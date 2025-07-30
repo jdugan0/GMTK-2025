@@ -2,6 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>GodotStarter</RootNamespace>
+    <RootNamespace>GMTK-2025</RootNamespace>
   </PropertyGroup>
 </Project>

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GodotStarter"
+config/name="GMTK-2025"
 run/main_scene="uid://dkqwtr4rnmqrm"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
@@ -31,4 +31,4 @@ window/size/mode.editor=0
 
 [dotnet]
 
-project/assembly_name="GodotStarter"
+project/assembly_name="GMTK-2025"

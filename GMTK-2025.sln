@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GodotStarter", "GodotStarter.csproj", "{8EEC42D8-5E62-461B-9854-C937FD260C73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMTK-2025", "GMTK-2025.csproj", "{8EEC42D8-5E62-461B-9854-C937FD260C73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

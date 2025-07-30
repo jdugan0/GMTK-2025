@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3df3pqxnto64"]
+
+[ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://scripts/Audio/AudioManager.cs" id="1_ulbmk"]
+
+[node name="Audiomanager" type="Node"]
+script = ExtResource("1_ulbmk")
+sounds = Array[Object]([])

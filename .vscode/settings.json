@@ -1,0 +1,9 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false, // keep children collapsed by default (optional)
+  "explorer.fileNesting.patterns": {
+    "*.cs": "$(capture).cs.uid",
+    "*.png": "$(capture).png.import",
+    "*.wav": "$(capture).wav.import"
+  }
+}

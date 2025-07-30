@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjj36q2sxrpld"]
+
+[ext_resource type="Script" uid="uid://dldb4op87lpcj" path="res://scripts/Module.cs" id="1_2k3m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k3m6"]
+size = Vector2(100, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v12o8"]
+radius = 5.04207
+
+[node name="TestModule" type="RigidBody2D" node_paths=PackedStringArray("collider", "edge") groups=["Connectable"]]
+input_pickable = true
+mass = 0.01
+freeze_mode = 1
+linear_damp = 3.0
+angular_damp = 3.0
+script = ExtResource("1_2k3m6")
+collider = NodePath("CollisionShape2D")
+edge = NodePath("Area2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2k3m6")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Connectable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Connectable"]]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_v12o8")
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExit"]
+[connection signal="body_entered" from="Area2D" to="." method="OnTouch"]

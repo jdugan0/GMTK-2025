@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=6 format=3 uid="uid://dkqwtr4rnmqrm"]
+
+[ext_resource type="Script" uid="uid://t7i4sg66t0iq" path="res://scripts/Camera.cs" id="1_4w0vo"]
+[ext_resource type="PackedScene" uid="uid://b3x2kgqbnemdu" path="res://scenes/BaseModule.tscn" id="1_iho50"]
+[ext_resource type="PackedScene" uid="uid://bjj36q2sxrpld" path="res://scenes/TestModule.tscn" id="2_3wh16"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbm7m"]
+size = Vector2(100000, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4w0vo"]
+size = Vector2(100, 100)
 
 [node name="LevelTest" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_rbm7m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_4w0vo")
+
+[node name="BaseModule" parent="." instance=ExtResource("1_iho50")]
+position = Vector2(12, -223)
+
+[node name="TestModule" parent="." instance=ExtResource("2_3wh16")]
+position = Vector2(194, -120)
+
+[node name="TestModule2" parent="." instance=ExtResource("2_3wh16")]
+position = Vector2(272, -211)
+
+[node name="TestModule3" parent="." instance=ExtResource("2_3wh16")]
+position = Vector2(-255, -264)
+
+[node name="TestModule4" parent="." instance=ExtResource("2_3wh16")]
+position = Vector2(-369, -220)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(413, -374)
+texture = SubResource("PlaceholderTexture2D_4w0vo")

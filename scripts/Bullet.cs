@@ -3,7 +3,7 @@ using System;
 public partial class Bullet : CharacterBody2D
 {
 
-    private bool stuck;
+    private bool stuck = false;
     [Export] private CollisionShape2D pickupRadius;
     [Export] private CollisionShape2D shape;
 
@@ -12,7 +12,7 @@ public partial class Bullet : CharacterBody2D
         var hit = MoveAndCollide(Velocity * (float)delta);
         if (hit != null)
             ResolveHit(hit);
-        if (Velocity.Length() == 0)
+        if (stuck)
         {
             pickupRadius.Disabled = false;
             shape.Disabled = true;
@@ -22,10 +22,9 @@ public partial class Bullet : CharacterBody2D
     private void ResolveHit(KinematicCollision2D hit)
     {
         var target = hit.GetCollider() as Node2D;
-        if (target?.IsInGroup("hittable") == true && !stuck)
+        if (target.IsInGroup("hittable") == true && !stuck)
         {
             (target as Enemy)?.Death();
-            GlobalPosition = hit.GetPosition();
             Velocity = Vector2.Zero;
             stuck = true;
             return;
@@ -33,7 +32,8 @@ public partial class Bullet : CharacterBody2D
     }
     public void ResolvePickup(Node2D hit)
     {
-        if (hit is Movement player)
+        GD.Print("hi");
+        if (hit is Movement player && stuck)
         {
             player.bullets++;
             QueueFree();

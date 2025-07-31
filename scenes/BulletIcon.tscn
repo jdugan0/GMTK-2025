@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ety2qufwm8w"]
+
+[ext_resource type="Texture2D" uid="uid://btybjyi573kt3" path="res://art/bulletIcon_100x209.png" id="1_2eosv"]
+
+[node name="BulletIcon" type="TextureRect"]
+clip_contents = true
+custom_minimum_size = Vector2(209, 109)
+offset_right = 209.0
+offset_bottom = 96.0
+texture = ExtResource("1_2eosv")
+expand_mode = 1
+stretch_mode = 2

@@ -58,5 +58,3 @@ position = Vector2(11231, 1819)
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(7490, 1819)
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

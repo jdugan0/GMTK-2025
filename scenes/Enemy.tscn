@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc5m4qvdd6r0q"]
+
+[ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_55jtl"]
+[ext_resource type="Texture2D" uid="uid://6usx1lymkpnb" path="res://art/attackerSR_1000x631.png" id="2_55jtl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
+radius = 175.114
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["hittable"]]
+script = ExtResource("1_55jtl")
+nav = NodePath("NavigationAgent2D")
+maxSpeed = 1000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_55jtl")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 631)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_55jtl")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 500.0
+max_speed = 1000.0
+debug_enabled = true
+debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)

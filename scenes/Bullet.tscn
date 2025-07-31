@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://co4ok6cl18jwu"]
 
 [ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_hf8mt"]
-[ext_resource type="Texture2D" uid="uid://b6f4akru8yjha" path="res://art/charaSprite.png" id="2_p1sfj"]
+[ext_resource type="Texture2D" uid="uid://ewoi8m1r85e3" path="res://art/player_441x642.png" id="2_p1sfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
 size = Vector2(72, 203)
@@ -16,9 +16,10 @@ pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 222)
 texture = ExtResource("2_p1sfj")
 region_enabled = true
-region_rect = Rect2(1555, 1650, 73, 203)
+region_rect = Rect2(882, 0, 441, 642)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

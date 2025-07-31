@@ -9,7 +9,7 @@ public partial class Movement : CharacterBody2D
     [Export] PackedScene bullet;
     [Export] float fireSpeed;
     [Export] Node2D firePos;
-    public int bullets = 6;
+    [Export] public int bullets = 6;
     [Export] float fireDelay = 1.5f;
     float delayTimer = 10000;
     public override void _Ready()

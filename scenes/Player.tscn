@@ -78,6 +78,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder")]
+motion_mode = 1
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
 friction = 5500.0

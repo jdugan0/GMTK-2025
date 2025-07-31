@@ -60,5 +60,3 @@ rotation = -0.785398
 tile_map_data = PackedByteArray("AABcAIP/AAAAAAAAAQBPAMT/AAAAAAAAAQDZAEH/AAAAAAAAAQDRAFD/AAAAAAAAAQC2ADj/AAAAAAAAAQC1AEX/AAAAAAAAAQCmAH7/AAAAAAAAAQCuAIf/AAAAAAAAAQDcAIX/AAAAAAAAAQDOAGb/AAAAAAAAAQBYAH7/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -14,6 +14,7 @@ height = 704.0
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["Enemy", "hittable"]]
 collision_layer = 5
 collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")
 ghost = ExtResource("2_mpr68")

@@ -22,6 +22,10 @@ public partial class GameManager : Node
             if (paused) Resume();
             else Pause();
         }
+        if (Input.IsActionJustPressed("RESTART"))
+        {
+            RestartLevel();
+        }
     }
 
     public void Pause()
@@ -46,6 +50,12 @@ public partial class GameManager : Node
         AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX("lvl1Intro");
         await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
         AudioManager.instance.PlaySFX("lvl1Main");
+    }
+
+    public void CancelMusic()
+    {
+        AudioManager.instance.CancelSFX("lvl1Intro");
+        AudioManager.instance.CancelSFX("lvl1Main");
     }
 
 

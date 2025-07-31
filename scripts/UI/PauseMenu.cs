@@ -13,6 +13,7 @@ public partial class PauseMenu : CanvasLayer
     {
         GetTree().Paused = false;
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
+        GameManager.instance.CancelMusic();
     }
     public void Resume()
     {

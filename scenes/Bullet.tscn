@@ -1,12 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://co4ok6cl18jwu"]
 
 [ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_hf8mt"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2ropf"]
-size = Vector2(50, 20)
+[ext_resource type="Texture2D" uid="uid://b6f4akru8yjha" path="res://art/charaSprite.png" id="2_p1sfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
-size = Vector2(50, 20)
+size = Vector2(72, 203)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hf8mt"]
 radius = 41.03
@@ -17,9 +15,12 @@ pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_2ropf")
+texture = ExtResource("2_p1sfj")
+region_enabled = true
+region_rect = Rect2(1555, 1650, 73, 203)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_2ropf")
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
 [ext_resource type="Texture2D" uid="uid://b6f4akru8yjha" path="res://art/charaSprite.png" id="3_3li8b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q5h1"]
-size = Vector2(400, 598)
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6fml"]
+radius = 50.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos")]
 script = ExtResource("1_p0vlq")
@@ -23,7 +23,7 @@ region_enabled = true
 region_rect = Rect2(1379, 685, 437, 599)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5q5h1")
+shape = SubResource("CircleShape2D_v6fml")
 
 [node name="FirePos" type="Node2D" parent="."]
 position = Vector2(94, 0)

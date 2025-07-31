@@ -12,11 +12,15 @@ public partial class Movement : CharacterBody2D
     public int bullets = 6;
     [Export] float fireDelay = 1.5f;
     float delayTimer = 10000;
+    public override void _Ready()
+    {
+        GameManager.instance.player = this;
+    }
 
     public override void _PhysicsProcess(double delta)
     {
         Vector2 inputDir = Input.GetVector("LEFT", "RIGHT", "UP", "DOWN");
-        Vector2 targetVelocity = inputDir * maxSpeed;
+        Vector2 targetVelocity = inputDir.Normalized() * maxSpeed;
 
         float rate = inputDir == Vector2.Zero ? friction : accel;
         Velocity = Velocity.MoveToward(targetVelocity, rate * (float)delta);

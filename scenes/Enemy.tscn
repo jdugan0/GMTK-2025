@@ -12,8 +12,8 @@ collision_mask = 3
 script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")
 maxSpeed = 1000.0
-playerSeenDistance = 1500.0
-alertDistance = 3000.0
+playerSeenDistance = 2500.0
+alertDistance = 3500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_55jtl")

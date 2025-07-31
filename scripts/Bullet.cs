@@ -54,6 +54,7 @@ public partial class Bullet : CharacterBody2D
                 player.sprite.Play("reload");
                 AudioManager.instance.PlaySFX("reload");
             }
+            AudioManager.instance.PlaySFX("bulletPickup");
             player.bullets++;
             QueueFree();
         }

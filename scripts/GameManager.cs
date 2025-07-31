@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 public partial class GameManager : Node
@@ -36,9 +37,17 @@ public partial class GameManager : Node
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
         instance.CancelMusic();
     }
-    public void NextLevel()
+    public async void NextLevel()
     {
-        LoadLevel(currentLevelID + 1);
+        GetTree().Paused = false;
+        if (currentLevelID == levels.Length)
+        {
+            await SceneSwitcher.instance.SwitchSceneAsyncSlide("GameComplete");
+        }
+        else
+        {
+            LoadLevel(currentLevelID + 1);
+        }
     }
     public void Pause()
     {

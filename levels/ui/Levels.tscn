@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3t8putfy33y4" path="res://scripts/UI/LevelUI.cs" id="1_nlgad"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_2h0fi"]
 [ext_resource type="Texture2D" uid="uid://l2qtnihig6fl" path="res://art/levels_252x259.png" id="2_p3igk"]
-[ext_resource type="Theme" uid="uid://j63b6j6lajh6" path="res://art/themes/Levels.tres" id="4_xagwo"]
+[ext_resource type="Theme" path="res://art/themes/Levels.tres" id="4_xagwo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dekjx"]
 texture = ExtResource("2_2h0fi")
@@ -140,4 +140,5 @@ grow_vertical = 0
 theme = ExtResource("4_xagwo")
 text = "BACK"
 
+[connection signal="pressed" from="GridContainer/TextureButton" to="." method="LoadLevel" binds= [1]]
 [connection signal="pressed" from="Button" to="." method="Back"]

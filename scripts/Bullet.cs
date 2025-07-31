@@ -32,7 +32,7 @@ public partial class Bullet : CharacterBody2D
     }
     public void ResolvePickup(Node2D hit)
     {
-        GD.Print("hi");
+        // GD.Print("hi");
         if (hit is Movement player && stuck)
         {
             player.bullets++;

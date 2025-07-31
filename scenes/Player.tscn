@@ -48,7 +48,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowHolder")]
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
 friction = 5500.0
@@ -59,6 +59,7 @@ firePos = NodePath("FirePos")
 bullets = 3
 fireDelay = 0.5
 sprite = NodePath("AnimatedSprite2D")
+arrowHolder = NodePath("Node")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")
@@ -69,3 +70,5 @@ position = Vector2(0, -197)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6fml")
 animation = &"empty"
+
+[node name="Node" type="Node" parent="."]

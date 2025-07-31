@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://co4ok6cl18jwu"]
+
+[ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_hf8mt"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2ropf"]
+size = Vector2(50, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
+size = Vector2(50, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hf8mt"]
+radius = 41.03
+
+[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape")]
+script = ExtResource("1_hf8mt")
+pickupRadius = NodePath("Area2D/CollisionShape2D")
+shape = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_2ropf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ropf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hf8mt")
+
+[connection signal="body_entered" from="Area2D" to="." method="ResolvePickup"]

@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=3 format=3 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="1_iho50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
+size = Vector2(10000, 20)
 
 [node name="LevelTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iho50")]
-position = Vector2(-24, -31)
-maxSpeed = 600.0
-friction = 3000.0
-accel = 5000.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hittable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["hittable"]]
+position = Vector2(-1, -385)
+shape = SubResource("RectangleShape2D_iho50")

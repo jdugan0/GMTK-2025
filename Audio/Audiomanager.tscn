@@ -78,7 +78,7 @@ stream_2/stream = ExtResource("12_y8p1i")
 script = ExtResource("2_subo3")
 stream = SubResource("AudioStreamRandomizer_q81wp")
 volume = 0.0
-name = "hitSucsess"
+name = "hitSuccess"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="Resource" id="Resource_tqoos"]

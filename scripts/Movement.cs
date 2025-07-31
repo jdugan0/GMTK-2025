@@ -60,6 +60,7 @@ public partial class Movement : CharacterBody2D
         Node node = bullet.Instantiate();
         GetTree().CurrentScene.AddChild(node);
         Bullet b = (Bullet)node;
+        b.stuck = false;
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;

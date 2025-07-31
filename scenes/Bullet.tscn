@@ -41,6 +41,7 @@ height = 244.0
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_hf8mt")
+stuck = true
 pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")

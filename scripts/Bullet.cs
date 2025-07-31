@@ -48,6 +48,11 @@ public partial class Bullet : CharacterBody2D
         // GD.Print("hi");
         if (hit is Movement player && stuck)
         {
+            if (player.bullets == 0)
+            {
+                player.sprite.Play("reload");
+                AudioManager.instance.PlaySFX("reload");
+            }
             player.bullets++;
             QueueFree();
         }

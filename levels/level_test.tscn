@@ -50,7 +50,7 @@ position = Vector2(7490, 1819)
 
 [node name="Player" parent="." instance=ExtResource("1_iho50")]
 position = Vector2(-3057, -162)
-bullets = 0
+bullets = 4
 
 [node name="LevelHUD" parent="." instance=ExtResource("6_y0s4v")]
 

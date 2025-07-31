@@ -11,10 +11,16 @@ public partial class Movement : CharacterBody2D
     [Export] Node2D firePos;
     [Export] public int bullets = 6;
     [Export] float fireDelay = 1.5f;
-    float delayTimer = 10000;
+    float delayTimer = 0;
+    [Export] public AnimatedSprite2D sprite;
     public override void _Ready()
     {
         GameManager.instance.player = this;
+        if (bullets > 0)
+        {
+            sprite.Play("reload");
+            AudioManager.instance.PlaySFX("reload");
+        }
     }
     public void Death()
     {
@@ -54,13 +60,27 @@ public partial class Movement : CharacterBody2D
         {
             AudioManager.instance.PlaySFX("noAmmo");
         }
-        delayTimer += (float)delta;
+
+        if (bullets <= 0)
+        {
+            sprite.Play("empty");
+            delayTimer = 0;
+        }
+        else
+        {
+            delayTimer += (float)delta;
+        }
     }
 
 
     public void Fire()
     {
         bullets--;
+        if (bullets > 0)
+        {
+            sprite.Play("reload");
+            AudioManager.instance.PlaySFX("reload");
+        }
         Node node = bullet.Instantiate();
         GetTree().CurrentScene.AddChild(node);
         Bullet b = (Bullet)node;

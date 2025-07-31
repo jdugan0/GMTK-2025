@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=10 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
@@ -7,7 +7,48 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3li8b"]
+atlas = ExtResource("3_3li8b")
+region = Rect2(441, 0, 441, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4a1"]
+atlas = ExtResource("3_3li8b")
+region = Rect2(441, 0, 441, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdl7e"]
+atlas = ExtResource("3_3li8b")
+region = Rect2(882, 0, 441, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70d11"]
+atlas = ExtResource("3_3li8b")
+region = Rect2(0, 0, 441, 642)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6fml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3li8b")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdl7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70d11")
+}],
+"loop": false,
+"name": &"reload",
+"speed": 6.0
+}]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite")]
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
 friction = 5500.0
@@ -16,15 +57,15 @@ bullet = ExtResource("2_v6fml")
 fireSpeed = 10000.0
 firePos = NodePath("FirePos")
 bullets = 3
-fireDelay = 0.05
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_3li8b")
-region_enabled = true
-region_rect = Rect2(0, 0, 441, 642)
+fireDelay = 0.5
+sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")
 
 [node name="FirePos" type="Node2D" parent="."]
 position = Vector2(0, -197)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6fml")
+animation = &"empty"

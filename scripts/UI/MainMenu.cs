@@ -7,8 +7,8 @@ public partial class MainMenu : Control
     {
         GetTree().Quit();
     }
-    public void Levels()
+    public async void Levels()
     {
-        SceneSwitcher.instance.SwitchScene("levels");
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide("levels");
     }
 }

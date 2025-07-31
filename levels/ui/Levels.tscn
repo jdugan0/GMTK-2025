@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bp4pbt66p04ah"]
 
-[ext_resource type="Script" uid="uid://d3t8putfy33y4" path="res://scripts/LevelUI.cs" id="1_nlgad"]
+[ext_resource type="Script" uid="uid://d3t8putfy33y4" path="res://scripts/UI/LevelUI.cs" id="1_nlgad"]
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -100,4 +100,16 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 101
 text = "1"
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 215.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 151
+text = "BACK"
+
 [connection signal="pressed" from="GridContainer/Button" to="." method="LoadLevel" binds= [1]]
+[connection signal="pressed" from="Button" to="." method="Back"]

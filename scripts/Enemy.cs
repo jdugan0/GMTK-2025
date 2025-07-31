@@ -58,7 +58,7 @@ public partial class Enemy : CharacterBody2D
             {
                 if (node.playerSeen)
                 {
-                    return;
+                    continue;
                 }
                 node.SeenPlayer();
             }

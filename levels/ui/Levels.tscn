@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp4pbt66p04ah"]
+[gd_scene load_steps=18 format=3 uid="uid://bp4pbt66p04ah"]
 
 [ext_resource type="Script" uid="uid://d3t8putfy33y4" path="res://scripts/UI/LevelUI.cs" id="1_nlgad"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_2h0fi"]
 [ext_resource type="Texture2D" uid="uid://l2qtnihig6fl" path="res://art/levels_252x259.png" id="2_p3igk"]
-[ext_resource type="Theme" path="res://art/themes/Levels.tres" id="4_xagwo"]
+[ext_resource type="Script" uid="uid://brfmgp5o08hhn" path="res://scripts/UI/LevelButton.cs" id="4_dekjx"]
+[ext_resource type="Theme" uid="uid://0r7v0v6385k2" path="res://art/themes/Levels.tres" id="4_xagwo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dekjx"]
 texture = ExtResource("2_2h0fi")
@@ -94,6 +95,8 @@ size_flags_vertical = 6
 texture_normal = SubResource("AtlasTexture_n4f6i")
 texture_hover = SubResource("AtlasTexture_2h0fi")
 texture_disabled = SubResource("AtlasTexture_xagwo")
+script = ExtResource("4_dekjx")
+level = 1
 
 [node name="TextureButton2" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -102,6 +105,8 @@ size_flags_vertical = 6
 texture_normal = SubResource("AtlasTexture_p3igk")
 texture_hover = SubResource("AtlasTexture_dekjx")
 texture_disabled = SubResource("AtlasTexture_xagwo")
+script = ExtResource("4_dekjx")
+level = 2
 
 [node name="TextureButton3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -110,6 +115,8 @@ size_flags_vertical = 6
 texture_normal = SubResource("AtlasTexture_r2f54")
 texture_hover = SubResource("AtlasTexture_uhtl0")
 texture_disabled = SubResource("AtlasTexture_xagwo")
+script = ExtResource("4_dekjx")
+level = 3
 
 [node name="TextureButton4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -118,6 +125,8 @@ size_flags_vertical = 6
 texture_normal = SubResource("AtlasTexture_511vu")
 texture_hover = SubResource("AtlasTexture_a3p0b")
 texture_disabled = SubResource("AtlasTexture_xagwo")
+script = ExtResource("4_dekjx")
+level = 4
 
 [node name="TextureButton5" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
@@ -126,6 +135,8 @@ size_flags_vertical = 6
 texture_normal = SubResource("AtlasTexture_670jl")
 texture_hover = SubResource("AtlasTexture_do2f8")
 texture_disabled = SubResource("AtlasTexture_xagwo")
+script = ExtResource("4_dekjx")
+level = 5
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -140,5 +151,6 @@ grow_vertical = 0
 theme = ExtResource("4_xagwo")
 text = "BACK"
 
-[connection signal="pressed" from="GridContainer/TextureButton" to="." method="LoadLevel" binds= [1]]
+[connection signal="pressed" from="GridContainer/TextureButton" to="GridContainer/TextureButton" method="LoadLevel"]
+[connection signal="pressed" from="GridContainer/TextureButton2" to="GridContainer/TextureButton2" method="LoadLevel"]
 [connection signal="pressed" from="Button" to="." method="Back"]

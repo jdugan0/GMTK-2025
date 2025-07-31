@@ -7,6 +7,7 @@ public partial class Bullet : CharacterBody2D
     [Export] private CollisionShape2D pickupRadius;
     [Export] private CollisionShape2D shape;
     [Export] AnimatedSprite2D sprite;
+    public bool playerFired = false;
     float timeStuck = 0f;
 
     public override void _PhysicsProcess(double delta)

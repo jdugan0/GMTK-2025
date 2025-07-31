@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public partial class Movement : CharacterBody2D
 {
@@ -13,6 +15,8 @@ public partial class Movement : CharacterBody2D
     [Export] float fireDelay = 1.5f;
     float delayTimer = 0;
     [Export] public AnimatedSprite2D sprite;
+    [Export] Node arrowBulletHolder;
+    [Export] PackedScene arrowBullet;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -70,6 +74,15 @@ public partial class Movement : CharacterBody2D
         {
             delayTimer += (float)delta;
         }
+        List<Vector2> bulletPos = new List<Vector2>();
+        foreach (Node n in GetTree().GetNodesInGroup("Bullet"))
+        {
+            Bullet b = n as Bullet;
+            if (b.playerFired && b.stuck)
+            {
+                bulletPos.Add(b.Position);
+            }
+        }
     }
 
 
@@ -84,6 +97,7 @@ public partial class Movement : CharacterBody2D
         Node node = bullet.Instantiate();
         GetTree().CurrentScene.AddChild(node);
         Bullet b = (Bullet)node;
+        b.playerFired = true;
         b.stuck = false;
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);

@@ -39,6 +39,7 @@ project/assembly_name="GMTK-2025"
 
 hittable=""
 Enemy=""
+Bullet=""
 
 [input]
 

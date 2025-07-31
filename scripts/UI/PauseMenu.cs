@@ -9,6 +9,7 @@ public partial class PauseMenu : CanvasLayer
         GameManager.instance.pauseMenu = this;
     }
 
+
     public void MainMenu()
     {
         GameManager.instance.MainMenu();

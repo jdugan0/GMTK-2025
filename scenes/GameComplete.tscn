@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://3w055v7ms6c4"]
+
+[ext_resource type="Script" uid="uid://dsyhmrptnskyy" path="res://scripts/UI/PauseMenu.cs" id="1_wt67i"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_wt67i")
+
+[node name="GameComplete" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameComplete"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameComplete/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -684.0
+offset_right = 684.0
+offset_bottom = 248.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 181
+text = "wow. you did it!"
+
+[node name="Button" type="Button" parent="GameComplete/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -15.5
+offset_right = 52.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 186
+text = "MAIN MENU"
+
+[connection signal="pressed" from="GameComplete/Panel/Button" to="GameComplete" method="MainMenu"]
+[connection signal="pressed" from="GameComplete/Panel/Button" to="." method="MainMenu"]

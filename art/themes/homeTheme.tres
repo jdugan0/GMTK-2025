@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cwdyn1lge3e2s"]
+
+[ext_resource type="Texture2D" uid="uid://bjgjqxudkgjyi" path="res://art/homebutton_1370x322.png" id="1_fysou"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fysou"]
+texture = ExtResource("1_fysou")
+texture_margin_left = 158.0
+texture_margin_top = 30.0
+texture_margin_right = 470.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 320, 1373, 319)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7d1a"]
+texture = ExtResource("1_fysou")
+texture_margin_left = 158.0
+texture_margin_top = 30.0
+texture_margin_right = 470.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 0, 1373, 316)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.132408, 0.605209, 0.647348, 1)
+Button/styles/hover = SubResource("StyleBoxTexture_fysou")
+Button/styles/normal = SubResource("StyleBoxTexture_y7d1a")
+Button/styles/pressed = SubResource("StyleBoxTexture_y7d1a")

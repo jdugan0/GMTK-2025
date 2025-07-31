@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bln2h1yf6bgd6"]
+[gd_scene load_steps=3 format=3 uid="uid://bln2h1yf6bgd6"]
 
 [ext_resource type="Script" uid="uid://b0n73vfovoueu" path="res://scripts/UI/MainMenu.cs" id="1_s0hl8"]
+[ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="2_4dpww"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,15 +22,15 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -310.5
-offset_top = -322.5
-offset_right = 310.5
-offset_bottom = 322.5
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.091
+anchor_right = 0.973
+anchor_bottom = 0.894
+offset_left = -0.52002
+offset_top = -0.280006
+offset_right = 0.839844
+offset_bottom = 16.4799
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 115
@@ -37,17 +38,20 @@ alignment = 1
 
 [node name="Levels" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4dpww")
 theme_override_font_sizes/font_size = 116
 text = "LEVELS"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4dpww")
 theme_override_font_sizes/font_size = 116
 text = "OPTIONS
 "
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_4dpww")
 theme_override_font_sizes/font_size = 116
 text = "QUIT"
 

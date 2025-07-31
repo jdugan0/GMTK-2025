@@ -55,9 +55,9 @@ friction = 5500.0
 accel = 8000.0
 bullet = ExtResource("2_v6fml")
 fireSpeed = 10000.0
-firePos = NodePath("FirePos")
 bullets = 3
 fireDelay = 0.5
+firePos = NodePath("FirePos")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

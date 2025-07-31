@@ -6,6 +6,8 @@ public partial class Bullet : CharacterBody2D
     private bool stuck = false;
     [Export] private CollisionShape2D pickupRadius;
     [Export] private CollisionShape2D shape;
+    [Export] AnimatedSprite2D sprite;
+    float timeStuck = 0f;
 
     public override void _PhysicsProcess(double delta)
     {
@@ -16,6 +18,9 @@ public partial class Bullet : CharacterBody2D
         {
             pickupRadius.Disabled = false;
             shape.Disabled = true;
+            float scaleFactor = 0.25f * Mathf.Sin(2 * timeStuck) + 1.25f;
+            Scale = new Vector2(scaleFactor, scaleFactor);
+            timeStuck += (float)delta;
         }
     }
 

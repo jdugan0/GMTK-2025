@@ -5,6 +5,7 @@ using System.Diagnostics.Tracing;
 public partial class Enemy : CharacterBody2D
 {
     [Export] NavigationAgent2D nav;
+    [Export] PackedScene ghost;
     [Export] float maxSpeed;
     [Export] float playerSeenDistance;
     [Export] float alertDistance;
@@ -14,6 +15,9 @@ public partial class Enemy : CharacterBody2D
     public void Death()
     {
         AudioManager.instance.PlaySFX("hitSuccess");
+        Node2D ghostNode = ghost.Instantiate<Node2D>();
+        GetTree().CurrentScene.AddChild(ghostNode);
+        ghostNode.GlobalPosition = GlobalPosition;
         QueueFree();
     }
     public override void _PhysicsProcess(double delta)

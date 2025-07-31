@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc5m4qvdd6r0q"]
+[gd_scene load_steps=5 format=3 uid="uid://dtkuebyj01siw"]
 
-[ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_55jtl"]
-[ext_resource type="Texture2D" uid="uid://6usx1lymkpnb" path="res://art/attackerSR_1000x631.png" id="2_55jtl"]
-[ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_mpr68"]
+[ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_wltc5"]
+[ext_resource type="Texture2D" uid="uid://yv4ffflib5y1" path="res://art/attackerLR_400x758.png" id="2_wltc5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 175.114
@@ -11,20 +10,20 @@ radius = 175.114
 radius = 215.0
 height = 704.0
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["Enemy", "hittable"]]
+[node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["Enemy", "hittable"]]
 collision_layer = 5
 collision_mask = 3
-script = ExtResource("1_55jtl")
+script = ExtResource("1_wltc5")
 nav = NodePath("NavigationAgent2D")
-ghost = ExtResource("2_mpr68")
 maxSpeed = 1000.0
 playerSeenDistance = 2500.0
-alertDistance = 2000.0
+alertDistance = 3500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_55jtl")
+texture = ExtResource("2_wltc5")
+offset = Vector2(-50.665, -67.1)
 region_enabled = true
-region_rect = Rect2(0, 0, 1000, 631)
+region_rect = Rect2(0, 0, 400, 758)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_55jtl")

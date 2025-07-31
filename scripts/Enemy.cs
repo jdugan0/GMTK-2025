@@ -12,6 +12,7 @@ public partial class Enemy : CharacterBody2D
 
     public void Death()
     {
+        AudioManager.instance.PlaySFX("hitSucsess");
         QueueFree();
     }
     public override void _PhysicsProcess(double delta)

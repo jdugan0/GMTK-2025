@@ -51,7 +51,7 @@ public partial class AudioManager : Node
     }
     public void CancelSFX(string sound)
     {
-        if (isPlaying(sound))
+        if (IsPlaying(sound))
         {
             KeyValuePair<string, AudioStreamPlayer> p = new KeyValuePair<string, AudioStreamPlayer>();
             foreach (KeyValuePair<string, AudioStreamPlayer> pair in playing)
@@ -66,7 +66,7 @@ public partial class AudioManager : Node
             p.Value.QueueFree();
         }
     }
-    public bool isPlaying(string sound)
+    public bool IsPlaying(string sound)
     {
         foreach (KeyValuePair<string, AudioStreamPlayer> pair in playing)
         {

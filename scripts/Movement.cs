@@ -22,6 +22,14 @@ public partial class Movement : CharacterBody2D
         Vector2 inputDir = Input.GetVector("LEFT", "RIGHT", "UP", "DOWN");
         Vector2 targetVelocity = inputDir.Normalized() * maxSpeed;
 
+        if (inputDir.Length() != 0)
+        {
+            if (!AudioManager.instance.IsPlaying("footsteps"))
+            {
+                AudioManager.instance.PlaySFX("footsteps");
+            }
+        }
+
         float rate = inputDir == Vector2.Zero ? friction : accel;
         Velocity = Velocity.MoveToward(targetVelocity, rate * (float)delta);
         Vector2 mousePos = GetGlobalMousePosition();
@@ -50,6 +58,7 @@ public partial class Movement : CharacterBody2D
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;
+        AudioManager.instance.PlaySFX("crossbowFire");
     }
 
 }

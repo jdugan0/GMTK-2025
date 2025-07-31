@@ -12,6 +12,7 @@ public partial class EnemiesRemaining : Label
     public override void _Process(double delta)
     {
         Text = GetTree().GetNodesInGroup("Enemy").Count + " / " + originalCount;
+        GameManager.instance.enemiesRemaining = GetTree().GetNodesInGroup("Enemy").Count;
     }
 
 }

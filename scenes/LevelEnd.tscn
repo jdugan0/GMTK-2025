@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5vl1rsn6absb"]
+
+[ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_7bpco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fuep"]
+size = Vector2(801, 80)
+
+[node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI")]
+process_mode = 3
+script = ExtResource("1_7bpco")
+UI = NodePath("CanvasLayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4fuep")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.5
+offset_top = -353.5
+offset_right = 528.5
+offset_bottom = 353.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -295.5
+offset_right = 466.0
+offset_bottom = 295.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 116
+text = "LEVEL COMPLETE"
+
+[node name="NEXTLEVEL" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 131
+text = "NEXT LEVEL"
+
+[node name="MAINMENU" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 131
+text = "MAIN MENU"
+
+[connection signal="body_entered" from="." to="." method="OnCol"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/NEXTLEVEL" to="." method="NextLevel"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/MAINMENU" to="." method="MainMenu"]

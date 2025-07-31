@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b61gwp8l1ownc"
+path="res://.godot/imported/No Ammo.mp3-d012f26158487a5b16ba9927be46c7a9.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/No Ammo.mp3"
+dest_files=["res://.godot/imported/No Ammo.mp3-d012f26158487a5b16ba9927be46c7a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

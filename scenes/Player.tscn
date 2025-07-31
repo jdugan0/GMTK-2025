@@ -8,7 +8,6 @@
 radius = 222.092
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos")]
-collision_mask = 3
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
 friction = 5500.0
@@ -28,4 +27,4 @@ region_rect = Rect2(0, 0, 441, 642)
 shape = SubResource("CircleShape2D_3li8b")
 
 [node name="FirePos" type="Node2D" parent="."]
-position = Vector2(0, -430)
+position = Vector2(0, -197)

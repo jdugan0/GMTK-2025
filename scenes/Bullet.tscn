@@ -38,7 +38,8 @@ radius = 48.0
 height = 244.0
 
 [node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite")]
-collision_mask = 3
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_hf8mt")
 pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")

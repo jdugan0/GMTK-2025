@@ -30,7 +30,14 @@ public partial class Bullet : CharacterBody2D
         var target = hit.GetCollider() as Node2D;
         if (target.IsInGroup("hittable") == true && !stuck)
         {
-            (target as Enemy)?.Death();
+            if (target is Enemy enemy)
+            {
+                enemy.Death();
+            }
+            else
+            {
+                AudioManager.instance.PlaySFX("hitFail");
+            }
             Velocity = Vector2.Zero;
             stuck = true;
             return;

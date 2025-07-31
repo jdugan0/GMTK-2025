@@ -19,7 +19,7 @@ public partial class Movement : CharacterBody2D
     public void Death()
     {
         QueueFree();
-        GameManager.instance.RestartLevel();
+        GameManager.instance.PlayerDeath();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -49,6 +49,10 @@ public partial class Movement : CharacterBody2D
         {
             Fire();
             delayTimer = 0;
+        }
+        if (Input.IsActionJustPressed("FIRE") && bullets <= 0)
+        {
+            AudioManager.instance.PlaySFX("noAmmo");
         }
         delayTimer += (float)delta;
     }

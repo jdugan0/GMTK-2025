@@ -54,6 +54,12 @@ public partial class GameManager : Node
     {
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(currentLevel);
     }
+    public async void PlayerDeath()
+    {
+        AudioStreamPlayer player = AudioManager.instance.PlaySFX("playerDeath");
+        await ToSignal(player, AudioStreamPlayer.SignalName.Finished);
+        RestartLevel();
+    }
 
     public async Task StartMusic()
     {

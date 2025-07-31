@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dn1s0vpqxqt4w"
-path="res://.godot/imported/Impail 2.wav-b83b93472e290285ea17b614b7e9beae.sample"
+uid="uid://r4ax0vskpusa"
+path="res://.godot/imported/Hiss 1.wav-53df8fbe451d20fbbb9e220dd7f274b3.sample"
 
 [deps]
 
-source_file="res://scripts/Audio/SFX/Impail 2.wav"
-dest_files=["res://.godot/imported/Impail 2.wav-b83b93472e290285ea17b614b7e9beae.sample"]
+source_file="res://Audio/SFX/Hiss 1.wav"
+dest_files=["res://.godot/imported/Hiss 1.wav-53df8fbe451d20fbbb9e220dd7f274b3.sample"]
 
 [params]
 

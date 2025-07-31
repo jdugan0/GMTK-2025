@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://b73lis36f5glx"
-path="res://.godot/imported/Hiss 3.wav-e24eae174525f1a5f525afc3ff97f95d.sample"
+uid="uid://dnrllmaviohuo"
+path="res://.godot/imported/Hiss 2.wav-ae7af058629c1af0caba6fc1140a93a6.sample"
 
 [deps]
 
-source_file="res://scripts/Audio/SFX/Hiss 3.wav"
-dest_files=["res://.godot/imported/Hiss 3.wav-e24eae174525f1a5f525afc3ff97f95d.sample"]
+source_file="res://Audio/SFX/Hiss 2.wav"
+dest_files=["res://.godot/imported/Hiss 2.wav-ae7af058629c1af0caba6fc1140a93a6.sample"]
 
 [params]
 

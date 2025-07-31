@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dsi2rdoa2b8v3"
-path="res://.godot/imported/Hiss 4.wav-2a556ede0b04b103819de9a3e9db2cad.sample"
+path="res://.godot/imported/Hiss 4.wav-1ff81320b844d77fc832369ea72a0abe.sample"
 
 [deps]
 
-source_file="res://scripts/Audio/SFX/Hiss 4.wav"
-dest_files=["res://.godot/imported/Hiss 4.wav-2a556ede0b04b103819de9a3e9db2cad.sample"]
+source_file="res://Audio/SFX/Hiss 4.wav"
+dest_files=["res://.godot/imported/Hiss 4.wav-1ff81320b844d77fc832369ea72a0abe.sample"]
 
 [params]
 

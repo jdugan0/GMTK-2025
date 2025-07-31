@@ -7,6 +7,7 @@ size = Vector2(400, 400)
 size = Vector2(400, 400)
 
 [node name="WallPlaceholder" type="StaticBody2D" groups=["hittable"]]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_873yr")

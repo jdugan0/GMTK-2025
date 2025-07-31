@@ -10,6 +10,8 @@ radius = 175.114
 script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")
 maxSpeed = 1000.0
+playerSeenDistance = 2700.0
+alertDistance = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_55jtl")

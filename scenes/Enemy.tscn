@@ -31,10 +31,8 @@ shape = SubResource("CircleShape2D_55jtl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
-avoidance_enabled = true
 radius = 500.0
 max_speed = 1000.0
-debug_enabled = true
 debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)
 
 [node name="Area2D" type="Area2D" parent="."]

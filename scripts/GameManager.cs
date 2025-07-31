@@ -16,7 +16,8 @@ public partial class GameManager : Node
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("PAUSE") && IsInstanceValid(pauseMenu))
+        if (!IsInstanceValid(pauseMenu)) return;
+        if (Input.IsActionJustPressed("PAUSE"))
         {
             if (paused) Resume();
             else Pause();

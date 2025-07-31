@@ -38,6 +38,7 @@ project/assembly_name="GMTK-2025"
 [global_group]
 
 hittable=""
+Enemy=""
 
 [input]
 

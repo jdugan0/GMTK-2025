@@ -9,7 +9,9 @@ public partial class GameManager : Node
     public PauseMenu pauseMenu;
     public bool paused = false;
     public string currentLevel;
+    public int currentLevelID;
     public int enemiesRemaining;
+    public string[] levels;
     public override void _Ready()
     {
         instance = this;
@@ -32,11 +34,11 @@ public partial class GameManager : Node
     {
         GetTree().Paused = false;
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
-        GameManager.instance.CancelMusic();
+        instance.CancelMusic();
     }
     public void NextLevel()
     {
-
+        LoadLevel(currentLevelID + 1);
     }
     public void Pause()
     {
@@ -49,6 +51,13 @@ public partial class GameManager : Node
         pauseMenu.Visible = false;
         GetTree().Paused = false;
         paused = false;
+    }
+    public async void LoadLevel(int id)
+    {
+        GameManager.instance.currentLevel = levels[id - 1];
+        GameManager.instance.currentLevelID = id;
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide(levels[id - 1]);
+        await GameManager.instance.StartMusic();
     }
     public async void RestartLevel()
     {

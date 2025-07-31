@@ -33,7 +33,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fuep"]
 size = Vector2(801, 196)
 
-[node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI", "sprite")]
+[node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI", "sprite") groups=["Exit"]]
 process_mode = 3
 script = ExtResource("1_7bpco")
 UI = NodePath("CanvasLayer")

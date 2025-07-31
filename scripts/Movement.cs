@@ -15,8 +15,11 @@ public partial class Movement : CharacterBody2D
     [Export] float fireDelay = 1.5f;
     float delayTimer = 0;
     [Export] public AnimatedSprite2D sprite;
-    [Export] Node arrowBulletHolder;
+    [Export] Node2D arrowBulletHolder;
     [Export] PackedScene arrowBullet;
+    [Export] PackedScene exitArrow;
+    Node2D arrow = null;
+    bool spawnedExitArrow = false;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -74,6 +77,36 @@ public partial class Movement : CharacterBody2D
         {
             delayTimer += (float)delta;
         }
+        if (IsInstanceValid(arrow))
+        {
+            Vector2 toPlayer = (GetTree().GetNodesInGroup("Exit")[0] as Node2D).GlobalPosition - GlobalPosition;
+            arrow.Rotation = toPlayer.Angle() - Rotation;
+        }
+        if (GameManager.instance.enemiesRemaining > 0)
+        {
+            UpdateBulletArrows();
+        }
+        else
+        {
+            if (spawnedExitArrow)
+            {
+                return;
+            }
+            spawnedExitArrow = true;
+            while (arrowBulletHolder.GetChildCount() > 0)
+            {
+                var child = arrowBulletHolder
+                    .GetChild(arrowBulletHolder.GetChildCount() - 1);
+                arrowBulletHolder.RemoveChild(child);
+                child.QueueFree();
+            }
+            var inst = exitArrow.Instantiate();
+            arrowBulletHolder.AddChild(inst);
+            arrow = (Node2D)inst;
+        }
+    }
+    public void UpdateBulletArrows()
+    {
         List<Vector2> bulletPos = new List<Vector2>();
         foreach (Node n in GetTree().GetNodesInGroup("Bullet"))
         {
@@ -82,6 +115,24 @@ public partial class Movement : CharacterBody2D
             {
                 bulletPos.Add(b.Position);
             }
+        }
+        while (arrowBulletHolder.GetChildCount() < bulletPos.Count)
+        {
+            var arrow = arrowBullet.Instantiate<Node2D>();
+            arrowBulletHolder.AddChild(arrow);
+        }
+        while (arrowBulletHolder.GetChildCount() > bulletPos.Count)
+        {
+            var child = arrowBulletHolder
+                .GetChild(arrowBulletHolder.GetChildCount() - 1);
+            arrowBulletHolder.RemoveChild(child);
+            child.QueueFree();
+        }
+        for (int i = 0; i < bulletPos.Count; i++)
+        {
+            var arrow = (Node2D)arrowBulletHolder.GetChild(i);
+            Vector2 toPlayer = bulletPos[i] - GlobalPosition;
+            arrow.Rotation = toPlayer.Angle() - Rotation;
         }
     }
 

@@ -1,11 +1,13 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://fgf17ec1udc6"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://fgf17ec1udc6"]
 
 [ext_resource type="Texture2D" uid="uid://cnmlq2mwg6njm" path="res://art/tilesetA.png" id="1_bso50"]
 [ext_resource type="PackedScene" uid="uid://c5vl1rsn6absb" path="res://scenes/LevelEnd.tscn" id="1_eqorc"]
+[ext_resource type="PackedScene" uid="uid://cmrepalu20e0c" path="res://scenes/LevelEndSide.tscn" id="2_n5pcl"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bso50"]
 resource_name = "Door"
 scenes/1/scene = ExtResource("1_eqorc")
+scenes/2/scene = ExtResource("2_n5pcl")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_eqorc"]
 vertices = PackedVector2Array(200, 200, -200, 200, -200, -200, 200, -200)

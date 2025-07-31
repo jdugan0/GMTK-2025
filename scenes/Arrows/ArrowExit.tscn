@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb3d0rjd67guf"]
+
+[ext_resource type="Texture2D" uid="uid://tml6v116rvvb" path="res://art/arrow_266x123.png" id="1_qpf70"]
+
+[node name="Arrow" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 0)
+texture = ExtResource("1_qpf70")
+region_enabled = true
+region_rect = Rect2(0, 246, 266, 123)

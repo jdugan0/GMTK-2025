@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class GameManager : Node
 {
@@ -37,6 +38,13 @@ public partial class GameManager : Node
     public async void RestartLevel()
     {
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(currentLevel);
+    }
+
+    public async Task StartMusic()
+    {
+        AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX("lvl1Intro");
+        await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
+        AudioManager.instance.PlaySFX("lvl1Main");
     }
 
 

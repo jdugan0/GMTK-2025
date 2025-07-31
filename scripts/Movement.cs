@@ -26,7 +26,7 @@ public partial class Movement : CharacterBody2D
         Velocity = Velocity.MoveToward(targetVelocity, rate * (float)delta);
         Vector2 mousePos = GetGlobalMousePosition();
         Vector2 toMouse = mousePos - GlobalPosition;
-        float targetAng = toMouse.Angle();
+        float targetAng = toMouse.Angle() + Mathf.Pi / 2;
         Rotation = Mathf.LerpAngle(Rotation, targetAng, 20f * (float)delta);
         MoveAndSlide();
     }
@@ -47,7 +47,7 @@ public partial class Movement : CharacterBody2D
         Node node = bullet.Instantiate();
         GetTree().CurrentScene.AddChild(node);
         Bullet b = (Bullet)node;
-        b.Velocity = fireSpeed * Vector2.Right.Rotated(Rotation) + Velocity;
+        b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;
     }

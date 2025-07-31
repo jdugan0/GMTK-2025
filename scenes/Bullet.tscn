@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
 size = Vector2(72, 203)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hf8mt"]
-radius = 41.03
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1sfj"]
+radius = 48.0
+height = 244.0
 
 [node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape")]
 script = ExtResource("1_hf8mt")
@@ -26,6 +27,6 @@ shape = SubResource("RectangleShape2D_2ropf")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_hf8mt")
+shape = SubResource("CapsuleShape2D_p1sfj")
 
 [connection signal="body_entered" from="Area2D" to="." method="ResolvePickup"]

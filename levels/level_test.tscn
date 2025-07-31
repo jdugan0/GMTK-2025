@@ -1,20 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=4 format=4 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="1_iho50"]
 [ext_resource type="Script" uid="uid://br3e01q0rtkhg" path="res://scripts/Camera.cs" id="2_3wh16"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iho50"]
-size = Vector2(10000, 20)
+[ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="3_4w0vo"]
 
 [node name="LevelTest" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iho50")]
+maxSpeed = 2000.0
+friction = 5500.0
+accel = 8000.0
+fireSpeed = 10000.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_3wh16")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hittable"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["hittable"]]
-position = Vector2(-1, -385)
-shape = SubResource("RectangleShape2D_iho50")
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["hittable"]]
+tile_map_data = PackedByteArray("AAD8//z/AQAAAAAAAQD9//z/AQAAAAAAAQD+//z/AQAAAAAAAQD///z/AQAAAAAAAQAAAPz/AQAAAAAAAQABAPz/AQAAAAAAAQACAPz/AQAAAAAAAQADAPz/AQAAAAAAAQAEAPz/AQAAAAAAAQAFAPz/AQAAAAAAAQAGAPz/AQAAAAAAAQAHAPz/AQAAAAAAAQAIAPz/AQAAAAAAAQAIAP3/AQAAAAAAAQAIAP7/AQAAAAAAAQAIAP//AQAAAAAAAQAIAAAAAQAAAAAAAQAIAAEAAQAAAAAAAQAIAAIAAQAAAAAAAQD7//z/AQAAAAAAAQD7//3/AQAAAAAAAQD7//7/AQAAAAAAAQD7////AQAAAAAAAQD7/wAAAQAAAAAAAQD7/wEAAQAAAAAAAQD7/wIAAQAAAAAAAQD7/wMAAQAAAAAAAQD8/wMAAQAAAAAAAQD9/wMAAQAAAAAAAQD+/wMAAQAAAAAAAQD//wMAAQAAAAAAAQAAAAMAAQAAAAAAAQABAAMAAQAAAAAAAQACAAMAAQAAAAAAAQADAAMAAQAAAAAAAQAEAAMAAQAAAAAAAQAFAAMAAQAAAAAAAQAGAAMAAQAAAAAAAQAHAAMAAQAAAAAAAQAIAAMAAQAAAAAAAQA=")
+tile_set = ExtResource("3_4w0vo")

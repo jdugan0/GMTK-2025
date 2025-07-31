@@ -1,0 +1,11 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://fgf17ec1udc6"]
+
+[ext_resource type="PackedScene" uid="uid://cd6lq26u13uhr" path="res://scenes/wall_placeholder.tscn" id="1_bso50"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_eqorc"]
+resource_name = "Placeholders"
+scenes/1/scene = ExtResource("1_bso50")
+
+[resource]
+tile_size = Vector2i(400, 400)
+sources/1 = SubResource("TileSetScenesCollectionSource_eqorc")

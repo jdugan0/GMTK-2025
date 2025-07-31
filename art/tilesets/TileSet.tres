@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://fgf17ec1udc6"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://fgf17ec1udc6"]
 
 [ext_resource type="PackedScene" uid="uid://cd6lq26u13uhr" path="res://scenes/wall_placeholder.tscn" id="1_bso50"]
 [ext_resource type="Texture2D" uid="uid://0fjkpdpjg0k6" path="res://art/blank.png" id="2_eqorc"]
@@ -7,10 +7,17 @@
 resource_name = "Placeholders"
 scenes/1/scene = ExtResource("1_bso50")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_eqorc"]
+vertices = PackedVector2Array(200, 200, -200, 200, -200, -200, 200, -200)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)])
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n5pcl"]
 texture = ExtResource("2_eqorc")
 texture_region_size = Vector2i(400, 400)
 0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_eqorc")
 
 [resource]
 tile_size = Vector2i(400, 400)

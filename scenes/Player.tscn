@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
-[ext_resource type="Texture2D" uid="uid://b6f4akru8yjha" path="res://art/charaSprite.png" id="3_3li8b"]
+[ext_resource type="Texture2D" uid="uid://ewoi8m1r85e3" path="res://art/player_441x642.png" id="3_3li8b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3li8b"]
 radius = 197.0
@@ -21,7 +21,7 @@ fireDelay = 0.05
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_3li8b")
 region_enabled = true
-region_rect = Rect2(1379, 685, 437, 599)
+region_rect = Rect2(0, 0, 441, 642)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3li8b")

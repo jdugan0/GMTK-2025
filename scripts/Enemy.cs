@@ -15,7 +15,7 @@ public partial class Enemy : CharacterBody2D
         if (!nav.IsTargetReached())
         {
             var dir = ToLocal(nav.GetNextPathPosition()).Normalized();
-            Velocity = dir * maxSpeed * (float)delta;
+            Velocity = dir * maxSpeed;
             MoveAndSlide();
         }
     }

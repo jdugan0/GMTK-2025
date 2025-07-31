@@ -7,5 +7,5 @@ resource_name = "Placeholders"
 scenes/1/scene = ExtResource("1_bso50")
 
 [resource]
-tile_size = Vector2i(100, 100)
+tile_size = Vector2i(400, 400)
 sources/1 = SubResource("TileSetScenesCollectionSource_eqorc")

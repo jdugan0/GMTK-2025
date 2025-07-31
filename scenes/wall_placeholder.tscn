@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cd6lq26u13uhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_873yr"]
-size = Vector2(100, 100)
+size = Vector2(400, 400)
 
 [node name="WallPlaceholder" type="StaticBody2D" groups=["hittable"]]
 

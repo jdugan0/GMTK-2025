@@ -1,7 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://co4ok6cl18jwu"]
+[gd_scene load_steps=8 format=3 uid="uid://co4ok6cl18jwu"]
 
 [ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_hf8mt"]
-[ext_resource type="Texture2D" uid="uid://ewoi8m1r85e3" path="res://art/player_441x642.png" id="2_p1sfj"]
+[ext_resource type="Texture2D" uid="uid://c7au7vj1m303" path="res://art/playerBullet_171x300.png" id="3_4utqk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4utqk"]
+atlas = ExtResource("3_4utqk")
+region = Rect2(171, 0, 171, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51h0o"]
+atlas = ExtResource("3_4utqk")
+region = Rect2(0, 0, 171, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hf8mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4utqk")
+}],
+"loop": true,
+"name": &"Fired",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51h0o")
+}],
+"loop": true,
+"name": &"OnGround",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
 size = Vector2(72, 203)
@@ -10,17 +37,16 @@ size = Vector2(72, 203)
 radius = 48.0
 height = 244.0
 
-[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape")]
+[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite")]
 collision_mask = 3
 script = ExtResource("1_hf8mt")
 pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, 222)
-texture = ExtResource("2_p1sfj")
-region_enabled = true
-region_rect = Rect2(882, 0, 441, 642)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hf8mt")
+animation = &"OnGround"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

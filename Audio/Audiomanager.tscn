@@ -176,7 +176,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 script = ExtResource("2_subo3")
 stream = ExtResource("27_u6d66")
 volume = 0.0
-name = ""
+name = "mainMenu"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [node name="Audiomanager" type="Node"]

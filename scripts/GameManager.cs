@@ -35,7 +35,7 @@ public partial class GameManager : Node
     {
         GetTree().Paused = false;
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
-        instance.CancelMusic();
+        CancelMusic();
     }
     public async void NextLevel()
     {
@@ -65,6 +65,7 @@ public partial class GameManager : Node
     {
         GameManager.instance.currentLevel = levels[id - 1];
         GameManager.instance.currentLevelID = id;
+        AudioManager.instance.CancelSFX("mainMenu");
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(levels[id - 1]);
         await GameManager.instance.StartMusic();
     }

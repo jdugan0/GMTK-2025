@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3ety2qufwm8w"]
 
-[ext_resource type="Texture2D" uid="uid://btybjyi573kt3" path="res://art/bulletIcon_100x209.png" id="1_2eosv"]
+[ext_resource type="Texture2D" uid="uid://pxgatjdwo171" path="res://art/bulletIcon_100x209.png" id="1_2eosv"]
 
 [node name="BulletIcon" type="TextureRect"]
 clip_contents = true

@@ -49,5 +49,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 186
 text = "MAIN MENU"
 
-[connection signal="pressed" from="GameComplete/Panel/Button" to="GameComplete" method="MainMenu"]
 [connection signal="pressed" from="GameComplete/Panel/Button" to="." method="MainMenu"]
+[connection signal="pressed" from="GameComplete/Panel/Button" to="GameComplete" method="MainMenu"]

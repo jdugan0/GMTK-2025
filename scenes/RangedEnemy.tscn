@@ -8,8 +8,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 215.0
-height = 704.0
+radius = 113.0
+height = 504.0
 
 [node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["Enemy", "hittable"]]
 collision_layer = 5
@@ -22,6 +22,7 @@ maxSpeed = 1000.0
 playerSeenDistance = 2500.0
 alertDistance = 2000.0
 desiredDistance = 1500.0
+stopBuffer = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wltc5")
@@ -44,6 +45,7 @@ collision_layer = 5
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, 0)
 shape = SubResource("CapsuleShape2D_55jtl")
 
 [connection signal="body_entered" from="Area2D" to="." method="OnCol"]

@@ -13,6 +13,7 @@ public partial class Enemy : CharacterBody2D
     [Export] float attackDelay;
     float attackTimer;
     [Export] float desiredDistance = 0f;
+    [Export] float stopBuffer = 0f;
     enum EnemyTypes
     {
         NORMAL,
@@ -73,30 +74,57 @@ public partial class Enemy : CharacterBody2D
     public void MoveToPlayer()
     {
         if (!playerSeen) return;
-        var spaceState = GetWorld2D().DirectSpaceState;
-        var query = PhysicsRayQueryParameters2D.Create(GlobalPosition, GameManager.instance.player.GlobalPosition);
-        query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+
+        Vector2 playerPos = GameManager.instance.player.GlobalPosition;
         bool playerCurrentlySeen = false;
-        var result = spaceState.IntersectRay(query);
-        if (result.Count > 0)                       // something was hit
         {
-            var collider = (Node2D)result["collider"];
-            if (collider is Movement)
-            {
+            var spaceState = GetWorld2D().DirectSpaceState;
+            var query = PhysicsRayQueryParameters2D.Create(GlobalPosition, playerPos);
+            query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+
+            var result = spaceState.IntersectRay(query);
+            if (result.Count > 0 && (Node2D)result["collider"] is Movement)
                 playerCurrentlySeen = true;
+        }
+        float dist = GlobalPosition.DistanceTo(playerPos);
+        float innerBand = desiredDistance - stopBuffer;
+        float outerBand = desiredDistance + stopBuffer;
+
+        if (!playerCurrentlySeen || dist > outerBand)
+        {
+            nav.TargetPosition = playerPos;
+            if (!nav.IsTargetReached())
+            {
+                Vector2 dir = ToLocal(nav.GetNextPathPosition()).Normalized();
+                Velocity = dir * maxSpeed;
+            }
+            else
+            {
+                Velocity = Vector2.Zero;
             }
         }
-        if (!nav.IsTargetReached() && GlobalPosition.DistanceTo(GameManager.instance.player.GlobalPosition) > desiredDistance || !playerCurrentlySeen)
+        else if (dist < innerBand)
         {
-            nav.TargetPosition = GameManager.instance.player.GlobalPosition;
-            var dir = ToLocal(nav.GetNextPathPosition()).Normalized();
-            Velocity = dir * maxSpeed;
+            Vector2 dir = (GlobalPosition - playerPos).Normalized();
+            Vector2 rawTarget = playerPos + dir * desiredDistance;
+            Rid navMap = nav.GetNavigationMap();
+            Vector2 safeTarget = NavigationServer2D.MapGetClosestPoint(navMap, rawTarget);
+            nav.TargetPosition = safeTarget;
+            if (!nav.IsTargetReached())
+            {
+                Vector2 dirV = ToLocal(nav.GetNextPathPosition()).Normalized();
+                Velocity = dirV * maxSpeed;
+            }
+            else
+            {
+                Velocity = Vector2.Zero;
+            }
         }
         else
         {
             Velocity = Vector2.Zero;
-
         }
+
         MoveAndSlide();
     }
 

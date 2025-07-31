@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class GameManager : Node
 {
@@ -15,10 +16,15 @@ public partial class GameManager : Node
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("PAUSE") && IsInstanceValid(pauseMenu))
+        if (!IsInstanceValid(pauseMenu)) return;
+        if (Input.IsActionJustPressed("PAUSE"))
         {
             if (paused) Resume();
             else Pause();
+        }
+        if (Input.IsActionJustPressed("RESTART"))
+        {
+            RestartLevel();
         }
     }
 
@@ -37,6 +43,19 @@ public partial class GameManager : Node
     public async void RestartLevel()
     {
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(currentLevel);
+    }
+
+    public async Task StartMusic()
+    {
+        AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX("lvl1Intro");
+        await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
+        AudioManager.instance.PlaySFX("lvl1Main");
+    }
+
+    public void CancelMusic()
+    {
+        AudioManager.instance.CancelSFX("lvl1Intro");
+        AudioManager.instance.CancelSFX("lvl1Main");
     }
 
 

@@ -8,6 +8,7 @@ public partial class LevelUI : Node
     {
         GameManager.instance.currentLevel = levelNames[id - 1];
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(levelNames[id - 1]);
+        await GameManager.instance.StartMusic();
     }
     public async void Back()
     {

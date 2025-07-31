@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsyhmrptnskyy" path="res://scripts/UI/PauseMenu.cs" id="1_ok285"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 visible = false
 script = ExtResource("1_ok285")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=7 format=4 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="1_iho50"]
 [ext_resource type="Script" uid="uid://br3e01q0rtkhg" path="res://scripts/Camera.cs" id="2_3wh16"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="3_4w0vo"]
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="4_eu8vo"]
 [ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="5_5yd65"]
+[ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="6_y0s4v"]
 
 [node name="LevelTest" type="Node2D"]
 
@@ -43,5 +44,7 @@ position = Vector2(7490, 1819)
 
 [node name="Player" parent="." instance=ExtResource("1_iho50")]
 position = Vector2(-3057, -162)
+
+[node name="LevelHUD" parent="." instance=ExtResource("6_y0s4v")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_5yd65")]

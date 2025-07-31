@@ -11,15 +11,21 @@ public partial class Movement : CharacterBody2D
     [Export] Node2D firePos;
     [Export] public int bullets = 6;
     [Export] float fireDelay = 1.5f;
-    float delayTimer = 10000;
+    float delayTimer = 0;
+    [Export] public AnimatedSprite2D sprite;
     public override void _Ready()
     {
         GameManager.instance.player = this;
+        if (bullets > 0)
+        {
+            sprite.Play("reload");
+            AudioManager.instance.PlaySFX("reload");
+        }
     }
     public void Death()
     {
         QueueFree();
-        GameManager.instance.RestartLevel();
+        GameManager.instance.PlayerDeath();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -50,16 +56,35 @@ public partial class Movement : CharacterBody2D
             Fire();
             delayTimer = 0;
         }
-        delayTimer += (float)delta;
+        if (Input.IsActionJustPressed("FIRE") && bullets <= 0)
+        {
+            AudioManager.instance.PlaySFX("noAmmo");
+        }
+
+        if (bullets <= 0)
+        {
+            sprite.Play("empty");
+            delayTimer = 0;
+        }
+        else
+        {
+            delayTimer += (float)delta;
+        }
     }
 
 
     public void Fire()
     {
         bullets--;
+        if (bullets > 0)
+        {
+            sprite.Play("reload");
+            AudioManager.instance.PlaySFX("reload");
+        }
         Node node = bullet.Instantiate();
         GetTree().CurrentScene.AddChild(node);
         Bullet b = (Bullet)node;
+        b.stuck = false;
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;

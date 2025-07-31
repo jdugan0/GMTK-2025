@@ -9,10 +9,11 @@ public partial class Enemy : CharacterBody2D
     [Export] float playerSeenDistance;
     [Export] float alertDistance;
     bool playerSeen;
+    bool playedSound = false;
 
     public void Death()
     {
-        AudioManager.instance.PlaySFX("hitSucsess");
+        AudioManager.instance.PlaySFX("hitSuccess");
         QueueFree();
     }
     public override void _PhysicsProcess(double delta)
@@ -38,13 +39,18 @@ public partial class Enemy : CharacterBody2D
             var collider = (Node2D)result["collider"];
             if (collider is Movement && GlobalPosition.DistanceTo(GameManager.instance.player.GlobalPosition) < playerSeenDistance)
             {
-                GD.Print(Name);
+                // GD.Print(Name);
                 SeenPlayer();
             }
         }
     }
     public void SeenPlayer()
     {
+        if (!playedSound)
+        {
+            AudioManager.instance.PlaySFX("playerSpotted");
+            playedSound = true;
+        }
         playerSeen = true;
         foreach (Enemy node in GetTree().GetNodesInGroup("Enemy"))
         {

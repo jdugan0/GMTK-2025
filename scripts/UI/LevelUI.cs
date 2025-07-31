@@ -4,11 +4,14 @@ using System;
 public partial class LevelUI : Node
 {
     [Export] public string[] levelNames;
-    public async void LoadLevel(int id)
+    public override void _Ready()
     {
-        GameManager.instance.currentLevel = levelNames[id - 1];
-        await SceneSwitcher.instance.SwitchSceneAsyncSlide(levelNames[id - 1]);
-        await GameManager.instance.StartMusic();
+        GameManager.instance.levels = levelNames;
+    }
+
+    public void LoadLevel(int id)
+    {
+        GameManager.instance.LoadLevel(id);
     }
     public async void Back()
     {

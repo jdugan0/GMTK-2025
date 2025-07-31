@@ -15,9 +15,11 @@ public partial class SceneSwitcher : Node
     }
     public async Task SwitchSceneAsyncSlide(string sceneName)
     {
+        AudioManager.instance.PlaySFX("wooshIn");
         await SlideIn(0.35);
         GetTree().ChangeSceneToPacked(scenes[Array.FindIndex(scenes, s => s.sceneName == sceneName)].scene);
         await WaitOneFrame();
+        AudioManager.instance.PlaySFX("wooshOut");
         await SlideOut(0.35);
         fadeRect.Visible = false;
     }

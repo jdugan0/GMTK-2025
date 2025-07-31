@@ -3,7 +3,7 @@ using System;
 public partial class Bullet : CharacterBody2D
 {
 
-    private bool stuck = false;
+    [Export] public bool stuck = false;
     [Export] private CollisionShape2D pickupRadius;
     [Export] private CollisionShape2D shape;
     [Export] AnimatedSprite2D sprite;
@@ -30,7 +30,14 @@ public partial class Bullet : CharacterBody2D
         var target = hit.GetCollider() as Node2D;
         if (target.IsInGroup("hittable") == true && !stuck)
         {
-            (target as Enemy)?.Death();
+            if (target is Enemy enemy)
+            {
+                enemy.Death();
+            }
+            else
+            {
+                AudioManager.instance.PlaySFX("hitFail");
+            }
             Velocity = Vector2.Zero;
             stuck = true;
             return;
@@ -41,6 +48,11 @@ public partial class Bullet : CharacterBody2D
         // GD.Print("hi");
         if (hit is Movement player && stuck)
         {
+            if (player.bullets == 0)
+            {
+                player.sprite.Play("reload");
+                AudioManager.instance.PlaySFX("reload");
+            }
             player.bullets++;
             QueueFree();
         }

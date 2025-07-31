@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5vl1rsn6absb"]
+[gd_scene load_steps=7 format=3 uid="uid://cmrepalu20e0c"]
 
-[ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_7bpco"]
-[ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_rgtyk"]
+[ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_5ni3g"]
+[ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_ki1jr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
-atlas = ExtResource("2_rgtyk")
+atlas = ExtResource("2_ki1jr")
 region = Rect2(0, 400, 800, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6rc7"]
-atlas = ExtResource("2_rgtyk")
+atlas = ExtResource("2_ki1jr")
 region = Rect2(0, 0, 800, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7bpco"]
@@ -35,7 +35,8 @@ size = Vector2(801, 196)
 
 [node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI", "sprite") groups=["Exit"]]
 process_mode = 3
-script = ExtResource("1_7bpco")
+rotation = -1.5708
+script = ExtResource("1_5ni3g")
 UI = NodePath("CanvasLayer")
 sprite = NodePath("AnimatedSprite2D")
 

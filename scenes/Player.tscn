@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=12 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
 [ext_resource type="Texture2D" uid="uid://ewoi8m1r85e3" path="res://art/player_441x642.png" id="3_3li8b"]
+[ext_resource type="PackedScene" uid="uid://dnusldn0om808" path="res://scenes/Arrows/ArrowBullet.tscn" id="3_mdl7e"]
+[ext_resource type="PackedScene" uid="uid://cb3d0rjd67guf" path="res://scenes/Arrows/ArrowExit.tscn" id="4_qu4a1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092
@@ -48,7 +50,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowHolder")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder")]
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
 friction = 5500.0
@@ -59,7 +61,9 @@ firePos = NodePath("FirePos")
 bullets = 3
 fireDelay = 0.5
 sprite = NodePath("AnimatedSprite2D")
-arrowHolder = NodePath("Node")
+arrowBulletHolder = NodePath("Node")
+arrowBullet = ExtResource("3_mdl7e")
+exitArrow = ExtResource("4_qu4a1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")
@@ -71,4 +75,4 @@ position = Vector2(0, -197)
 sprite_frames = SubResource("SpriteFrames_v6fml")
 animation = &"empty"
 
-[node name="Node" type="Node" parent="."]
+[node name="Node" type="Node2D" parent="."]

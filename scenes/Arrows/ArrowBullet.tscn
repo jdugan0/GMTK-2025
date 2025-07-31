@@ -5,7 +5,7 @@
 [node name="Arrow" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(800, 0)
+position = Vector2(400, 0)
 texture = ExtResource("1_0eice")
 region_enabled = true
 region_rect = Rect2(0, 123, 266, 123)

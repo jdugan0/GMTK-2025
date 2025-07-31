@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pxgatjdwo171"
-path="res://.godot/imported/bulletIcon_100x209.png-5d8ef426f136cbfb983510151b56aad0.ctex"
+uid="uid://c7mjr43ipxlsx"
+path="res://.godot/imported/homeEllie.png-3bb8ebafa03b4e6d6ca18eeb2714fba0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bulletIcon_100x209.png"
-dest_files=["res://.godot/imported/bulletIcon_100x209.png-5d8ef426f136cbfb983510151b56aad0.ctex"]
+source_file="res://art/homeEllie.png"
+dest_files=["res://.godot/imported/homeEllie.png-3bb8ebafa03b4e6d6ca18eeb2714fba0.ctex"]
 
 [params]
 

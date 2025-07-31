@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l7oygvxkbmhg"
+path="res://.godot/imported/Game Main.wav-3daf234cb8a5addc23ab9ff0db58edc6.sample"
+
+[deps]
+
+source_file="res://scripts/Audio/Music/Level 1/Game Main.wav"
+dest_files=["res://.godot/imported/Game Main.wav-3daf234cb8a5addc23ab9ff0db58edc6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,7 +1,108 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=31 format=3 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://scripts/Audio/AudioManager.cs" id="1_ulbmk"]
+[ext_resource type="Script" uid="uid://007myadtw53h" path="res://scripts/Audio/Sound.cs" id="2_subo3"]
+[ext_resource type="AudioStream" uid="uid://cnskwxds70eb" path="res://scripts/Audio/Music/Level 1/Main Intro.wav" id="3_8b0fc"]
+[ext_resource type="AudioStream" uid="uid://l7oygvxkbmhg" path="res://scripts/Audio/Music/Level 1/Game Main.wav" id="4_mas5p"]
+[ext_resource type="AudioStream" uid="uid://odj77hcbvcdp" path="res://scripts/Audio/SFX/Footstep 1.wav" id="4_q7sym"]
+[ext_resource type="AudioStream" uid="uid://cpow243k6jabr" path="res://scripts/Audio/SFX/Footstep 3.wav" id="5_7mvwt"]
+[ext_resource type="AudioStream" uid="uid://c07p0wf3648cd" path="res://scripts/Audio/SFX/Footstep 2.wav" id="6_eqkb6"]
+[ext_resource type="AudioStream" uid="uid://d23qfof0yqboh" path="res://scripts/Audio/SFX/Crossbow 1.wav" id="7_eqkb6"]
+[ext_resource type="AudioStream" uid="uid://dtukacx5501e2" path="res://scripts/Audio/SFX/Crossbow 2.wav" id="8_syugd"]
+[ext_resource type="AudioStream" uid="uid://xhrvs2qcqsnx" path="res://scripts/Audio/SFX/Impail 1.wav" id="10_7y8by"]
+[ext_resource type="AudioStream" uid="uid://dn1s0vpqxqt4w" path="res://scripts/Audio/SFX/Impail 2.wav" id="11_tqoos"]
+[ext_resource type="AudioStream" uid="uid://q6hdirbwsybp" path="res://scripts/Audio/SFX/Impail 3.wav" id="12_y8p1i"]
+[ext_resource type="AudioStream" uid="uid://c7dfbw6hb3u51" path="res://scripts/Audio/SFX/Reload.wav" id="13_7y8by"]
+[ext_resource type="AudioStream" uid="uid://r4ax0vskpusa" path="res://scripts/Audio/SFX/Hiss 1.wav" id="14_q81wp"]
+[ext_resource type="AudioStream" uid="uid://dnrllmaviohuo" path="res://scripts/Audio/SFX/Hiss 2.wav" id="15_x3jbo"]
+[ext_resource type="AudioStream" uid="uid://b73lis36f5glx" path="res://scripts/Audio/SFX/Hiss 3.wav" id="16_v8qda"]
+[ext_resource type="AudioStream" uid="uid://dsi2rdoa2b8v3" path="res://scripts/Audio/SFX/Hiss 4.wav" id="17_gin7a"]
+[ext_resource type="AudioStream" uid="uid://whgmcbh0os2c" path="res://scripts/Audio/SFX/Slash.wav" id="18_x3jbo"]
+
+[sub_resource type="Resource" id="Resource_on1l4"]
+script = ExtResource("2_subo3")
+stream = ExtResource("3_8b0fc")
+volume = 0.0
+name = "lvl1Intro"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="Resource" id="Resource_rryhs"]
+script = ExtResource("2_subo3")
+stream = ExtResource("4_mas5p")
+volume = 0.0
+name = "lvl1Main"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_syugd"]
+random_pitch = 1.31
+streams_count = 3
+stream_0/stream = ExtResource("4_q7sym")
+stream_1/stream = ExtResource("5_7mvwt")
+stream_2/stream = ExtResource("6_eqkb6")
+
+[sub_resource type="Resource" id="Resource_jnl66"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_syugd")
+volume = 0.0
+name = "footsteps"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jnl66"]
+random_pitch = 1.5
+streams_count = 2
+stream_0/stream = ExtResource("7_eqkb6")
+stream_1/stream = ExtResource("8_syugd")
+
+[sub_resource type="Resource" id="Resource_p7eer"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_jnl66")
+volume = 0.0
+name = "crossbowFire"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q81wp"]
+random_pitch = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("10_7y8by")
+stream_1/stream = ExtResource("11_tqoos")
+stream_2/stream = ExtResource("12_y8p1i")
+
+[sub_resource type="Resource" id="Resource_x3jbo"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_q81wp")
+volume = 0.0
+name = "hitSucsess"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="Resource" id="Resource_tqoos"]
+script = ExtResource("2_subo3")
+stream = ExtResource("13_7y8by")
+volume = 0.0
+name = "reload"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vprys"]
+random_pitch = 1.4
+streams_count = 4
+stream_0/stream = ExtResource("14_q81wp")
+stream_1/stream = ExtResource("15_x3jbo")
+stream_2/stream = ExtResource("16_v8qda")
+stream_3/stream = ExtResource("17_gin7a")
+
+[sub_resource type="Resource" id="Resource_flvt4"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_vprys")
+volume = 0.0
+name = "vampHiss"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="Resource" id="Resource_v8qda"]
+script = ExtResource("2_subo3")
+stream = ExtResource("18_x3jbo")
+volume = 0.0
+name = ""
+metadata/_custom_type_script = "uid://007myadtw53h"
 
 [node name="Audiomanager" type="Node"]
 script = ExtResource("1_ulbmk")
-sounds = Array[Object]([])
+sounds = Array[Object]([SubResource("Resource_on1l4"), SubResource("Resource_rryhs"), SubResource("Resource_jnl66"), SubResource("Resource_p7eer"), SubResource("Resource_x3jbo"), SubResource("Resource_tqoos"), SubResource("Resource_flvt4"), SubResource("Resource_v8qda")])

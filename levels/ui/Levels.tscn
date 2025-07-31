@@ -34,65 +34,8 @@ offset_bottom = 419.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 35
-columns = 46
 
 [node name="Button" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button8" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button2" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button3" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button4" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button5" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button6" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(144.47, 0)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme_override_font_sizes/font_size = 101
-text = "1"
-
-[node name="Button7" type="Button" parent="GridContainer"]
 custom_minimum_size = Vector2(144.47, 0)
 layout_mode = 2
 size_flags_horizontal = 6

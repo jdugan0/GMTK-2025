@@ -7,6 +7,7 @@ public partial class GameManager : Node
     public static GameManager instance;
     public PauseMenu pauseMenu;
     public bool paused = false;
+    public string currentLevel;
     public override void _Ready()
     {
         instance = this;
@@ -32,6 +33,10 @@ public partial class GameManager : Node
         pauseMenu.Visible = false;
         GetTree().Paused = false;
         paused = false;
+    }
+    public async void RestartLevel()
+    {
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide(currentLevel);
     }
 
 

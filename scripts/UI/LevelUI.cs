@@ -6,6 +6,7 @@ public partial class LevelUI : Node
     [Export] public string[] levelNames;
     public async void LoadLevel(int id)
     {
+        GameManager.instance.currentLevel = levelNames[id - 1];
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(levelNames[id - 1]);
     }
     public async void Back()

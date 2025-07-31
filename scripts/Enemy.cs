@@ -72,9 +72,9 @@ public partial class Enemy : CharacterBody2D
 
     public void OnCol(Node2D node)
     {
-        if (node is Movement)
+        if (node is Movement m)
         {
-            node.QueueFree();
+            m.Death();
         }
     }
 

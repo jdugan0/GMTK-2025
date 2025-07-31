@@ -16,6 +16,11 @@ public partial class Movement : CharacterBody2D
     {
         GameManager.instance.player = this;
     }
+    public void Death()
+    {
+        QueueFree();
+        GameManager.instance.RestartLevel();
+    }
 
     public override void _PhysicsProcess(double delta)
     {

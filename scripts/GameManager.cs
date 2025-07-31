@@ -13,6 +13,7 @@ public partial class GameManager : Node
     public int currentLevelID;
     public int enemiesRemaining;
     public string[] levels;
+    [Export] public int maxLevelUnlocked = 1;
     public override void _Ready()
     {
         instance = this;
@@ -82,9 +83,12 @@ public partial class GameManager : Node
 
     public async Task StartMusic()
     {
-        AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX("lvl1Intro");
-        await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
-        AudioManager.instance.PlaySFX("lvl1Main");
+        if (!AudioManager.instance.IsPlaying("lvl1Main") && !AudioManager.instance.IsPlaying("lvl1Intro"))
+        {
+            AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX("lvl1Intro");
+            await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
+            AudioManager.instance.PlaySFX("lvl1Main");
+        }
     }
 
     public void CancelMusic()

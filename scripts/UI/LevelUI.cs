@@ -8,11 +8,6 @@ public partial class LevelUI : Node
     {
         GameManager.instance.levels = levelNames;
     }
-
-    public void LoadLevel(int id)
-    {
-        GameManager.instance.LoadLevel(id);
-    }
     public async void Back()
     {
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");

@@ -11,6 +11,7 @@ public partial class LevelEnd : Area2D
         {
             GetTree().Paused = true;
             UI.Visible = true;
+            GameManager.instance.maxLevelUnlocked++;
 
         }
 

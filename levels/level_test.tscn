@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dkqwtr4rnmqrm"]
+[gd_scene load_steps=9 format=4 uid="uid://dkqwtr4rnmqrm"]
 
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="1_iho50"]
 [ext_resource type="Script" uid="uid://br3e01q0rtkhg" path="res://scripts/Camera.cs" id="2_3wh16"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="5_5yd65"]
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="6_y0s4v"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="7_tt56a"]
+[ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="8_sop0g"]
 
 [node name="LevelTest" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.4, 0.4)
+zoom = Vector2(0.3, 0.3)
 script = ExtResource("2_3wh16")
 
 [node name="Floor" type="TileMapLayer" parent="." groups=["hittable"]]
@@ -58,5 +59,8 @@ position = Vector2(11231, 1819)
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(7490, 1819)
+
+[node name="RangedEnemy" parent="." instance=ExtResource("8_sop0g")]
+position = Vector2(-5379, -669)
 
 [connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

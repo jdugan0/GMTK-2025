@@ -5,7 +5,10 @@ public partial class MainMenu : Control
 {
     public override void _Ready()
     {
-        AudioManager.instance.PlaySFX("mainMenu");
+        if (!AudioManager.instance.IsPlaying("mainMenu"))
+        {
+            AudioManager.instance.PlaySFX("mainMenu");
+        }
     }
 
     public void Quit()

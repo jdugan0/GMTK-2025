@@ -19,6 +19,7 @@ public partial class Movement : CharacterBody2D
     [Export] PackedScene arrowBullet;
     [Export] PackedScene exitArrow;
     Node2D arrow = null;
+    bool die = false;
     bool spawnedExitArrow = false;
     public override void _Ready()
     {
@@ -31,12 +32,15 @@ public partial class Movement : CharacterBody2D
     }
     public void Death()
     {
-        QueueFree();
+        Rotation = 0;
+        die = true;
+        sprite.Play("death");
         GameManager.instance.PlayerDeath();
     }
 
     public override void _PhysicsProcess(double delta)
     {
+        if (die) return;
         Vector2 inputDir = Input.GetVector("LEFT", "RIGHT", "UP", "DOWN");
         Vector2 targetVelocity = inputDir.Normalized() * maxSpeed;
 
@@ -58,6 +62,7 @@ public partial class Movement : CharacterBody2D
     }
     public override void _Process(double delta)
     {
+        if (die) return;
         if (Input.IsActionJustPressed("FIRE") && delayTimer > fireDelay && bullets > 0)
         {
             Fire();

@@ -1,19 +1,31 @@
 using Godot;
 using System;
-using System.Diagnostics.Tracing;
 
 public partial class Enemy : CharacterBody2D
 {
     [Export] NavigationAgent2D nav;
+    [Export] PackedScene ghost;
     [Export] float maxSpeed;
     [Export] float playerSeenDistance;
     [Export] float alertDistance;
     bool playerSeen;
     bool playedSound = false;
+    [Export] float attackDelay;
+    float attackTimer;
+    [Export] float desiredDistance = 0f;
+    enum EnemyTypes
+    {
+        NORMAL,
+        RANGED
+    }
+    [Export] EnemyTypes enemyType = EnemyTypes.NORMAL;
 
     public void Death()
     {
         AudioManager.instance.PlaySFX("hitSuccess");
+        Node2D ghostNode = ghost.Instantiate<Node2D>();
+        GetTree().CurrentScene.AddChild(ghostNode);
+        ghostNode.GlobalPosition = GlobalPosition;
         QueueFree();
     }
     public override void _PhysicsProcess(double delta)
@@ -21,12 +33,6 @@ public partial class Enemy : CharacterBody2D
         if (!IsInstanceValid(GameManager.instance.player)) return;
         MoveToPlayer();
         CheckForSeenPlayer();
-        
-        for (int i = 0; i < GetSlideCollisionCount(); i++)
-        {
-            var c = GetSlideCollision(i);
-            OnCol(c.GetCollider() as Node2D);
-        }
     }
     public void CheckForSeenPlayer()
     {
@@ -58,7 +64,7 @@ public partial class Enemy : CharacterBody2D
             {
                 if (node.playerSeen)
                 {
-                    return;
+                    continue;
                 }
                 node.SeenPlayer();
             }
@@ -67,13 +73,31 @@ public partial class Enemy : CharacterBody2D
     public void MoveToPlayer()
     {
         if (!playerSeen) return;
-        nav.TargetPosition = GameManager.instance.player.GlobalPosition;
-        if (!nav.IsTargetReached())
+        var spaceState = GetWorld2D().DirectSpaceState;
+        var query = PhysicsRayQueryParameters2D.Create(GlobalPosition, GameManager.instance.player.GlobalPosition);
+        query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+        bool playerCurrentlySeen = false;
+        var result = spaceState.IntersectRay(query);
+        if (result.Count > 0)                       // something was hit
         {
+            var collider = (Node2D)result["collider"];
+            if (collider is Movement)
+            {
+                playerCurrentlySeen = true;
+            }
+        }
+        if (!nav.IsTargetReached() && GlobalPosition.DistanceTo(GameManager.instance.player.GlobalPosition) > desiredDistance || !playerCurrentlySeen)
+        {
+            nav.TargetPosition = GameManager.instance.player.GlobalPosition;
             var dir = ToLocal(nav.GetNextPathPosition()).Normalized();
             Velocity = dir * maxSpeed;
-            MoveAndSlide();
         }
+        else
+        {
+            Velocity = Vector2.Zero;
+
+        }
+        MoveAndSlide();
     }
 
     public void OnCol(Node2D node)

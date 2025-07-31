@@ -9,11 +9,9 @@ public partial class PauseMenu : CanvasLayer
         GameManager.instance.pauseMenu = this;
     }
 
-    public async void MainMenu()
+    public void MainMenu()
     {
-        GetTree().Paused = false;
-        await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
-        GameManager.instance.CancelMusic();
+        GameManager.instance.MainMenu();
     }
     public void Resume()
     {

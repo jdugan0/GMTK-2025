@@ -9,6 +9,7 @@ public partial class GameManager : Node
     public PauseMenu pauseMenu;
     public bool paused = false;
     public string currentLevel;
+    public int enemiesRemaining;
     public override void _Ready()
     {
         instance = this;
@@ -27,7 +28,16 @@ public partial class GameManager : Node
             RestartLevel();
         }
     }
+    public async void MainMenu()
+    {
+        GetTree().Paused = false;
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
+        GameManager.instance.CancelMusic();
+    }
+    public void NextLevel()
+    {
 
+    }
     public void Pause()
     {
         pauseMenu.Visible = true;

@@ -21,12 +21,6 @@ public partial class Enemy : CharacterBody2D
         if (!IsInstanceValid(GameManager.instance.player)) return;
         MoveToPlayer();
         CheckForSeenPlayer();
-        
-        for (int i = 0; i < GetSlideCollisionCount(); i++)
-        {
-            var c = GetSlideCollision(i);
-            OnCol(c.GetCollider() as Node2D);
-        }
     }
     public void CheckForSeenPlayer()
     {

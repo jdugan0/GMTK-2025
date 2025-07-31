@@ -8,6 +8,7 @@
 radius = 222.092
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos")]
+collision_mask = 3
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
 friction = 5500.0

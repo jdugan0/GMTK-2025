@@ -10,7 +10,7 @@ height = 662.0
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["hittable"]]
 script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")
-maxSpeed = 1500.0
+maxSpeed = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_55jtl")

@@ -33,6 +33,8 @@ public partial class Movement : CharacterBody2D
     float rollRotation;
     [Export] public float recoilForce = 500f;
     [Export] public int health = 2;
+    float damageCoolDown = 1f;
+    float damageTimer;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -80,6 +82,9 @@ public partial class Movement : CharacterBody2D
     public delegate void HealthChangedEventHandler(int health);
     public void TakeDamage(int amount = 1)
     {
+        if (die) return;
+        if (damageTimer > 0) return;
+        damageTimer = damageCoolDown;
         health -= amount;
         AudioManager.instance.PlaySFX("playerHit");
         EmitSignal(SignalName.HealthChanged, amount);
@@ -133,6 +138,7 @@ public partial class Movement : CharacterBody2D
     public override void _Process(double delta)
     {
         if (die) return;
+        damageTimer -= (float)delta;
         if (Input.IsActionJustPressed("FIRE") && delayTimer > fireDelay && bullets > 0)
         {
             Fire();

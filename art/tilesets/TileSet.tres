@@ -1,18 +1,20 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://fgf17ec1udc6"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://fgf17ec1udc6"]
 
 [ext_resource type="Texture2D" uid="uid://cnmlq2mwg6njm" path="res://art/tilesetA.png" id="1_bso50"]
 [ext_resource type="PackedScene" uid="uid://c5vl1rsn6absb" path="res://scenes/LevelEnd.tscn" id="1_eqorc"]
 [ext_resource type="PackedScene" uid="uid://cmrepalu20e0c" path="res://scenes/LevelEndSide.tscn" id="2_n5pcl"]
-[ext_resource type="Texture2D" uid="uid://cuvkt2jtnkixs" path="res://art/tilesetB.png" id="3_325t6"]
+[ext_resource type="PackedScene" uid="uid://dmdusifb4ye1r" path="res://scenes/LevelEndSideRight.tscn" id="3_325t6"]
+[ext_resource type="Texture2D" uid="uid://cuvkt2jtnkixs" path="res://art/tilesetB.png" id="4_kwsoi"]
 [ext_resource type="Texture2D" uid="uid://hkoajjdx2av5" path="res://art/tilesetC.png" id="4_thupg"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bso50"]
 resource_name = "Door"
 scenes/1/scene = ExtResource("1_eqorc")
 scenes/2/scene = ExtResource("2_n5pcl")
+scenes/3/scene = ExtResource("3_325t6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thupg"]
-texture = ExtResource("3_325t6")
+texture = ExtResource("4_kwsoi")
 texture_region_size = Vector2i(400, 400)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-200, -94.1529, -103.568, -200, 200, -200, 200, -76, -49, -69, -50, 200, -200, 200)

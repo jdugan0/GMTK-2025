@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://8wfma6nhdeui"]
+[gd_scene load_steps=12 format=4 uid="uid://8wfma6nhdeui"]
 
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="1_l53as"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_gwceb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="6_5ot28"]
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="7_gwceb"]
 [ext_resource type="Texture2D" uid="uid://brtn62537kop8" path="res://art/guides_1200x800.png" id="8_l53as"]
+[ext_resource type="Texture2D" uid="uid://edv0tp67dunv" path="res://art/guidesR_1200x800.png" id="9_3sk1a"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l53as"]
 scenes/1/scene = ExtResource("7_gwceb")
@@ -51,6 +52,10 @@ texture = ExtResource("8_l53as")
 region_enabled = true
 region_rect = Rect2(0, 800, 1200, 800)
 
+[node name="GuidesR1200x800" type="Sprite2D" parent="."]
+position = Vector2(203, -1202)
+texture = ExtResource("9_3sk1a")
+
 [node name="Guides1200x802" type="Sprite2D" parent="."]
 position = Vector2(4609, -5864)
 texture = ExtResource("8_l53as")
@@ -70,6 +75,9 @@ position = Vector2(9403, -9284)
 rotation = -0.785398
 
 [node name="Enemy" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("AABcAIP/AAAAAAAAAQBPAMT/AAAAAAAAAQBYAH7/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5vl1rsn6absb"]
+[gd_scene load_steps=10 format=3 uid="uid://c5vl1rsn6absb"]
 
 [ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_7bpco"]
 [ext_resource type="Texture2D" uid="uid://dvr8aiep5mn2h" path="res://art/levelComp_1414x1076.png" id="2_8vkxa"]
 [ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_rgtyk"]
 [ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="3_v16ue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vkxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
 atlas = ExtResource("2_rgtyk")
@@ -70,6 +72,7 @@ offset_bottom = 353.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8vkxa")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
@@ -83,14 +86,13 @@ expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 133.0
-offset_top = 106.5
-offset_right = -132.0
-offset_bottom = 380.5
+anchor_bottom = 1.0
+offset_left = 214.0
+offset_top = 464.0
+offset_right = -212.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 

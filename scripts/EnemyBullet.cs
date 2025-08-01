@@ -17,7 +17,7 @@ public partial class EnemyBullet : CharacterBody2D
 
             if (target is Movement enemy)
             {
-                enemy.Death();
+                enemy.TakeDamage();
                 QueueFree();
             }
             else

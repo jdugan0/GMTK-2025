@@ -11,7 +11,7 @@ public partial class Camera : Camera2D
         }
         Zoom = new Vector2(0.25f, 0.25f);
         PositionSmoothingEnabled = true;
-        PositionSmoothingSpeed = 5;
+        PositionSmoothingSpeed = 10;
     }
 
     public override void _PhysicsProcess(double delta)

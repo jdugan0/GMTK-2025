@@ -29,6 +29,7 @@ public partial class Movement : CharacterBody2D
     public bool isRolling;
     uint prevLayer, prevMask;
     Vector2 rollDirection;
+    Color origColor;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -41,7 +42,8 @@ public partial class Movement : CharacterBody2D
     void StartRoll()
     {
         if (rollCooldownTimer > 0 || isRolling) return;
-
+        origColor = sprite.Modulate;
+        sprite.Modulate = new Color(origColor.R,origColor.G,origColor.B,0.40f);
         isRolling = true;
         rollTImer = rollTime;
         rollCooldownTimer = rollCooldown;
@@ -58,6 +60,7 @@ public partial class Movement : CharacterBody2D
         CollisionLayer = prevLayer;
         CollisionMask = prevMask;
         rollDirection = Vector2.Zero;
+        sprite.Modulate = origColor;
     }
 
     public void Death()

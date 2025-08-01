@@ -65,3 +65,5 @@ navigation_enabled = false
 
 [node name="Camera2D" parent="." instance=ExtResource("8_jq78i")]
 position = Vector2(-54, -7396)
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

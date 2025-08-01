@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b4hssphxdggt5"]
+[gd_scene load_steps=12 format=4 uid="uid://b4hssphxdggt5"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="3_at1ld"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="7_ep78u"]
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="7_wcjpl"]
 [ext_resource type="Texture2D" uid="uid://cbk2m3ohhlqrv" path="res://art/image.png" id="8_dfjjl"]
+[ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_at1ld"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_gwceb"]
 scenes/1/scene = ExtResource("7_wcjpl")
@@ -60,3 +61,7 @@ navigation_enabled = false
 
 [node name="Camera2D" parent="." instance=ExtResource("7_ep78u")]
 position = Vector2(13320, -5941)
+
+[node name="Oel" parent="." instance=ExtResource("9_at1ld")]
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

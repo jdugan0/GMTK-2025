@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=19 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnusldn0om808" path="res://scenes/Arrows/ArrowBullet.tscn" id="3_mdl7e"]
 [ext_resource type="PackedScene" uid="uid://cb3d0rjd67guf" path="res://scenes/Arrows/ArrowExit.tscn" id="4_qu4a1"]
 [ext_resource type="Texture2D" uid="uid://701jh8ngn5g4" path="res://art/playerDeath_855x608.png" id="5_70d11"]
+[ext_resource type="Texture2D" uid="uid://3fee4itn1st3" path="res://art/dRoll_418x808.png" id="7_cw2d6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092
@@ -26,6 +27,10 @@ region = Rect2(1630, 0, 815, 608)
 atlas = ExtResource("3_3li8b")
 region = Rect2(441, 0, 441, 642)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3wef"]
+atlas = ExtResource("3_3li8b")
+region = Rect2(0, 0, 441, 642)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu4a1"]
 atlas = ExtResource("3_3li8b")
 region = Rect2(441, 0, 441, 642)
@@ -37,6 +42,10 @@ region = Rect2(882, 0, 441, 642)
 [sub_resource type="AtlasTexture" id="AtlasTexture_70d11"]
 atlas = ExtResource("3_3li8b")
 region = Rect2(0, 0, 441, 642)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyey"]
+atlas = ExtResource("7_cw2d6")
+region = Rect2(0, 0, 418, 808)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6fml"]
 animations = [{
@@ -64,6 +73,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d3wef")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qu4a1")
 }, {
 "duration": 1.0,
@@ -75,16 +92,24 @@ animations = [{
 "loop": false,
 "name": &"reload",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eyey")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder") groups=["hittable"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 4
+collision_mask = 51
 motion_mode = 1
 script = ExtResource("1_p0vlq")
-maxSpeed = 2000.0
-friction = 5500.0
-accel = 8000.0
+maxSpeed = 2670.0
+friction = 8000.0
+accel = 10000.0
 bullet = ExtResource("2_v6fml")
 fireSpeed = 10000.0
 firePos = NodePath("FirePos")
@@ -94,6 +119,10 @@ sprite = NodePath("AnimatedSprite2D")
 arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
 exitArrow = ExtResource("4_qu4a1")
+rollTime = 0.35
+rollSpeed = 3500.0
+rollCooldown = 0.8
+recoilForce = 1500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")
@@ -103,6 +132,6 @@ position = Vector2(0, -197)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6fml")
-animation = &"reload"
+animation = &"roll"
 
 [node name="Node" type="Node2D" parent="."]

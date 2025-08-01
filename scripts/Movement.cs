@@ -30,6 +30,7 @@ public partial class Movement : CharacterBody2D
     uint prevLayer, prevMask;
     Vector2 rollDirection;
     Color origColor;
+    float rollRotation;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -43,7 +44,7 @@ public partial class Movement : CharacterBody2D
     {
         if (rollCooldownTimer > 0 || isRolling) return;
         origColor = sprite.Modulate;
-        sprite.Modulate = new Color(origColor.R,origColor.G,origColor.B,0.40f);
+        // sprite.Modulate = new Color(origColor.R, origColor.G, origColor.B, 0.40f);
         isRolling = true;
         rollTImer = rollTime;
         rollCooldownTimer = rollCooldown;
@@ -53,6 +54,8 @@ public partial class Movement : CharacterBody2D
         CollisionMask &= ~((1u << 1) | (1u << 4));
         CollisionLayer = 1u << 9;
 
+        sprite.Play("roll");
+
     }
     void EndRoll()
     {
@@ -61,6 +64,14 @@ public partial class Movement : CharacterBody2D
         CollisionMask = prevMask;
         rollDirection = Vector2.Zero;
         sprite.Modulate = origColor;
+        if (bullets > 0)
+        {
+            sprite.Play("full");
+        }
+        else
+        {
+            sprite.Play("empty");
+        }
     }
 
     public void Death()
@@ -97,7 +108,9 @@ public partial class Movement : CharacterBody2D
             if (rollDirection == Vector2.Zero)
             {
                 rollDirection = inputDir.Normalized();
+                rollRotation = inputDir.Angle() + Mathf.Pi / 2;
             }
+            Rotation = rollRotation;
             Velocity = rollDirection * rollSpeed;
         }
         MoveAndSlide();
@@ -128,7 +141,7 @@ public partial class Movement : CharacterBody2D
             AudioManager.instance.PlaySFX("noAmmo");
         }
 
-        if (bullets <= 0)
+        if (bullets <= 0 && !isRolling)
         {
             sprite.Play("empty");
             delayTimer = 0;

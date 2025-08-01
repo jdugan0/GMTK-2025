@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b4hssphxdggt5"]
+[gd_scene load_steps=11 format=4 uid="uid://b4hssphxdggt5"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="3_at1ld"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="6_hbb88"]
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="7_ep78u"]
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="7_wcjpl"]
+[ext_resource type="Texture2D" uid="uid://cbk2m3ohhlqrv" path="res://art/image.png" id="8_dfjjl"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_gwceb"]
 scenes/1/scene = ExtResource("7_wcjpl")
@@ -55,5 +56,9 @@ navigation_enabled = false
 
 [node name="Camera2D" parent="." instance=ExtResource("7_ep78u")]
 position = Vector2(13320, -5941)
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(19403, -8404)
+texture = ExtResource("8_dfjjl")
 
 [connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

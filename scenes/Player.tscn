@@ -78,8 +78,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder") groups=["hittable"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 4
+collision_mask = 51
 motion_mode = 1
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0
@@ -94,6 +94,9 @@ sprite = NodePath("AnimatedSprite2D")
 arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
 exitArrow = ExtResource("4_qu4a1")
+rollTime = 0.35
+rollSpeed = 3000.0
+rollCooldown = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")

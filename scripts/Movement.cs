@@ -18,9 +18,16 @@ public partial class Movement : CharacterBody2D
     [Export] Node2D arrowBulletHolder;
     [Export] PackedScene arrowBullet;
     [Export] PackedScene exitArrow;
+    [Export] float rollTime;
+    [Export] float rollSpeed;
+    float rollTImer;
+    [Export] float rollCooldown;
+    float rollCooldownTimer;
     Node2D arrow = null;
     bool die = false;
     bool spawnedExitArrow = false;
+    public bool isRolling;
+    uint prevLayer, prevMask;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -30,8 +37,30 @@ public partial class Movement : CharacterBody2D
             AudioManager.instance.PlaySFX("reload");
         }
     }
+    void StartRoll()
+    {
+        if (rollCooldownTimer > 0 || isRolling) return;
+
+        isRolling = true;
+        rollTImer = rollTime;
+        rollCooldownTimer = rollCooldown;
+
+        prevLayer = CollisionLayer;
+        prevMask = CollisionMask;
+        CollisionMask &= ~((1u << 1) | (1u << 4));
+        CollisionLayer = 1u << 9;
+        
+    }
+    void EndRoll()
+    {
+        isRolling = false;
+        CollisionLayer = prevLayer;
+        CollisionMask = prevMask;
+    }
+
     public void Death()
     {
+        if (isRolling) return;
         if (die) return;
         Rotation = 0;
         die = true;
@@ -52,13 +81,17 @@ public partial class Movement : CharacterBody2D
                 AudioManager.instance.PlaySFX("footsteps");
             }
         }
-
+        Vector2 v = Velocity;
         float rate = inputDir == Vector2.Zero ? friction : accel;
         Velocity = Velocity.MoveToward(targetVelocity, rate * (float)delta);
         Vector2 mousePos = GetGlobalMousePosition();
         Vector2 toMouse = mousePos - GlobalPosition;
         float targetAng = toMouse.Angle() + Mathf.Pi / 2;
         Rotation = Mathf.LerpAngle(Rotation, targetAng, 20f * (float)delta);
+        if (isRolling)
+        {
+            Velocity = v.Normalized() * rollSpeed;
+        }
         MoveAndSlide();
     }
     public override void _Process(double delta)
@@ -69,6 +102,19 @@ public partial class Movement : CharacterBody2D
             Fire();
             delayTimer = 0;
         }
+        if (Input.IsActionJustPressed("ROLL"))
+        {
+            StartRoll();
+        }
+        if (isRolling)
+        {
+            rollTImer -= (float)delta;
+            if (rollTImer <= 0f)
+                EndRoll();
+        }
+
+        if (rollCooldownTimer > 0f)
+            rollCooldownTimer -= (float)delta;
         if (Input.IsActionJustPressed("FIRE") && bullets <= 0)
         {
             AudioManager.instance.PlaySFX("noAmmo");

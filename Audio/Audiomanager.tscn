@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=62 format=3 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://Audio/AudioManager.cs" id="1_ulbmk"]
 [ext_resource type="Script" uid="uid://007myadtw53h" path="res://Audio/Sound.cs" id="2_subo3"]
@@ -30,6 +30,9 @@
 [ext_resource type="AudioStream" uid="uid://blluwf2fq1npf" path="res://Audio/Music/Thunderstorm Loop.wav" id="28_riudb"]
 [ext_resource type="AudioStream" uid="uid://4cwo7fsfg4it" path="res://Audio/SFX/Bullet Pickup.wav" id="29_uep86"]
 [ext_resource type="AudioStream" uid="uid://cb1hcb3sepvjg" path="res://Audio/SFX/Level Complete.wav" id="30_wci4t"]
+[ext_resource type="AudioStream" uid="uid://cvgi3gtty6ph5" path="res://Audio/SFX/Dodge 1.wav" id="31_t5rx1"]
+[ext_resource type="AudioStream" uid="uid://bwxi1siw6ncx6" path="res://Audio/SFX/Dodge 2.wav" id="32_db0g7"]
+[ext_resource type="AudioStream" uid="uid://w2cb66tn2yth" path="res://Audio/Music/Whimsy 2.wav" id="33_y88w7"]
 
 [sub_resource type="Resource" id="Resource_on1l4"]
 script = ExtResource("2_subo3")
@@ -203,7 +206,26 @@ volume = 4.0
 name = "killedAll"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pxwiq"]
+streams_count = 2
+stream_0/stream = ExtResource("31_t5rx1")
+stream_1/stream = ExtResource("32_db0g7")
+
+[sub_resource type="Resource" id="Resource_yk2tk"]
+script = ExtResource("2_subo3")
+stream = SubResource("AudioStreamRandomizer_pxwiq")
+volume = 0.0
+name = "dodge"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
+[sub_resource type="Resource" id="Resource_giii4"]
+script = ExtResource("2_subo3")
+stream = ExtResource("33_y88w7")
+volume = 0.0
+name = "levelMusicTwo"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
 [node name="Audiomanager" type="Node"]
 process_mode = 3
 script = ExtResource("1_ulbmk")
-sounds = Array[Object]([SubResource("Resource_on1l4"), SubResource("Resource_rryhs"), SubResource("Resource_jnl66"), SubResource("Resource_p7eer"), SubResource("Resource_x3jbo"), SubResource("Resource_tqoos"), SubResource("Resource_flvt4"), SubResource("Resource_v8qda"), SubResource("Resource_7i6kp"), SubResource("Resource_c3h4e"), SubResource("Resource_wci4t"), SubResource("Resource_t5rx1"), SubResource("Resource_db0g7"), SubResource("Resource_y88w7"), SubResource("Resource_pxwiq"), SubResource("Resource_m6wxk"), SubResource("Resource_cmg6v"), SubResource("Resource_44d4p"), SubResource("Resource_ljrrh"), SubResource("Resource_flw6a")])
+sounds = Array[Object]([SubResource("Resource_on1l4"), SubResource("Resource_rryhs"), SubResource("Resource_jnl66"), SubResource("Resource_p7eer"), SubResource("Resource_x3jbo"), SubResource("Resource_tqoos"), SubResource("Resource_flvt4"), SubResource("Resource_v8qda"), SubResource("Resource_7i6kp"), SubResource("Resource_c3h4e"), SubResource("Resource_wci4t"), SubResource("Resource_t5rx1"), SubResource("Resource_db0g7"), SubResource("Resource_y88w7"), SubResource("Resource_pxwiq"), SubResource("Resource_m6wxk"), SubResource("Resource_cmg6v"), SubResource("Resource_44d4p"), SubResource("Resource_ljrrh"), SubResource("Resource_flw6a"), SubResource("Resource_yk2tk"), SubResource("Resource_giii4")])

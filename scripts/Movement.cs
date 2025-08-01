@@ -7,6 +7,7 @@ public partial class Movement : CharacterBody2D
 {
     [Export] public float maxSpeed;
     [Export] public float friction;
+    [Export] public float fastFriction;
     [Export] public float accel;
     [Export] PackedScene bullet;
     [Export] float fireSpeed;
@@ -119,7 +120,8 @@ public partial class Movement : CharacterBody2D
                 AudioManager.instance.PlaySFX("footsteps");
             }
         }
-        float rate = inputDir == Vector2.Zero ? friction : accel;
+        float usedFriction = Velocity.Length() > maxSpeed ? fastFriction : friction;
+        float rate = inputDir == Vector2.Zero || Velocity.Length() > maxSpeed ? usedFriction : accel;
         Velocity = Velocity.MoveToward(targetVelocity, rate * (float)delta);
         Vector2 mousePos = GetGlobalMousePosition();
         Vector2 toMouse = mousePos - GlobalPosition;

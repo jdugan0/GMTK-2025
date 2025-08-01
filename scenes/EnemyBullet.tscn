@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm1pymxltn3gc"]
+
+[ext_resource type="Texture2D" uid="uid://tf3hlmifms7y" path="res://art/attackLR_68x75.png" id="2_s6wdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
+size = Vector2(72, 76)
+
+[node name="Bullet" type="CharacterBody2D" groups=["Bullet"]]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2ropf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_s6wdq")
+region_enabled = true
+region_rect = Rect2(0, 0, 68, 75)

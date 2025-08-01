@@ -34,14 +34,14 @@
 [sub_resource type="Resource" id="Resource_on1l4"]
 script = ExtResource("2_subo3")
 stream = ExtResource("3_8b0fc")
-volume = 0.0
+volume = -5.0
 name = "lvl1Intro"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="Resource" id="Resource_rryhs"]
 script = ExtResource("2_subo3")
 stream = ExtResource("4_mas5p")
-volume = 0.0
+volume = -5.0
 name = "lvl1Main"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
@@ -129,7 +129,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 [sub_resource type="Resource" id="Resource_c3h4e"]
 script = ExtResource("2_subo3")
 stream = ExtResource("20_112rm")
-volume = 0.0
+volume = 4.0
 name = "noAmmo"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
@@ -199,7 +199,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 [sub_resource type="Resource" id="Resource_flw6a"]
 script = ExtResource("2_subo3")
 stream = ExtResource("30_wci4t")
-volume = 0.0
+volume = 4.0
 name = "killedAll"
 metadata/_custom_type_script = "uid://007myadtw53h"
 

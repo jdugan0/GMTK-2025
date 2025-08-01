@@ -69,7 +69,7 @@ stopBuffer = 25.0
 coolDown = 1.5
 enemyBullet = ExtResource("3_r1k2w")
 sprite = NodePath("AnimatedSprite2D")
-fireSpeed = 2000.0
+fireSpeed = 1500.0
 firePos = NodePath("Node2D")
 enemyType = 1
 

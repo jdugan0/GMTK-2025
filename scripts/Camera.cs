@@ -5,7 +5,7 @@ public partial class Camera : Camera2D
 {
     [Export] private float pulseAlpha = 0.35f;
     [Export] private float pulseTime = 0.5f;
-    private ColorRect overlay;
+    [Export] private TextureRect overlay;
     private Tween tween;
     private bool pulsing = false;
     public override void _Ready()

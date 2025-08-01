@@ -116,7 +116,7 @@ arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
 exitArrow = ExtResource("4_qu4a1")
 rollTime = 0.25
-rollSpeed = 7500.0
+rollSpeed = 5000.0
 rollCooldown = 0.8
 recoilForce = 1500.0
 

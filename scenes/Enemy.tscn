@@ -77,13 +77,13 @@ animations = [{
 size = Vector2(855.19, 1026.06)
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
-collision_layer = 5
-collision_mask = 3
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")
 ghost = ExtResource("2_mpr68")
-maxSpeed = 1000.0
+maxSpeed = 1750.0
 playerSeenDistance = 3000.0
 alertDistance = 4000.0
 attackDelay = 3.0
@@ -101,8 +101,8 @@ max_speed = 1000.0
 debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 5
-collision_mask = 3
+collision_layer = 0
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_55jtl")
@@ -114,6 +114,8 @@ frame = 5
 frame_progress = 1.0
 
 [node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("RectangleShape2D_mpr68")

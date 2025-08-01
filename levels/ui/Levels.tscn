@@ -61,7 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlgad")
-levelNames = PackedStringArray("level_1", "level_2", "level_3", "level_4")
+levelNames = PackedStringArray("level_1", "level_2", "level_4", "level_3")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

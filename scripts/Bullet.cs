@@ -8,6 +8,7 @@ public partial class Bullet : CharacterBody2D
     [Export] private CollisionShape2D shape;
     [Export] AnimatedSprite2D sprite;
     [Export] PackedScene splinterBurst;
+    [Export] GpuParticles2D trail;
     public bool playerFired = false;
     float timeStuck = 0f;
     public void SplinterBurst(KinematicCollision2D hit)
@@ -30,6 +31,10 @@ public partial class Bullet : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (stuck)
+        {
+            trail.Emitting = false;
+        }
         var hit = MoveAndCollide(Velocity * (float)delta);
         if (hit != null)
             ResolveHit(hit);

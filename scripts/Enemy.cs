@@ -21,6 +21,7 @@ public partial class Enemy : CharacterBody2D
     [Export] float fireSpeed = 8000.0f;
     [Export] Node2D firePos;
     bool playerIn = false;
+    [Export] PackedScene corpse;
     enum EnemyTypes
     {
         NORMAL,
@@ -34,6 +35,9 @@ public partial class Enemy : CharacterBody2D
         Node2D ghostNode = ghost.Instantiate<Node2D>();
         GetTree().CurrentScene.AddChild(ghostNode);
         ghostNode.GlobalPosition = GlobalPosition;
+        var c = corpse.Instantiate<Node2D>();
+        GetTree().CurrentScene.AddChild(c);
+        c.GlobalPosition = GlobalPosition;
         QueueFree();
     }
     public void OnCol(Node2D node)

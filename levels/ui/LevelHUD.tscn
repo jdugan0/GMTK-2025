@@ -47,14 +47,12 @@ script = ExtResource("1_dq21l")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.814
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.016
-offset_left = 40.0
-offset_top = -0.119995
-offset_right = -21.0
-offset_bottom = -29.28
+anchor_bottom = 1.0
+offset_top = -296.3
+offset_bottom = -76.3
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1

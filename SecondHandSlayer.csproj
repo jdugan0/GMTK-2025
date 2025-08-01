@@ -2,6 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>GMTK-2025</RootNamespace>
+    <RootNamespace>SecondHandSlayer</RootNamespace>
   </PropertyGroup>
 </Project>

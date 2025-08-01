@@ -5,4 +5,3 @@
 [node name="GameManager" type="Node"]
 process_mode = 3
 script = ExtResource("1_34tde")
-maxLevelUnlocked = 4

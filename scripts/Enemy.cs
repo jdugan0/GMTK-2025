@@ -122,6 +122,7 @@ public partial class Enemy : CharacterBody2D
         playerSeen = true;
         foreach (Enemy node in GetTree().GetNodesInGroup("Enemy"))
         {
+            if (!IsInstanceValid(node)) return;
             if (node.GlobalPosition.DistanceTo(GlobalPosition) < alertDistance)
             {
                 if (node.playerSeen)
@@ -133,7 +134,9 @@ public partial class Enemy : CharacterBody2D
                 break;
             }
         }
+        
     }
+    
     public void MoveToPlayer()
     {
         if (!playerSeen) return;

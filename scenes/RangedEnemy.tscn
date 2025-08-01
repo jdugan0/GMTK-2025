@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtkuebyj01siw"]
+[gd_scene load_steps=13 format=3 uid="uid://dtkuebyj01siw"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_wltc5"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_k7el5"]
 [ext_resource type="Texture2D" uid="uid://yv4ffflib5y1" path="res://art/attackerLR_400x758.png" id="2_wltc5"]
 [ext_resource type="PackedScene" uid="uid://bm1pymxltn3gc" path="res://scenes/EnemyBullet.tscn" id="3_r1k2w"]
+[ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="4_pt6rv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 175.114
@@ -72,6 +73,7 @@ enemyBullet = ExtResource("3_r1k2w")
 sprite = NodePath("AnimatedSprite2D")
 fireSpeed = 2000.0
 firePos = NodePath("Node2D")
+corpse = ExtResource("4_pt6rv")
 enemyType = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

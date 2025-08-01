@@ -71,5 +71,3 @@ color = Color(0.0383972, 0.0383972, 0.0383972, 0.807843)
 [node name="Lights" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD2//j/BAAAAAAAAQD7//D/BAAAAAAAAQABAOz/BAAAAAAAAQABAPj/BAAAAAAAAQAGAAIABAAAAAAAAQAPAAAABAAAAAAAAQAZAPj/BAAAAAAAAQAlAPf/BAAAAAAAAQAPAPP/BAAAAAAAAQAMAPb/BAAAAAAAAQAAAAIABAAAAAAAAQAGAP3/BAAAAAAAAQAMAP7/BAAAAAAAAQApAPj/BAAAAAAAAQA=")
 tile_set = ExtResource("2_sc6c1")
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

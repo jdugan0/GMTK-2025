@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b0n73vfovoueu" path="res://scripts/UI/MainMenu.cs" id="1_s0hl8"]
 [ext_resource type="Texture2D" uid="uid://c7mjr43ipxlsx" path="res://art/homeEllie.png" id="2_le7e1"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_q8b54"]
-[ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="3_le7e1"]
+[ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="4_q8b54"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8b54"]
 texture = ExtResource("2_q8b54")
@@ -47,20 +47,20 @@ alignment = 1
 
 [node name="Levels" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_le7e1")
+theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 116
 text = "LEVELS"
 
 [node name="Options" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_le7e1")
+theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 116
 text = "OPTIONS
 "
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_le7e1")
+theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 116
 text = "QUIT"
 

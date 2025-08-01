@@ -7,8 +7,26 @@ public partial class Bullet : CharacterBody2D
     [Export] private CollisionShape2D pickupRadius;
     [Export] private CollisionShape2D shape;
     [Export] AnimatedSprite2D sprite;
+    [Export] PackedScene splinterBurst;
     public bool playerFired = false;
     float timeStuck = 0f;
+    public void SplinterBurst(KinematicCollision2D hit)
+    {
+        GpuParticles2D particles = splinterBurst.Instantiate<GpuParticles2D>();
+        if (splinterBurst == null) return;
+
+        var p = splinterBurst.Instantiate<GpuParticles2D>();
+        GetTree().CurrentScene.AddChild(p);
+        p.GlobalPosition = hit.GetPosition();
+        var n = hit.GetNormal().Normalized();
+        var incoming = Velocity.Length() > 0 ? Velocity.Normalized() : -n;
+        var reflect = incoming.Bounce(n).Normalized();
+        var dir = (n * 0.7f + reflect * 0.3f).Normalized();
+        if (p.ProcessMaterial is ParticleProcessMaterial mat)
+            mat.Direction = new Vector3(dir.X, dir.Y, 0);
+        p.Emitting = true;
+        p.Finished += () => p.QueueFree();
+    }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -38,6 +56,7 @@ public partial class Bullet : CharacterBody2D
             else
             {
                 AudioManager.instance.PlaySFX("hitFail");
+                SplinterBurst(hit);
             }
             Velocity = Vector2.Zero;
             stuck = true;

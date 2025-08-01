@@ -80,7 +80,7 @@ public partial class Enemy : CharacterBody2D
                 GetTree().CurrentScene.AddChild(node);
                 EnemyBullet b = (EnemyBullet)node;
                 float angle = (GameManager.instance.player.GlobalPosition - firePos.GlobalPosition).Angle() + Mathf.Pi / 2;
-                b.Velocity = fireSpeed * Vector2.Up.Rotated(angle) + Velocity;
+                b.Velocity = fireSpeed * Vector2.Up.Rotated(angle);
                 b.Rotate(angle);
                 b.GlobalPosition = firePos.GlobalPosition;
                 sprite.Play("Normal");

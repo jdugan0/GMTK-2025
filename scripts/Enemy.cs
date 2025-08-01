@@ -14,6 +14,11 @@ public partial class Enemy : CharacterBody2D
     float attackTimer;
     [Export] float desiredDistance = 0f;
     [Export] float stopBuffer = 0f;
+    [Export] float coolDown;
+    float coolDownTimer;
+    [Export] PackedScene enemyBullet;
+    [Export] AnimatedSprite2D sprite;
+    bool playerIn = false;
     enum EnemyTypes
     {
         NORMAL,
@@ -32,9 +37,43 @@ public partial class Enemy : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         if (!IsInstanceValid(GameManager.instance.player)) return;
-        MoveToPlayer();
+        coolDownTimer += (float)delta;
+        attackTimer += (float)delta;
+        if (coolDownTimer >= coolDown)
+        {
+            MoveToPlayer();
+        }
+        GD.Print(attackTimer);
+
+        if (GameManager.instance.player.GlobalPosition.DistanceTo(GlobalPosition) <= desiredDistance && attackTimer >= attackDelay)
+        {
+            Attack();
+        }
         CheckForSeenPlayer();
     }
+    public void Attack()
+    {
+        attackTimer = 0f;
+        coolDownTimer = 0f;
+        switch (enemyType)
+        {
+            case EnemyTypes.NORMAL:
+                sprite.Play("Attack");
+                if (playerIn)
+                {
+                    GameManager.instance.player.Death();
+                }
+                break;
+            case EnemyTypes.RANGED:
+                break;
+        }
+    }
+    public override void _Ready()
+    {
+        coolDownTimer = coolDown;
+        attackTimer = attackDelay;
+    }
+
     public void CheckForSeenPlayer()
     {
         var spaceState = GetWorld2D().DirectSpaceState;
@@ -46,7 +85,6 @@ public partial class Enemy : CharacterBody2D
             var collider = (Node2D)result["collider"];
             if (collider is Movement && GlobalPosition.DistanceTo(GameManager.instance.player.GlobalPosition) < playerSeenDistance)
             {
-                // GD.Print(Name);
                 SeenPlayer();
             }
         }
@@ -128,12 +166,18 @@ public partial class Enemy : CharacterBody2D
         MoveAndSlide();
     }
 
-    public void OnCol(Node2D node)
+    public void BodyEntered(Node2D node)
     {
         if (node is Movement m)
         {
-            m.Death();
+            playerIn = true;
         }
     }
-
+    public void BodyExited(Node2D node)
+    {
+        if (node is Movement m)
+        {
+            playerIn = false;
+        }
+    }
 }

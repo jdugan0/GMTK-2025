@@ -94,6 +94,9 @@ sprite = NodePath("AnimatedSprite2D")
 arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
 exitArrow = ExtResource("4_qu4a1")
+rollTime = 0.35
+rollSpeed = 3000.0
+rollCooldown = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")

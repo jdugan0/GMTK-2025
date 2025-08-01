@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3ety2qufwm8w"]
+[gd_scene load_steps=3 format=3 uid="uid://d3ety2qufwm8w"]
 
-[ext_resource type="Texture2D" uid="uid://pxgatjdwo171" path="res://art/bulletIcon_100x209.png" id="1_2eosv"]
+[ext_resource type="Texture2D" uid="uid://cb1jh8vq334io" path="res://art/bulletico_120x187.png" id="1_2eosv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtj7r"]
+atlas = ExtResource("1_2eosv")
+region = Rect2(120, 0, 120, 187)
 
 [node name="BulletIcon" type="TextureRect"]
 clip_contents = true
 custom_minimum_size = Vector2(209, 109)
 offset_right = 209.0
-offset_bottom = 96.0
-texture = ExtResource("1_2eosv")
+offset_bottom = 189.0
+texture = SubResource("AtlasTexture_gtj7r")
 expand_mode = 1
 stretch_mode = 2

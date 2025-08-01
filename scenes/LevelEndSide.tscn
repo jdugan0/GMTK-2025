@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_5ni3g"]
 [ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_ki1jr"]
 [ext_resource type="Texture2D" uid="uid://dvr8aiep5mn2h" path="res://art/levelComp_1414x1076.png" id="3_5chgj"]
-[ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="4_huocq"]
+[ext_resource type="Theme" uid="uid://70136ytkrcl6" path="res://art/themes/grayTheme.tres" id="4_5chgj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
 atlas = ExtResource("2_ki1jr")
@@ -106,13 +106,13 @@ grow_vertical = 2
 [node name="NEXTLEVEL" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = ExtResource("4_huocq")
+theme = ExtResource("4_5chgj")
 text = "NEXT LEVEL"
 
 [node name="MAINMENU" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = ExtResource("4_huocq")
+theme = ExtResource("4_5chgj")
 text = "MAIN MENU"
 
 [connection signal="body_entered" from="." to="." method="OnCol"]

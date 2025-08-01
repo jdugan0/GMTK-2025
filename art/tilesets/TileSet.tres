@@ -57,6 +57,13 @@ texture_region_size = Vector2i(400, 400)
 5:4/0 = 0
 5:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
 6:4/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+2:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwsoi"]
 texture = ExtResource("4_thupg")
@@ -121,6 +128,7 @@ texture_region_size = Vector2i(400, 400)
 1:4/0 = 0
 1:4/0/terrain_set = 0
 1:4/0/terrain = 0
+1:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
 1:4/0/terrains_peering_bit/right_side = 0
 1:4/0/terrains_peering_bit/bottom_right_corner = 0
 1:4/0/terrains_peering_bit/bottom_side = 0

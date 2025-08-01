@@ -31,6 +31,7 @@ public partial class Movement : CharacterBody2D
     Vector2 rollDirection;
     Color origColor;
     float rollRotation;
+    [Export] public float recoilForce = 500f;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -226,6 +227,8 @@ public partial class Movement : CharacterBody2D
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;
+        Vector2 shotDir = Vector2.Up.Rotated(Rotation).Normalized();
+        Velocity -= shotDir * recoilForce;
         if (bullets == 0)
         {
             AudioManager.instance.PlaySFX("crossbowFinal");

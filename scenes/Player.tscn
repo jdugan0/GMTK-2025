@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=19 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dnusldn0om808" path="res://scenes/Arrows/ArrowBullet.tscn" id="3_mdl7e"]
 [ext_resource type="PackedScene" uid="uid://cb3d0rjd67guf" path="res://scenes/Arrows/ArrowExit.tscn" id="4_qu4a1"]
 [ext_resource type="Texture2D" uid="uid://701jh8ngn5g4" path="res://art/playerDeath_855x608.png" id="5_70d11"]
-[ext_resource type="Texture2D" uid="uid://d7hipqs03aka" path="res://art/roll_forward.png" id="7_cw2d6"]
+[ext_resource type="Texture2D" uid="uid://d32ygmsh1dj2g" path="res://art/droll_460x817.png" id="7_cw2d6"]
+[ext_resource type="Texture2D" uid="uid://3fee4itn1st3" path="res://art/dRoll_418x808.png" id="7_khinc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092
@@ -46,10 +47,10 @@ region = Rect2(0, 0, 441, 642)
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6fml"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_cw2d6")
 }, {
-"duration": 1.0,
+"duration": 2.5,
 "texture": SubResource("AtlasTexture_khinc")
 }, {
 "duration": 1.0,
@@ -90,8 +91,14 @@ animations = [{
 "speed": 15.0
 }, {
 "frames": [{
+"duration": 0.5,
+"texture": ExtResource("7_khinc")
+}, {
 "duration": 1.0,
 "texture": ExtResource("7_cw2d6")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_khinc")
 }],
 "loop": true,
 "name": &"roll",

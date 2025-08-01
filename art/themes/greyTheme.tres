@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://btqp4dq5b7jtd"]
+
+[ext_resource type="Texture2D" uid="uid://h5h7mqf1q2sn" path="res://art/greybutton_1370x322.png" id="1_nsdmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fysou"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fysou"]
+texture = ExtResource("1_nsdmx")
+texture_margin_top = 30.0
+texture_margin_right = 200.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 211, 905, 211)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7d1a"]
+texture = ExtResource("1_nsdmx")
+texture_margin_top = 30.0
+texture_margin_right = 200.0
+texture_margin_bottom = 30.0
+region_rect = Rect2(0, 0, 905, 208)
+
+[resource]
+Button/colors/font_color = Color(0.67451, 0.67451, 0.67451, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 50
+Button/styles/focus = SubResource("StyleBoxEmpty_fysou")
+Button/styles/hover = SubResource("StyleBoxTexture_fysou")
+Button/styles/normal = SubResource("StyleBoxTexture_y7d1a")
+Button/styles/pressed = SubResource("StyleBoxTexture_y7d1a")

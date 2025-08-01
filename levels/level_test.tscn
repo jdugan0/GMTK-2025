@@ -28,6 +28,8 @@ tile_set = ExtResource("3_4w0vo")
 
 [node name="Bullet" parent="." instance=ExtResource("7_tt56a")]
 position = Vector2(2973, 3)
+collision_layer = 2
+collision_mask = 4
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_5yd65")]
 
@@ -38,29 +40,65 @@ navigation_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("1_iho50")]
 position = Vector2(-3057, -162)
+collision_layer = 9
+collision_mask = 9
 bullets = 4
+exitArrow = null
+rollTime = 0.0
+rollSpeed = 0.0
+rollCooldown = 0.0
 
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(1956, -32)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(10393, -2575)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(10965, -1247)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(7899, -368)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(11231, 1819)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("4_eu8vo")]
 position = Vector2(7490, 1819)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="RangedEnemy" parent="." instance=ExtResource("8_sop0g")]
 position = Vector2(-5379, -669)
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+stopBuffer = 0.0
+coolDown = 0.0
+enemyBullet = null
+fireSpeed = 8000.0
+enemyType = 0

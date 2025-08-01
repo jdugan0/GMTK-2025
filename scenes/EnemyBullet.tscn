@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bm1pymxltn3gc"]
 
 [ext_resource type="Script" uid="uid://cmishs85k4peh" path="res://scripts/EnemyBullet.cs" id="1_s6wdq"]
+[ext_resource type="Texture2D" uid="uid://dnq6e6ws41q83" path="res://art/particleLR_55x66.png" id="2_la4vt"]
 [ext_resource type="Texture2D" uid="uid://tf3hlmifms7y" path="res://art/attackLR_68x75.png" id="2_s6wdq"]
-[ext_resource type="Texture2D" uid="uid://dgo5nbknn4twn" path="res://art/bowparticle_55x66.png" id="3_la4vt"]
 
 [sub_resource type="Curve" id="Curve_rdk3h"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -36,14 +36,14 @@ size = Vector2(72, 76)
 [node name="Bullet" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 8
-collision_mask = 12
+collision_mask = 13
 motion_mode = 1
 script = ExtResource("1_s6wdq")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(1.5, 1)
 amount = 50
-texture = ExtResource("3_la4vt")
+texture = ExtResource("2_la4vt")
 visibility_rect = Rect2(-50000, -50000, 100000, 100000)
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_pddfc")

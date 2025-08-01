@@ -79,7 +79,7 @@ size = Vector2(855.19, 1026.06)
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")

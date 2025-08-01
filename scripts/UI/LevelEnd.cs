@@ -12,9 +12,11 @@ public partial class LevelEnd : Area2D
         {
             GetTree().Paused = true;
             UI.Visible = true;
-            GameManager.instance.maxLevelUnlocked++;
+            if (GameManager.instance.maxLevelUnlocked == GameManager.instance.currentLevelID)
+            {
+                GameManager.instance.maxLevelUnlocked++;
+            }
             complete = true;
-            GD.Print(GameManager.instance.maxLevelUnlocked);
 
         }
 

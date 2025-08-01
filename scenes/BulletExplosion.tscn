@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dghh2wnp8oryo"]
+[gd_scene load_steps=5 format=3 uid="uid://dghh2wnp8oryo"]
+
+[ext_resource type="Texture2D" uid="uid://da44jd5qu1uyb" path="res://art/particleMissed_55x66.png" id="1_lp8ds"]
 
 [sub_resource type="Curve" id="Curve_l47h0"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -15,13 +17,14 @@ initial_velocity_max = 822.44
 gravity = Vector3(0, 0, 0)
 damping_min = 6.0
 damping_max = 12.0
-scale_min = 40.0
-scale_max = 40.0
+scale_min = 1.5
+scale_max = 2.0
 alpha_curve = SubResource("CurveTexture_lp8ds")
 
 [node name="BulletExplosion" type="GPUParticles2D"]
 emitting = false
 amount = 35
+texture = ExtResource("1_lp8ds")
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0

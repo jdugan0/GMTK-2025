@@ -43,20 +43,12 @@ navigation_enabled = false
 position = Vector2(-29, -7340)
 bullets = 0
 
-[node name="Bullet" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(-9925, -17274)
-rotation = 0.523599
-
 [node name="Bullet4" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(1324, -21021)
+position = Vector2(-8182, -20393)
 rotation = 0.523599
 
 [node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
 position = Vector2(-1468, -5757)
-rotation = 0.523599
-
-[node name="Bullet3" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(-1495, -5160)
 rotation = 0.523599
 
 [node name="Enemy" type="TileMapLayer" parent="."]
@@ -68,3 +60,5 @@ navigation_enabled = false
 position = Vector2(-54, -7396)
 
 [node name="Oel" parent="." instance=ExtResource("9_jq78i")]
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

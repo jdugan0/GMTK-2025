@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sp0eji0gqnpq"
-path="res://.godot/imported/bulletIcon_100x224.png-3f9f00946362736e486f84dd93e46432.ctex"
+uid="uid://clcf0p3wf0few"
+path="res://.godot/imported/rollBar_181x610.png-936fc0b209b6304c3cdedee9ba356806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bulletIcon_100x224.png"
-dest_files=["res://.godot/imported/bulletIcon_100x224.png-3f9f00946362736e486f84dd93e46432.ctex"]
+source_file="res://art/rollBar_181x610.png"
+dest_files=["res://.godot/imported/rollBar_181x610.png-936fc0b209b6304c3cdedee9ba356806.ctex"]
 
 [params]
 

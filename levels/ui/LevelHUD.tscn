@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cr54qoo8g7gow"]
 
+[ext_resource type="Texture2D" uid="uid://bmlisp5xhgoqm" path="res://art/enemyCount_406x175.png" id="1_0a4xe"]
 [ext_resource type="Script" uid="uid://8jkxksdv8lod" path="res://scripts/UI/EnemiesRemaining.cs" id="1_dq21l"]
 [ext_resource type="Script" uid="uid://brg6tyih14n45" path="res://scripts/BulletCount.cs" id="2_r50do"]
-[ext_resource type="PackedScene" uid="uid://d3ety2qufwm8w" path="res://scenes/BulletIcon.tscn" id="3_j5djn"]
 
 [node name="LevelHUD" type="CanvasLayer"]
 
@@ -15,21 +15,40 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.232
+anchor_bottom = 0.196
+offset_left = 40.0
+offset_top = 37.0
+offset_right = 0.559998
+offset_bottom = 0.319992
+texture = ExtResource("1_0a4xe")
+
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_right = 0.232
+anchor_bottom = 0.196
+offset_left = 234.0
+offset_top = 77.0
+offset_right = -38.44
+offset_bottom = -43.68
 theme_override_font_sizes/font_size = 66
 text = "0 / 20"
 script = ExtResource("1_dq21l")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_top = 0.814
 anchor_right = 1.0
-offset_left = -181.0
-offset_bottom = 813.0
-grow_horizontal = 0
+anchor_bottom = 1.016
+offset_left = 40.0
+offset_top = -0.119995
+offset_right = -21.0
+offset_bottom = -29.28
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("2_r50do")
-bulletIcon = ExtResource("3_j5djn")

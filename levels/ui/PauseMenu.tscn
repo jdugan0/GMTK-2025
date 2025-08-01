@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c55il4hklg0bq"]
+[gd_scene load_steps=3 format=3 uid="uid://c55il4hklg0bq"]
 
 [ext_resource type="Script" uid="uid://dsyhmrptnskyy" path="res://scripts/UI/PauseMenu.cs" id="1_ok285"]
+[ext_resource type="Theme" uid="uid://70136ytkrcl6" path="res://art/themes/grayTheme.tres" id="3_badbe"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -18,15 +19,9 @@ mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="PauseMenu"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -422.5
-offset_top = -284.5
-offset_right = 422.5
-offset_bottom = 284.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -38,9 +33,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -242.5
+offset_left = -296.0
 offset_top = -215.0
-offset_right = 242.5
+offset_right = 296.0
 offset_bottom = 215.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -49,6 +44,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme = ExtResource("3_badbe")
 theme_override_font_sizes/font_size = 66
 text = "RESUME"
 
@@ -57,6 +53,7 @@ process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme = ExtResource("3_badbe")
 theme_override_font_sizes/font_size = 66
 text = "MAIN MENU"
 

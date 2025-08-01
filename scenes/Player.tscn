@@ -105,7 +105,7 @@ motion_mode = 1
 script = ExtResource("1_p0vlq")
 maxSpeed = 2400.0
 friction = 8000.0
-accel = 10000.0
+accel = 15000.0
 bullet = ExtResource("2_v6fml")
 fireSpeed = 10000.0
 firePos = NodePath("FirePos")
@@ -116,7 +116,7 @@ arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
 exitArrow = ExtResource("4_qu4a1")
 rollTime = 0.25
-rollSpeed = 5000.0
+rollSpeed = 5500.0
 rollCooldown = 0.8
 recoilForce = 1500.0
 

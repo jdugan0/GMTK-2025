@@ -28,6 +28,8 @@ public partial class Movement : CharacterBody2D
     bool spawnedExitArrow = false;
     public bool isRolling;
     uint prevLayer, prevMask;
+    Vector2 rollDirection;
+    Color origColor;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -40,7 +42,8 @@ public partial class Movement : CharacterBody2D
     void StartRoll()
     {
         if (rollCooldownTimer > 0 || isRolling) return;
-
+        origColor = sprite.Modulate;
+        sprite.Modulate = new Color(origColor.R,origColor.G,origColor.B,0.40f);
         isRolling = true;
         rollTImer = rollTime;
         rollCooldownTimer = rollCooldown;
@@ -49,13 +52,15 @@ public partial class Movement : CharacterBody2D
         prevMask = CollisionMask;
         CollisionMask &= ~((1u << 1) | (1u << 4));
         CollisionLayer = 1u << 9;
-        
+
     }
     void EndRoll()
     {
         isRolling = false;
         CollisionLayer = prevLayer;
         CollisionMask = prevMask;
+        rollDirection = Vector2.Zero;
+        sprite.Modulate = origColor;
     }
 
     public void Death()
@@ -81,7 +86,6 @@ public partial class Movement : CharacterBody2D
                 AudioManager.instance.PlaySFX("footsteps");
             }
         }
-        Vector2 v = Velocity;
         float rate = inputDir == Vector2.Zero ? friction : accel;
         Velocity = Velocity.MoveToward(targetVelocity, rate * (float)delta);
         Vector2 mousePos = GetGlobalMousePosition();
@@ -90,7 +94,11 @@ public partial class Movement : CharacterBody2D
         Rotation = Mathf.LerpAngle(Rotation, targetAng, 20f * (float)delta);
         if (isRolling)
         {
-            Velocity = v.Normalized() * rollSpeed;
+            if (rollDirection == Vector2.Zero)
+            {
+                rollDirection = inputDir.Normalized();
+            }
+            Velocity = rollDirection * rollSpeed;
         }
         MoveAndSlide();
     }

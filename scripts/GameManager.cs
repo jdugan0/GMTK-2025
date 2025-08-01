@@ -12,6 +12,7 @@ public partial class GameManager : Node
     public string currentLevel;
     public int currentLevelID;
     public int enemiesRemaining;
+    public int health;
     public string[] levels;
     [Export] public int maxLevelUnlocked = 1;
     public override void _Ready()

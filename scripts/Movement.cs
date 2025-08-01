@@ -32,6 +32,7 @@ public partial class Movement : CharacterBody2D
     Color origColor;
     float rollRotation;
     [Export] public float recoilForce = 500f;
+    [Export] public int health = 2;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -75,6 +76,19 @@ public partial class Movement : CharacterBody2D
         }
     }
 
+    [Signal]
+    public delegate void HealthChangedEventHandler(int health);
+    public void TakeDamage(int amount = 1)
+    {
+        health -= amount;
+        AudioManager.instance.PlaySFX("playerHit");
+        EmitSignal(SignalName.HealthChanged, amount);
+        if (health <= 0)
+        {
+            Death();
+        }
+    }
+
     public void Death()
     {
         if (isRolling) return;
@@ -103,7 +117,7 @@ public partial class Movement : CharacterBody2D
         Vector2 mousePos = GetGlobalMousePosition();
         Vector2 toMouse = mousePos - GlobalPosition;
         float targetAng = toMouse.Angle() + Mathf.Pi / 2;
-        Rotation = Mathf.LerpAngle(Rotation, targetAng, 20f * (float)delta);
+        Rotation = Mathf.LerpAngle(Rotation, targetAng, 80f * (float)delta);
         if (isRolling)
         {
             if (rollDirection == Vector2.Zero)

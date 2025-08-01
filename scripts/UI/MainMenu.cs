@@ -19,4 +19,9 @@ public partial class MainMenu : Control
     {
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("levels");
     }
+
+    public async void Options()
+    {
+        await SceneSwitcher.instance.SwitchSceneAsyncSlide("options");
+    }
 }

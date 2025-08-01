@@ -48,6 +48,10 @@ bullets = 0
 position = Vector2(15825, -5028)
 rotation = -0.785398
 
+[node name="Bullet4" parent="." instance=ExtResource("6_hbb88")]
+position = Vector2(15174, -5048)
+rotation = -0.785398
+
 [node name="Bullet3" parent="." instance=ExtResource("6_hbb88")]
 position = Vector2(16617, -14412)
 rotation = -0.785398
@@ -56,3 +60,5 @@ rotation = -0.785398
 tile_map_data = PackedByteArray("AADZAEH/AAAAAAAAAQDRAFD/AAAAAAAAAQCmAH7/AAAAAAAAAQCuAIf/AAAAAAAAAQDcAIX/AAAAAAAAAQDOAGb/AAAAAAAAAQC1AEn/AAAAAAAAAQC2ADz/AAAAAAAAAQCEAED/AAAAAAAAAQByADv/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

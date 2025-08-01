@@ -9,6 +9,7 @@ public partial class Camera : Camera2D
         {
             GlobalPosition = GameManager.instance.player.GlobalPosition;
         }
+        Zoom = new Vector2(0.25f, 0.25f);
         PositionSmoothingEnabled = true;
         PositionSmoothingSpeed = 5;
     }

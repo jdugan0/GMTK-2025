@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://0fohlunqbspr"]
+[gd_scene load_steps=9 format=3 uid="uid://0fohlunqbspr"]
 
 [ext_resource type="Script" uid="uid://bkw53ywyvkt73" path="res://scripts/UI/Options.cs" id="1_v1bic"]
+[ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_lqvsu"]
 [ext_resource type="Texture2D" uid="uid://bb5pkwengli7b" path="res://art/UI/temp_slider_knob.png" id="2_xqxg3"]
-[ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="3_mm0ai"]
+[ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="4_lqvsu"]
+[ext_resource type="StyleBox" path="    public async void Options()    {        await SceneSwitcher.instance.SwitchSceneAsyncSlide("options");    }" id="4_wk64w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wk64w"]
+texture = ExtResource("2_lqvsu")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm0ai"]
 border_width_left = 4
@@ -14,11 +19,6 @@ expand_margin_top = 8.0
 expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqvsu"]
-bg_color = Color(0.764706, 0.505882, 0.415686, 1)
-expand_margin_top = 4.0
-expand_margin_bottom = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk64w"]
 bg_color = Color(0.764706, 0.505882, 0.415686, 1)
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
@@ -36,6 +36,7 @@ script = ExtResource("1_v1bic")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wk64w")
 
 [node name="Options Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -75,18 +76,19 @@ theme_override_icons/grabber_highlight = ExtResource("2_xqxg3")
 theme_override_icons/grabber_disabled = ExtResource("2_xqxg3")
 theme_override_styles/slider = SubResource("StyleBoxFlat_mm0ai")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_lqvsu")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_wk64w")
+theme_override_styles/grabber_area_highlight = ExtResource("4_wk64w")
 max_value = 1.5
 step = 0.001
 value = 1.0
 
 [node name="Back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 250.0
 offset_top = 789.0
 offset_right = 718.0
 offset_bottom = 1007.0
 scale = Vector2(0.664102, 0.631029)
-theme = ExtResource("3_mm0ai")
+theme = ExtResource("4_lqvsu")
 theme_override_font_sizes/font_size = 116
 text = "Back
 "

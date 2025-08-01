@@ -79,6 +79,8 @@ public partial class Enemy : CharacterBody2D
                 break;
             case EnemyTypes.RANGED:
                 sprite.Play("Attack");
+                AudioStreamPlayer a = AudioManager.instance.PlaySFX("rangeCharge");
+                await ToSignal(a, AudioStreamPlayer.SignalName.Finished);
                 await ToSignal(sprite, AnimatedSprite2D.SignalName.AnimationFinished);
                 Node node = enemyBullet.Instantiate();
                 GetTree().CurrentScene.AddChild(node);
@@ -88,6 +90,7 @@ public partial class Enemy : CharacterBody2D
                 b.Rotate(angle);
                 b.GlobalPosition = firePos.GlobalPosition;
                 sprite.Play("Normal");
+                AudioManager.instance.PlaySFX("rangeFire");
                 break;
         }
     }

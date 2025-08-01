@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=18 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnusldn0om808" path="res://scenes/Arrows/ArrowBullet.tscn" id="3_mdl7e"]
 [ext_resource type="PackedScene" uid="uid://cb3d0rjd67guf" path="res://scenes/Arrows/ArrowExit.tscn" id="4_qu4a1"]
 [ext_resource type="Texture2D" uid="uid://701jh8ngn5g4" path="res://art/playerDeath_855x608.png" id="5_70d11"]
-[ext_resource type="Texture2D" uid="uid://3fee4itn1st3" path="res://art/dRoll_418x808.png" id="7_cw2d6"]
+[ext_resource type="Texture2D" uid="uid://d7hipqs03aka" path="res://art/roll_forward.png" id="7_cw2d6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092
@@ -42,10 +42,6 @@ region = Rect2(882, 0, 441, 642)
 [sub_resource type="AtlasTexture" id="AtlasTexture_70d11"]
 atlas = ExtResource("3_3li8b")
 region = Rect2(0, 0, 441, 642)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6eyey"]
-atlas = ExtResource("7_cw2d6")
-region = Rect2(0, 0, 418, 808)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6fml"]
 animations = [{
@@ -95,7 +91,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6eyey")
+"texture": ExtResource("7_cw2d6")
 }],
 "loop": true,
 "name": &"roll",
@@ -119,8 +115,8 @@ sprite = NodePath("AnimatedSprite2D")
 arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
 exitArrow = ExtResource("4_qu4a1")
-rollTime = 0.35
-rollSpeed = 3500.0
+rollTime = 0.25
+rollSpeed = 7500.0
 rollCooldown = 0.8
 recoilForce = 1500.0
 

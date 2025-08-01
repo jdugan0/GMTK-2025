@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://w2cb66tn2yth"
+path="res://.godot/imported/Whimsy 2.wav-d70b53b4f801488eaf47a8210a739422.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Whimsy 2.wav"
+dest_files=["res://.godot/imported/Whimsy 2.wav-d70b53b4f801488eaf47a8210a739422.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

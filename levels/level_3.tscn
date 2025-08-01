@@ -58,6 +58,10 @@ rotation = 0.523599
 position = Vector2(-1468, -5757)
 rotation = 0.523599
 
+[node name="Bullet3" parent="." instance=ExtResource("6_0unm6")]
+position = Vector2(-1495, -5160)
+rotation = 0.523599
+
 [node name="Enemy" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADB/1D/AAAAAAAAAQD//yL/AAAAAAAAAQBX/2X/AAAAAAAAAQBk/1n/AAAAAAAAAQBV/zj/AAAAAAAAAQBg/y//AAAAAAAAAQBo/zn/AAAAAAAAAQCv/3P/AAAAAAAAAQDz/xb/AAAAAAAAAQCs/yL/AAAAAAAAAQDW/yH/AAAAAAAAAQDj/3f/AAAAAAAAAgBS/0z/AAAAAAAAAgCF/yL/AAAAAAAAAgCq/0L/AAAAAAAAAQC1/0L/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_l53as")

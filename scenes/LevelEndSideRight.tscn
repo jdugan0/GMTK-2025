@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmdusifb4ye1r"]
+[gd_scene load_steps=10 format=3 uid="uid://dmdusifb4ye1r"]
 
 [ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_kcsus"]
 [ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_oaibo"]
 [ext_resource type="Texture2D" uid="uid://dvr8aiep5mn2h" path="res://art/levelComp_1414x1076.png" id="3_m86ap"]
-[ext_resource type="Theme" uid="uid://70136ytkrcl6" path="res://art/themes/grayTheme.tres" id="4_gyhr1"]
+[ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="4_kcsus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
 atlas = ExtResource("2_oaibo")
@@ -35,13 +35,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fuep"]
 size = Vector2(801, 196)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaibo"]
+
 [node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI", "sprite") groups=["Exit"]]
 process_mode = 3
 rotation = 1.5708
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_kcsus")
-UI = NodePath("CanvasLayer")
+UI = NodePath("")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -63,7 +65,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
@@ -79,6 +80,7 @@ offset_bottom = 353.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oaibo")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
@@ -92,27 +94,26 @@ expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 133.0
-offset_top = 106.5
-offset_right = -132.0
-offset_bottom = 380.5
+anchor_bottom = 1.0
+offset_left = 214.0
+offset_top = 464.0
+offset_right = -212.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NEXTLEVEL" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = ExtResource("4_gyhr1")
+theme = ExtResource("4_kcsus")
 text = "NEXT LEVEL"
 
 [node name="MAINMENU" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-theme = ExtResource("4_gyhr1")
+theme = ExtResource("4_kcsus")
 text = "MAIN MENU"
 
 [connection signal="body_entered" from="." to="." method="OnCol"]

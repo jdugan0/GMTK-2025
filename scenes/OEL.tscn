@@ -19,20 +19,21 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-modulate = Color(1, 1, 1, 0.345098)
+modulate = Color(1, 1, 1, 0.235294)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -591.0
+offset_left = -295.5
 offset_top = 540.0
-offset_right = 591.0
-offset_bottom = 1087.0
+offset_right = 295.5
+offset_bottom = 813.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0a255")
+expand_mode = 1
 script = ExtResource("2_d1qns")
-finalY = -547.0
+finalY = -273.0
 follow = SubResource("Curve_d1qns")

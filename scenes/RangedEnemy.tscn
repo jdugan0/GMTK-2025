@@ -20,7 +20,7 @@ nav = NodePath("NavigationAgent2D")
 ghost = ExtResource("2_k7el5")
 maxSpeed = 1000.0
 playerSeenDistance = 2500.0
-alertDistance = 2000.0
+alertDistance = 3000.0
 desiredDistance = 1500.0
 stopBuffer = 50.0
 

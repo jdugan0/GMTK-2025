@@ -16,6 +16,7 @@ public partial class Health : TextureRect
 	// hard coded, but it's such a small thing it doesn't matter
 	public void updateHealth(int health)
 	{
+		Texture2D newTexture = GD.Load<Texture2D>("res://art/UI/heart.png");
 		if (health == 2)
 		{
 			Texture = GD.Load<Texture2D>("res://art/UI/heart.png");
@@ -28,5 +29,6 @@ public partial class Health : TextureRect
 		{
 			Texture = GD.Load<Texture2D>("res://art/UI/empty_heart.png");
 		}
+		Texture = newTexture;
 	}
 }

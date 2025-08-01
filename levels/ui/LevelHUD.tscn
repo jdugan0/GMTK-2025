@@ -57,6 +57,7 @@ offset_right = -21.0
 offset_bottom = -29.28
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
 script = ExtResource("2_r50do")
 bulletIcon = ExtResource("4_0a4xe")
 currentBullet = SubResource("AtlasTexture_0a4xe")

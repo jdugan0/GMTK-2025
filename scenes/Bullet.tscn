@@ -1,30 +1,35 @@
-[gd_scene load_steps=14 format=3 uid="uid://co4ok6cl18jwu"]
+[gd_scene load_steps=15 format=3 uid="uid://co4ok6cl18jwu"]
 
 [ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_hf8mt"]
 [ext_resource type="PackedScene" uid="uid://dghh2wnp8oryo" path="res://scenes/BulletExplosion.tscn" id="2_4utqk"]
 [ext_resource type="Texture2D" uid="uid://c7au7vj1m303" path="res://art/playerBullet_171x300.png" id="3_4utqk"]
+[ext_resource type="Texture2D" uid="uid://dgo5nbknn4twn" path="res://art/bowparticle_55x66.png" id="3_51h0o"]
 
 [sub_resource type="Curve" id="Curve_4utqk"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_p1sfj"]
+[sub_resource type="CurveTexture" id="CurveTexture_51h0o"]
 curve = SubResource("Curve_4utqk")
 
 [sub_resource type="Curve" id="Curve_p1sfj"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_4utqk"]
+[sub_resource type="CurveTexture" id="CurveTexture_4m4t0"]
 curve = SubResource("Curve_p1sfj")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p1sfj"]
 particle_flag_disable_z = true
+angle_min = -144.0
+angle_max = 113.7
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
-scale_min = 54.66
-scale_max = 54.66
-scale_curve = SubResource("CurveTexture_4utqk")
-alpha_curve = SubResource("CurveTexture_p1sfj")
+scale_min = 1.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_4m4t0")
+alpha_curve = SubResource("CurveTexture_51h0o")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4utqk"]
 atlas = ExtResource("3_4utqk")
@@ -60,7 +65,7 @@ size = Vector2(72, 203)
 radius = 48.0
 height = 244.0
 
-[node name="Bullet2" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite") groups=["Bullet"]]
+[node name="Bullet2" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite", "trail") groups=["Bullet"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_hf8mt")
@@ -69,11 +74,12 @@ pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")
 splinterBurst = ExtResource("2_4utqk")
+trail = NodePath("GPUParticles2D")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(0, 71.59)
-amount = 10000
-lifetime = 0.5
+position = Vector2(-1, 50)
+amount = 50
+texture = ExtResource("3_51h0o")
 visibility_rect = Rect2(-50000, -50000, 100000, 100000)
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_p1sfj")

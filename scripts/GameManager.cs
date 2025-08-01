@@ -14,7 +14,9 @@ public partial class GameManager : Node
     public int enemiesRemaining;
     public int health;
     public string[] levels;
+    public OEL oel;
     [Export] public int maxLevelUnlocked = 1;
+    public Camera camera;
     public override void _Ready()
     {
         instance = this;

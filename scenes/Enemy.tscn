@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bc5m4qvdd6r0q"]
+[gd_scene load_steps=16 format=3 uid="uid://bc5m4qvdd6r0q"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_55jtl"]
 [ext_resource type="Texture2D" uid="uid://6usx1lymkpnb" path="res://art/attackerSR_1000x631.png" id="2_55jtl"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_mpr68"]
+[ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="3_ft8do"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 175.114
@@ -90,6 +91,7 @@ attackDelay = 3.0
 desiredDistance = 400.0
 coolDown = 1.0
 sprite = NodePath("AnimatedSprite2D")
+corpse = ExtResource("3_ft8do")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_55jtl")

@@ -5,13 +5,16 @@ public partial class LevelEnd : Area2D
 {
     [Export] CanvasLayer UI;
     [Export] AnimatedSprite2D sprite;
+    bool complete = false;
     public void OnCol(Node2D node)
     {
-        if (node is Movement && GameManager.instance.enemiesRemaining == 0)
+        if (node is Movement && GameManager.instance.enemiesRemaining == 0 && !complete)
         {
             GetTree().Paused = true;
             UI.Visible = true;
             GameManager.instance.maxLevelUnlocked++;
+            complete = true;
+            GD.Print(GameManager.instance.maxLevelUnlocked);
 
         }
 

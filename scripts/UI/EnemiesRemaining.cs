@@ -4,7 +4,8 @@ using System;
 public partial class EnemiesRemaining : Label
 {
     int originalCount = 0;
-    bool playedSound = false;   
+    bool playedSound = false;
+    bool oel = false;
     public override void _Process(double delta)
     {
         if (originalCount == 0)
@@ -17,6 +18,11 @@ public partial class EnemiesRemaining : Label
         {
             playedSound = true;
             AudioManager.instance.PlaySFX("killedAll");
+        }
+        if (GameManager.instance.enemiesRemaining == 1 && !oel)
+        {
+            oel = true;
+            GameManager.instance.oel.PlayMotionOnce();
         }
     }
 

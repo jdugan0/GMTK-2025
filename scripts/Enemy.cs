@@ -21,6 +21,7 @@ public partial class Enemy : CharacterBody2D
     [Export] float fireSpeed = 8000.0f;
     [Export] Node2D firePos;
     bool playerIn = false;
+    [Export] PackedScene corpse;
     enum EnemyTypes
     {
         NORMAL,
@@ -34,6 +35,9 @@ public partial class Enemy : CharacterBody2D
         Node2D ghostNode = ghost.Instantiate<Node2D>();
         GetTree().CurrentScene.AddChild(ghostNode);
         ghostNode.GlobalPosition = GlobalPosition;
+        var c = corpse.Instantiate<Node2D>();
+        GetTree().CurrentScene.AddChild(c);
+        c.GlobalPosition = GlobalPosition;
         QueueFree();
     }
     public void OnCol(Node2D node)
@@ -75,6 +79,8 @@ public partial class Enemy : CharacterBody2D
                 break;
             case EnemyTypes.RANGED:
                 sprite.Play("Attack");
+                AudioStreamPlayer a = AudioManager.instance.PlaySFX("rangeCharge");
+                await ToSignal(a, AudioStreamPlayer.SignalName.Finished);
                 await ToSignal(sprite, AnimatedSprite2D.SignalName.AnimationFinished);
                 Node node = enemyBullet.Instantiate();
                 GetTree().CurrentScene.AddChild(node);
@@ -84,6 +90,7 @@ public partial class Enemy : CharacterBody2D
                 b.Rotate(angle);
                 b.GlobalPosition = firePos.GlobalPosition;
                 sprite.Play("Normal");
+                AudioManager.instance.PlaySFX("rangeFire");
                 break;
         }
     }
@@ -116,8 +123,10 @@ public partial class Enemy : CharacterBody2D
             playedSound = true;
         }
         playerSeen = true;
+        if (!IsInstanceValid(this)) return;
         foreach (Enemy node in GetTree().GetNodesInGroup("Enemy"))
         {
+            if (!IsInstanceValid(node)) return;
             if (node.GlobalPosition.DistanceTo(GlobalPosition) < alertDistance)
             {
                 if (node.playerSeen)
@@ -129,7 +138,9 @@ public partial class Enemy : CharacterBody2D
                 break;
             }
         }
+        
     }
+    
     public void MoveToPlayer()
     {
         if (!playerSeen) return;

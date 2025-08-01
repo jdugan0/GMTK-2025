@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c67yqf3qd17es"]
+[gd_scene load_steps=12 format=4 uid="uid://c67yqf3qd17es"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="3_ng40l"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="7_vru0x"]
 [ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="8_dmnu2"]
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="8_sc6c1"]
+[ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_sc6c1"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0fd8o"]
 scenes/1/scene = ExtResource("7_vru0x")
@@ -61,3 +62,5 @@ navigation_enabled = false
 
 [node name="Camera2D" parent="." instance=ExtResource("8_sc6c1")]
 position = Vector2(-4501, -3050)
+
+[node name="Oel" parent="." instance=ExtResource("9_sc6c1")]

@@ -14,9 +14,15 @@ public partial class Camera : Camera2D
         {
             GlobalPosition = GameManager.instance.player.GlobalPosition;
         }
+        GameManager.instance.camera = this;
         Zoom = new Vector2(0.25f, 0.25f);
         PositionSmoothingEnabled = true;
         PositionSmoothingSpeed = 10;
+    }
+
+    public override void _ExitTree()
+    {
+        tween?.Kill();
     }
 
     public override void _PhysicsProcess(double delta)
@@ -31,19 +37,21 @@ public partial class Camera : Camera2D
                 StopPulse();
         }
     }
-    private void StartPulse()
+    public void StartPulse()
     {
+        if (pulsing) return;
         pulsing = true;
         tween = GetTree().CreateTween().SetLoops();
         tween.TweenProperty(overlay, "modulate:a", 0.0f, pulseTime).From(pulseAlpha);
         tween.TweenProperty(overlay, "modulate:a", pulseAlpha, pulseTime);
     }
 
-    private void StopPulse()
+    public void StopPulse()
     {
+        if (!pulsing) return;
         pulsing = false;
         tween?.Kill();
-        overlay.Modulate = overlay.Modulate with { A = 0 }; 
+        overlay.Modulate = overlay.Modulate with { A = 0 };
     }
 
 }

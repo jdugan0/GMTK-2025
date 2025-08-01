@@ -108,6 +108,7 @@ public partial class Movement : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         if (die) return;
+        MoveToFront();
         Vector2 inputDir = Input.GetVector("LEFT", "RIGHT", "UP", "DOWN");
         Vector2 targetVelocity = inputDir.Normalized() * maxSpeed;
 

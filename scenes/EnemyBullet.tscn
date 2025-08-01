@@ -1,7 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm1pymxltn3gc"]
+[gd_scene load_steps=9 format=3 uid="uid://bm1pymxltn3gc"]
 
 [ext_resource type="Script" uid="uid://cmishs85k4peh" path="res://scripts/EnemyBullet.cs" id="1_s6wdq"]
 [ext_resource type="Texture2D" uid="uid://tf3hlmifms7y" path="res://art/attackLR_68x75.png" id="2_s6wdq"]
+
+[sub_resource type="Curve" id="Curve_s6wdq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_51h0o"]
+curve = SubResource("Curve_s6wdq")
+
+[sub_resource type="Curve" id="Curve_la4vt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4utqk"]
+curve = SubResource("Curve_la4vt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rdk3h"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 54.66
+scale_max = 54.66
+scale_curve = SubResource("CurveTexture_4utqk")
+alpha_curve = SubResource("CurveTexture_51h0o")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
 size = Vector2(72, 76)
@@ -12,6 +34,14 @@ collision_layer = 8
 collision_mask = 12
 motion_mode = 1
 script = ExtResource("1_s6wdq")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1, -10)
+amount = 10000
+lifetime = 0.5
+visibility_rect = Rect2(-50000, -50000, 100000, 100000)
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_rdk3h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ropf")

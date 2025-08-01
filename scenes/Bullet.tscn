@@ -1,7 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://co4ok6cl18jwu"]
+[gd_scene load_steps=13 format=3 uid="uid://co4ok6cl18jwu"]
 
 [ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_hf8mt"]
 [ext_resource type="Texture2D" uid="uid://c7au7vj1m303" path="res://art/playerBullet_171x300.png" id="3_4utqk"]
+
+[sub_resource type="Curve" id="Curve_4utqk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p1sfj"]
+curve = SubResource("Curve_4utqk")
+
+[sub_resource type="Curve" id="Curve_p1sfj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4utqk"]
+curve = SubResource("Curve_p1sfj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p1sfj"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 54.66
+scale_max = 54.66
+scale_curve = SubResource("CurveTexture_4utqk")
+alpha_curve = SubResource("CurveTexture_p1sfj")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4utqk"]
 atlas = ExtResource("3_4utqk")
@@ -45,6 +67,14 @@ stuck = true
 pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 71.59)
+amount = 10000
+lifetime = 0.5
+visibility_rect = Rect2(-50000, -50000, 100000, 100000)
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_p1sfj")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hf8mt")

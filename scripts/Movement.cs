@@ -59,6 +59,7 @@ public partial class Movement : CharacterBody2D
         CollisionLayer = 1u << 9;
 
         sprite.Play("roll");
+        AudioManager.instance.PlaySFX("dodgeRoll");
 
     }
     void EndRoll()

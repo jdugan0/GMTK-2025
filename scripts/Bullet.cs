@@ -7,8 +7,14 @@ public partial class Bullet : CharacterBody2D
     [Export] private CollisionShape2D pickupRadius;
     [Export] private CollisionShape2D shape;
     [Export] AnimatedSprite2D sprite;
+    [Export] PackedScene splinterBurst;
     public bool playerFired = false;
     float timeStuck = 0f;
+    public void SplinterBurst(KinematicCollision2D hit)
+    {
+        GpuParticles2D particles = splinterBurst.Instantiate<GpuParticles2D>();
+        //...
+    }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -38,6 +44,7 @@ public partial class Bullet : CharacterBody2D
             else
             {
                 AudioManager.instance.PlaySFX("hitFail");
+                // SplinterBurst(hit);
             }
             Velocity = Vector2.Zero;
             stuck = true;

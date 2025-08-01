@@ -107,7 +107,7 @@ stream_3/stream = ExtResource("17_gin7a")
 [sub_resource type="Resource" id="Resource_flvt4"]
 script = ExtResource("2_subo3")
 stream = SubResource("AudioStreamRandomizer_vprys")
-volume = 0.0
+volume = -10.0
 name = "vampHiss"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
@@ -182,7 +182,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 [sub_resource type="Resource" id="Resource_cmg6v"]
 script = ExtResource("2_subo3")
 stream = ExtResource("27_u6d66")
-volume = 0.0
+volume = -7.0
 name = "mainMenu"
 metadata/_custom_type_script = "uid://007myadtw53h"
 

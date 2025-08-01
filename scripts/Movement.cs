@@ -213,7 +213,14 @@ public partial class Movement : CharacterBody2D
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;
-        AudioManager.instance.PlaySFX("crossbowFire");
+        if (bullets == 0)
+        {
+            AudioManager.instance.PlaySFX("crossbowFinal");
+        }
+        else
+        {
+            AudioManager.instance.PlaySFX("crossbowFire");
+        }
     }
 
 }

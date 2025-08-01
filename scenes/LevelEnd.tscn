@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5vl1rsn6absb"]
+[gd_scene load_steps=9 format=3 uid="uid://c5vl1rsn6absb"]
 
 [ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_7bpco"]
+[ext_resource type="Texture2D" uid="uid://dvr8aiep5mn2h" path="res://art/levelComp_1414x1076.png" id="2_8vkxa"]
 [ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_rgtyk"]
+[ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="3_v16ue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
 atlas = ExtResource("2_rgtyk")
@@ -35,6 +37,8 @@ size = Vector2(801, 196)
 
 [node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI", "sprite") groups=["Exit"]]
 process_mode = 3
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("1_7bpco")
 UI = NodePath("CanvasLayer")
 sprite = NodePath("AnimatedSprite2D")
@@ -67,42 +71,48 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -466.0
-offset_top = -295.5
-offset_right = 466.0
-offset_bottom = 295.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_8vkxa")
+expand_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 116
-text = "LEVEL COMPLETE"
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = 106.5
+offset_right = -132.0
+offset_bottom = 380.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="NEXTLEVEL" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 131
+theme = ExtResource("3_v16ue")
 text = "NEXT LEVEL"
 
 [node name="MAINMENU" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 131
+theme = ExtResource("3_v16ue")
 text = "MAIN MENU"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_7bpco")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_4fuep")
 

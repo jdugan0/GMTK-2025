@@ -54,13 +54,13 @@ animations = [{
 }]
 
 [node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite", "firePos") groups=["Enemy", "hittable"]]
-collision_layer = 5
-collision_mask = 3
+collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_wltc5")
 nav = NodePath("NavigationAgent2D")
 ghost = ExtResource("2_k7el5")
-maxSpeed = 1000.0
+maxSpeed = 1400.0
 playerSeenDistance = 2500.0
 alertDistance = 3000.0
 attackDelay = 3.0
@@ -69,7 +69,7 @@ stopBuffer = 25.0
 coolDown = 1.5
 enemyBullet = ExtResource("3_r1k2w")
 sprite = NodePath("AnimatedSprite2D")
-fireSpeed = 1500.0
+fireSpeed = 1700.0
 firePos = NodePath("Node2D")
 enemyType = 1
 
@@ -84,8 +84,8 @@ max_speed = 1000.0
 debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 5
-collision_mask = 3
+collision_layer = 0
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(4, 0)

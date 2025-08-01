@@ -46,9 +46,10 @@ public partial class Bullet : CharacterBody2D
     }
     public void ResolvePickup(Node2D hit)
     {
-        // GD.Print("hi");
+        
         if (hit is Movement player && stuck)
         {
+            if (player.isRolling) return;
             if (player.bullets == 0)
             {
                 player.sprite.Play("reload");

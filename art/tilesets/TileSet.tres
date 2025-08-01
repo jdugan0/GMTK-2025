@@ -130,7 +130,9 @@ texture_region_size = Vector2i(400, 400)
 2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
 5:6/0 = 0
 5:5/0 = 0
+5:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
 5:4/0 = 0
+5:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
 6:4/0 = 0
 6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, -129.115, -138.229, -129.115, -147.343, 200, -200, 200)
 7:4/0 = 0
@@ -152,8 +154,10 @@ texture_region_size = Vector2i(400, 400)
 
 [resource]
 tile_size = Vector2i(400, 400)
-physics_layer_0/collision_layer = 13
-physics_layer_0/collision_mask = 15
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 1023
+physics_layer_1/collision_layer = 16
+physics_layer_1/collision_mask = 6
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)

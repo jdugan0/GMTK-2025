@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqv07yec5lnbf"
+path="res://.godot/imported/crossbow final.mp3-a8a4fc2829d16b9b4adea42c7930dcfa.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/crossbow final.mp3"
+dest_files=["res://.godot/imported/crossbow final.mp3-a8a4fc2829d16b9b4adea42c7930dcfa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

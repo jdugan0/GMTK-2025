@@ -23,101 +23,235 @@ tile_set = ExtResource("2_0vwvu")
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(1956, -32)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(10393, -2575)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(10965, -1247)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(7899, -368)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(11231, 1819)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(7490, 1819)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(4949, 685)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy8" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6748, 1126)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy9" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6139, 1357)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy10" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6125, 573)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy11" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(7602, 629)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy12" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8169, 1161)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy13" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8582, 1728)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy14" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8225, 2316)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy15" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(7434, 2519)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy16" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6825, 2295)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy17" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6111, 2169)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy18" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(5600, 1882)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy19" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(4963, 1644)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy20" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(4270, 1273)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy21" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(4123, 538)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy22" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(5551, 174)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy23" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6482, -176)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy24" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(7028, 482)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy25" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8785, 573)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy26" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(9352, 1455)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy27" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(9212, 2372)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy28" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8561, 2883)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy29" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8407, -610)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy30" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(8183, 314)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy31" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(6636, -932)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Enemy32" parent="Enemies" instance=ExtResource("3_5gbeh")]
 position = Vector2(5852, -932)
+ghost = null
+attackDelay = 0.0
+desiredDistance = 0.0
+coolDown = 0.0
 
 [node name="Player" parent="." instance=ExtResource("4_h2ikj")]
 position = Vector2(-3057, -162)
+collision_layer = 9
+collision_mask = 9
+exitArrow = null
+rollTime = 0.0
+rollSpeed = 0.0
+rollCooldown = 0.0
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_h1knw")]

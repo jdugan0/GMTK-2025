@@ -105,6 +105,8 @@ public partial class Enemy : CharacterBody2D
         var spaceState = GetWorld2D().DirectSpaceState;
         var query = PhysicsRayQueryParameters2D.Create(GlobalPosition, GameManager.instance.player.GlobalPosition);
         query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+        const uint LAYER5_MASK = 1u << 4;
+        query.CollisionMask &= ~LAYER5_MASK;
         var result = spaceState.IntersectRay(query);
         if (result.Count > 0)                       // something was hit
         {
@@ -138,9 +140,9 @@ public partial class Enemy : CharacterBody2D
                 break;
             }
         }
-        
+
     }
-    
+
     public void MoveToPlayer()
     {
         if (!playerSeen) return;
@@ -151,6 +153,8 @@ public partial class Enemy : CharacterBody2D
             var spaceState = GetWorld2D().DirectSpaceState;
             var query = PhysicsRayQueryParameters2D.Create(GlobalPosition, playerPos);
             query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+            const uint LAYER5_MASK = 1u << 4;
+            query.CollisionMask &= ~LAYER5_MASK;
 
             var result = spaceState.IntersectRay(query);
             if (result.Count > 0 && (Node2D)result["collider"] is Movement)

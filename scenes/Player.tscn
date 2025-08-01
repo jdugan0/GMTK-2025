@@ -78,8 +78,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder") groups=["hittable"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 4
+collision_mask = 51
 motion_mode = 1
 script = ExtResource("1_p0vlq")
 maxSpeed = 2000.0

@@ -18,6 +18,10 @@ public partial class Movement : CharacterBody2D
     [Export] Node2D arrowBulletHolder;
     [Export] PackedScene arrowBullet;
     [Export] PackedScene exitArrow;
+    [Export] float rollTime;
+    float rollTImer;
+    [Export] float rollCooldown;
+    float rollCooldownTimer;
     Node2D arrow = null;
     bool die = false;
     bool spawnedExitArrow = false;

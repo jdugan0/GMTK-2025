@@ -57,7 +57,7 @@ animations = [{
 [node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite", "firePos") groups=["Enemy", "hittable"]]
 scale = Vector2(1.305, 1.305)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
 motion_mode = 1
 script = ExtResource("1_wltc5")
 nav = NodePath("NavigationAgent2D")

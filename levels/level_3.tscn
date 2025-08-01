@@ -60,5 +60,3 @@ navigation_enabled = false
 position = Vector2(-54, -7396)
 
 [node name="Oel" parent="." instance=ExtResource("9_jq78i")]
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

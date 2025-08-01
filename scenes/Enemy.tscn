@@ -8,8 +8,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 215.0
-height = 704.0
+radius = 315.0
+height = 958.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8do"]
 atlas = ExtResource("2_55jtl")
@@ -84,7 +84,7 @@ script = ExtResource("1_55jtl")
 nav = NodePath("NavigationAgent2D")
 ghost = ExtResource("2_mpr68")
 maxSpeed = 1400.0
-playerSeenDistance = 3900.0
+playerSeenDistance = 3200.0
 alertDistance = 3500.0
 attackDelay = 3.0
 desiredDistance = 400.0

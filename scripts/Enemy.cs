@@ -120,6 +120,7 @@ public partial class Enemy : CharacterBody2D
             playedSound = true;
         }
         playerSeen = true;
+        if (!IsInstanceValid(this)) return;
         foreach (Enemy node in GetTree().GetNodesInGroup("Enemy"))
         {
             if (!IsInstanceValid(node)) return;

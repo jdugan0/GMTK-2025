@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dlv2k1w6kie57" path="res://scripts/OEL.cs" id="2_d1qns"]
 
 [sub_resource type="Curve" id="Curve_d1qns"]
-_data = [Vector2(0, 0), 0.0, 3.13557, 0, 0, Vector2(0.526442, 0.552573), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.28464, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 3.13557, 0, 0, Vector2(0.257212, 0.328859), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.28464, 0.0, 0, 0]
 point_count = 3
 
 [node name="Oel" type="CanvasLayer"]

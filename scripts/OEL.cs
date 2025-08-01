@@ -22,7 +22,7 @@ public partial class OEL : TextureRect
         tween.TweenMethod(Callable.From<float>(ApplyYFromT), 0f, 1f, duration);
         tween.TweenCallback(Callable.From(() =>
         {
-            Position = new Vector2(Position.X, MathF.Round(finalY));
+            Position = new Vector2(Position.X, finalY);
             Position = new Vector2(Position.X, (initialY));
         }));
     }

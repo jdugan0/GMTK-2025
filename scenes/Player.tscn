@@ -122,7 +122,7 @@ exitArrow = ExtResource("4_qu4a1")
 rollTime = 0.35
 rollSpeed = 3500.0
 rollCooldown = 0.8
-recoilForce = 2500.0
+recoilForce = 1500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3li8b")

@@ -36,6 +36,14 @@ public partial class Enemy : CharacterBody2D
         ghostNode.GlobalPosition = GlobalPosition;
         QueueFree();
     }
+    public void OnCol(Node2D node)
+    {
+        if (node is Bullet b)
+        {
+            b.Hit();
+            Death();
+        }
+    }
     public override void _PhysicsProcess(double delta)
     {
         if (!IsInstanceValid(GameManager.instance.player)) return;

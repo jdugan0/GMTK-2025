@@ -43,7 +43,7 @@ rotation = -1.5708
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_5ni3g")
-UI = NodePath("")
+UI = NodePath("CanvasLayer")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

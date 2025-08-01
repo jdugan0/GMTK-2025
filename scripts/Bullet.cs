@@ -33,7 +33,7 @@ public partial class Bullet : CharacterBody2D
         {
             if (target is Enemy enemy)
             {
-                enemy.Death();
+
             }
             else
             {
@@ -44,9 +44,14 @@ public partial class Bullet : CharacterBody2D
             return;
         }
     }
+    public void Hit()
+    {
+        Velocity = Vector2.Zero;
+        stuck = true;
+    }
     public void ResolvePickup(Node2D hit)
     {
-        
+
         if (hit is Movement player && stuck)
         {
             if (player.isRolling) return;

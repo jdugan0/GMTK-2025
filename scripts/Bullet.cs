@@ -33,7 +33,7 @@ public partial class Bullet : CharacterBody2D
         {
             if (target is Enemy enemy)
             {
-
+                enemy.Death();
             }
             else
             {

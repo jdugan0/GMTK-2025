@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dvr8aiep5mn2h" path="res://art/levelComp_1414x1076.png" id="3_m86ap"]
 [ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="4_kcsus"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaibo"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
 atlas = ExtResource("2_oaibo")
 region = Rect2(0, 400, 800, 400)
@@ -35,8 +37,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fuep"]
 size = Vector2(801, 196)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaibo"]
-
 [node name="LevelEnd" type="Area2D" node_paths=PackedStringArray("UI", "sprite") groups=["Exit"]]
 process_mode = 3
 rotation = 1.5708
@@ -45,14 +45,6 @@ collision_mask = 4
 script = ExtResource("1_kcsus")
 UI = NodePath("CanvasLayer")
 sprite = NodePath("AnimatedSprite2D")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_7bpco")
-animation = &"open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
-shape = SubResource("RectangleShape2D_4fuep")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -115,6 +107,14 @@ layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("4_kcsus")
 text = "MAIN MENU"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7bpco")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_4fuep")
 
 [connection signal="body_entered" from="." to="." method="OnCol"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/NEXTLEVEL" to="." method="NextLevel"]

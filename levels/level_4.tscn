@@ -66,7 +66,7 @@ position = Vector2(-4501, -3050)
 [node name="Oel" parent="." instance=ExtResource("9_sc6c1")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.101961, 0.121569, 0.247059, 0.8)
+color = Color(0.0383972, 0.0383972, 0.0383972, 0.807843)
 
 [node name="Lights" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD2//j/BAAAAAAAAQD7//D/BAAAAAAAAQABAOz/BAAAAAAAAQABAPj/BAAAAAAAAQAGAAIABAAAAAAAAQAPAAAABAAAAAAAAQAZAPj/BAAAAAAAAQAlAPf/BAAAAAAAAQAPAPP/BAAAAAAAAQAMAPb/BAAAAAAAAQAAAAIABAAAAAAAAQAGAP3/BAAAAAAAAQAMAP7/BAAAAAAAAQApAPj/BAAAAAAAAQA=")

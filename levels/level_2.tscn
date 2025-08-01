@@ -50,12 +50,10 @@ bullets = 0
 [node name="Bullet2" parent="." instance=ExtResource("6_hbb88")]
 position = Vector2(16224, -5427)
 rotation = -0.785398
-splinterBurst = null
 
 [node name="Bullet3" parent="." instance=ExtResource("6_hbb88")]
 position = Vector2(16617, -14412)
 rotation = -0.785398
-splinterBurst = null
 
 [node name="Enemy" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADZAEH/AAAAAAAAAQDRAFD/AAAAAAAAAQCmAH7/AAAAAAAAAQCuAIf/AAAAAAAAAQC1AEn/AAAAAAAAAQC2ADz/AAAAAAAAAQDRAID/AAAAAAAAAQDaAHv/AAAAAAAAAQClAEz/AAAAAAAAAQClADv/AAAAAAAAAQA=")
@@ -66,5 +64,3 @@ navigation_enabled = false
 position = Vector2(13320, -5941)
 
 [node name="Oel" parent="." instance=ExtResource("9_at1ld")]
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

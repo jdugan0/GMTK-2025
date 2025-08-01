@@ -74,7 +74,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"reload",
-"speed": 6.0
+"speed": 15.0
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder") groups=["hittable"]]
@@ -89,7 +89,7 @@ bullet = ExtResource("2_v6fml")
 fireSpeed = 10000.0
 firePos = NodePath("FirePos")
 bullets = 3
-fireDelay = 0.5
+fireDelay = 0.2
 sprite = NodePath("AnimatedSprite2D")
 arrowBulletHolder = NodePath("Node")
 arrowBullet = ExtResource("3_mdl7e")
@@ -103,6 +103,6 @@ position = Vector2(0, -197)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6fml")
-animation = &"empty"
+animation = &"reload"
 
 [node name="Node" type="Node2D" parent="."]

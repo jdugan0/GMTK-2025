@@ -44,10 +44,6 @@ navigation_enabled = false
 position = Vector2(13345, -5831)
 bullets = 0
 
-[node name="Bullet" parent="." instance=ExtResource("6_hbb88")]
-position = Vector2(16189, -5291)
-rotation = 0.785398
-
 [node name="Bullet2" parent="." instance=ExtResource("6_hbb88")]
 position = Vector2(15825, -5028)
 rotation = -0.785398

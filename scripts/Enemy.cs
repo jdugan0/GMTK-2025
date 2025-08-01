@@ -100,7 +100,7 @@ public partial class Enemy : CharacterBody2D
             }
         }
     }
-    public void SeenPlayer()
+    public async void SeenPlayer()
     {
         if (!playedSound)
         {
@@ -116,7 +116,9 @@ public partial class Enemy : CharacterBody2D
                 {
                     continue;
                 }
+                await ToSignal(GetTree().CreateTimer(0.3f), "timeout");
                 node.SeenPlayer();
+                break;
             }
         }
     }

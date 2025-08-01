@@ -37,7 +37,7 @@ size = Vector2(72, 203)
 radius = 48.0
 height = 244.0
 
-[node name="Bullet" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite") groups=["Bullet"]]
+[node name="Bullet2" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite") groups=["Bullet"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_hf8mt")

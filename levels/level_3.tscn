@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://4sd8y6qx2js0"]
+[gd_scene load_steps=10 format=4 uid="uid://dcd0ukcbsjayo"]
 
 [ext_resource type="Script" uid="uid://br3e01q0rtkhg" path="res://scripts/Camera.cs" id="1_lfnxh"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_ofchu"]
@@ -64,5 +64,3 @@ rotation = -1.0472
 tile_map_data = PackedByteArray("AACl/z3/AAAAAAAAAQC1/z7/AAAAAAAAAQDB/1D/AAAAAAAAAQD//yL/AAAAAAAAAQBX/2X/AAAAAAAAAQBk/1n/AAAAAAAAAQBV/zj/AAAAAAAAAQBg/y//AAAAAAAAAQBo/zn/AAAAAAAAAQCv/3P/AAAAAAAAAQDz/xb/AAAAAAAAAQCF/yL/AAAAAAAAAQCs/yL/AAAAAAAAAQDW/yH/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

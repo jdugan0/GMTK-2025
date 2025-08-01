@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtkuebyj01siw"]
+[gd_scene load_steps=12 format=3 uid="uid://dtkuebyj01siw"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_wltc5"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_k7el5"]
 [ext_resource type="Texture2D" uid="uid://yv4ffflib5y1" path="res://art/attackerLR_400x758.png" id="2_wltc5"]
+[ext_resource type="PackedScene" uid="uid://bm1pymxltn3gc" path="res://scenes/EnemyBullet.tscn" id="3_r1k2w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 175.114
@@ -11,7 +12,48 @@ radius = 175.114
 radius = 113.0
 height = 504.0
 
-[node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav") groups=["Enemy", "hittable"]]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1k2w"]
+atlas = ExtResource("2_wltc5")
+region = Rect2(0, 0, 400, 758)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt6rv"]
+atlas = ExtResource("2_wltc5")
+region = Rect2(400, 0, 400, 758)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72o25"]
+atlas = ExtResource("2_wltc5")
+region = Rect2(800, 0, 400, 758)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nun3"]
+atlas = ExtResource("2_wltc5")
+region = Rect2(0, 0, 400, 758)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7el5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1k2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt6rv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72o25")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nun3")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}]
+
+[node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite", "firePos") groups=["Enemy", "hittable"]]
 collision_layer = 5
 collision_mask = 3
 motion_mode = 1
@@ -21,14 +63,15 @@ ghost = ExtResource("2_k7el5")
 maxSpeed = 1000.0
 playerSeenDistance = 2500.0
 alertDistance = 3000.0
+attackDelay = 3.0
 desiredDistance = 1500.0
 stopBuffer = 50.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wltc5")
-offset = Vector2(-50.665, -67.1)
-region_enabled = true
-region_rect = Rect2(0, 0, 400, 758)
+coolDown = 1.5
+enemyBullet = ExtResource("3_r1k2w")
+sprite = NodePath("AnimatedSprite2D")
+fireSpeed = 2000.0
+firePos = NodePath("Node2D")
+enemyType = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_55jtl")
@@ -47,5 +90,14 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(4, 0)
 shape = SubResource("CapsuleShape2D_55jtl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, -59)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_k7el5")
+animation = &"Attack"
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-135, -297)
 
 [connection signal="body_entered" from="Area2D" to="." method="OnCol"]

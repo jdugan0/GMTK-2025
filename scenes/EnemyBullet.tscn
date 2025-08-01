@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm1pymxltn3gc"]
+[gd_scene load_steps=4 format=3 uid="uid://bm1pymxltn3gc"]
 
+[ext_resource type="Script" uid="uid://cmishs85k4peh" path="res://scripts/EnemyBullet.cs" id="1_s6wdq"]
 [ext_resource type="Texture2D" uid="uid://tf3hlmifms7y" path="res://art/attackLR_68x75.png" id="2_s6wdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
 size = Vector2(72, 76)
 
-[node name="Bullet" type="CharacterBody2D" groups=["Bullet"]]
-collision_layer = 2
-collision_mask = 4
+[node name="Bullet" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 8
+motion_mode = 1
+script = ExtResource("1_s6wdq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2ropf")

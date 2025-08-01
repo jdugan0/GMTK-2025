@@ -32,6 +32,7 @@ public partial class Movement : CharacterBody2D
     }
     public void Death()
     {
+        if (die) return;
         Rotation = 0;
         die = true;
         sprite.Play("death");

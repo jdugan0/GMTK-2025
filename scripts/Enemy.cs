@@ -18,6 +18,8 @@ public partial class Enemy : CharacterBody2D
     float coolDownTimer;
     [Export] PackedScene enemyBullet;
     [Export] AnimatedSprite2D sprite;
+    [Export] float fireSpeed = 8000.0f;
+    [Export] Node2D firePos;
     bool playerIn = false;
     enum EnemyTypes
     {
@@ -43,15 +45,14 @@ public partial class Enemy : CharacterBody2D
         {
             MoveToPlayer();
         }
-        GD.Print(attackTimer);
 
-        if (GameManager.instance.player.GlobalPosition.DistanceTo(GlobalPosition) <= desiredDistance && attackTimer >= attackDelay)
+        if (GameManager.instance.player.GlobalPosition.DistanceTo(GlobalPosition) <= (desiredDistance + stopBuffer) && attackTimer >= attackDelay)
         {
             Attack();
         }
         CheckForSeenPlayer();
     }
-    public void Attack()
+    public async void Attack()
     {
         attackTimer = 0f;
         coolDownTimer = 0f;
@@ -65,6 +66,16 @@ public partial class Enemy : CharacterBody2D
                 }
                 break;
             case EnemyTypes.RANGED:
+                sprite.Play("Attack");
+                await ToSignal(sprite, AnimatedSprite2D.SignalName.AnimationFinished);
+                Node node = enemyBullet.Instantiate();
+                GetTree().CurrentScene.AddChild(node);
+                EnemyBullet b = (EnemyBullet)node;
+                float angle = (GameManager.instance.player.GlobalPosition - firePos.GlobalPosition).Angle() + Mathf.Pi / 2;
+                b.Velocity = fireSpeed * Vector2.Up.Rotated(angle) + Velocity;
+                b.Rotate(angle);
+                b.GlobalPosition = firePos.GlobalPosition;
+                sprite.Play("Normal");
                 break;
         }
     }

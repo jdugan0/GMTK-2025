@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkqwtr4rnmqrm" path="res://levels/level_test.tscn" id="4_ja1x2"]
 [ext_resource type="PackedScene" uid="uid://3w055v7ms6c4" path="res://scenes/GameComplete.tscn" id="6_sg0go"]
 [ext_resource type="PackedScene" uid="uid://8wfma6nhdeui" path="res://levels/level_1.tscn" id="7_wp8u4"]
-[ext_resource type="PackedScene" uid="uid://4sd8y6qx2js0" path="res://levels/level_2.tscn" id="8_p7jox"]
+[ext_resource type="PackedScene" uid="uid://4sd8y6qx2js0" path="res://levels/level_3.tscn" id="8_p7jox"]
 
 [sub_resource type="Resource" id="Resource_dare8"]
 script = ExtResource("2_dare8")

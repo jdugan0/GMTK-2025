@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr54qoo8g7gow"]
+[gd_scene load_steps=4 format=3 uid="uid://cr54qoo8g7gow"]
 
 [ext_resource type="Script" uid="uid://8jkxksdv8lod" path="res://scripts/UI/EnemiesRemaining.cs" id="1_dq21l"]
 [ext_resource type="Script" uid="uid://brg6tyih14n45" path="res://scripts/BulletCount.cs" id="2_r50do"]
 [ext_resource type="PackedScene" uid="uid://d3ety2qufwm8w" path="res://scenes/BulletIcon.tscn" id="3_j5djn"]
-[ext_resource type="Texture2D" uid="uid://dqrbaogcmfclp" path="res://art/UI/heart.png" id="4_jm2fy"]
-[ext_resource type="Script" uid="uid://texbe0kd3gg2" path="res://levels/ui/Health.cs" id="5_cf1bu"]
 
 [node name="LevelHUD" type="CanvasLayer"]
 
@@ -19,10 +17,8 @@ mouse_filter = 1
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
-offset_left = 180.0
-offset_top = 3.0
-offset_right = 353.0
-offset_bottom = 94.0
+offset_right = 173.0
+offset_bottom = 91.0
 theme_override_font_sizes/font_size = 66
 text = "0 / 20"
 script = ExtResource("1_dq21l")
@@ -37,10 +33,3 @@ offset_bottom = 813.0
 grow_horizontal = 0
 script = ExtResource("2_r50do")
 bulletIcon = ExtResource("3_j5djn")
-
-[node name="Health" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("4_jm2fy")
-script = ExtResource("5_cf1bu")

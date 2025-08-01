@@ -60,4 +60,5 @@ theme_override_font_sizes/font_size = 116
 text = "QUIT"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Levels" to="." method="Levels"]
+[connection signal="pressed" from="Panel/VBoxContainer/Options" to="." method="Options"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="Quit"]

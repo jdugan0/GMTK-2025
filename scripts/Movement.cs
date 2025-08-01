@@ -81,6 +81,7 @@ public partial class Movement : CharacterBody2D
     public void TakeDamage(int amount = 1)
     {
         health -= amount;
+        AudioManager.instance.PlaySFX("playerHit");
         EmitSignal(SignalName.HealthChanged, amount);
         if (health <= 0)
         {

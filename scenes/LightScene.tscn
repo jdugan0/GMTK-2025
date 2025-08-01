@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq21be1h6fpby"]
+
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="1_uoada"]
+
+[node name="LightScene" type="PointLight2D"]
+color = Color(1, 0.705882, 0.352941, 1)
+energy = 3.0
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("1_uoada")
+texture_scale = 20.0

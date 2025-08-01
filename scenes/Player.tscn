@@ -135,6 +135,6 @@ position = Vector2(0, -197)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6fml")
-animation = &"roll"
+animation = &"empty"
 
 [node name="Node" type="Node2D" parent="."]

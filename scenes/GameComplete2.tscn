@@ -33,6 +33,7 @@ expand_mode = 1
 
 [node name="Main Menu" type="Button" parent="GameComplete"]
 process_mode = 3
+layout_mode = 0
 offset_left = 1194.0
 offset_top = 892.0
 offset_right = 1946.0

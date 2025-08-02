@@ -22,15 +22,22 @@ public partial class Enemy : CharacterBody2D
     [Export] Node2D firePos;
     bool playerIn = false;
     [Export] PackedScene corpse;
+    int health = 2;
     enum EnemyTypes
     {
         NORMAL,
-        RANGED
+        RANGED,
+        PROT
     }
     [Export] EnemyTypes enemyType = EnemyTypes.NORMAL;
 
     public void Death()
     {
+        if (health > 1)
+        {
+            health--;
+            return;
+        }
         AudioManager.instance.PlaySFX("hitSuccess");
         Node2D ghostNode = ghost.Instantiate<Node2D>();
         GetTree().CurrentScene.AddChild(ghostNode);

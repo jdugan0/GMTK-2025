@@ -41,7 +41,6 @@ public partial class Bullet : CharacterBody2D
         if (stuck)
         {
             pickupRadius.Disabled = false;
-            shape.Disabled = true;
             float scaleFactor = 0.25f * Mathf.Sin(2 * timeStuck) + 1.25f;
             sprite.Scale = new Vector2(scaleFactor, scaleFactor);
             sprite.Animation = "OnGround";

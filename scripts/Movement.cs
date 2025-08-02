@@ -234,6 +234,14 @@ public partial class Movement : CharacterBody2D
         }
     }
 
+    public void ResolvePickup(Node node)
+    {
+        if (node is Bullet b)
+        {
+            b.ResolvePickup(this);
+        }
+    }
+
 
     public void Fire()
     {

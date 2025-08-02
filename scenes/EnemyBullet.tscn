@@ -59,7 +59,4 @@ region_enabled = true
 region_rect = Rect2(0, 0, 68, 75)
 
 [node name="LightScene" parent="." instance=ExtResource("4_rdk3h")]
-energy = 0.2
-minInterval = 6.0
-maxInterval = 15.0
-maxDip = 0.8
+energy = 1.2

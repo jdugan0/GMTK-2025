@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=60 format=3 uid="uid://fgf17ec1udc6"]
+[gd_resource type="TileSet" load_steps=58 format=3 uid="uid://fgf17ec1udc6"]
 
 [ext_resource type="Texture2D" uid="uid://cnmlq2mwg6njm" path="res://art/tilesetA.png" id="1_bso50"]
 [ext_resource type="PackedScene" uid="uid://c5vl1rsn6absb" path="res://scenes/LevelEnd.tscn" id="1_eqorc"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dq21be1h6fpby" path="res://scenes/LightScene.tscn" id="7_2hmb2"]
 [ext_resource type="Texture2D" uid="uid://dcyl63bgysm3x" path="res://art/corridor_special_tiles.png" id="8_1kdkm"]
 [ext_resource type="PackedScene" uid="uid://1t3lqawpi0vh" path="res://scenes/blue_light_scene.tscn" id="8_lph3c"]
-[ext_resource type="PackedScene" uid="uid://bmwt7jp5lxakw" path="res://scenes/light_scene_small.tscn" id="9_334jo"]
-[ext_resource type="PackedScene" uid="uid://bjb4qcr3mslit" path="res://scenes/light_scene_big.tscn" id="10_v7v8s"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bso50"]
 resource_name = "Door"
@@ -419,8 +417,6 @@ texture_region_size = Vector2i(400, 400)
 resource_name = "Lights"
 scenes/1/scene = ExtResource("7_2hmb2")
 scenes/2/scene = ExtResource("8_lph3c")
-scenes/3/scene = ExtResource("9_334jo")
-scenes/4/scene = ExtResource("10_v7v8s")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2mkbj"]
 vertices = PackedVector2Array(200, 200, -200, 200, -200, 10.9844, 7.84375, -200, 200, -200)

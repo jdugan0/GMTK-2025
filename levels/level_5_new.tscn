@@ -61,13 +61,14 @@ position = Vector2(-4501, -3050)
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="Lights" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD0/9//BAAAAAAAAgD0/+P/BAAAAAAAAgD0/+z/BAAAAAAAAgD0/9z/BAAAAAAAAgD0/9f/BAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAD0/9//BAAAAAAAAgD0/+P/BAAAAAAAAgD0/+z/BAAAAAAAAgD0/9z/BAAAAAAAAgD0/9f/BAAAAAAAAgD0//P/BAAAAAAAAgA=")
 tile_set = ExtResource("2_swv33")
 
 [node name="Bullet2" parent="." instance=ExtResource("11_rosce")]
-position = Vector2(-4591, -5421)
+position = Vector2(-4604, -5399)
 
-[node name="SpeakTrigger2" parent="." instance=ExtResource("12_swv33")]
-position = Vector2(1025, 119)
-lineName = "on_damage"
-type = 4
+[node name="SpeakTrigger" parent="." instance=ExtResource("12_swv33")]
+position = Vector2(-4683, -7199)
+lineName = "pierce_intro"
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

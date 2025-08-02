@@ -36,7 +36,7 @@ public partial class Enemy : CharacterBody2D
     {
         AudioManager.instance.PlaySFX("hitSuccess");
         AudioManager.instance.PlaySFX("vampHiss");
-        EmitSignal(GameManager.SignalName.EnemyHit);
+        // EmitSignal(GameManager.SignalName.EnemyHit);
         if (health > 1 && enemyType == EnemyTypes.PROT)
         {
             health--;
@@ -53,12 +53,12 @@ public partial class Enemy : CharacterBody2D
     }
     public void OnCol(Node2D node)
     {
-        if (node is Bullet b)
-        {
-            if (b.stuck) return;
-            b.Hit();
-            Death();
-        }
+        // if (node is Bullet b)
+        // {
+        //     if (b.stuck) return;
+        //     b.Hit();
+        //     Death();
+        // }
     }
     public override void _PhysicsProcess(double delta)
     {

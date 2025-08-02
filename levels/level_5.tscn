@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dry8mgrnd1de7"]
+[gd_scene load_steps=14 format=4 uid="uid://dry8mgrnd1de7"]
 
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_yaabq"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dhnqt"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_ldpug"]
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="9_p0827"]
 [ext_resource type="PackedScene" uid="uid://b2b8ptmqti8kl" path="res://scenes/BulletPierce.tscn" id="11_a58qw"]
-[ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_ij65d"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mgx0j"]
 scenes/1/scene = ExtResource("6_gci8k")
@@ -98,10 +97,3 @@ position = Vector2(61, -12257)
 
 [node name="Bullet3" parent="." instance=ExtResource("5_ij65d")]
 position = Vector2(2903, -18687)
-
-[node name="SpeakTrigger2" parent="." instance=ExtResource("12_ij65d")]
-position = Vector2(1025, 119)
-lineName = "on_damage"
-type = 4
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

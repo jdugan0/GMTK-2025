@@ -6,7 +6,11 @@
 size = Vector2(1600, 1600)
 
 [node name="SpeakTrigger" type="Area2D"]
+collision_layer = 1023
+collision_mask = 1023
 script = ExtResource("1_wjote")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wjote")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

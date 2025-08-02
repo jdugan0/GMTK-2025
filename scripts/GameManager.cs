@@ -17,6 +17,8 @@ public partial class GameManager : Node
     public OEL oel;
     [Export] public int maxLevelUnlocked = 1;
     public Camera camera;
+    public string currentSong;
+    [Export] string[] songNames;
     public override void _Ready()
     {
         instance = this;
@@ -71,7 +73,7 @@ public partial class GameManager : Node
         GameManager.instance.currentLevelID = id;
         AudioManager.instance.CancelSFX("mainMenu");
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(levels[id - 1]);
-        await GameManager.instance.StartMusic();
+        await GameManager.instance.StartMusic(songNames[id - 1]);
         SpeedrunManager.levelTime = 0;
     }
     public async void RestartLevel()
@@ -85,20 +87,24 @@ public partial class GameManager : Node
         RestartLevel();
     }
 
-    public async Task StartMusic()
+    public async Task StartMusic(string songName)
     {
-        if (!AudioManager.instance.IsPlaying("lvl1Main") && !AudioManager.instance.IsPlaying("lvl1Intro"))
+        currentSong = songName;
+        if (!AudioManager.instance.IsPlaying(songName) && !AudioManager.instance.IsPlaying(songName + "Intro"))
         {
-            AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX("lvl1Intro");
-            await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
-            AudioManager.instance.PlaySFX("lvl1Main");
+            if (AudioManager.instance.SoundExists(songName + "Intro"))
+            {
+                AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX(songName + "Intro");
+                await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
+            }
+            AudioManager.instance.PlaySFX(songName);
         }
     }
 
     public void CancelMusic()
     {
-        AudioManager.instance.CancelSFX("lvl1Intro");
-        AudioManager.instance.CancelSFX("lvl1Main");
+        AudioManager.instance.CancelSFX(currentSong);
+        AudioManager.instance.CancelSFX(currentSong + "Intro");
     }
 
 

@@ -62,7 +62,7 @@ tile_set = ExtResource("2_dhnqt")
 navigation_enabled = false
 
 [node name="Camera2D" parent="." instance=ExtResource("9_p0827")]
-position = Vector2(-16511, 9012)
+position = Vector2(-38, 2227)
 
 [node name="Player" parent="." instance=ExtResource("4_a58qw")]
 position = Vector2(11, 2164)

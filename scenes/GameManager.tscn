@@ -6,3 +6,4 @@
 process_mode = 3
 script = ExtResource("1_34tde")
 maxLevelUnlocked = 5
+songNames = PackedStringArray("lvl1", "lvl1", "lvl1", "lvl2", "lvl2", "spooky")

@@ -7,7 +7,8 @@ public partial class Dialouge : Resource
     {
         SHOCKED,
         RELIEVED,
-        AFRAID
+        AFRAID,
+        CONFIDENT
     }
     [Export] public Emotion emotion;
 }

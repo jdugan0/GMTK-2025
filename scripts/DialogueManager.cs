@@ -9,6 +9,7 @@ public partial class DialogueManager : Node
     [Export] Texture2D shockedTextBox;
     [Export] Texture2D relievedTextBox;
     [Export] Texture2D afraidTextBox;
+    [Export] Texture2D confidentTextBox;
 
     [Export] Control display;
     [Export] Label text;
@@ -32,6 +33,9 @@ public partial class DialogueManager : Node
                 break;
             case Dialouge.Emotion.AFRAID:
                 box.Texture = afraidTextBox;
+                break;
+            case Dialouge.Emotion.CONFIDENT:
+                box.Texture = confidentTextBox;
                 break;
         }
         var tweenIn = CreateTween();

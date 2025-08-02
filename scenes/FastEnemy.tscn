@@ -91,6 +91,7 @@ corpse = ExtResource("3_8s80y")
 shape = SubResource("CircleShape2D_55jtl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
 path_postprocessing = 1
 radius = 500.0
 max_speed = 1000.0

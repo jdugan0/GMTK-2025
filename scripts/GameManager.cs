@@ -72,6 +72,7 @@ public partial class GameManager : Node
         AudioManager.instance.CancelSFX("mainMenu");
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(levels[id - 1]);
         await GameManager.instance.StartMusic();
+        SpeedrunManager.levelTime = 0;
     }
     public async void RestartLevel()
     {

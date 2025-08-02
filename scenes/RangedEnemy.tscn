@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtkuebyj01siw"]
+[gd_scene load_steps=14 format=3 uid="uid://dtkuebyj01siw"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_wltc5"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_k7el5"]
 [ext_resource type="Texture2D" uid="uid://yv4ffflib5y1" path="res://art/attackerLR_400x758.png" id="2_wltc5"]
 [ext_resource type="PackedScene" uid="uid://bm1pymxltn3gc" path="res://scenes/EnemyBullet.tscn" id="3_r1k2w"]
 [ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="4_pt6rv"]
+[ext_resource type="PackedScene" uid="uid://dq21be1h6fpby" path="res://scenes/LightScene.tscn" id="6_72o25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 175.114
@@ -54,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite", "firePos") groups=["Enemy", "hittable"]]
+[node name="RangedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite", "firePos", "enemyLight") groups=["Enemy", "hittable"]]
 scale = Vector2(1.305, 1.305)
 collision_layer = 2
 collision_mask = 7
@@ -74,6 +75,7 @@ sprite = NodePath("AnimatedSprite2D")
 fireSpeed = 2000.0
 firePos = NodePath("Node2D")
 corpse = ExtResource("4_pt6rv")
+enemyLight = NodePath("LightScene")
 enemyType = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -99,8 +101,16 @@ position = Vector2(-32, -59)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_k7el5")
 animation = &"Attack"
+frame = 2
+frame_progress = 1.0
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-135, -297)
+
+[node name="LightScene" parent="." instance=ExtResource("6_72o25")]
+position = Vector2(-137.165, -291.954)
+enabled = false
+energy = 1.2
+shadow_enabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="OnCol"]

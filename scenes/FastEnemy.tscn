@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_ldiid"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_jws25"]
-[ext_resource type="PackedScene" path="res://scenes/DeadEnemy.tscn" id="3_8s80y"]
+[ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="3_8s80y"]
 [ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="5_8s80y"]
 [ext_resource type="Texture2D" uid="uid://wvyewxjg512e" path="res://art/attackerFast_331x728.png" id="5_jws25"]
 
@@ -122,6 +122,7 @@ shape = SubResource("RectangleShape2D_mpr68")
 position = Vector2(-3, -198)
 color = Color(0.970975, 0.0480647, 3.85046e-07, 1)
 energy = 0.8
+shadow_enabled = true
 texture = ExtResource("5_8s80y")
 texture_scale = 10.0
 

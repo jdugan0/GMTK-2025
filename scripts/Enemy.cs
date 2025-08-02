@@ -23,6 +23,7 @@ public partial class Enemy : CharacterBody2D
     bool playerIn = false;
     [Export] PackedScene corpse;
     int health = 2;
+    [Export] Light2D enemyLight;
     enum EnemyTypes
     {
         NORMAL,
@@ -108,9 +109,11 @@ public partial class Enemy : CharacterBody2D
                 break;
             case EnemyTypes.RANGED:
                 sprite.Play("Attack");
+                enemyLight.Enabled = true;
                 AudioStreamPlayer a = AudioManager.instance.PlaySFX("rangeCharge");
                 await ToSignal(a, AudioStreamPlayer.SignalName.Finished);
                 await ToSignal(sprite, AnimatedSprite2D.SignalName.AnimationFinished);
+                enemyLight.Enabled = false;
                 Node node = enemyBullet.Instantiate();
                 GetTree().CurrentScene.AddChild(node);
                 EnemyBullet b = (EnemyBullet)node;

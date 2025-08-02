@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://1t3lqawpi0vh"]
+
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="1_66tfi"]
+[ext_resource type="Script" uid="uid://dn6vvnvxo3oiw" path="res://scripts/LightFlicker.cs" id="2_tqhi4"]
+[ext_resource type="Texture2D" uid="uid://cu0v36637q2ia" path="res://art/torch1.png" id="3_5rhbs"]
+[ext_resource type="Texture2D" uid="uid://b52d126gr41x3" path="res://art/torch2.png" id="4_jh7vw"]
+[ext_resource type="Texture2D" uid="uid://c2jn3qx5f3s2m" path="res://art/torch3.png" id="5_w6yba"]
+[ext_resource type="Texture2D" uid="uid://bppnfuqymmq8v" path="res://art/torch4.png" id="6_2jnje"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aavev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5rhbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w6yba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2jnje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jh7vw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="BlueLightScene" type="PointLight2D"]
+color = Color(0.377466, 0.710808, 0.99884, 1)
+energy = 2.1
+shadow_filter = 1
+texture = ExtResource("1_66tfi")
+texture_scale = 12.6
+script = ExtResource("2_tqhi4")
+minInterval = 0.1
+maxInterval = 1.0
+minFlickerDuration = 0.1
+maxFlickerDuration = 0.5
+maxDip = 0.8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_aavev")
+autoplay = "default"
+frame_progress = 0.621964

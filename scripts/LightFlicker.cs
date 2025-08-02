@@ -5,9 +5,12 @@ public partial class LightFlicker : PointLight2D
 {
     [Export] public float minInterval = 6.0f;
     [Export] public float maxInterval = 18.0f;
-    [Export] public float flickerDuration = 0.20f;
+    [Export] public float minFlickerDuration = 0.20f;
+    [Export] public float maxFlickerDuration = 0.20f;
     [Export] public float maxDip = 0.5f;
+    [Export] public float renderRange = 3000;
     private Timer timer;
+    private Movement player;
     private RandomNumberGenerator rng = new RandomNumberGenerator();
     private Tween tween;
     public override void _Ready()
@@ -19,7 +22,25 @@ public partial class LightFlicker : PointLight2D
         AddChild(timer);
         timer.Timeout += OnTimerTimeout;
         ScheduleNext();
+        player = GameManager.instance.player;
     }
+
+    public async void periodic(float period)
+    {
+        while (true)
+        {
+            await ToSignal(GetTree().CreateTimer(period), "timeout");
+            if (Position.DistanceTo(player.Position) > renderRange)
+            {
+                Enabled = false;
+            }
+            else
+            {
+                Enabled = true;
+            }
+        }
+    }
+
 
     private void ScheduleNext()
     {
@@ -36,12 +57,13 @@ public partial class LightFlicker : PointLight2D
     {
         float baseEnergy = Energy;
         float depth = rng.RandfRange(0.10f, Mathf.Clamp(maxDip, 0.05f, 0.9f));
+        float flickerDuration = rng.RandfRange(minFlickerDuration, maxFlickerDuration);
         float dipTarget = MathF.Max(0.0f, baseEnergy * (1.0f - depth));
         if (tween != null && tween.IsValid())
             tween.Kill();
 
         tween = CreateTween()
-            .SetTrans(Tween.TransitionType.Sine)
+            .SetTrans(Tween.TransitionType.Quad)
             .SetEase(Tween.EaseType.InOut);
 
         tween.TweenProperty(this, "energy", dipTarget, flickerDuration * 0.35f);

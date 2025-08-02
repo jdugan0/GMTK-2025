@@ -1,0 +1,58 @@
+[gd_scene load_steps=13 format=3 uid="uid://ccgp6qf6nv00i"]
+
+[ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_rosce"]
+[ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_swv33"]
+[ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="3_kenkb"]
+[ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="4_gxn5j"]
+[ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="6_bppgn"]
+[ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="7_3kfvf"]
+[ext_resource type="PackedScene" uid="uid://c2qg6ys7x5u2m" path="res://scenes/FastEnemy.tscn" id="8_p855r"]
+[ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="9_hdvde"]
+[ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="10_tb71p"]
+[ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="11_eisyx"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0fd8o"]
+scenes/1/scene = ExtResource("6_bppgn")
+scenes/2/scene = ExtResource("7_3kfvf")
+scenes/3/scene = ExtResource("8_p855r")
+scenes/4/scene = ExtResource("9_hdvde")
+
+[sub_resource type="TileSet" id="TileSet_dmnu2"]
+tile_size = Vector2i(100, 100)
+sources/0 = SubResource("TileSetScenesCollectionSource_0fd8o")
+
+[node name="5" type="Node2D"]
+
+[node name="LevelHUD" parent="." instance=ExtResource("1_rosce")]
+
+[node name="Floor" type="TileMapLayer" parent="." groups=["hittable"]]
+tile_set = ExtResource("2_swv33")
+navigation_enabled = false
+
+[node name="Walls_Nav" type="TileMapLayer" parent="." groups=["hittable"]]
+tile_set = ExtResource("2_swv33")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_kenkb")]
+
+[node name="Decor" type="TileMapLayer" parent="."]
+position = Vector2(1, 0)
+tile_set = ExtResource("2_swv33")
+navigation_enabled = false
+
+[node name="Player" parent="." instance=ExtResource("4_gxn5j")]
+position = Vector2(-4487, -3040)
+
+[node name="Enemy" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_dmnu2")
+navigation_enabled = false
+
+[node name="Camera2D" parent="." instance=ExtResource("10_tb71p")]
+position = Vector2(-4501, -3050)
+
+[node name="Oel" parent="." instance=ExtResource("11_eisyx")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[node name="Lights" type="TileMapLayer" parent="."]
+tile_set = ExtResource("2_swv33")

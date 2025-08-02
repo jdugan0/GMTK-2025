@@ -93,7 +93,7 @@ tile_map_data = PackedByteArray("AAD7/wIABAAAAAAAAQACAPf/BAAAAAAAAQD9//f/BAAAAAA
 tile_set = ExtResource("2_gwceb")
 
 [node name="SpeakTrigger" parent="." instance=ExtResource("12_aerfg")]
-position = Vector2(1025, 119)
+position = Vector2(964, 125)
 lineName = "game_start"
 type = 1
 
@@ -101,3 +101,16 @@ type = 1
 position = Vector2(1025, 119)
 lineName = "on_damage"
 type = 4
+
+[node name="SpeakTrigger3" parent="." instance=ExtResource("12_aerfg")]
+position = Vector2(-1, -1314)
+scale = Vector2(1.47884, 0.7484)
+lineName = "1_return"
+onlyOnEnd = true
+
+[node name="SpeakTrigger4" parent="." instance=ExtResource("12_aerfg")]
+position = Vector2(12947, -5833)
+lineName = "3_down"
+type = 5
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

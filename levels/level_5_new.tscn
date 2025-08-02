@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=4 uid="uid://ccgp6qf6nv00i"]
 
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_rosce"]
-[ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_swv33"]
+[ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/art/tilesets/TileSet.tres" id="2_swv33"]
 [ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="3_kenkb"]
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="4_gxn5j"]
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="6_bppgn"]
@@ -69,6 +69,12 @@ position = Vector2(-4604, -5399)
 
 [node name="SpeakTrigger" parent="." instance=ExtResource("12_swv33")]
 position = Vector2(-4683, -7199)
+scale = Vector2(1.36401, 1.10318)
 lineName = "pierce_intro"
+
+[node name="SpeakTrigger2" parent="." instance=ExtResource("12_swv33")]
+position = Vector2(-4708, -15846)
+lineName = "easy_peasy"
+type = 5
 
 [connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

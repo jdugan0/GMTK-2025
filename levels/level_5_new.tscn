@@ -48,7 +48,7 @@ navigation_enabled = false
 position = Vector2(-4487, -3040)
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADR/6X/AAAAAAAAAwDn/1P/AAAAAAAAAwDL/2f/AAAAAAAAAQDX/2f/AAAAAAAAAQCAAGD/AAAAAAAAAgBgAEv/AAAAAAAABABfAHH/AAAAAAAAAgC6/1j/AAAAAAAAAgDe/1X/AAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AADR/6X/AAAAAAAAAwDn/1P/AAAAAAAAAwDL/2f/AAAAAAAAAQDX/2f/AAAAAAAAAQCAAGD/AAAAAAAAAgBgAEv/AAAAAAAABABfAHH/AAAAAAAAAgC6/1j/AAAAAAAAAgDe/1X/AAAAAAAAAgBCAFr/AAAAAAAAAwBCAGL/AAAAAAAAAwA=")
 tile_set = SubResource("TileSet_dmnu2")
 navigation_enabled = false
 

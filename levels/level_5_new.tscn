@@ -76,5 +76,3 @@ lineName = "pierce_intro"
 position = Vector2(-4708, -15846)
 lineName = "easy_peasy"
 type = 5
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

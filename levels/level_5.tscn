@@ -66,7 +66,7 @@ navigation_enabled = false
 position = Vector2(-38, 2227)
 
 [node name="Player" parent="." instance=ExtResource("4_a58qw")]
-position = Vector2(11, 2164)
+position = Vector2(49, 199)
 
 [node name="Bullet6" parent="." instance=ExtResource("5_ij65d")]
 position = Vector2(10570, -14212)

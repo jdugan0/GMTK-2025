@@ -11,8 +11,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 158.0
-height = 554.0
+radius = 192.935
+height = 582.375
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1k2w"]
 atlas = ExtResource("2_wltc5")
@@ -84,7 +84,8 @@ shape = SubResource("CircleShape2D_55jtl")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_max_distance = 25.0
 path_postprocessing = 1
-radius = 500.0
+radius = 1000.0
+neighbor_distance = 10009.0
 max_speed = 1000.0
 debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)
 

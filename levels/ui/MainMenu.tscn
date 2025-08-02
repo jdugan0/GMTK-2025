@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bln2h1yf6bgd6"]
+[gd_scene load_steps=7 format=3 uid="uid://bln2h1yf6bgd6"]
 
 [ext_resource type="Script" uid="uid://b0n73vfovoueu" path="res://scripts/UI/MainMenu.cs" id="1_s0hl8"]
 [ext_resource type="Texture2D" uid="uid://c7mjr43ipxlsx" path="res://art/homeEllie.png" id="2_le7e1"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_q8b54"]
 [ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="4_q8b54"]
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="5_65jyh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8b54"]
 texture = ExtResource("2_q8b54")
@@ -63,6 +64,15 @@ layout_mode = 2
 theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 116
 text = "QUIT"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(929, 494)
+color = Color(0.655826, 0.478455, 0.278206, 1)
+texture = ExtResource("5_65jyh")
+texture_scale = 14.91
 
 [connection signal="pressed" from="Panel/VBoxContainer/Levels" to="." method="Levels"]
 [connection signal="pressed" from="Panel/VBoxContainer/Options" to="." method="Options"]

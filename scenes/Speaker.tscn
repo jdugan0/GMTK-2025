@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://n1i870278n80"]
+[gd_scene load_steps=29 format=3 uid="uid://n1i870278n80"]
 
 [ext_resource type="Script" uid="uid://dqt60nudgh88q" path="res://scripts/DialogueManager.cs" id="1_8rf17"]
 [ext_resource type="Script" uid="uid://mfnpo33dme3a" path="res://scripts/UI/Dialouge.cs" id="2_5sv7i"]
@@ -7,20 +7,110 @@
 
 [sub_resource type="Resource" id="Resource_05xiv"]
 script = ExtResource("2_5sv7i")
-line = "the doors are locked.... i guess i'll have to use whatever i can find..."
+line = "Looks like I'll have to scrounge around and recycle whatever I can find..."
 emotion = 0
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="Resource" id="Resource_5sv7i"]
 script = ExtResource("2_5sv7i")
 line = "One more hit and I'm toast!"
-emotion = 0
+emotion = 2
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="Resource" id="Resource_mlfsg"]
 script = ExtResource("2_5sv7i")
-line = "Looks like that bullet pierces through enemies..."
+line = "Looks like this bullet can pierce through multiple enemies. Good thing I just got my crossbow revamped!"
 emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_pa5jc"]
+script = ExtResource("2_5sv7i")
+line = "My evasion skills are no joke! Take that vampires!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_2vdek"]
+script = ExtResource("2_5sv7i")
+line = "I just had to come back and admire the decor... For some reason...."
+emotion = 1
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_ycowp"]
+script = ExtResource("2_5sv7i")
+line = "That big guy will take two hits. I better be careful!"
+emotion = 0
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_0odl6"]
+script = ExtResource("2_5sv7i")
+line = "A perfectly me sized hallway!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_lwwvl"]
+script = ExtResource("2_5sv7i")
+line = "Let's blow this vampsicle stand!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_vgorr"]
+script = ExtResource("2_5sv7i")
+line = "They'll never see me coming from here!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_3qix3"]
+script = ExtResource("2_5sv7i")
+line = "THEY'RE GUARDING THE STAKE?? That's not fair...."
+emotion = 2
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_mv7ue"]
+script = ExtResource("2_5sv7i")
+line = "I bet this is where the cool vamps hang out... I'm glad i missed them!!"
+emotion = 0
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_v6pg2"]
+script = ExtResource("2_5sv7i")
+line = "Nice and easy! Just how I like it!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_8r56g"]
+script = ExtResource("2_5sv7i")
+line = "I wonder what it'd be like to be a vampire...."
+emotion = 0
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_rln71"]
+script = ExtResource("2_5sv7i")
+line = "Finally time to get out of here!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_awibv"]
+script = ExtResource("2_5sv7i")
+line = "That's more like it! Let's pierce through these undead losers!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_k4n8t"]
+script = ExtResource("2_5sv7i")
+line = "It sure is dark in here... I hope nothing scary pops up..."
+emotion = 1
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_hiysl"]
+script = ExtResource("2_5sv7i")
+line = "Three down, only a few more to go!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_wmocq"]
+script = ExtResource("2_5sv7i")
+line = "One last look before I leave forever... Why did I come  back here again?"
+emotion = 1
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37fbv"]
@@ -49,11 +139,26 @@ region = Rect2(0, 0, 1532, 317)
 [node name="Speaker" type="Node" node_paths=PackedStringArray("display", "text", "box")]
 process_mode = 3
 script = ExtResource("1_8rf17")
-lines = {
+lines = Dictionary[String, ExtResource("2_5sv7i")]({
+"2_return": SubResource("Resource_2vdek"),
+"3_down": SubResource("Resource_hiysl"),
+"3_end": SubResource("Resource_lwwvl"),
+"4_end": SubResource("Resource_mv7ue"),
+"5_return": SubResource("Resource_wmocq"),
+"armed": SubResource("Resource_awibv"),
+"big_guy": SubResource("Resource_ycowp"),
+"center": SubResource("Resource_3qix3"),
+"dark": SubResource("Resource_k4n8t"),
+"easy_peasy": SubResource("Resource_v6pg2"),
 "game_start": SubResource("Resource_05xiv"),
+"hall": SubResource("Resource_vgorr"),
+"leave": SubResource("Resource_rln71"),
 "on_damage": SubResource("Resource_5sv7i"),
-"pierce_intro": SubResource("Resource_mlfsg")
-}
+"passage": SubResource("Resource_0odl6"),
+"pierce_intro": SubResource("Resource_mlfsg"),
+"table_dodge": SubResource("Resource_pa5jc"),
+"wonder": SubResource("Resource_8r56g")
+})
 shockedTextBox = SubResource("AtlasTexture_37fbv")
 relievedTextBox = SubResource("AtlasTexture_5sv7i")
 afraidTextBox = SubResource("AtlasTexture_05xiv")

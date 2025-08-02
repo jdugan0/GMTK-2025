@@ -64,7 +64,7 @@ size = Vector2(72, 203)
 radius = 48.0
 height = 244.0
 
-[node name="Bullet2" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite") groups=["Bullet"]]
+[node name="Bullet2" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite", "trail") groups=["Bullet"]]
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_hf8mt")
@@ -72,6 +72,7 @@ stuck = true
 pickupRadius = NodePath("Area2D/CollisionShape2D")
 shape = NodePath("CollisionShape2D")
 sprite = NodePath("Sprite2D")
+trail = NodePath("GPUParticles2D")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-1, 50)

@@ -67,8 +67,8 @@ public partial class Movement : CharacterBody2D
             kind = Bullet.BulletType.Normal;
             return false;
         }
-        kind = magazine[^1];
-        magazine.RemoveAt(magazine.Count - 1);
+        kind = magazine[0];
+        magazine.RemoveAt(0); 
         return true;
     }
     public Bullet.BulletType GetBulletKindAt(int index) => (index >= 0 && index < magazine.Count) ? magazine[index] : Bullet.BulletType.Normal;

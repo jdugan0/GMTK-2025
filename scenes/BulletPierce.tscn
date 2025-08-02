@@ -1,0 +1,109 @@
+[gd_scene load_steps=17 format=3 uid="uid://b2b8ptmqti8kl"]
+
+[ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_wvamf"]
+[ext_resource type="PackedScene" uid="uid://dghh2wnp8oryo" path="res://scenes/BulletExplosion.tscn" id="2_0da75"]
+[ext_resource type="Texture2D" uid="uid://dgo5nbknn4twn" path="res://art/bowparticle_55x66.png" id="3_pq6lr"]
+[ext_resource type="Texture2D" uid="uid://bst5elsqs4i4k" path="res://art/crossheir_67x44.png" id="4_0da75"]
+[ext_resource type="Texture2D" uid="uid://c7au7vj1m303" path="res://art/playerBullet_171x300.png" id="4_2qoxe"]
+[ext_resource type="PackedScene" uid="uid://dq21be1h6fpby" path="res://scenes/LightScene.tscn" id="5_5u4nl"]
+
+[sub_resource type="Curve" id="Curve_4utqk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_51h0o"]
+curve = SubResource("Curve_4utqk")
+
+[sub_resource type="Curve" id="Curve_p1sfj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4m4t0"]
+curve = SubResource("Curve_p1sfj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p1sfj"]
+particle_flag_disable_z = true
+angle_min = -144.0
+angle_max = 113.7
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 1.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_4m4t0")
+alpha_curve = SubResource("CurveTexture_51h0o")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq6lr"]
+atlas = ExtResource("4_0da75")
+region = Rect2(0, 0, 67, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51h0o"]
+atlas = ExtResource("4_2qoxe")
+region = Rect2(0, 0, 171, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hf8mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq6lr")
+}],
+"loop": true,
+"name": &"Fired",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51h0o")
+}],
+"loop": true,
+"name": &"OnGround",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
+size = Vector2(72, 203)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1sfj"]
+radius = 48.0
+height = 244.0
+
+[node name="Bullet2" type="CharacterBody2D" node_paths=PackedStringArray("pickupRadius", "shape", "sprite", "trail") groups=["Bullet"]]
+collision_layer = 32
+collision_mask = 3
+script = ExtResource("1_wvamf")
+stuck = true
+pickupRadius = NodePath("Area2D/CollisionShape2D")
+shape = NodePath("CollisionShape2D")
+sprite = NodePath("Sprite2D")
+splinterBurst = ExtResource("2_0da75")
+trail = NodePath("GPUParticles2D")
+bulletType = 1
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 50)
+amount = 50
+texture = ExtResource("3_pq6lr")
+visibility_rect = Rect2(-50000, -50000, 100000, 100000)
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_p1sfj")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hf8mt")
+animation = &"Fired"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_2ropf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_p1sfj")
+
+[node name="LightScene" parent="." instance=ExtResource("5_5u4nl")]
+color = Color(0.147016, 0.905095, 0.666453, 1)
+energy = 0.4
+
+[connection signal="body_entered" from="Area2D" to="." method="ResolvePickup"]

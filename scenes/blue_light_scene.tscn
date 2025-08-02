@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1t3lqawpi0vh"]
+
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="1_66tfi"]
+[ext_resource type="Script" uid="uid://dn6vvnvxo3oiw" path="res://scripts/LightFlicker.cs" id="2_tqhi4"]
+
+[node name="BlueLightScene" type="PointLight2D"]
+color = Color(0.235353, 0.660042, 0.99766, 1)
+energy = 1.85
+shadow_filter = 1
+texture = ExtResource("1_66tfi")
+texture_scale = 9.38
+script = ExtResource("2_tqhi4")
+minInterval = 0.1
+maxInterval = 1.0
+minFlickerDuration = 0.1
+maxFlickerDuration = 0.5
+maxDip = 0.8

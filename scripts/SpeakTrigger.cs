@@ -10,6 +10,8 @@ public partial class SpeakTrigger : Area2D
 
     public enum TriggerType { ENTERED, START, FIRED, ENEMYHIT, DAMAGE }
 
+    [Export] public bool onlyOnEnd;
+
     public override void _Ready()
     {
         CallDeferred(nameof(SetupTriggers));
@@ -50,6 +52,7 @@ public partial class SpeakTrigger : Area2D
 
     private void Trigger()
     {
+        if (onlyOnEnd && GameManager.instance.enemiesRemaining != 0) return;
         if (fired) return;
         DialogueManager.instance.EnqueueLine(lineName);
         fired = true;

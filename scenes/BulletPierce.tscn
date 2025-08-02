@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2b8ptmqti8kl"]
+[gd_scene load_steps=16 format=3 uid="uid://b2b8ptmqti8kl"]
 
 [ext_resource type="Script" uid="uid://ci87fdtl4r0tg" path="res://scripts/Bullet.cs" id="1_wvamf"]
 [ext_resource type="PackedScene" uid="uid://dghh2wnp8oryo" path="res://scenes/BulletExplosion.tscn" id="2_0da75"]
 [ext_resource type="Texture2D" uid="uid://dgo5nbknn4twn" path="res://art/bowparticle_55x66.png" id="3_pq6lr"]
-[ext_resource type="Texture2D" uid="uid://bst5elsqs4i4k" path="res://art/crossheir_67x44.png" id="4_0da75"]
-[ext_resource type="Texture2D" uid="uid://c7au7vj1m303" path="res://art/playerBullet_171x300.png" id="4_2qoxe"]
+[ext_resource type="Texture2D" uid="uid://dkrpnermjuh6b" path="res://art/silverBullet_171x300.png" id="4_0da75"]
 [ext_resource type="PackedScene" uid="uid://dq21be1h6fpby" path="res://scenes/LightScene.tscn" id="5_5u4nl"]
 
 [sub_resource type="Curve" id="Curve_4utqk"]
@@ -35,10 +34,10 @@ alpha_curve = SubResource("CurveTexture_51h0o")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pq6lr"]
 atlas = ExtResource("4_0da75")
-region = Rect2(0, 0, 67, 44)
+region = Rect2(171, 0, 171, 300)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_51h0o"]
-atlas = ExtResource("4_2qoxe")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvamf"]
+atlas = ExtResource("4_0da75")
 region = Rect2(0, 0, 171, 300)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hf8mt"]
@@ -53,7 +52,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_51h0o")
+"texture": SubResource("AtlasTexture_wvamf")
 }],
 "loop": true,
 "name": &"OnGround",
@@ -89,7 +88,7 @@ process_material = SubResource("ParticleProcessMaterial_p1sfj")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hf8mt")
-animation = &"Fired"
+animation = &"OnGround"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

@@ -11,5 +11,4 @@ texture = ExtResource("1_uoada")
 texture_scale = 17.0
 script = ExtResource("2_kohcj")
 maxInterval = 15.0
-flickerDuration = 0.5
 maxDip = 0.8

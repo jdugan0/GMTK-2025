@@ -33,12 +33,14 @@ public partial class Enemy : CharacterBody2D
 
     public void Death()
     {
+        AudioManager.instance.PlaySFX("hitSuccess");
+        AudioManager.instance.PlaySFX("vampHiss");
         if (health > 1 && enemyType == EnemyTypes.PROT)
         {
             health--;
             return;
         }
-        AudioManager.instance.PlaySFX("hitSuccess");
+        
         Node2D ghostNode = ghost.Instantiate<Node2D>();
         GetTree().CurrentScene.AddChild(ghostNode);
         ghostNode.GlobalPosition = GlobalPosition;

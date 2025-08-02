@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtprbkd6fv5gw"
+path="res://.godot/imported/Strong Enemy Attack.wav-1697fda3fb0f08ec4cf5f58c144ebafb.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Strong Enemy Attack.wav"
+dest_files=["res://.godot/imported/Strong Enemy Attack.wav-1697fda3fb0f08ec4cf5f58c144ebafb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

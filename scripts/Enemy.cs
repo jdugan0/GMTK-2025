@@ -51,6 +51,7 @@ public partial class Enemy : CharacterBody2D
     {
         if (node is Bullet b)
         {
+            if (b.stuck) return;
             b.Hit();
             Death();
         }

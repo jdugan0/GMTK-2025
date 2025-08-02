@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2s5ywils2c5j"]
+
+[ext_resource type="Script" uid="uid://dsyhmrptnskyy" path="res://scripts/UI/PauseMenu.cs" id="1_an2t2"]
+[ext_resource type="Texture2D" uid="uid://bqvh6psqntqsx" path="res://art/ending1.png" id="2_an2t2"]
+[ext_resource type="Theme" uid="uid://70136ytkrcl6" path="res://art/themes/grayTheme.tres" id="3_dxb2m"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_an2t2")
+
+[node name="GameComplete" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="GameComplete"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_an2t2")
+expand_mode = 1
+
+[node name="Main Menu" type="Button" parent="GameComplete"]
+process_mode = 3
+offset_left = 1194.0
+offset_top = 892.0
+offset_right = 1946.0
+offset_bottom = 1083.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("3_dxb2m")
+theme_override_font_sizes/font_size = 66
+text = "MAIN MENU"
+
+[connection signal="pressed" from="GameComplete/Main Menu" to="." method="MainMenu"]

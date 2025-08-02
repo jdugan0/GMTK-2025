@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b4hssphxdggt5" path="res://levels/level_2.tscn" id="9_p7jox"]
 [ext_resource type="PackedScene" uid="uid://0fohlunqbspr" path="res://levels/ui/options.tscn" id="10_ht1on"]
 [ext_resource type="PackedScene" uid="uid://c67yqf3qd17es" path="res://levels/level_4.tscn" id="11_jjhwt"]
-[ext_resource type="PackedScene" uid="uid://dry8mgrnd1de7" path="res://levels/level_5.tscn" id="12_mxliv"]
+[ext_resource type="PackedScene" path="res://levels/level_5.tscn" id="12_mxliv"]
 [ext_resource type="PackedScene" uid="uid://c2s5ywils2c5j" path="res://scenes/GameComplete2.tscn" id="13_bp7pt"]
 
 [sub_resource type="Resource" id="Resource_dare8"]

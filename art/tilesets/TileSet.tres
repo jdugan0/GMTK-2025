@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://hkoajjdx2av5" path="res://art/tilesetC.png" id="4_thupg"]
 [ext_resource type="PackedScene" uid="uid://dq21be1h6fpby" path="res://scenes/LightScene.tscn" id="7_2hmb2"]
 [ext_resource type="Texture2D" uid="uid://dcyl63bgysm3x" path="res://art/corridor_special_tiles.png" id="8_1kdkm"]
-[ext_resource type="PackedScene" uid="uid://1t3lqawpi0vh" path="res://scenes/blue_light_scene.tscn" id="8_lph3c"]
-[ext_resource type="PackedScene" uid="uid://bmwt7jp5lxakw" path="res://scenes/light_scene_small.tscn" id="9_334jo"]
-[ext_resource type="PackedScene" uid="uid://bjb4qcr3mslit" path="res://scenes/light_scene_big.tscn" id="10_v7v8s"]
+[ext_resource type="PackedScene" path="res://scenes/blue_light_scene.tscn" id="8_lph3c"]
+[ext_resource type="PackedScene" path="res://scenes/light_scene_small.tscn" id="9_334jo"]
+[ext_resource type="PackedScene" path="res://scenes/light_scene_big.tscn" id="10_v7v8s"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bso50"]
 resource_name = "Door"

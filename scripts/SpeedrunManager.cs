@@ -7,8 +7,11 @@ public partial class SpeedrunManager : Node
     public static float totalTime;
     public override void _Process(double delta)
     {
-        totalTime += (float)delta;
-        levelTime += (float)delta;
+        if (GameManager.instance.currentLevelID != -1)
+        {
+            totalTime += (float)delta;
+            levelTime += (float)delta;
+        }
     }
 
 }

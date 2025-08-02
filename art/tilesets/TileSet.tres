@@ -20,8 +20,8 @@ polygon = PackedVector2Array(-200, -200, -125.537, -200, -122.399, -119.26, -200
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ayd2e"]
 polygon = PackedVector2Array(-200, -200, -43.938, -200, -37.6612, 200, -200, 200)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bl71o"]
-polygon = PackedVector2Array(-200, -200, -144.368, -200, -144.368, 134.952, 200, 131.814, 200, 200, -200, 200)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lw78u"]
+polygon = PackedVector2Array(-200, -200, -153.419, -200, -141.267, 132.153, 200, 141.267, 200, 200, -200, 200)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_51ekn"]
 polygon = PackedVector2Array(-200, -200, 200, -200, 200, -137.19, -200, -128.676)
@@ -79,7 +79,7 @@ texture_region_size = Vector2i(400, 400)
 5:3/0 = 0
 6:3/0 = 0
 0:4/0 = 0
-0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bl71o")
+0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_lw78u")
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-200, -200, -144.368, -200, -136, 120, 200, 131.814, 200, 200, -200, 200)
 1:4/0 = 0
 1:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_3figl")

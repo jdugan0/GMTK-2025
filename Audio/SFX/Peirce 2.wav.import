@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdbdhxn7r8d01"
+path="res://.godot/imported/Peirce 2.wav-fdd7cc8a49336575984c60e98f0edf51.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Peirce 2.wav"
+dest_files=["res://.godot/imported/Peirce 2.wav-fdd7cc8a49336575984c60e98f0edf51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

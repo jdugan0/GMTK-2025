@@ -45,7 +45,6 @@ navigation_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("3_at1ld")]
 position = Vector2(13345, -5831)
-bullets = 0
 
 [node name="Bullet2" parent="." instance=ExtResource("6_hbb88")]
 position = Vector2(17013, -12674)
@@ -67,5 +66,3 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 [node name="Lights" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAeAO7/BAAAAAAAAQAsAPD/BAAAAAAAAQAvAOn/BAAAAAAAAQAvAO//BAAAAAAAAQApAOP/BAAAAAAAAQAzAOL/BAAAAAAAAQA1ANv/BAAAAAAAAQAzANb/BAAAAAAAAQAxANH/BAAAAAAAAQAvAM3/BAAAAAAAAQAnAM3/BAAAAAAAAQAgAM//BAAAAAAAAQAbAM//BAAAAAAAAQAyAN//BAAAAAAAAQAqANv/BAAAAAAAAQApAOD/BAAAAAAAAQArANj/BAAAAAAAAQA0ANj/BAAAAAAAAQAuANb/BAAAAAAAAQAlAO//BAAAAAAAAQAWANH/BAAAAAAAAQASAMz/BAAAAAAAAQAaAMz/BAAAAAAAAQA=")
 tile_set = ExtResource("2_dfjjl")
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -8,7 +8,9 @@ public partial class LightFlicker : PointLight2D
     [Export] public float minFlickerDuration = 0.20f;
     [Export] public float maxFlickerDuration = 0.20f;
     [Export] public float maxDip = 0.5f;
+    [Export] public float renderRange = 3000;
     private Timer timer;
+    private Movement player;
     private RandomNumberGenerator rng = new RandomNumberGenerator();
     private Tween tween;
     public override void _Ready()
@@ -20,7 +22,25 @@ public partial class LightFlicker : PointLight2D
         AddChild(timer);
         timer.Timeout += OnTimerTimeout;
         ScheduleNext();
+        player = GameManager.instance.player;
     }
+
+    public async void periodic(float period)
+    {
+        while (true)
+        {
+            await ToSignal(GetTree().CreateTimer(period), "timeout");
+            if (Position.DistanceTo(player.Position) > renderRange)
+            {
+                Enabled = false;
+            }
+            else
+            {
+                Enabled = true;
+            }
+        }
+    }
+
 
     private void ScheduleNext()
     {

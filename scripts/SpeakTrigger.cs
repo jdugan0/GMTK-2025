@@ -7,8 +7,6 @@ public partial class SpeakTrigger : Area2D
     [Export] string lineName;
     [Export] TriggerType type;
 
-    // Optional: allow explicitly specifying a source node (else fall back to GameManager.player)
-    [Export] Node source;
 
     public enum TriggerType { ENTERED, START, FIRED, ENEMYHIT, DAMAGE }
 

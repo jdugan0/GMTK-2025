@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://n1i870278n80"]
+[gd_scene load_steps=13 format=3 uid="uid://n1i870278n80"]
 
 [ext_resource type="Script" uid="uid://dqt60nudgh88q" path="res://scripts/DialogueManager.cs" id="1_8rf17"]
 [ext_resource type="Script" uid="uid://mfnpo33dme3a" path="res://scripts/UI/Dialouge.cs" id="2_5sv7i"]
@@ -8,6 +8,12 @@
 [sub_resource type="Resource" id="Resource_05xiv"]
 script = ExtResource("2_5sv7i")
 line = "the doors are locked.... i guess i'll have to use whatever i can find..."
+emotion = 0
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_5sv7i"]
+script = ExtResource("2_5sv7i")
+line = "One more hit and I'm toast!"
 emotion = 0
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
@@ -35,9 +41,11 @@ atlas = ExtResource("2_fklqs")
 region = Rect2(0, 0, 1532, 317)
 
 [node name="Speaker" type="Node" node_paths=PackedStringArray("display", "text", "box")]
+process_mode = 3
 script = ExtResource("1_8rf17")
 lines = {
-"game_start": SubResource("Resource_05xiv")
+"game_start": SubResource("Resource_05xiv"),
+"on_damage": SubResource("Resource_5sv7i")
 }
 shockedTextBox = SubResource("AtlasTexture_37fbv")
 relievedTextBox = SubResource("AtlasTexture_5sv7i")
@@ -66,26 +74,26 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -766.0
-offset_top = -414.0
-offset_right = 766.0
-offset_bottom = -97.0
+offset_left = -574.5
+offset_top = -237.75
+offset_right = 574.5
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("AtlasTexture_fklqs")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/TextureRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.611
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.611
 anchor_bottom = 0.5
-offset_left = -397.0
-offset_top = -116.5
-offset_right = 766.0
-offset_bottom = 127.5
+offset_left = -436.039
+offset_top = -86.875
+offset_right = 436.961
+offset_bottom = 108.125
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 44
 autowrap_mode = 3

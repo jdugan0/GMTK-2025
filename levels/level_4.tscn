@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c67yqf3qd17es"]
+[gd_scene load_steps=15 format=4 uid="uid://c67yqf3qd17es"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="3_ng40l"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="8_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="9_04hp8"]
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_sc6c1"]
+[ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_8hlpj"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0fd8o"]
 scenes/1/scene = ExtResource("7_vru0x")
@@ -71,4 +72,9 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 tile_map_data = PackedByteArray("AADy//b/BAAAAAAAAQD9/+3/BAAAAAAAAQD5////BAAAAAAAAQD5//X/BAAAAAAAAQD+//j/BAAAAAAAAQAEAPj/BAAAAAAAAQABAOv/BAAAAAAAAQABAAEABAAAAAAAAQAQAAMABAAAAAAAAQASAP7/BAAAAAAAAQAOAPz/BAAAAAAAAQAOAPr/BAAAAAAAAQAKAPb/BAAAAAAAAQAGAPL/BAAAAAAAAQAYAPr/BAAAAAAAAQAjAPj/BAAAAAAAAQApAPL/BAAAAAAAAQAiAP7/BAAAAAAAAQAIAAMABAAAAAAAAQASAPj/BAAAAAAAAQA=")
 tile_set = ExtResource("2_sc6c1")
 
-[connection signal="body_entered" from="Decor/@Area2D@81360" to="Decor/@Area2D@81360" method="OnCol"]
+[node name="SpeakTrigger2" parent="." instance=ExtResource("12_8hlpj")]
+position = Vector2(1025, 119)
+lineName = "on_damage"
+type = 4
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

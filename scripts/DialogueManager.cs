@@ -41,14 +41,14 @@ public partial class DialogueManager : Node
         var tweenIn = CreateTween();
         tweenIn.SetEase(Tween.EaseType.Out);
         tweenIn.SetTrans(Tween.TransitionType.Cubic);
-        tweenIn.TweenProperty(display, "modulate:a", 0.7, 0.5).From(0);
+        tweenIn.TweenProperty(display, "modulate:a", 0.7, 0.2).From(0);
         await ToSignal(tweenIn, Tween.SignalName.Finished);
         text.Text = "";
         string full = d.line ?? "";
         for (int i = 0; i < full.Length; i++)
         {
             text.Text += full[i];
-            var timer = GetTree().CreateTimer(Mathf.Max(0f, 0.03));
+            var timer = GetTree().CreateTimer(Mathf.Max(0f, 0.02));
             await ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
         }
         var holdTimer = GetTree().CreateTimer(2);
@@ -57,7 +57,9 @@ public partial class DialogueManager : Node
         tweenOut.SetEase(Tween.EaseType.In);
         tweenOut.SetTrans(Tween.TransitionType.Cubic);
         tweenOut.TweenProperty(display, "modulate:a", 0.0, 0.5);
+
         await ToSignal(tweenOut, Tween.SignalName.Finished);
+        text.Text = "";
 
     }
 

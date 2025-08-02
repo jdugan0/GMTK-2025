@@ -86,6 +86,7 @@ desiredDistance = 400.0
 coolDown = 1.0
 sprite = NodePath("AnimatedSprite2D")
 corpse = ExtResource("3_8s80y")
+enemyType = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_55jtl")

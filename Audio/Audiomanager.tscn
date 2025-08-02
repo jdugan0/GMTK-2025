@@ -119,7 +119,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 [sub_resource type="Resource" id="Resource_v8qda"]
 script = ExtResource("2_subo3")
 stream = ExtResource("18_x3jbo")
-volume = 0.0
+volume = 10.0
 name = "slash"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
@@ -260,14 +260,14 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 [sub_resource type="Resource" id="Resource_dblve"]
 script = ExtResource("2_subo3")
 stream = ExtResource("38_ljrrh")
-volume = 0.0
+volume = 8.0
 name = "enemyStrong"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="Resource" id="Resource_5r4gf"]
 script = ExtResource("2_subo3")
 stream = ExtResource("39_flw6a")
-volume = 0.0
+volume = 10.0
 name = "enemyFast"
 metadata/_custom_type_script = "uid://007myadtw53h"
 

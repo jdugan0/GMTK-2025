@@ -8,6 +8,10 @@ public partial class EnemyBullet : CharacterBody2D
         var hit = MoveAndCollide(Velocity * (float)delta);
         if (hit != null)
             ResolveHit(hit);
+        if (Velocity.Length() == 0)
+        {
+            QueueFree();
+        }
     }
     private void ResolveHit(KinematicCollision2D hit)
     {

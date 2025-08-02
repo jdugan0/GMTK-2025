@@ -2,6 +2,11 @@ using Godot;
 using System;
 public partial class Bullet : CharacterBody2D
 {
+    public enum BulletType
+    {
+        Normal,
+        Pierce
+    }
 
     [Export] public bool stuck = false;
     [Export] private CollisionShape2D pickupRadius;
@@ -9,6 +14,7 @@ public partial class Bullet : CharacterBody2D
     [Export] AnimatedSprite2D sprite;
     [Export] PackedScene splinterBurst;
     [Export] GpuParticles2D trail;
+    [Export] public BulletType bulletType = BulletType.Normal;
     public bool playerFired = false;
     float timeStuck = 0f;
     public void SplinterBurst(KinematicCollision2D hit)
@@ -84,7 +90,7 @@ public partial class Bullet : CharacterBody2D
                 AudioManager.instance.PlaySFX("reload");
             }
             AudioManager.instance.PlaySFX("bulletPickup");
-            player.bullets++;
+            player.AddBullet(bulletType );
             QueueFree();
         }
     }

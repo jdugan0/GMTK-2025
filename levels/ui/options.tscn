@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://0fohlunqbspr"]
+[gd_scene load_steps=13 format=3 uid="uid://0fohlunqbspr"]
 
 [ext_resource type="Script" uid="uid://bkw53ywyvkt73" path="res://scripts/UI/Options.cs" id="1_v1bic"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_lqvsu"]
 [ext_resource type="Texture2D" uid="uid://bb5pkwengli7b" path="res://art/UI/temp_slider_knob.png" id="2_xqxg3"]
 [ext_resource type="Texture2D" uid="uid://bjgjqxudkgjyi" path="res://art/homebutton_1370x322.png" id="4_lqvsu"]
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="5_wk64w"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wk64w"]
 texture = ExtResource("2_lqvsu")
@@ -135,6 +136,15 @@ scale = Vector2(0.664102, 0.631029)
 theme = SubResource("Theme_ukys5")
 text = "Back
 "
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(929, 494)
+color = Color(0.655826, 0.478455, 0.278206, 1)
+texture = ExtResource("5_wk64w")
+texture_scale = 14.91
 
 [connection signal="value_changed" from="Panel/VBoxContainer/Volume Slider" to="." method="AdjustVolume"]
 [connection signal="pressed" from="Back" to="." method="MainMenu"]

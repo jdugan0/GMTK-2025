@@ -4,8 +4,7 @@
 
 [node name="LightScene" type="PointLight2D"]
 color = Color(1, 0.705882, 0.352941, 1)
-energy = 1.5
-shadow_enabled = true
+energy = 1.25
 shadow_filter = 1
 texture = ExtResource("1_uoada")
-texture_scale = 20.0
+texture_scale = 17.0

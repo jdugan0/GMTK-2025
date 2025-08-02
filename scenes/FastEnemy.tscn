@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2qg6ys7x5u2m"]
+
+[ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_ldiid"]
+[ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_jws25"]
+[ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="3_8s80y"]
+[ext_resource type="Texture2D" uid="uid://wvyewxjg512e" path="res://art/attackerFast_331x728.png" id="5_jws25"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
+radius = 175.114
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
+radius = 315.0
+height = 958.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldiid"]
+atlas = ExtResource("5_jws25")
+region = Rect2(0, 0, 330, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jws25"]
+atlas = ExtResource("5_jws25")
+region = Rect2(330, 0, 330, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s80y"]
+atlas = ExtResource("5_jws25")
+region = Rect2(0, 0, 330, 728)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_55jtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldiid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jws25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldiid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jws25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldiid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jws25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldiid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jws25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldiid")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s80y")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
+size = Vector2(855.19, 1026.06)
+
+[node name="FastEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
+collision_layer = 2
+collision_mask = 7
+motion_mode = 1
+script = ExtResource("1_ldiid")
+nav = NodePath("NavigationAgent2D")
+ghost = ExtResource("2_jws25")
+maxSpeed = 2000.0
+playerSeenDistance = 4000.0
+alertDistance = 3500.0
+attackDelay = 3.0
+desiredDistance = 400.0
+coolDown = 1.0
+sprite = NodePath("AnimatedSprite2D")
+corpse = ExtResource("3_8s80y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_55jtl")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+radius = 500.0
+max_speed = 1000.0
+debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_55jtl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_55jtl")
+animation = &"Attack"
+frame = 8
+frame_progress = 1.0
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_mpr68")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnCol"]
+[connection signal="body_entered" from="Area2D2" to="." method="BodyEntered"]
+[connection signal="body_exited" from="Area2D2" to="." method="BodyExited"]

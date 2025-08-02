@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bp4pbt66p04ah"]
+[gd_scene load_steps=19 format=3 uid="uid://bp4pbt66p04ah"]
 
 [ext_resource type="Script" uid="uid://d3t8putfy33y4" path="res://scripts/UI/LevelUI.cs" id="1_nlgad"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_2h0fi"]
 [ext_resource type="Texture2D" uid="uid://l2qtnihig6fl" path="res://art/levels_252x259.png" id="2_p3igk"]
 [ext_resource type="Script" uid="uid://brfmgp5o08hhn" path="res://scripts/UI/LevelButton.cs" id="4_dekjx"]
 [ext_resource type="Theme" uid="uid://0r7v0v6385k2" path="res://art/themes/Levels.tres" id="4_xagwo"]
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="6_dekjx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dekjx"]
 texture = ExtResource("2_2h0fi")
@@ -150,6 +151,15 @@ offset_bottom = -49.0
 grow_vertical = 0
 theme = ExtResource("4_xagwo")
 text = "BACK"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(929, 494)
+color = Color(0.655826, 0.478455, 0.278206, 1)
+texture = ExtResource("6_dekjx")
+texture_scale = 14.91
 
 [connection signal="pressed" from="GridContainer/TextureButton" to="GridContainer/TextureButton" method="LoadLevel"]
 [connection signal="pressed" from="GridContainer/TextureButton2" to="GridContainer/TextureButton2" method="LoadLevel"]

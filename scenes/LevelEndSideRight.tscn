@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmdusifb4ye1r"]
+[gd_scene load_steps=11 format=3 uid="uid://dmdusifb4ye1r"]
 
 [ext_resource type="Script" uid="uid://cdtp86dmdey3x" path="res://scripts/UI/LevelEnd.cs" id="1_kcsus"]
 [ext_resource type="Texture2D" uid="uid://cirkoj4cie8jo" path="res://art/exit_400x800.png" id="2_oaibo"]
 [ext_resource type="Texture2D" uid="uid://dvr8aiep5mn2h" path="res://art/levelComp_1414x1076.png" id="3_m86ap"]
 [ext_resource type="Theme" uid="uid://dinqa4ftyknty" path="res://art/themes/greyTheme.tres" id="4_kcsus"]
+[ext_resource type="Script" uid="uid://cq1o4nmnx6koa" path="res://scripts/TimeDisplay.cs" id="4_oaibo"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaibo"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m86ap"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgtyk"]
 atlas = ExtResource("2_oaibo")
@@ -72,13 +73,19 @@ offset_bottom = 353.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxEmpty_oaibo")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m86ap")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.408
+anchor_top = -0.264
+anchor_right = 1.408
+anchor_bottom = 1.264
+offset_left = 431.256
+offset_top = 186.648
+offset_right = -431.256
+offset_bottom = -186.648
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_m86ap")
@@ -86,13 +93,15 @@ expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = -0.408
+anchor_top = -0.264
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 214.0
-offset_top = 464.0
-offset_right = -212.0
-offset_bottom = 19.0
+anchor_bottom = 1.264
+offset_left = 757.256
+offset_top = 650.648
+offset_right = -100.0
+offset_bottom = -167.648
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -107,6 +116,26 @@ layout_mode = 2
 size_flags_vertical = 6
 theme = ExtResource("4_kcsus")
 text = "MAIN MENU"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -483.5
+offset_top = -227.0
+offset_right = -213.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+text = "LEVEL TIME: 00:00:000"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("4_oaibo")
+levelTime = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7bpco")

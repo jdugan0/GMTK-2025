@@ -28,18 +28,18 @@ animations = [{
 }]
 
 [node name="BlueLightScene" type="PointLight2D"]
-color = Color(0.377466, 0.710808, 0.99884, 1)
-energy = 2.1
+color = Color(0.545098, 0.709804, 1, 1)
+energy = 1.75
 shadow_enabled = true
 shadow_filter = 1
 texture = ExtResource("1_66tfi")
-texture_scale = 12.6
+texture_scale = 10.0
 script = ExtResource("2_tqhi4")
-minInterval = 0.1
-maxInterval = 1.0
+minInterval = 0.5
+maxInterval = 2.0
 minFlickerDuration = 0.1
 maxFlickerDuration = 0.5
-maxDip = 0.8
+maxDip = 0.6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)

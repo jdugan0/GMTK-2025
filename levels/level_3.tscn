@@ -52,11 +52,11 @@ position = Vector2(-7576, -20362)
 rotation = 0.523599
 
 [node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(-1450, -5464)
+position = Vector2(847, -10604)
 rotation = 0.523599
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD//yL/AAAAAAAAAQBX/2X/AAAAAAAAAQBV/zj/AAAAAAAAAQBo/zn/AAAAAAAAAQCv/3P/AAAAAAAAAQDW/yH/AAAAAAAAAQDj/3f/AAAAAAAAAgBS/0z/AAAAAAAAAgCF/yL/AAAAAAAAAgCq/0L/AAAAAAAAAQC1/0L/AAAAAAAAAgDx/x3/AAAAAAAAAwBg/xT/AAAAAAAAAwDB/1D/AAAAAAAABACs/yH/AAAAAAAABABk/1j/AAAAAAAABADj/3D/AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AABo/zn/AAAAAAAAAQDW/yH/AAAAAAAAAQDj/3f/AAAAAAAAAgBS/0z/AAAAAAAAAgCF/yL/AAAAAAAAAgCq/0L/AAAAAAAAAQC1/0L/AAAAAAAAAgBg/xT/AAAAAAAAAwDB/1D/AAAAAAAABACs/yH/AAAAAAAABABk/1j/AAAAAAAABADj/3D/AAAAAAAABAD//yL/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
 
@@ -77,11 +77,6 @@ position = Vector2(880.781, 314.222)
 lineName = "3_end"
 type = 5
 
-[node name="SpeakTrigger" parent="." instance=ExtResource("12_0unm6")]
-position = Vector2(-29, -12424)
-scale = Vector2(1.36, 1)
-lineName = "big_guy"
-
 [node name="SpeakTrigger2" parent="." instance=ExtResource("12_0unm6")]
 position = Vector2(-4003, -20050)
 scale = Vector2(0.399998, 0.64)
@@ -92,5 +87,3 @@ position = Vector2(0.999977, -6038)
 scale = Vector2(1.96968, 0.971053)
 lineName = "3_return"
 onlyOnEnd = true
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

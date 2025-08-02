@@ -103,8 +103,8 @@ lineName = "on_damage"
 type = 4
 
 [node name="SpeakTrigger3" parent="." instance=ExtResource("12_aerfg")]
-position = Vector2(-1, -1314)
-scale = Vector2(1.47884, 0.7484)
+position = Vector2(399, 2632)
+scale = Vector2(4.754, 2.404)
 lineName = "1_return"
 onlyOnEnd = true
 
@@ -112,5 +112,3 @@ onlyOnEnd = true
 position = Vector2(12947, -5833)
 lineName = "3_down"
 type = 5
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

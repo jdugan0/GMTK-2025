@@ -20,7 +20,7 @@ public partial class SpeakTrigger : Area2D
     {
         if (type == TriggerType.ENDED && GameManager.instance.enemiesRemaining == 0 && !fired)
         {
-            Trigger();   
+            Trigger();
         }
     }
 
@@ -60,8 +60,20 @@ public partial class SpeakTrigger : Area2D
 
     private void Trigger()
     {
+        if (onlyOnEnd)
+        {
+            GD.Print(1);
+        }
         if (onlyOnEnd && GameManager.instance.enemiesRemaining != 0) return;
+        if (onlyOnEnd)
+        {
+            GD.Print(2);
+        }
         if (fired) return;
+        if (onlyOnEnd)
+        {
+            GD.Print(3);
+        }
         DialogueManager.instance.EnqueueLine(lineName);
         fired = true;
     }

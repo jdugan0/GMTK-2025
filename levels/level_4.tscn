@@ -82,10 +82,9 @@ position = Vector2(-4539, -3013)
 lineName = "center"
 type = 1
 
-[node name="SpeakTrigger3" parent="." instance=ExtResource("12_8hlpj")]
-position = Vector2(4991, -3004)
-scale = Vector2(1.26984, 1.24985)
-lineName = "4_end"
-onlyOnEnd = true
+[node name="SpeakTrigger4" parent="." instance=ExtResource("12_8hlpj")]
+position = Vector2(1621, -2964)
+scale = Vector2(1.36, 1)
+lineName = "big_guy"
 
 [connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

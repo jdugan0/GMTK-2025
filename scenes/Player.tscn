@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://3fee4itn1st3" path="res://art/dRoll_418x808.png" id="7_khinc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khinc"]
-radius = 503.37
+radius = 366.395
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092

@@ -51,7 +51,7 @@ public partial class SpeakTrigger : Area2D
     private void Trigger()
     {
         if (fired) return;
-        DialogueManager.instance.DisplayLine(lineName);
+        DialogueManager.instance.EnqueueLine(lineName);
         fired = true;
     }
 }

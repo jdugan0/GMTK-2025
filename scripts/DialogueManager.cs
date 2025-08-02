@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public partial class DialogueManager : Node
 {
@@ -20,7 +21,34 @@ public partial class DialogueManager : Node
         instance = this;
     }
 
-    public async void DisplayLine(string lineName)
+    private readonly Queue<string> _queue = new();
+    private bool _processing;
+
+    public void EnqueueLine(string lineName)
+    {
+        _queue.Enqueue(lineName);
+        if (!_processing)
+            _ = ProcessQueueAsync();
+    }
+
+    private async Task ProcessQueueAsync()
+    {
+        _processing = true;
+        try
+        {
+            while (_queue.Count > 0)
+            {
+                var next = _queue.Dequeue();
+                await DisplayLine(next);
+            }
+        }
+        finally
+        {
+            _processing = false;
+        }
+    }
+
+    private async Task DisplayLine(string lineName)
     {
         Dialouge d = lines[lineName];
         switch (d.emotion)
@@ -60,7 +88,6 @@ public partial class DialogueManager : Node
 
         await ToSignal(tweenOut, Tween.SignalName.Finished);
         text.Text = "";
-
     }
 
 

@@ -94,5 +94,3 @@ tile_set = ExtResource("2_gwceb")
 
 [node name="Bullet3" parent="." instance=ExtResource("12_aerfg")]
 position = Vector2(-1172, -274)
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

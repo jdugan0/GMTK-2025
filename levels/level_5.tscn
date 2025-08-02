@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dry8mgrnd1de7"]
+[gd_scene load_steps=13 format=4 uid="uid://dry8mgrnd1de7"]
 
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_yaabq"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dhnqt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="5_ij65d"]
 [ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="6_gci8k"]
 [ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="7_gder6"]
+[ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="8_8vr3t"]
 [ext_resource type="PackedScene" uid="uid://c2qg6ys7x5u2m" path="res://scenes/FastEnemy.tscn" id="8_hv08k"]
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_ldpug"]
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="9_p0827"]
@@ -14,6 +15,7 @@
 scenes/1/scene = ExtResource("6_gci8k")
 scenes/2/scene = ExtResource("7_gder6")
 scenes/3/scene = ExtResource("8_hv08k")
+scenes/4/scene = ExtResource("8_8vr3t")
 
 [sub_resource type="TileSet" id="TileSet_k3t65"]
 tile_size = Vector2i(100, 100)
@@ -83,7 +85,7 @@ rotation = 0.523599
 
 [node name="Enemy" type="TileMapLayer" parent="."]
 position = Vector2(-3141, 6578)
-tile_map_data = PackedByteArray("AABYACP/AAAAAAAAAgAlACL/AAAAAAAAAgCLAMD+AAAAAAAAAgCeAMH+AAAAAAAAAgB9AMH+AAAAAAAAAgCrANb+AAAAAAAAAgBBANX+AAAAAAAAAwCgACr/AAAAAAAAAwCEABf/AAAAAAAAAQCSABf/AAAAAAAAAQCLABL/AAAAAAAAAQBPAC7/AAAAAAAAAQA/ADf/AAAAAAAAAQBFACn/AAAAAAAAAQAAAOb+AAAAAAAAAQAHAOH+AAAAAAAAAQARAFf/AAAAAAAAAgAVAOf/AAAAAAAAAQApAOf/AAAAAAAAAQAfAPH/AAAAAAAAAwAOACb/AAAAAAAAAwBsAOv+AAAAAAAAAwB1AOv+AAAAAAAAAwCWAKX/AAAAAAAAAwBnAD3/AAAAAAAAAgBuAMH+AAAAAAAAAgCtAML+AAAAAAAAAgABANj+AAAAAAAAAgATAIT/AAAAAAAAAgARAFD/AAAAAAAAAgBZAIr/AAAAAAAAAgBvAFr/AAAAAAAAAgCsAM7+AAAAAAAAAwClAMH+AAAAAAAAAwCgADT/AAAAAAAAAgBV/tr+AAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AABYACP/AAAAAAAAAgAlACL/AAAAAAAAAgCLAMD+AAAAAAAAAgCeAMH+AAAAAAAAAgB9AMH+AAAAAAAAAgCrANb+AAAAAAAAAgBBANX+AAAAAAAAAwCEABf/AAAAAAAAAQCSABf/AAAAAAAAAQA/ADf/AAAAAAAAAQBFACn/AAAAAAAAAQAAAOb+AAAAAAAAAQAHAOH+AAAAAAAABAARAFf/AAAAAAAAAgAVAOf/AAAAAAAAAQApAOf/AAAAAAAAAQAfAPH/AAAAAAAAAwAOACb/AAAAAAAAAwCWAKX/AAAAAAAAAwBnAD3/AAAAAAAAAgBuAMH+AAAAAAAAAgCtAML+AAAAAAAAAgABANj+AAAAAAAAAgATAIT/AAAAAAAAAgARAFD/AAAAAAAAAgCsAM7+AAAAAAAAAwClAMH+AAAAAAAAAwBV/tr+AAAAAAAAAgBmAO3+AAAAAAAAAwBsAO3+AAAAAAAAAwCjAEH/AAAAAAAAAwCfAEH/AAAAAAAAAgB/AD//AAAAAAAAAgAsAGn/AAAAAAAAAgCLABH/AAAAAAAABABPAC7/AAAAAAAABAA=")
 tile_set = SubResource("TileSet_k3t65")
 navigation_enabled = false
 
@@ -99,5 +101,3 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 [node name="Lights2" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD9/wAABAAAAAAAAQABAPT/BAAAAAAAAQD9//H/BAAAAAAAAQD9/+f/BAAAAAAAAQADAOT/BAAAAAAAAQAHAN3/BAAAAAAAAQALANj/BAAAAAAAAQAUANz/BAAAAAAAAQANAOD/BAAAAAAAAQACANj/BAAAAAAAAQD9/9//BAAAAAAAAQAcANz/BAAAAAAAAQAWANf/BAAAAAAAAQAbAND/BAAAAAAAAQD6/9L/BAAAAAAAAQD3/83/BAAAAAAAAQD4/9n/BAAAAAAAAQAFAMb/BAAAAAAAAQAQAMb/BAAAAAAAAQD5/8T/BAAAAAAAAQAIAP3/BAAAAAAAAgAMAPv/BAAAAAAAAgARAP3/BAAAAAAAAgAUAPv/BAAAAAAAAgAWAP3/BAAAAAAAAgA=")
 tile_set = ExtResource("2_dhnqt")
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

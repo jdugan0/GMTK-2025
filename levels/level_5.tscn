@@ -97,5 +97,3 @@ position = Vector2(61, -12257)
 
 [node name="Bullet3" parent="." instance=ExtResource("5_ij65d")]
 position = Vector2(2903, -18687)
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

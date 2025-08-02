@@ -28,7 +28,7 @@ public partial class SceneSwitcher : Node
     {
         GetTree().ChangeSceneToPacked(scenes[loadOrder].scene);
     }
-    private async Task WaitOneFrame()
+    public async Task WaitOneFrame()
     {
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
     }

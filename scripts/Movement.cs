@@ -34,6 +34,8 @@ public partial class Movement : CharacterBody2D
     float rollRotation;
     [Export] public float recoilForce = 500f;
     [Export] public int health = 2;
+    [Signal] public delegate void FiredEventHandler();
+    [Signal] public delegate void DamagedEventHandler(int amount);
     float damageCoolDown = 1f;
     float damageTimer;
 
@@ -69,7 +71,7 @@ public partial class Movement : CharacterBody2D
             return false;
         }
         kind = magazine[0];
-        magazine.RemoveAt(0); 
+        magazine.RemoveAt(0);
         return true;
     }
     public Bullet.BulletType GetBulletKindAt(int index) => (index >= 0 && index < magazine.Count) ? magazine[index] : Bullet.BulletType.Normal;
@@ -107,9 +109,6 @@ public partial class Movement : CharacterBody2D
             sprite.Play("empty");
         }
     }
-
-    [Signal]
-    public delegate void HealthChangedEventHandler(int health);
     public void TakeDamage(int amount = 1)
     {
         if (die) return;
@@ -117,7 +116,7 @@ public partial class Movement : CharacterBody2D
         damageTimer = damageCoolDown;
         health -= amount;
         AudioManager.instance.PlaySFX("playerHit");
-        EmitSignal(SignalName.HealthChanged, amount);
+        EmitSignal(SignalName.Damaged, amount);
         if (health <= 0)
         {
             Death();
@@ -282,6 +281,7 @@ public partial class Movement : CharacterBody2D
             sprite.Play("reload");
             AudioManager.instance.PlaySFX("reload");
         }
+        EmitSignal(SignalName.Fired);
         PackedScene scene = kind == Bullet.BulletType.Pierce ? bulletPierce : bullet;
 
         Node node = scene.Instantiate();

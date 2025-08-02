@@ -41,7 +41,7 @@ public partial class DialogueManager : Node
         var tweenIn = CreateTween();
         tweenIn.SetEase(Tween.EaseType.Out);
         tweenIn.SetTrans(Tween.TransitionType.Cubic);
-        tweenIn.TweenProperty(display, "modulate:a", 1.0, 0.2).From(0.0);
+        tweenIn.TweenProperty(display, "modulate:a", 0.7, 0.5).From(0);
         await ToSignal(tweenIn, Tween.SignalName.Finished);
         text.Text = "";
         string full = d.line ?? "";
@@ -51,12 +51,12 @@ public partial class DialogueManager : Node
             var timer = GetTree().CreateTimer(Mathf.Max(0f, 0.03));
             await ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
         }
-        var holdTimer = GetTree().CreateTimer(3);
+        var holdTimer = GetTree().CreateTimer(2);
         await ToSignal(holdTimer, SceneTreeTimer.SignalName.Timeout);
         var tweenOut = CreateTween();
         tweenOut.SetEase(Tween.EaseType.In);
         tweenOut.SetTrans(Tween.TransitionType.Cubic);
-        tweenOut.TweenProperty(display, "modulate:a", 0.0, 0.2);
+        tweenOut.TweenProperty(display, "modulate:a", 0.0, 0.5);
         await ToSignal(tweenOut, Tween.SignalName.Finished);
 
     }

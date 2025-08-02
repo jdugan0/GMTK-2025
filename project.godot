@@ -22,6 +22,7 @@ ParticleManager="*res://scripts/ParticleManager/ParticleManager.tscn"
 Audiomanager="*res://Audio/Audiomanager.tscn"
 GameManager="*res://scenes/GameManager.tscn"
 Speedrun="*res://scenes/Speedrun.tscn"
+Speaker="*res://scenes/Speaker.tscn"
 
 [display]
 

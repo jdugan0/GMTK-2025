@@ -102,7 +102,7 @@ collision_mask = 4
 shape = SubResource("CapsuleShape2D_p1sfj")
 
 [node name="LightScene" parent="." instance=ExtResource("5_5u4nl")]
-color = Color(0.147016, 0.905095, 0.666453, 1)
+color = Color(0.196078, 0.839216, 0.211765, 1)
 energy = 0.4
 
 [connection signal="body_entered" from="Area2D" to="." method="ResolvePickup"]

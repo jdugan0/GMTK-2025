@@ -89,16 +89,17 @@ public partial class GameManager : Node
 
     public async Task StartMusic(string songName)
     {
+        if (AudioManager.instance.IsPlaying(songName) || AudioManager.instance.IsPlaying(songName + "Intro")) return;
+        AudioManager.instance.CancelSFX(currentSong);
+        AudioManager.instance.CancelSFX(currentSong + "Intro");
         currentSong = songName;
-        if (!AudioManager.instance.IsPlaying(songName) && !AudioManager.instance.IsPlaying(songName + "Intro"))
+
+        if (AudioManager.instance.SoundExists(songName + "Intro"))
         {
-            if (AudioManager.instance.SoundExists(songName + "Intro"))
-            {
-                AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX(songName + "Intro");
-                await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
-            }
-            AudioManager.instance.PlaySFX(songName);
+            AudioStreamPlayer introPlayer = AudioManager.instance.PlaySFX(songName + "Intro");
+            await ToSignal(introPlayer, AudioStreamPlayer.SignalName.Finished);
         }
+        AudioManager.instance.PlaySFX(songName);
     }
 
     public void CancelMusic()

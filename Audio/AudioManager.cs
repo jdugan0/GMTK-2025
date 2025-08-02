@@ -25,6 +25,11 @@ public partial class AudioManager : Node
             dict.Add(s.name, s);
         }
     }
+
+    public bool SoundExists(string sound)
+    {
+        return dict.ContainsKey(sound);
+    }
     public AudioStreamPlayer PlaySFX(Node from, string sound, float time)
     {
         var player = new AudioStreamPlayer();

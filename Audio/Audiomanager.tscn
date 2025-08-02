@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=76 format=3 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://Audio/AudioManager.cs" id="1_ulbmk"]
 [ext_resource type="Script" uid="uid://007myadtw53h" path="res://Audio/Sound.cs" id="2_subo3"]
@@ -39,6 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://cdbdhxn7r8d01" path="res://Audio/SFX/Peirce 2.wav" id="37_44d4p"]
 [ext_resource type="AudioStream" uid="uid://dtprbkd6fv5gw" path="res://Audio/SFX/Strong Enemy Attack.wav" id="38_ljrrh"]
 [ext_resource type="AudioStream" uid="uid://clnwuo8q1q8gu" path="res://Audio/SFX/Fast Enemy Attack.wav" id="39_flw6a"]
+[ext_resource type="AudioStream" uid="uid://cbbp4osnbwo85" path="res://Audio/Music/spooky.mp3" id="40_flw6a"]
 
 [sub_resource type="Resource" id="Resource_on1l4"]
 script = ExtResource("2_subo3")
@@ -51,7 +52,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 script = ExtResource("2_subo3")
 stream = ExtResource("4_mas5p")
 volume = -5.0
-name = "lvl1Main"
+name = "lvl1"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_syugd"]
@@ -235,7 +236,7 @@ metadata/_custom_type_script = "uid://007myadtw53h"
 script = ExtResource("2_subo3")
 stream = ExtResource("34_pxwiq")
 volume = 0.0
-name = "musicTwo"
+name = "lvl2"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="Resource" id="Resource_iunf2"]
@@ -271,7 +272,14 @@ volume = 10.0
 name = "enemyFast"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
+[sub_resource type="Resource" id="Resource_lfius"]
+script = ExtResource("2_subo3")
+stream = ExtResource("40_flw6a")
+volume = 0.0
+name = "spooky"
+metadata/_custom_type_script = "uid://007myadtw53h"
+
 [node name="Audiomanager" type="Node"]
 process_mode = 3
 script = ExtResource("1_ulbmk")
-sounds = Array[Object]([SubResource("Resource_on1l4"), SubResource("Resource_rryhs"), SubResource("Resource_jnl66"), SubResource("Resource_p7eer"), SubResource("Resource_x3jbo"), SubResource("Resource_tqoos"), SubResource("Resource_flvt4"), SubResource("Resource_v8qda"), SubResource("Resource_7i6kp"), SubResource("Resource_c3h4e"), SubResource("Resource_wci4t"), SubResource("Resource_t5rx1"), SubResource("Resource_db0g7"), SubResource("Resource_y88w7"), SubResource("Resource_pxwiq"), SubResource("Resource_m6wxk"), SubResource("Resource_cmg6v"), SubResource("Resource_44d4p"), SubResource("Resource_ljrrh"), SubResource("Resource_flw6a"), SubResource("Resource_yk2tk"), SubResource("Resource_giii4"), SubResource("Resource_b18dy"), SubResource("Resource_iunf2"), SubResource("Resource_kexwl"), SubResource("Resource_dblve"), SubResource("Resource_5r4gf")])
+sounds = Array[Object]([SubResource("Resource_on1l4"), SubResource("Resource_rryhs"), SubResource("Resource_jnl66"), SubResource("Resource_p7eer"), SubResource("Resource_x3jbo"), SubResource("Resource_tqoos"), SubResource("Resource_flvt4"), SubResource("Resource_v8qda"), SubResource("Resource_7i6kp"), SubResource("Resource_c3h4e"), SubResource("Resource_wci4t"), SubResource("Resource_t5rx1"), SubResource("Resource_db0g7"), SubResource("Resource_y88w7"), SubResource("Resource_pxwiq"), SubResource("Resource_m6wxk"), SubResource("Resource_cmg6v"), SubResource("Resource_44d4p"), SubResource("Resource_ljrrh"), SubResource("Resource_flw6a"), SubResource("Resource_yk2tk"), SubResource("Resource_giii4"), SubResource("Resource_b18dy"), SubResource("Resource_iunf2"), SubResource("Resource_kexwl"), SubResource("Resource_dblve"), SubResource("Resource_5r4gf"), SubResource("Resource_lfius")])

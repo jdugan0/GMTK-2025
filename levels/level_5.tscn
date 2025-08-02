@@ -62,7 +62,7 @@ tile_set = ExtResource("2_dhnqt")
 navigation_enabled = false
 
 [node name="Camera2D" parent="." instance=ExtResource("9_p0827")]
-position = Vector2(-16511, 9012)
+position = Vector2(-38, 2227)
 
 [node name="Player" parent="." instance=ExtResource("4_a58qw")]
 position = Vector2(11, 2164)
@@ -97,5 +97,3 @@ position = Vector2(61, -12257)
 
 [node name="Bullet3" parent="." instance=ExtResource("5_ij65d")]
 position = Vector2(2903, -18687)
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

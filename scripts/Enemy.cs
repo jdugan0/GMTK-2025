@@ -36,6 +36,7 @@ public partial class Enemy : CharacterBody2D
     {
         AudioManager.instance.PlaySFX("hitSuccess");
         AudioManager.instance.PlaySFX("vampHiss");
+        EmitSignal(GameManager.SignalName.EnemyHit, this);
         if (health > 1 && enemyType == EnemyTypes.PROT)
         {
             health--;

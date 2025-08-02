@@ -8,7 +8,7 @@ public partial class SpeakTrigger : Area2D
     [Export] TriggerType type;
 
 
-    public enum TriggerType { ENTERED, START, FIRED, ENEMYHIT, DAMAGE }
+    public enum TriggerType { ENTERED, START, FIRED, ENEMYHIT, DAMAGE, ENDED }
 
     [Export] public bool onlyOnEnd;
 
@@ -16,6 +16,14 @@ public partial class SpeakTrigger : Area2D
     {
         CallDeferred(nameof(SetupTriggers));
     }
+    public override void _Process(double delta)
+    {
+        if (type == TriggerType.ENDED && GameManager.instance.enemiesRemaining == 0 && !fired)
+        {
+            Trigger();   
+        }
+    }
+
     public void SetupTriggers()
     {
         switch (type)

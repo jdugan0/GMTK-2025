@@ -16,6 +16,7 @@ public partial class LevelEnd : Area2D
             {
                 GameManager.instance.maxLevelUnlocked++;
             }
+            AudioManager.instance.PlaySFX("doorEntered");
             complete = true;
 
         }

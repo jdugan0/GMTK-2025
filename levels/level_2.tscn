@@ -81,5 +81,3 @@ lineName = "table_dodge"
 position = Vector2(19437, -6435)
 lineName = "2_return"
 onlyOnEnd = true
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

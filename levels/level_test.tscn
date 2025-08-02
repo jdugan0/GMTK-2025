@@ -39,7 +39,6 @@ navigation_enabled = false
 position = Vector2(-3057, -162)
 collision_layer = 9
 collision_mask = 9
-bullets = 4
 
 [node name="Enemies" type="Node" parent="."]
 

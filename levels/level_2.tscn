@@ -72,3 +72,14 @@ tile_set = ExtResource("2_dfjjl")
 position = Vector2(1025, 119)
 lineName = "on_damage"
 type = 4
+
+[node name="SpeakTrigger" parent="." instance=ExtResource("11_vm7no")]
+position = Vector2(19008, -14424)
+scale = Vector2(-0.22, 2)
+lineName = "table_dodge"
+
+[node name="SpeakTrigger3" parent="." instance=ExtResource("11_vm7no")]
+position = Vector2(19354, -7818)
+type = 5
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

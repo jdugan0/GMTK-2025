@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://n1i870278n80"]
+[gd_scene load_steps=15 format=3 uid="uid://n1i870278n80"]
 
 [ext_resource type="Script" uid="uid://dqt60nudgh88q" path="res://scripts/DialogueManager.cs" id="1_8rf17"]
 [ext_resource type="Script" uid="uid://mfnpo33dme3a" path="res://scripts/UI/Dialouge.cs" id="2_5sv7i"]
@@ -20,6 +20,12 @@ metadata/_custom_type_script = "uid://mfnpo33dme3a"
 [sub_resource type="Resource" id="Resource_mlfsg"]
 script = ExtResource("2_5sv7i")
 line = "Looks like that bullet pierces through enemies..."
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_pa5jc"]
+script = ExtResource("2_5sv7i")
+line = "haii xd"
 emotion = 3
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
@@ -49,11 +55,12 @@ region = Rect2(0, 0, 1532, 317)
 [node name="Speaker" type="Node" node_paths=PackedStringArray("display", "text", "box")]
 process_mode = 3
 script = ExtResource("1_8rf17")
-lines = {
+lines = Dictionary[String, ExtResource("2_5sv7i")]({
 "game_start": SubResource("Resource_05xiv"),
 "on_damage": SubResource("Resource_5sv7i"),
-"pierce_intro": SubResource("Resource_mlfsg")
-}
+"pierce_intro": SubResource("Resource_mlfsg"),
+"table_dodge": SubResource("Resource_pa5jc")
+})
 shockedTextBox = SubResource("AtlasTexture_37fbv")
 relievedTextBox = SubResource("AtlasTexture_5sv7i")
 afraidTextBox = SubResource("AtlasTexture_05xiv")

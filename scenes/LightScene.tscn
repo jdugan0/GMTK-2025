@@ -12,5 +12,4 @@ texture_scale = 17.0
 script = ExtResource("2_kohcj")
 minInterval = 0.1
 maxInterval = 8.0
-maxFlickerDuration = 0.35
 maxDip = 1.5

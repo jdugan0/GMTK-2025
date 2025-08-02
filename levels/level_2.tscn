@@ -45,6 +45,7 @@ navigation_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("3_at1ld")]
 position = Vector2(13345, -5831)
+rollCooldown = 0.5
 
 [node name="Bullet2" parent="." instance=ExtResource("6_hbb88")]
 position = Vector2(17013, -12674)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=27 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d32ygmsh1dj2g" path="res://art/droll_460x817.png" id="7_cw2d6"]
 [ext_resource type="Texture2D" uid="uid://3fee4itn1st3" path="res://art/dRoll_418x808.png" id="7_khinc"]
 [ext_resource type="PackedScene" uid="uid://cn7kth53horlr" path="res://scenes/DashExplosion.tscn" id="11_d3wef"]
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="13_lkdrv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkdrv"]
 atlas = ExtResource("6_o4126")
@@ -145,6 +146,12 @@ recoilForce = 1500.0
 iconPierce = SubResource("AtlasTexture_lkdrv")
 iconNormal = SubResource("AtlasTexture_6eyey")
 dashEffect = NodePath("DashExplosion")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.4
+shadow_enabled = true
+texture = ExtResource("13_lkdrv")
+texture_scale = 6.67
 
 [node name="DashExplosion" parent="." instance=ExtResource("11_d3wef")]
 

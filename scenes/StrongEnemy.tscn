@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxtxuc2nlgg7y"]
+[gd_scene load_steps=19 format=3 uid="uid://cxtxuc2nlgg7y"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_iw1qt"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_mhw3o"]
@@ -9,8 +9,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 315.0
-height = 958.0
+radius = 396.0
+height = 1022.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw1qt"]
 atlas = ExtResource("4_iw1qt")
@@ -59,7 +59,39 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
 size = Vector2(855.19, 1026.06)
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
+[sub_resource type="Curve" id="Curve_iw1qt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_mhw3o"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_wjd8v"]
+curve_x = SubResource("Curve_iw1qt")
+curve_y = SubResource("Curve_mhw3o")
+
+[sub_resource type="Curve" id="Curve_cwf7v"]
+_data = [Vector2(0, 1), 0.0, -2.20114, 0, 0, Vector2(0.508993, 0.295512), -0.90143, -0.90143, 0, 0, Vector2(1, 0), -0.423412, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kr3l8"]
+curve = SubResource("Curve_cwf7v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iw1qt"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 688.24
+initial_velocity_max = 714.71
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_wjd8v")
+gravity = Vector3(0, 0, 0)
+scale_min = 68.64
+scale_max = 101.0
+scale_curve = SubResource("CurveTexture_kr3l8")
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite", "bloodSplatter") groups=["Enemy", "hittable"]]
 collision_layer = 2
 collision_mask = 7
 motion_mode = 1
@@ -74,6 +106,7 @@ desiredDistance = 400.0
 coolDown = 1.0
 sprite = NodePath("AnimatedSprite2D")
 corpse = ExtResource("3_wjd8v")
+bloodSplatter = NodePath("GPUParticles2D")
 enemyType = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -81,7 +114,8 @@ shape = SubResource("CircleShape2D_55jtl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
-radius = 500.0
+radius = 1000.0
+neighbor_distance = 10000.0
 max_speed = 1000.0
 debug_path_custom_color = Color(0.565759, 0, 0.190342, 1)
 
@@ -102,6 +136,15 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("RectangleShape2D_mpr68")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.541176, 0.0117647, 0.0117647, 1)
+emitting = false
+amount = 20
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_iw1qt")
 
 [connection signal="body_entered" from="Area2D" to="." method="OnCol"]
 [connection signal="body_entered" from="Area2D2" to="." method="BodyEntered"]

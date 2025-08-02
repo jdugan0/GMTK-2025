@@ -24,6 +24,7 @@ public partial class Enemy : CharacterBody2D
     [Export] PackedScene corpse;
     int health = 2;
     [Export] Light2D enemyLight;
+    [Export] GpuParticles2D bloodSplatter;
     enum EnemyTypes
     {
         NORMAL,
@@ -40,6 +41,7 @@ public partial class Enemy : CharacterBody2D
         // EmitSignal(GameManager.SignalName.EnemyHit);
         if (health > 1 && enemyType == EnemyTypes.PROT)
         {
+            bloodSplatter.Emitting = true;
             health--;
             return;
         }

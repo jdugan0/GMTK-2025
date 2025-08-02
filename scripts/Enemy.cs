@@ -33,7 +33,7 @@ public partial class Enemy : CharacterBody2D
 
     public void Death()
     {
-        if (health > 1)
+        if (health > 1 && enemyType == EnemyTypes.PROT)
         {
             health--;
             return;

@@ -64,7 +64,7 @@ navigation_enabled = false
 position = Vector2(11, 2164)
 
 [node name="Bullet2" parent="." instance=ExtResource("5_ij65d")]
-position = Vector2(12976, -1416)
+position = Vector2(-1145, -7967)
 rotation = 0.523599
 
 [node name="Bullet6" parent="." instance=ExtResource("5_ij65d")]
@@ -72,7 +72,7 @@ position = Vector2(8207, -14213)
 rotation = 0.523599
 
 [node name="Bullet3" parent="." instance=ExtResource("5_ij65d")]
-position = Vector2(4567, -6555)
+position = Vector2(1197, -11930)
 rotation = 0.523599
 
 [node name="Bullet4" parent="." instance=ExtResource("5_ij65d")]

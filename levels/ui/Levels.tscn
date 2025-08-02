@@ -153,11 +153,13 @@ theme = ExtResource("4_xagwo")
 text = "BACK"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-313.52, -173.52)
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(929, 494)
-color = Color(0.655826, 0.478455, 0.278206, 1)
+position = Vector2(615.48, 320.48)
+color = Color(0.521569, 0.45098, 0.376471, 1)
+energy = 2.93
 texture = ExtResource("6_dekjx")
 texture_scale = 14.91
 

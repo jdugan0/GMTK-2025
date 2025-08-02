@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://8wfma6nhdeui"]
+[gd_scene load_steps=14 format=4 uid="uid://8wfma6nhdeui"]
 
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="1_l53as"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_gwceb"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://edv0tp67dunv" path="res://art/guidesR_1200x800.png" id="9_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://c2qg6ys7x5u2m" path="res://scenes/FastEnemy.tscn" id="10_5ot28"]
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="10_08mmt"]
-[ext_resource type="PackedScene" uid="uid://b2b8ptmqti8kl" path="res://scenes/BulletPierce.tscn" id="12_aerfg"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l53as"]
 scenes/1/scene = ExtResource("7_gwceb")
@@ -69,6 +68,7 @@ region_rect = Rect2(0, 0, 1200, 800)
 
 [node name="Player" parent="." instance=ExtResource("3_l53as")]
 position = Vector2(5, 1535)
+rollCooldown = 0.5
 
 [node name="Bullet" parent="." instance=ExtResource("6_5ot28")]
 position = Vector2(183, -6604)
@@ -91,6 +91,3 @@ color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 [node name="Lights" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD7/wIABAAAAAAAAQACAPf/BAAAAAAAAQD9//f/BAAAAAAAAQAEAAIABAAAAAAAAQAGAPP/BAAAAAAAAQAMAPP/BAAAAAAAAQAGAO7/BAAAAAAAAQAMAO7/BAAAAAAAAQAAAO//BAAAAAAAAQAXAPX/BAAAAAAAAQAQAPX/BAAAAAAAAQARAOz/BAAAAAAAAQAYAOX/BAAAAAAAAQAUAN7/BAAAAAAAAQAbAPP/BAAAAAAAAQAjAO3/BAAAAAAAAQAlAPD/BAAAAAAAAQD9//3/BAAAAAAAAQADAPH/BAAAAAAAAQAdAPD/BAAAAAAAAQAKAPL/BAAAAAAAAQA=")
 tile_set = ExtResource("2_gwceb")
-
-[node name="Bullet3" parent="." instance=ExtResource("12_aerfg")]
-position = Vector2(-1172, -274)

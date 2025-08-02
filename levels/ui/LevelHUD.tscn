@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr54qoo8g7gow"]
+[gd_scene load_steps=6 format=3 uid="uid://cr54qoo8g7gow"]
 
 [ext_resource type="Texture2D" uid="uid://bmlisp5xhgoqm" path="res://art/enemyCount_406x175.png" id="1_0a4xe"]
 [ext_resource type="Script" uid="uid://8jkxksdv8lod" path="res://scripts/UI/EnemiesRemaining.cs" id="1_dq21l"]
 [ext_resource type="Script" uid="uid://brg6tyih14n45" path="res://scripts/BulletCount.cs" id="2_r50do"]
 [ext_resource type="PackedScene" uid="uid://d3ety2qufwm8w" path="res://scenes/BulletIcon.tscn" id="4_0a4xe"]
-[ext_resource type="Texture2D" uid="uid://cb1jh8vq334io" path="res://art/bulletico_120x187.png" id="5_jm2fy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0a4xe"]
-atlas = ExtResource("5_jm2fy")
-region = Rect2(0, 0, 120, 187)
+[ext_resource type="PackedScene" uid="uid://bpd7uro1j6von" path="res://scenes/Border.tscn" id="5_jm2fy"]
 
 [node name="LevelHUD" type="CanvasLayer"]
 
@@ -58,4 +54,4 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("2_r50do")
 bulletIcon = ExtResource("4_0a4xe")
-currentBullet = SubResource("AtlasTexture_0a4xe")
+currentBullet = ExtResource("5_jm2fy")

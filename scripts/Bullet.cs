@@ -2,6 +2,11 @@ using Godot;
 using System;
 public partial class Bullet : CharacterBody2D
 {
+    public enum BulletType
+    {
+        Normal,
+        Pierce
+    }
 
     [Export] public bool stuck = false;
     [Export] private CollisionShape2D pickupRadius;
@@ -9,7 +14,9 @@ public partial class Bullet : CharacterBody2D
     [Export] AnimatedSprite2D sprite;
     [Export] PackedScene splinterBurst;
     [Export] GpuParticles2D trail;
+    [Export] public BulletType bulletType = BulletType.Normal;
     public bool playerFired = false;
+    public bool hitEnemy = false;
     float timeStuck = 0f;
     public void SplinterBurst(KinematicCollision2D hit)
     {
@@ -56,21 +63,32 @@ public partial class Bullet : CharacterBody2D
             if (target is Enemy enemy)
             {
                 enemy.Death();
+                if (bulletType != BulletType.Pierce || hitEnemy)
+                {
+                    Velocity = Vector2.Zero;
+                    stuck = true;
+                }
+                hitEnemy = true;
             }
             else
             {
                 AudioManager.instance.PlaySFX("hitFail");
                 SplinterBurst(hit);
+                Velocity = Vector2.Zero;
+                stuck = true;
             }
-            Velocity = Vector2.Zero;
-            stuck = true;
+
             return;
         }
     }
     public void Hit()
     {
-        Velocity = Vector2.Zero;
-        stuck = true;
+        if (bulletType != BulletType.Pierce || hitEnemy)
+        {
+            Velocity = Vector2.Zero;
+            stuck = true;
+        }
+        hitEnemy = true;
     }
     public void ResolvePickup(Node2D hit)
     {
@@ -84,7 +102,7 @@ public partial class Bullet : CharacterBody2D
                 AudioManager.instance.PlaySFX("reload");
             }
             AudioManager.instance.PlaySFX("bulletPickup");
-            player.bullets++;
+            player.AddBullet(bulletType);
             QueueFree();
         }
     }

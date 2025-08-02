@@ -85,6 +85,13 @@ public partial class Enemy : CharacterBody2D
                     GameManager.instance.player.TakeDamage();
                 }
                 break;
+            case EnemyTypes.PROT:
+                sprite.Play("Attack");
+                if (playerIn)
+                {
+                    GameManager.instance.player.TakeDamage();
+                }
+                break;
             case EnemyTypes.RANGED:
                 sprite.Play("Attack");
                 AudioStreamPlayer a = AudioManager.instance.PlaySFX("rangeCharge");

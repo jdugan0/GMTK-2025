@@ -5,7 +5,7 @@ public partial class BulletCount : Node
 {
     [Export] PackedScene bulletIcon;
     private int prevCount = -1;
-    [Export] Texture2D currentBullet;
+    [Export] PackedScene currentBullet;
 
     public override void _Process(double delta)
     {
@@ -28,9 +28,15 @@ public partial class BulletCount : Node
             Node icon = bulletIcon.Instantiate();
             AddChild(icon);
         }
+
         for (int i = 0; i < GetChildCount(); i++)
         {
-            ((TextureRect)GetChild(0)).Texture = currentBullet;
+            var texRect = (TextureRect)GetChild(i);
+            texRect.Texture = GameManager.instance.player.GetBulletIcon(i);
+        }
+        if (bulletCount != 0)
+        {
+            ((TextureRect)GetChild(0)).AddChild(currentBullet.Instantiate());
         }
 
         prevCount = bulletCount;

@@ -10,9 +10,9 @@ public partial class Movement : CharacterBody2D
     [Export] public float fastFriction;
     [Export] public float accel;
     [Export] PackedScene bullet;
+    [Export] PackedScene bulletPierce;
     [Export] float fireSpeed;
     [Export] Node2D firePos;
-    [Export] public int bullets = 6;
     [Export] float fireDelay = 1.5f;
     float delayTimer = 0;
     [Export] public AnimatedSprite2D sprite;
@@ -36,15 +36,42 @@ public partial class Movement : CharacterBody2D
     [Export] public int health = 2;
     float damageCoolDown = 1f;
     float damageTimer;
+
+    [Export] Texture2D iconPierce;
+    [Export] Texture2D iconNormal;
+
+    private readonly List<Bullet.BulletType> magazine = new();
+    public int bullets => magazine.Count;
     public override void _Ready()
     {
         GameManager.instance.player = this;
-        if (bullets > 0)
+    }
+    public void AddBullet(Bullet.BulletType kind, bool playSfx = true)
+    {
+        bool wasEmpty = magazine.Count == 0;
+        magazine.Add(kind);
+
+        if (playSfx)
+            AudioManager.instance.PlaySFX("bulletPickup");
+
+        if (wasEmpty)
         {
             sprite.Play("reload");
             AudioManager.instance.PlaySFX("reload");
         }
     }
+    private bool TryPopBullet(out Bullet.BulletType kind)
+    {
+        if (magazine.Count == 0)
+        {
+            kind = Bullet.BulletType.Normal;
+            return false;
+        }
+        kind = magazine[0];
+        magazine.RemoveAt(0); 
+        return true;
+    }
+    public Bullet.BulletType GetBulletKindAt(int index) => (index >= 0 && index < magazine.Count) ? magazine[index] : Bullet.BulletType.Normal;
     void StartRoll()
     {
         if (rollCooldownTimer > 0 || isRolling) return;
@@ -242,33 +269,37 @@ public partial class Movement : CharacterBody2D
         }
     }
 
+    public Texture2D GetBulletIcon(int index) => GetBulletKindAt(index) == Bullet.BulletType.Pierce ? iconPierce : iconNormal;
+
 
     public void Fire()
     {
-        bullets--;
+        if (!TryPopBullet(out var kind))
+            return;
         if (bullets > 0)
         {
             sprite.Play("reload");
             AudioManager.instance.PlaySFX("reload");
         }
-        Node node = bullet.Instantiate();
+        PackedScene scene = kind == Bullet.BulletType.Pierce ? bulletPierce : bullet;
+
+        Node node = scene.Instantiate();
         GetTree().CurrentScene.AddChild(node);
         Bullet b = (Bullet)node;
+
         b.playerFired = true;
         b.stuck = false;
         b.Velocity = fireSpeed * Vector2.Up.Rotated(Rotation) + Velocity;
         b.Rotate(Rotation);
         b.GlobalPosition = firePos.GlobalPosition;
+
         Vector2 shotDir = Vector2.Up.Rotated(Rotation).Normalized();
         Velocity -= shotDir * recoilForce;
+
         if (bullets == 0)
-        {
             AudioManager.instance.PlaySFX("crossbowFinal");
-        }
         else
-        {
             AudioManager.instance.PlaySFX("crossbowFire");
-        }
     }
 
 }

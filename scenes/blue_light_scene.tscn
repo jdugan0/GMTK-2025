@@ -28,11 +28,11 @@ animations = [{
 }]
 
 [node name="BlueLightScene" type="PointLight2D"]
-color = Color(0.235353, 0.660042, 0.99766, 1)
+color = Color(0.323213, 0.689876, 0.998468, 1)
 energy = 1.85
 shadow_filter = 1
 texture = ExtResource("1_66tfi")
-texture_scale = 9.38
+texture_scale = 11.29
 script = ExtResource("2_tqhi4")
 minInterval = 0.1
 maxInterval = 1.0

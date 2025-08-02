@@ -37,10 +37,6 @@ public partial class SpeakTrigger : Area2D
         }
     }
 
-    private void OnEnemyHit() {
-        Trigger();
-    }
-
     private void OnBodyEntered(Node body)
     {
         if (fired) return;
@@ -50,7 +46,7 @@ public partial class SpeakTrigger : Area2D
 
     private void OnPlayerFired() => Trigger();
     private void OnPlayerDamaged(int amount) => Trigger();
-    private void OnEnemyHit(Node2D enemy) => Trigger();
+    private void OnEnemyHit() => Trigger();
 
     private void Trigger()
     {

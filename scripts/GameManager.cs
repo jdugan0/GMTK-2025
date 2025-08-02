@@ -14,7 +14,7 @@ public partial class GameManager : Node
     public int enemiesRemaining;
     public int health;
     public string[] levels;
-    [Signal] public delegate void EnemyHitEventHandler(Node2D enemy);
+    [Signal] public delegate void EnemyHitEventHandler();
     public OEL oel;
     [Export] public int maxLevelUnlocked = 1;
     public Camera camera;

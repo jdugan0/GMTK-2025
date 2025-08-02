@@ -56,6 +56,7 @@ text = NodePath("CanvasLayer/Control/TextureRect/Label")
 box = NodePath("CanvasLayer/Control/TextureRect")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 36
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)

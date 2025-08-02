@@ -35,7 +35,6 @@ tile_map_data = PackedByteArray("AAD8//3/AwAIAAMAAAD8//7/AwAHAAMAAAD8////AwAGAAM
 tile_set = ExtResource("2_gwceb")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_08mmt")]
-visible = true
 
 [node name="Decor" type="TileMapLayer" parent="."]
 rotation = -0.000639125

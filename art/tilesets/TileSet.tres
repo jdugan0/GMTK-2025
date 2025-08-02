@@ -103,7 +103,11 @@ texture_region_size = Vector2i(400, 400)
 4:0/0 = 0
 2:0/0 = 0
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-200, -200, 200, -200, 200, 200, -200, 200)
 0:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+1:3/0 = 0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lph3c"]
 vertices = PackedVector2Array(200, 200, -200, 200, -200, -200, 200, -200)

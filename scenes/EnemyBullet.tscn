@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm1pymxltn3gc"]
+[gd_scene load_steps=11 format=3 uid="uid://bm1pymxltn3gc"]
 
 [ext_resource type="Script" uid="uid://cmishs85k4peh" path="res://scripts/EnemyBullet.cs" id="1_s6wdq"]
 [ext_resource type="Texture2D" uid="uid://dnq6e6ws41q83" path="res://art/particleLR_55x66.png" id="2_la4vt"]
 [ext_resource type="Texture2D" uid="uid://tf3hlmifms7y" path="res://art/attackLR_68x75.png" id="2_s6wdq"]
+[ext_resource type="PackedScene" uid="uid://dq21be1h6fpby" path="res://scenes/LightScene.tscn" id="4_rdk3h"]
 
 [sub_resource type="Curve" id="Curve_rdk3h"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -56,3 +57,6 @@ rotation = 3.14159
 texture = ExtResource("2_s6wdq")
 region_enabled = true
 region_rect = Rect2(0, 0, 68, 75)
+
+[node name="LightScene" parent="." instance=ExtResource("4_rdk3h")]
+energy = 0.2

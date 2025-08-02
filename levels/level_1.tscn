@@ -68,7 +68,6 @@ region_rect = Rect2(0, 0, 1200, 800)
 
 [node name="Player" parent="." instance=ExtResource("3_l53as")]
 position = Vector2(5, 1535)
-rollCooldown = 0.5
 
 [node name="Bullet" parent="." instance=ExtResource("6_5ot28")]
 position = Vector2(183, -6604)

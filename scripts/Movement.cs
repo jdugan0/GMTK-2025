@@ -39,6 +39,7 @@ public partial class Movement : CharacterBody2D
 
     [Export] Texture2D iconPierce;
     [Export] Texture2D iconNormal;
+    [Export] GpuParticles2D dashEffect;
 
     private readonly List<Bullet.BulletType> magazine = new();
     public int bullets => magazine.Count;
@@ -80,7 +81,7 @@ public partial class Movement : CharacterBody2D
         isRolling = true;
         rollTImer = rollTime;
         rollCooldownTimer = rollCooldown;
-
+        dashEffect.Emitting = true;
         prevLayer = CollisionLayer;
         prevMask = CollisionMask;
         CollisionMask &= ~((1u << 1) | (1u << 4));

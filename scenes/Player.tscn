@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://5ybjq0gl2k4h"]
+[gd_scene load_steps=26 format=3 uid="uid://5ybjq0gl2k4h"]
 
 [ext_resource type="Script" uid="uid://mf4ys1idw2eb" path="res://scripts/Movement.cs" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://co4ok6cl18jwu" path="res://scenes/Bullet.tscn" id="2_v6fml"]
@@ -8,11 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://cb3d0rjd67guf" path="res://scenes/Arrows/ArrowExit.tscn" id="4_qu4a1"]
 [ext_resource type="Texture2D" uid="uid://701jh8ngn5g4" path="res://art/playerDeath_855x608.png" id="5_70d11"]
 [ext_resource type="Texture2D" uid="uid://cb1jh8vq334io" path="res://art/bulletico_120x187.png" id="5_bruh7"]
+[ext_resource type="Texture2D" uid="uid://cju18dk5ma63n" path="res://art/sBulletico_120x187.png" id="6_o4126"]
 [ext_resource type="Texture2D" uid="uid://d32ygmsh1dj2g" path="res://art/droll_460x817.png" id="7_cw2d6"]
 [ext_resource type="Texture2D" uid="uid://3fee4itn1st3" path="res://art/dRoll_418x808.png" id="7_khinc"]
+[ext_resource type="PackedScene" uid="uid://cn7kth53horlr" path="res://scenes/DashExplosion.tscn" id="11_d3wef"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bruh7"]
-size = Vector2(100, 100)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkdrv"]
+atlas = ExtResource("6_o4126")
+region = Rect2(120, 0, 120, 187)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6eyey"]
 atlas = ExtResource("5_bruh7")
@@ -117,7 +120,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder") groups=["hittable"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("firePos", "sprite", "arrowBulletHolder", "dashEffect") groups=["hittable"]]
 collision_layer = 4
 collision_mask = 51
 motion_mode = 1
@@ -139,8 +142,11 @@ rollTime = 0.2
 rollSpeed = 6500.0
 rollCooldown = 0.5
 recoilForce = 1500.0
-iconPierce = SubResource("PlaceholderTexture2D_bruh7")
+iconPierce = SubResource("AtlasTexture_lkdrv")
 iconNormal = SubResource("AtlasTexture_6eyey")
+dashEffect = NodePath("DashExplosion")
+
+[node name="DashExplosion" parent="." instance=ExtResource("11_d3wef")]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

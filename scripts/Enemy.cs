@@ -27,18 +27,21 @@ public partial class Enemy : CharacterBody2D
     {
         NORMAL,
         RANGED,
-        PROT
+        PROT,
+        FAST
     }
     [Export] EnemyTypes enemyType = EnemyTypes.NORMAL;
 
     public void Death()
     {
+        AudioManager.instance.PlaySFX("hitSuccess");
+        AudioManager.instance.PlaySFX("vampHiss");
         if (health > 1 && enemyType == EnemyTypes.PROT)
         {
             health--;
             return;
         }
-        AudioManager.instance.PlaySFX("hitSuccess");
+
         Node2D ghostNode = ghost.Instantiate<Node2D>();
         GetTree().CurrentScene.AddChild(ghostNode);
         ghostNode.GlobalPosition = GlobalPosition;
@@ -84,6 +87,15 @@ public partial class Enemy : CharacterBody2D
                 {
                     GameManager.instance.player.TakeDamage();
                 }
+                AudioManager.instance.PlaySFX("slash");
+                break;
+            case EnemyTypes.FAST:
+                sprite.Play("Attack");
+                if (playerIn)
+                {
+                    GameManager.instance.player.TakeDamage();
+                }
+                AudioManager.instance.PlaySFX("enemyFast");
                 break;
             case EnemyTypes.PROT:
                 sprite.Play("Attack");
@@ -91,6 +103,7 @@ public partial class Enemy : CharacterBody2D
                 {
                     GameManager.instance.player.TakeDamage();
                 }
+                AudioManager.instance.PlaySFX("enemyStrong");
                 break;
             case EnemyTypes.RANGED:
                 sprite.Play("Attack");

@@ -10,7 +10,7 @@ public partial class GameManager : Node
     public PauseMenu pauseMenu;
     public bool paused = false;
     public string currentLevel;
-    public int currentLevelID;
+    public int currentLevelID = -1;
     public int enemiesRemaining;
     public int health;
     public string[] levels;
@@ -72,6 +72,7 @@ public partial class GameManager : Node
         AudioManager.instance.CancelSFX("mainMenu");
         await SceneSwitcher.instance.SwitchSceneAsyncSlide(levels[id - 1]);
         await GameManager.instance.StartMusic();
+        SpeedrunManager.levelTime = 0;
     }
     public async void RestartLevel()
     {

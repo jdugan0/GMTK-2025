@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dghh2wnp8oryo"]
+[gd_scene load_steps=5 format=3 uid="uid://cn7kth53horlr"]
 
-[ext_resource type="Texture2D" uid="uid://da44jd5qu1uyb" path="res://art/particleMissed_55x66.png" id="1_lp8ds"]
+[ext_resource type="Texture2D" uid="uid://mcjxs67y30sn" path="res://art/particleDash_92x95.png" id="1_05t8d"]
 
 [sub_resource type="Curve" id="Curve_l47h0"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -12,8 +12,11 @@ curve = SubResource("Curve_l47h0")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l47h0"]
 particle_flag_align_y = true
 particle_flag_disable_z = true
-initial_velocity_min = 662.44
-initial_velocity_max = 822.44
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 780.62
+initial_velocity_max = 899.71
 gravity = Vector3(0, 0, 0)
 damping_min = 6.0
 damping_max = 12.0
@@ -21,10 +24,10 @@ scale_min = 1.5
 scale_max = 2.0
 alpha_curve = SubResource("CurveTexture_lp8ds")
 
-[node name="BulletExplosion" type="GPUParticles2D"]
+[node name="DashExplosion" type="GPUParticles2D"]
 emitting = false
-amount = 5
-texture = ExtResource("1_lp8ds")
+amount = 20
+texture = ExtResource("1_05t8d")
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0

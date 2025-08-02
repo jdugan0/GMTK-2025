@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2qg6ys7x5u2m"]
+[gd_scene load_steps=13 format=3 uid="uid://c2qg6ys7x5u2m"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_ldiid"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_jws25"]
 [ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="3_8s80y"]
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="5_8s80y"]
 [ext_resource type="Texture2D" uid="uid://wvyewxjg512e" path="res://art/attackerFast_331x728.png" id="5_jws25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
@@ -114,6 +115,13 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("RectangleShape2D_mpr68")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3, -198)
+color = Color(0.970975, 0.0480647, 3.85046e-07, 1)
+energy = 0.8
+texture = ExtResource("5_8s80y")
+texture_scale = 10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="OnCol"]
 [connection signal="body_entered" from="Area2D2" to="." method="BodyEntered"]

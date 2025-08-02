@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_jq78i"]
 [ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="9_wj73x"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ofchu"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lsnkt"]
 scenes/1/scene = ExtResource("7_q42ux")
 scenes/2/scene = ExtResource("8_ofchu")
 scenes/3/scene = ExtResource("8_lsnkt")
@@ -20,7 +20,7 @@ scenes/4/scene = ExtResource("9_wj73x")
 
 [sub_resource type="TileSet" id="TileSet_l53as"]
 tile_size = Vector2i(100, 100)
-sources/0 = SubResource("TileSetScenesCollectionSource_ofchu")
+sources/0 = SubResource("TileSetScenesCollectionSource_lsnkt")
 
 [node name="3" type="Node2D"]
 

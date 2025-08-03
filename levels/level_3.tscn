@@ -116,3 +116,6 @@ lineName = "4_hallway"
 [node name="SpeakTrigger8" parent="." instance=ExtResource("12_0unm6")]
 position = Vector2(-1613, -3985)
 lineName = "books"
+
+[node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
+position = Vector2(-1152, -9890)

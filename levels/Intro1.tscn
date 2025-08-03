@@ -16,7 +16,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_qu2ks"]
 animations = [{
 "frames": [{
-"duration": 3.0,
+"duration": 3.2,
 "texture": ExtResource("2_fj8pa")
 }, {
 "duration": 3.0,
@@ -57,6 +57,7 @@ animations = [{
 [node name="Sprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qu2ks")
 animation = &"anim"
+frame_progress = 0.587296
 script = ExtResource("1_r3xse")
 time = 18.0
 nextLevel = true

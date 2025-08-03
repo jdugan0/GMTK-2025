@@ -73,9 +73,15 @@ tile_map_data = PackedByteArray("AAAgAO//BAAAAAAAAQAwAO7/BAAAAAAAAQAwAOD/BAAAAAA
 tile_set = ExtResource("2_dfjjl")
 
 [node name="SpeakTrigger" parent="." instance=ExtResource("11_vm7no")]
-position = Vector2(20210, -13784)
-scale = Vector2(3.28602, 0.246746)
+position = Vector2(20218, -13824)
+scale = Vector2(2.99939, 0.126756)
 lineName = "table_dodge"
+
+[node name="SpeakTrigger4" parent="." instance=ExtResource("11_vm7no")]
+position = Vector2(20218, -13824)
+scale = Vector2(2.99939, 0.126756)
+lineName = "2_ready"
+type = 1
 
 [node name="SpeakTrigger3" parent="." instance=ExtResource("11_vm7no")]
 position = Vector2(19437, -6435)

@@ -24,6 +24,7 @@ public partial class GameManager : Node
     {
         instance = this;
     }
+    public bool hardCore = false;
 
     public override void _Process(double delta)
     {

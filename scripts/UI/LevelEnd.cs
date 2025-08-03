@@ -6,6 +6,7 @@ public partial class LevelEnd : Area2D
     [Export] CanvasLayer UI;
     [Export] AnimatedSprite2D sprite;
     bool complete = false;
+    bool hitButton = false;
     public void OnCol(Node2D node)
     {
         if (node is Movement && GameManager.instance.enemiesRemaining == 0 && !complete)
@@ -36,6 +37,8 @@ public partial class LevelEnd : Area2D
     }
     public void NextLevel()
     {
+        if (hitButton) return;
+        hitButton = true;
         GameManager.instance.NextLevel();
     }
 }

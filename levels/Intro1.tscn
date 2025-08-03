@@ -57,7 +57,8 @@ animations = [{
 [node name="Sprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qu2ks")
 animation = &"anim"
-frame_progress = 0.587296
+frame = 10
+frame_progress = 1.0
 script = ExtResource("1_r3xse")
 time = 18.0
 nextLevel = true

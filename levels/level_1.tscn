@@ -80,7 +80,7 @@ position = Vector2(183, -6604)
 rotation = 0.785398
 
 [node name="Bullet2" parent="." instance=ExtResource("6_5ot28")]
-position = Vector2(8989, -9008)
+position = Vector2(8951, -9065)
 rotation = -0.785398
 
 [node name="Enemy" type="TileMapLayer" parent="."]
@@ -94,7 +94,7 @@ navigation_enabled = false
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="Lights" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD7/wIABAAAAAAAAQACAPf/BAAAAAAAAQD9//f/BAAAAAAAAQAEAAIABAAAAAAAAQAMAPP/BAAAAAAAAQAGAO7/BAAAAAAAAQAAAO//BAAAAAAAAQAXAPX/BAAAAAAAAQAQAPX/BAAAAAAAAQARAOz/BAAAAAAAAQAYAOX/BAAAAAAAAQAUAN7/BAAAAAAAAQAbAPP/BAAAAAAAAQAjAO3/BAAAAAAAAQAlAPD/BAAAAAAAAQD9//3/BAAAAAAAAQADAPH/BAAAAAAAAQAdAPD/BAAAAAAAAQAKAPL/BAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAD7/wIABAAAAAAAAQACAPf/BAAAAAAAAQD9//f/BAAAAAAAAQAEAAIABAAAAAAAAQAMAPP/BAAAAAAAAQAGAO7/BAAAAAAAAQAAAO//BAAAAAAAAQAXAPX/BAAAAAAAAQAQAPX/BAAAAAAAAQARAOz/BAAAAAAAAQAYAOX/BAAAAAAAAQAUAN7/BAAAAAAAAQAbAPP/BAAAAAAAAQAjAO3/BAAAAAAAAQAlAPD/BAAAAAAAAQD9//3/BAAAAAAAAQADAPH/BAAAAAAAAQAdAPD/BAAAAAAAAQAKAPL/BAAAAAAAAQAWAOz/BAAAAAAAAQA=")
 tile_set = ExtResource("2_gwceb")
 
 [node name="SpeakTrigger" parent="." instance=ExtResource("12_aerfg")]
@@ -127,3 +127,5 @@ position = Vector2(3699, -6008)
 scale = Vector2(0.68, 1.96)
 lineName = "dodgers"
 type = 2
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

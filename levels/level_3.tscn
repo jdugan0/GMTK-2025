@@ -121,3 +121,10 @@ lineName = "books"
 
 [node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
 position = Vector2(-1152, -9890)
+
+[node name="Collectible" parent="." instance=ExtResource("14_wi0qq")]
+position = Vector2(-12848, -19945)
+id = 3
+image = ExtResource("15_s3q8p")
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -24,7 +24,7 @@ public partial class Collectible : Node2D
 		if (hit is Movement player)
 		{
 			if (player.isRolling) return;
-			// AudioManager.instance.PlaySFX("foundCollectible");
+			AudioManager.instance.PlaySFX("pageTurn");
 			parent.Show();
 			onScreen = true;
 			GetTree().Paused = true;

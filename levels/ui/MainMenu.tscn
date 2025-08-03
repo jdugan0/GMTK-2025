@@ -76,9 +76,9 @@ text = "QUIT"
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 904.0
-offset_top = 542.0
+offset_top = 768.0
 offset_right = 1878.0
-offset_bottom = 619.0
+offset_bottom = 845.0
 theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 56
 text = "Too easy? Try hardcore mode!"

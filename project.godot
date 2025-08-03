@@ -13,6 +13,7 @@ config_version=5
 config/name="SecondHandSlayer"
 run/main_scene="uid://bln2h1yf6bgd6"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+boot_splash/image="uid://cjx0uv31cb60d"
 config/icon="uid://cgxae72sajltm"
 
 [autoload]

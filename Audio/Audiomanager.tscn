@@ -224,7 +224,6 @@ name = "crossbowFinal"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m6wxk"]
-random_pitch = 1.2
 streams_count = 3
 stream_0/stream = ExtResource("32_b18dy")
 stream_1/stream = ExtResource("33_iunf2")

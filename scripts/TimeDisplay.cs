@@ -8,7 +8,14 @@ public partial class TimeDisplay : Label
     {
         if (!levelTime)
         {
-            Text = "TOTAL TIME: " + FormatTime(SpeedrunManager.totalTime);
+            if (SpeedrunManager.speedrun)
+            {
+                Text = "TOTAL TIME: " + FormatTime(SpeedrunManager.totalTime);
+            }
+            else
+            {
+                Text = "";
+            }
         }
     }
 

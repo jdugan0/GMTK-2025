@@ -10,8 +10,8 @@
 radius = 144.003
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 315.0
-height = 958.0
+radius = 406.0
+height = 1152.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldiid"]
 atlas = ExtResource("5_jws25")
@@ -69,7 +69,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
-size = Vector2(855.19, 1026.06)
+size = Vector2(611.89, 905.395)
 
 [node name="FastEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
 collision_layer = 2

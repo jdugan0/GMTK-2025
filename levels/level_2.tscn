@@ -56,7 +56,7 @@ position = Vector2(16459, -5231)
 rotation = -0.785398
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAClADv/AAAAAAAAAQClAEr/AAAAAAAAAQC/AEn/AAAAAAAAAQC2AGj/AAAAAAAAAQDVAF3/AAAAAAAAAwC8ADz/AAAAAAAAAQDBAKX/AAAAAAAAAQDHAGP/AAAAAAAAAgBsAD7/AAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAClAEr/AAAAAAAAAQC/AEn/AAAAAAAAAQC8ADz/AAAAAAAAAQDBAKX/AAAAAAAAAQDHAGP/AAAAAAAAAgC2AGj/AAAAAAAAAQBsAD7/AAAAAAAAAwA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
 
@@ -81,3 +81,10 @@ lineName = "table_dodge"
 position = Vector2(19437, -6435)
 lineName = "2_return"
 onlyOnEnd = true
+
+[node name="SpeakTrigger2" parent="." instance=ExtResource("11_vm7no")]
+position = Vector2(1025, 119)
+lineName = "on_damage"
+type = 4
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

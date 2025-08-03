@@ -9,8 +9,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 315.0
-height = 958.0
+radius = 391.0
+height = 1056.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8do"]
 atlas = ExtResource("2_55jtl")
@@ -75,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
-size = Vector2(855.19, 1026.06)
+size = Vector2(692.615, 926.73)
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
 collision_layer = 2

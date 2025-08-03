@@ -9,8 +9,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 396.0
-height = 1022.0
+radius = 468.0
+height = 1142.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iw1qt"]
 atlas = ExtResource("4_iw1qt")
@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
-size = Vector2(855.19, 1026.06)
+size = Vector2(744, 902.35)
 
 [sub_resource type="Curve" id="Curve_iw1qt"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

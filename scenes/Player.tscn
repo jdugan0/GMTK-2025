@@ -23,7 +23,7 @@ atlas = ExtResource("5_bruh7")
 region = Rect2(120, 0, 120, 187)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khinc"]
-radius = 322.126
+radius = 440.056
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3li8b"]
 radius = 222.092
@@ -146,6 +146,7 @@ recoilForce = 1500.0
 iconPierce = SubResource("AtlasTexture_lkdrv")
 iconNormal = SubResource("AtlasTexture_6eyey")
 dashEffect = NodePath("DashExplosion")
+dashSafety = 0.6
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.4

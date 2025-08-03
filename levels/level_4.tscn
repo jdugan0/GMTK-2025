@@ -56,7 +56,7 @@ position = Vector2(2197, -2996)
 rotation = -0.523598
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADu//j/AAAAAAAAAgDv/8z/AAAAAAAAAgB0AOL/AAAAAAAAAQCOAPb/AAAAAAAAAgChAPb/AAAAAAAAAgCNAMz/AAAAAAAAAgCiAM7/AAAAAAAAAgAGAPz/AAAAAAAAAQAEAK//AAAAAAAAAwCbAOT/AAAAAAAAAwDy/7v/AAAAAAAAAQBqAOL/AAAAAAAAAgAyAOH/AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AADu//j/AAAAAAAAAgDv/8z/AAAAAAAAAgCOAPb/AAAAAAAAAgCiAM7/AAAAAAAAAgBqAOL/AAAAAAAAAgBLAOP/AAAAAAAABAA=")
 tile_set = SubResource("TileSet_dmnu2")
 navigation_enabled = false
 
@@ -86,5 +86,11 @@ type = 1
 position = Vector2(1621, -2964)
 scale = Vector2(1.36, 1)
 lineName = "big_guy"
+
+[node name="SpeakTrigger3" parent="." instance=ExtResource("12_8hlpj")]
+position = Vector2(225.176, -2385.44)
+rotation = 0.523599
+lineName = "on_damage"
+type = 4
 
 [connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

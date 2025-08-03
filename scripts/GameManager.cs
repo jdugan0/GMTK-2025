@@ -20,9 +20,31 @@ public partial class GameManager : Node
     public Camera camera;
     public string currentSong;
     [Export] string[] songNames;
+    private const string SavePath = "user://save.cfg";
     public override void _Ready()
     {
         instance = this;
+        LoadProgress();
+    }
+    private void SaveProgress()
+    {
+        var cfg = new ConfigFile();
+        cfg.Load(SavePath);
+        cfg.SetValue("progress", "max_level_unlocked", maxLevelUnlocked);
+        cfg.Save(SavePath);
+    }
+    private void LoadProgress()
+    {
+        var cfg = new ConfigFile();
+        var err = cfg.Load(SavePath);
+        if (err == Error.Ok)
+        {
+            maxLevelUnlocked = (int)cfg.GetValue("progress", "max_level_unlocked", maxLevelUnlocked);
+        }
+        else
+        {
+            SaveProgress();
+        }
     }
     public bool hardCore = false;
 
@@ -56,6 +78,7 @@ public partial class GameManager : Node
         if (GameManager.instance.maxLevelUnlocked == GameManager.instance.currentLevelID)
         {
             GameManager.instance.maxLevelUnlocked++;
+            SaveProgress();
         }
         LoadLevel(currentLevelID + 1);
     }

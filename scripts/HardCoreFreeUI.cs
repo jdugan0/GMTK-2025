@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class HarcoreFree : Node2D
+public partial class HardCoreFreeUI : Control
 {
     public override void _Ready()
     {

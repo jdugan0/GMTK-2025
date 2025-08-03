@@ -17,6 +17,7 @@ public partial class GameManager : Node
     [Signal] public delegate void EnemyHitEventHandler();
     public OEL oel;
     [Export] public int maxLevelUnlocked = 1;
+    public int maxLevelUnlockedHardcore = 1;
     public Camera camera;
     public string currentSong;
     [Export] string[] songNames;
@@ -32,6 +33,7 @@ public partial class GameManager : Node
         var cfg = new ConfigFile();
         cfg.Load(SavePath);
         cfg.SetValue("progress", "max_level_unlocked", maxLevelUnlocked);
+        cfg.SetValue("progress", "max_level_unlocked_HC", maxLevelUnlockedHardcore);
         cfg.SetValue("options", "volume", AudioServer.GetBusVolumeLinear(AudioServer.GetBusIndex("Master")));
         cfg.SetValue("options", "timer", timer);
         cfg.SetValue("options", "hardCore", hardCore);
@@ -44,6 +46,7 @@ public partial class GameManager : Node
         if (err == Error.Ok)
         {
             maxLevelUnlocked = (int)cfg.GetValue("progress", "max_level_unlocked", maxLevelUnlocked);
+            maxLevelUnlockedHardcore = (int)cfg.GetValue("progress", "max_level_unlocked_HC", maxLevelUnlockedHardcore);
             timer = (bool)cfg.GetValue("options", "timer", timer);
             AudioServer.SetBusVolumeLinear(AudioServer.GetBusIndex("Master"), (float)cfg.GetValue("options", "volume", 0));
             hardCore = (bool)cfg.GetValue("options", "hardCore", hardCore);
@@ -83,9 +86,11 @@ public partial class GameManager : Node
     public void NextLevel()
     {
         GetTree().Paused = false;
-        if (GameManager.instance.maxLevelUnlocked == GameManager.instance.currentLevelID)
+        int levelUnlocked = hardCore ? maxLevelUnlockedHardcore : maxLevelUnlocked;
+        if (levelUnlocked == currentLevelID)
         {
-            GameManager.instance.maxLevelUnlocked++;
+            if (hardCore) maxLevelUnlockedHardcore++;
+            else maxLevelUnlocked++;
             SaveProgress();
         }
         LoadLevel(currentLevelID + 1);

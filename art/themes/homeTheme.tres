@@ -1,15 +1,8 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cwdyn1lge3e2s"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cwdyn1lge3e2s"]
 
 [ext_resource type="Texture2D" uid="uid://bjgjqxudkgjyi" path="res://art/homebutton_1370x322.png" id="1_fysou"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fysou"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fysou"]
-texture = ExtResource("1_fysou")
-texture_margin_top = 30.0
-texture_margin_right = 200.0
-texture_margin_bottom = 30.0
-region_rect = Rect2(0, 211, 905, 211)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7d1a"]
 texture = ExtResource("1_fysou")
@@ -18,19 +11,11 @@ texture_margin_right = 200.0
 texture_margin_bottom = 30.0
 region_rect = Rect2(0, 0, 905, 208)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fysou"]
-atlas = ExtResource("1_fysou")
-region = Rect2(0, 0, 907, 205)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gkt0c"]
-texture = SubResource("AtlasTexture_fysou")
-modulate_color = Color(1, 0.12549, 0.0666667, 1)
-
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_focus_color = Color(0.133333, 0.603922, 0.647059, 1)
 Button/colors/font_hover_color = Color(0.132408, 0.605209, 0.647348, 1)
 Button/styles/focus = SubResource("StyleBoxEmpty_fysou")
-Button/styles/hover = SubResource("StyleBoxTexture_fysou")
+Button/styles/hover = SubResource("StyleBoxTexture_y7d1a")
 Button/styles/normal = SubResource("StyleBoxTexture_y7d1a")
-Button/styles/pressed = SubResource("StyleBoxTexture_gkt0c")
+Button/styles/pressed = SubResource("StyleBoxTexture_y7d1a")

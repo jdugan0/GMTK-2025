@@ -119,6 +119,7 @@ public partial class Movement : CharacterBody2D
         if (die) return;
         if (damageTimer > 0) return;
         if (rollSafeTimer > 0) return;
+        if (GameManager.instance.hardCore) amount = 3;
         damageTimer = damageCoolDown;
         health -= amount;
         AudioManager.instance.PlaySFX("playerHit");

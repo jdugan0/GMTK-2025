@@ -49,7 +49,11 @@ navigation_enabled = false
 position = Vector2(-29, -7340)
 
 [node name="Bullet4" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(-7576, -20362)
+position = Vector2(-3938, -17693)
+rotation = 0.523599
+
+[node name="Bullet5" parent="." instance=ExtResource("6_0unm6")]
+position = Vector2(-7996, -16601)
 rotation = 0.523599
 
 [node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
@@ -57,7 +61,7 @@ position = Vector2(847, -10604)
 rotation = 0.523599
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AABo/zn/AAAAAAAAAQCF/yL/AAAAAAAAAgCq/0L/AAAAAAAAAQC1/0L/AAAAAAAAAgBg/xT/AAAAAAAAAwCv/3P/AAAAAAAABAD//2r/AAAAAAAAAgAGADX/AAAAAAAAAQD6/zD/AAAAAAAAAQBt/0z/AAAAAAAABABi/4L/AAAAAAAAAgDG/yH/AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AABo/zn/AAAAAAAAAQCF/yL/AAAAAAAAAgCq/0L/AAAAAAAAAQC1/0L/AAAAAAAAAgBg/xT/AAAAAAAAAwCv/3P/AAAAAAAABAD//2r/AAAAAAAAAgAGADX/AAAAAAAAAQD6/zD/AAAAAAAAAQBt/0z/AAAAAAAABABi/4L/AAAAAAAAAgDG/yH/AAAAAAAABAC//0L/AAAAAAAAAwA=")
 tile_set = SubResource("TileSet_l53as")
 navigation_enabled = false
 
@@ -96,4 +100,4 @@ type = 4
 
 [node name="HardcoreScene" parent="." instance=ExtResource("13_q42ux")]
 visible = false
-tile_map_data = PackedByteArray("AABr/6T8AAAAAAAABAAn/6T8AAAAAAAABAAm/6T8AAAAAAAABADs/xf8AAAAAAAAAwDF/pf8AAAAAAAAAgAL/+n7AAAAAAAAAwBt/5D6AAAAAAAAAwCs/4b6AAAAAAAAAQCr/6v6AAAAAAAAAQCr/6z6AAAAAAAAAQD3+xD7AAAAAAAABAD4+xD7AAAAAAAABAAY/A38AAAAAAAABAA=")
+tile_map_data = PackedByteArray("AADs/xf8AAAAAAAAAwDF/pf8AAAAAAAAAgAL/+n7AAAAAAAAAwBt/5D6AAAAAAAAAwBi/5/8AAAAAAAAAgBi/6D8AAAAAAAAAgAV/Af8AAAAAAAAAwCC/g37AAAAAAAABACl/4/6AAAAAAAAAgD9+y37AAAAAAAAAgA=")

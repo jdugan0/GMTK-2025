@@ -119,5 +119,4 @@ lineName = "3_down"
 type = 5
 
 [node name="HardcoreScene" parent="." instance=ExtResource("15_vjtdm")]
-visible = false
-tile_map_data = PackedByteArray("AABtAmD+AAAAAAAAAgBwAqL+AAAAAAAAAgAzAgD+AAAAAAAABADRAUr+AAAAAAAAAwDGAdP+AAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AABtAmD+AAAAAAAAAgAzAgD+AAAAAAAABADRAUr+AAAAAAAAAwDGAdP+AAAAAAAAAwA=")

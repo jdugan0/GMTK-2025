@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://d3df3pqxnto64"]
+[gd_scene load_steps=81 format=3 uid="uid://d3df3pqxnto64"]
 
 [ext_resource type="Script" uid="uid://bgxrlc5jnr4u" path="res://Audio/AudioManager.cs" id="1_ulbmk"]
 [ext_resource type="Script" uid="uid://007myadtw53h" path="res://Audio/Sound.cs" id="2_subo3"]
@@ -31,8 +31,9 @@
 [ext_resource type="AudioStream" uid="uid://4cwo7fsfg4it" path="res://Audio/SFX/Bullet Pickup.wav" id="29_uep86"]
 [ext_resource type="AudioStream" uid="uid://cb1hcb3sepvjg" path="res://Audio/SFX/Level Complete.wav" id="30_wci4t"]
 [ext_resource type="AudioStream" uid="uid://bqv07yec5lnbf" path="res://Audio/SFX/crossbow final.mp3" id="31_uep86"]
-[ext_resource type="AudioStream" uid="uid://cvgi3gtty6ph5" path="res://Audio/SFX/Dodge 1.wav" id="32_db0g7"]
-[ext_resource type="AudioStream" uid="uid://bwxi1siw6ncx6" path="res://Audio/SFX/Dodge 2.wav" id="33_y88w7"]
+[ext_resource type="AudioStream" uid="uid://6drcumsj65jo" path="res://Audio/SFX/New Dodge 1.wav" id="32_b18dy"]
+[ext_resource type="AudioStream" uid="uid://dah0c5ilqlq6f" path="res://Audio/SFX/New Dodge 2.wav" id="33_iunf2"]
+[ext_resource type="AudioStream" uid="uid://bc6ejcs0v0cgu" path="res://Audio/SFX/New Dodge 3.wav" id="34_kexwl"]
 [ext_resource type="AudioStream" uid="uid://w2cb66tn2yth" path="res://Audio/Music/Whimsy 2.wav" id="34_pxwiq"]
 [ext_resource type="AudioStream" uid="uid://yiif8fkavrtm" path="res://Audio/SFX/Arcade_Game_Medium_Hit.mp3" id="35_y88w7"]
 [ext_resource type="AudioStream" uid="uid://dfk367xdcjxsx" path="res://Audio/SFX/Peirce 1.wav" id="36_m6wxk"]
@@ -66,7 +67,7 @@ stream_1/stream = ExtResource("6_eqkb6")
 [sub_resource type="Resource" id="Resource_jnl66"]
 script = ExtResource("2_subo3")
 stream = SubResource("AudioStreamRandomizer_syugd")
-volume = 0.0
+volume = -2.0
 name = "footsteps"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
@@ -223,14 +224,16 @@ name = "crossbowFinal"
 metadata/_custom_type_script = "uid://007myadtw53h"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_m6wxk"]
-streams_count = 2
-stream_0/stream = ExtResource("32_db0g7")
-stream_1/stream = ExtResource("33_y88w7")
+random_pitch = 1.2
+streams_count = 3
+stream_0/stream = ExtResource("32_b18dy")
+stream_1/stream = ExtResource("33_iunf2")
+stream_2/stream = ExtResource("34_kexwl")
 
 [sub_resource type="Resource" id="Resource_giii4"]
 script = ExtResource("2_subo3")
 stream = SubResource("AudioStreamRandomizer_m6wxk")
-volume = 0.0
+volume = -2.0
 name = "dodgeRoll"
 metadata/_custom_type_script = "uid://007myadtw53h"
 

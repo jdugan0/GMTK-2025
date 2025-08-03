@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dry8mgrnd1de7"]
+[gd_scene load_steps=16 format=4 uid="uid://dry8mgrnd1de7"]
 
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_yaabq"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dhnqt"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="9_p0827"]
 [ext_resource type="PackedScene" uid="uid://b2b8ptmqti8kl" path="res://scenes/BulletPierce.tscn" id="11_a58qw"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_ij65d"]
+[ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="13_gci8k"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mgx0j"]
 scenes/1/scene = ExtResource("6_gci8k")
@@ -26,6 +27,8 @@ sources/0 = SubResource("TileSetScenesCollectionSource_mgx0j")
 [node name="5" type="Node2D"]
 
 [node name="LevelHUD" parent="." instance=ExtResource("1_yaabq")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("13_gci8k")]
 
 [node name="Floor" type="TileMapLayer" parent="." groups=["hittable"]]
 position = Vector2(0, -14)

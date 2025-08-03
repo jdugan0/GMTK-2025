@@ -75,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
-size = Vector2(692.615, 926.73)
+size = Vector2(1251, 1251)
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
 collision_layer = 2
@@ -122,6 +122,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(20.5, -31.5)
 shape = SubResource("RectangleShape2D_mpr68")
 
 [connection signal="body_entered" from="Area2D" to="." method="OnCol"]

@@ -69,7 +69,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpr68"]
-size = Vector2(611.89, 905.395)
+size = Vector2(1124, 1185)
 
 [node name="FastEnemy" type="CharacterBody2D" node_paths=PackedStringArray("nav", "sprite") groups=["Enemy", "hittable"]]
 collision_layer = 2
@@ -117,6 +117,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(12, -6.5)
 shape = SubResource("RectangleShape2D_mpr68")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

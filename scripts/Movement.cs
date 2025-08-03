@@ -85,6 +85,7 @@ public partial class Movement : CharacterBody2D
         // sprite.Modulate = new Color(origColor.R, origColor.G, origColor.B, 0.40f);
         isRolling = true;
         rollTImer = rollTime;
+        rollSafeTimer = dashSafety;
         rollCooldownTimer = rollCooldown;
         dashEffect.Emitting = true;
         prevLayer = CollisionLayer;
@@ -163,7 +164,6 @@ public partial class Movement : CharacterBody2D
         Vector2 toMouse = mousePos - GlobalPosition;
         float targetAng = toMouse.Angle() + Mathf.Pi / 2;
         Rotation = Mathf.LerpAngle(Rotation, targetAng, 80f * (float)delta);
-        rollSafeTimer = dashSafety;
         if (isRolling)
         {
             if (rollDirection == Vector2.Zero)

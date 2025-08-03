@@ -34,13 +34,14 @@ public partial class Enemy : CharacterBody2D
     }
     [Export] EnemyTypes enemyType = EnemyTypes.NORMAL;
 
-    public void Death()
+    public void Death(bool instant = false)
     {
         AudioManager.instance.PlaySFX("hitSuccess");
         AudioManager.instance.PlaySFX("vampHiss");
         // EmitSignal(GameManager.SignalName.EnemyHit);
-        if (health > 1 && enemyType == EnemyTypes.PROT)
+        if (health > 1 && enemyType == EnemyTypes.PROT && !instant)
         {
+            Modulate = new Color("df4852");
             bloodSplatter.Emitting = true;
             health--;
             return;
@@ -60,7 +61,8 @@ public partial class Enemy : CharacterBody2D
         {
             if (b.stuck) return;
             b.Hit();
-            Death();
+            Death(b.bulletType == Bullet.BulletType.Pierce);
+            if (enemyType == EnemyTypes.PROT) b.Hit();
         }
     }
     public override void _PhysicsProcess(double delta)

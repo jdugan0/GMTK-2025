@@ -12,10 +12,6 @@ public partial class LevelEnd : Area2D
         {
             GetTree().Paused = true;
             UI.Visible = true;
-            if (GameManager.instance.maxLevelUnlocked == GameManager.instance.currentLevelID)
-            {
-                GameManager.instance.maxLevelUnlocked++;
-            }
             AudioManager.instance.PlaySFX("doorEntered");
             complete = true;
 

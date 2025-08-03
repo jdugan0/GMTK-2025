@@ -127,5 +127,3 @@ position = Vector2(3699, -6008)
 scale = Vector2(0.68, 1.96)
 lineName = "dodgers"
 type = 2
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

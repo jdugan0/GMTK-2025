@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c67yqf3qd17es"]
+[gd_scene load_steps=18 format=4 uid="uid://c67yqf3qd17es"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="3_ng40l"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_8hlpj"]
 [ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="13_qhnv2"]
+[ext_resource type="PackedScene" uid="uid://dh6hhvglr2gvp" path="res://scenes/collectible.tscn" id="14_vru0x"]
+[ext_resource type="Texture2D" uid="uid://rmkie6p6fh5a" path="res://art/Collectibles/elliotart.png" id="15_5oqfd"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0fd8o"]
 scenes/1/scene = ExtResource("7_vru0x")
@@ -111,3 +113,10 @@ onlyOnEnd = true
 [node name="SpeakTrigger7" parent="." instance=ExtResource("12_8hlpj")]
 position = Vector2(11429, -2985)
 lineName = "peer_pressure2"
+
+[node name="Collectible" parent="." instance=ExtResource("14_vru0x")]
+position = Vector2(6473, 1219)
+scale = 0.6
+id = 2
+image = ExtResource("15_5oqfd")
+scale = 0.6

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dcd0ukcbsjayo"]
+[gd_scene load_steps=18 format=4 uid="uid://dcd0ukcbsjayo"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_ofchu"]
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="3_jq78i"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="9_wj73x"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_0unm6"]
 [ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="13_q42ux"]
+[ext_resource type="PackedScene" uid="uid://dh6hhvglr2gvp" path="res://scenes/collectible.tscn" id="14_wi0qq"]
+[ext_resource type="Texture2D" uid="uid://pxvue77h22wv" path="res://art/Collectibles/freyaart.png" id="15_s3q8p"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lsnkt"]
 scenes/1/scene = ExtResource("7_q42ux")
@@ -119,3 +121,10 @@ lineName = "books"
 
 [node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
 position = Vector2(-1152, -9890)
+
+[node name="Collectible" parent="." instance=ExtResource("14_wi0qq")]
+position = Vector2(-12848, -19945)
+id = 3
+image = ExtResource("15_s3q8p")
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

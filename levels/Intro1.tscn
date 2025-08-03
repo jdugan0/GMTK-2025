@@ -55,9 +55,9 @@ animations = [{
 }]
 
 [node name="Sprite2D" type="AnimatedSprite2D"]
-position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_qu2ks")
 animation = &"anim"
+frame_progress = 0.125999
 script = ExtResource("1_r3xse")
 time = 18.0
 nextLevel = true

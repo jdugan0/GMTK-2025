@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bln2h1yf6bgd6"]
+[gd_scene load_steps=8 format=3 uid="uid://bln2h1yf6bgd6"]
 
 [ext_resource type="Script" uid="uid://b0n73vfovoueu" path="res://scripts/UI/MainMenu.cs" id="1_s0hl8"]
 [ext_resource type="Texture2D" uid="uid://c7mjr43ipxlsx" path="res://art/homeEllie.png" id="2_le7e1"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_q8b54"]
 [ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="4_q8b54"]
+[ext_resource type="Texture2D" uid="uid://be7g74ar8b2po" path="res://art/UI/logoWhite.png" id="4_rhqmm"]
 [ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="5_65jyh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8b54"]
@@ -25,26 +26,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_q8b54")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 2
 anchor_right = 0.542
 anchor_bottom = 1.0
-offset_left = -46.0
-offset_right = 0.359863
+offset_left = -67.0
+offset_right = -20.6401
 offset_bottom = 48.0
+mouse_filter = 2
 texture = ExtResource("2_le7e1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 2
-offset_left = 960.0
-offset_right = 1920.0
+offset_left = 963.0
+offset_right = 1917.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 115
+theme_override_constants/separation = 20
 alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_rhqmm")
 
 [node name="Levels" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -68,9 +76,9 @@ text = "QUIT"
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 904.0
-offset_top = 364.0
+offset_top = 542.0
 offset_right = 1878.0
-offset_bottom = 456.0
+offset_bottom = 619.0
 theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 56
 text = "CHECK OUT HARDCORE MODE!"
@@ -80,7 +88,7 @@ horizontal_alignment = 1
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(931, 496)
+position = Vector2(904, 501)
 color = Color(0.521569, 0.45098, 0.376471, 1)
 energy = 2.93
 texture = ExtResource("5_65jyh")

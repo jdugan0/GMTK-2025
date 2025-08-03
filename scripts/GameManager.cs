@@ -71,6 +71,7 @@ public partial class GameManager : Node
     public async void MainMenu()
     {
         GetTree().Paused = false;
+        DialogueManager.instance.ClearQueue();
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
         currentLevel = "";
         currentLevelID = -1;
@@ -78,7 +79,6 @@ public partial class GameManager : Node
         SpeedrunManager.levelTime = 0;
         SpeedrunManager.speedrun = false;
         CancelMusic();
-        DialogueManager.instance.ClearQueue();
     }
     public void NextLevel()
     {

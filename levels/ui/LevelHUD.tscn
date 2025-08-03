@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr54qoo8g7gow"]
+[gd_scene load_steps=8 format=3 uid="uid://cr54qoo8g7gow"]
 
 [ext_resource type="Texture2D" uid="uid://bmlisp5xhgoqm" path="res://art/enemyCount_406x175.png" id="1_0a4xe"]
 [ext_resource type="Script" uid="uid://8jkxksdv8lod" path="res://scripts/UI/EnemiesRemaining.cs" id="1_dq21l"]
 [ext_resource type="Script" uid="uid://brg6tyih14n45" path="res://scripts/BulletCount.cs" id="2_r50do"]
 [ext_resource type="PackedScene" uid="uid://d3ety2qufwm8w" path="res://scenes/BulletIcon.tscn" id="4_0a4xe"]
 [ext_resource type="PackedScene" uid="uid://bpd7uro1j6von" path="res://scenes/Border.tscn" id="5_jm2fy"]
+[ext_resource type="Script" uid="uid://2j01jv4ad2k" path="res://scripts/Health.cs" id="6_5863u"]
+[ext_resource type="Texture2D" uid="uid://dqrbaogcmfclp" path="res://art/UI/heart.png" id="6_cf1bu"]
 
 [node name="LevelHUD" type="CanvasLayer"]
 
@@ -55,3 +57,26 @@ alignment = 1
 script = ExtResource("2_r50do")
 bulletIcon = ExtResource("4_0a4xe")
 currentBullet = ExtResource("5_jm2fy")
+
+[node name="health" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -474.0
+offset_bottom = 117.0
+grow_horizontal = 0
+alignment = 2
+script = ExtResource("6_5863u")
+
+[node name="TextureRect" type="TextureRect" parent="Control/health"]
+layout_mode = 2
+texture = ExtResource("6_cf1bu")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/health"]
+layout_mode = 2
+texture = ExtResource("6_cf1bu")
+
+[node name="TextureRect3" type="TextureRect" parent="Control/health"]
+layout_mode = 2
+texture = ExtResource("6_cf1bu")

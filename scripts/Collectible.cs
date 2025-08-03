@@ -8,15 +8,13 @@ public partial class Collectible : Node2D
 	[Export] public float scale = 1;
 
 	private bool onScreen = false;
-	private TextureRect textureRect;
-	private Label label;
-	// Called when the node enters the scene tree for the first time.
+	[Export] private TextureRect textureRect;
+	[Export] private Label label;
+	[Export] CanvasLayer parent;
 	public override void _Ready()
 	{
-		textureRect = GetNode<TextureRect>("Content/Control/TextureRect");
 		textureRect.Texture = image;
-		GetNode<Label>("Content/Control/Label").Text = "Collectible # " + id;
-		label = GetNode<Label>("Content/Control/Label");
+		label.Text = "Collectible # " + id;
 	}
 
 
@@ -26,23 +24,21 @@ public partial class Collectible : Node2D
 		if (hit is Movement player)
 		{
 			if (player.isRolling) return;
-			AudioManager.instance.PlaySFX("foundCollectible");
-			textureRect.Show();
-			label.Visible = true;
+			// AudioManager.instance.PlaySFX("foundCollectible");
+			parent.Show();
 			onScreen = true;
 			GetTree().Paused = true;
 		}
 	}
-	
-	    public override void _Input(InputEvent @event)
-    {
+
+	public override void _Input(InputEvent @event)
+	{
 		if (onScreen && @event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			textureRect.Hide();
-			label.Visible = false;
+			parent.Hide();
 			onScreen = false;
 			GetTree().Paused = false;
 			QueueFree();
-        }
-    }
+		}
+	}
 }

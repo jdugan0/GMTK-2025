@@ -109,7 +109,5 @@ lineName = "better"
 
 [node name="Collectible" parent="." instance=ExtResource("14_5orea")]
 position = Vector2(18998, -13340)
-scale = 0.6
 id = 1
 image = ExtResource("15_0ourt")
-scale = 0.6

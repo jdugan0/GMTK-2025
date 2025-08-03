@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://coew8gcbrybfu"]
+
+[ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="1_obgxd"]
+[ext_resource type="Script" uid="uid://dn6vvnvxo3oiw" path="res://scripts/LightFlicker.cs" id="2_wqw2v"]
+
+[node name="LightScene_big" type="PointLight2D"]
+color = Color(1, 0.705882, 0.352941, 1)
+energy = 1.25
+shadow_filter = 1
+texture = ExtResource("1_obgxd")
+texture_scale = 28.9
+script = ExtResource("2_wqw2v")
+minInterval = 0.1
+maxInterval = 12.0
+maxDip = 1.5

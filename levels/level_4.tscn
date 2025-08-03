@@ -53,7 +53,7 @@ position = Vector2(-603, -3001)
 rotation = 0.523599
 
 [node name="Bullet5" parent="." instance=ExtResource("6_qhnv2")]
-position = Vector2(2197, -2996)
+position = Vector2(6162, -2910)
 rotation = -0.523598
 
 [node name="Enemy" type="TileMapLayer" parent="."]

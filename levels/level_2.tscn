@@ -51,7 +51,7 @@ navigation_enabled = false
 position = Vector2(13210, -5739)
 
 [node name="Bullet2" parent="." instance=ExtResource("6_hbb88")]
-position = Vector2(22526, -15041)
+position = Vector2(20051, -11155)
 rotation = -0.785398
 
 [node name="Bullet3" parent="." instance=ExtResource("6_hbb88")]

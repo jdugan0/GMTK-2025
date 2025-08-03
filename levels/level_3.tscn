@@ -49,11 +49,11 @@ navigation_enabled = false
 position = Vector2(-29, -7340)
 
 [node name="Bullet4" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(-7576, -20362)
+position = Vector2(-3938, -17693)
 rotation = 0.523599
 
-[node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
-position = Vector2(847, -10604)
+[node name="Bullet5" parent="." instance=ExtResource("6_0unm6")]
+position = Vector2(-7996, -16601)
 rotation = 0.523599
 
 [node name="Enemy" type="TileMapLayer" parent="."]

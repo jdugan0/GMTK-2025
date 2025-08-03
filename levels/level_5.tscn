@@ -88,7 +88,6 @@ navigation_enabled = false
 [node name="Oel" parent="." instance=ExtResource("9_ldpug")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="Lights2" type="TileMapLayer" parent="."]

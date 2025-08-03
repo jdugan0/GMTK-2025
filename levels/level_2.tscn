@@ -69,7 +69,6 @@ position = Vector2(13320, -5941)
 [node name="Oel" parent="." instance=ExtResource("9_at1ld")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="Lights" type="TileMapLayer" parent="."]

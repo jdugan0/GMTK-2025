@@ -121,5 +121,3 @@ type = 5
 [node name="HardcoreScene" parent="." instance=ExtResource("15_vjtdm")]
 visible = false
 tile_map_data = PackedByteArray("AABtAmD+AAAAAAAAAgBwAqL+AAAAAAAAAgAzAgD+AAAAAAAABADRAUr+AAAAAAAAAwDGAdP+AAAAAAAAAwA=")
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

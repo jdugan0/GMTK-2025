@@ -87,7 +87,7 @@ public partial class Enemy : CharacterBody2D
         coolDownTimer = 0f;
         var timer = new Timer();
         timer.OneShot = true;
-        timer.WaitTime = 0.3;
+        timer.WaitTime = 0.05;
         AddChild(timer);
         timer.Start();
         await ToSignal(timer, Timer.SignalName.Timeout);

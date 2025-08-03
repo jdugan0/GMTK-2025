@@ -206,6 +206,7 @@ offset_top = -237.75
 offset_right = 574.5
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 texture = SubResource("AtlasTexture_fklqs")
 expand_mode = 1
 

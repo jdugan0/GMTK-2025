@@ -116,5 +116,3 @@ lineName = "4_hallway"
 [node name="SpeakTrigger8" parent="." instance=ExtResource("12_0unm6")]
 position = Vector2(-1613, -3985)
 lineName = "books"
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -104,5 +104,3 @@ tile_map_data = PackedByteArray("AAB4BJv+AAAAAAAABAB1BGf9AAAAAAAAAwAcBT78AAAAAAA
 position = Vector2(16229, -18915)
 scale = Vector2(1.1494, 2.03814)
 lineName = "better"
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

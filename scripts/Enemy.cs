@@ -41,7 +41,7 @@ public partial class Enemy : CharacterBody2D
         // EmitSignal(GameManager.SignalName.EnemyHit);
         if (health > 1 && enemyType == EnemyTypes.PROT && !instant)
         {
-            Modulate = new Color("df4852");
+            sprite.Play("hurt");
             bloodSplatter.Emitting = true;
             health--;
             return;
@@ -111,7 +111,14 @@ public partial class Enemy : CharacterBody2D
                 AudioManager.instance.PlaySFX("enemyFast");
                 break;
             case EnemyTypes.PROT:
-                sprite.Play("Attack");
+                if (health == 1)
+                {
+                    sprite.Play("hurtAttack");
+                }
+                else
+                {
+                    sprite.Play("Attack");
+                }
                 if (playerIn)
                 {
                     GameManager.instance.player.TakeDamage();

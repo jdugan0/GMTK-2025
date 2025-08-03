@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cxtxuc2nlgg7y"]
+[gd_scene load_steps=24 format=3 uid="uid://cxtxuc2nlgg7y"]
 
 [ext_resource type="Script" uid="uid://dts3p10q7v0an" path="res://scripts/Enemy.cs" id="1_iw1qt"]
 [ext_resource type="PackedScene" uid="uid://u53lv1ejerxt" path="res://scenes/VampireGhost.tscn" id="2_mhw3o"]
 [ext_resource type="PackedScene" uid="uid://pkpfi17u4jsx" path="res://scenes/DeadEnemy.tscn" id="3_wjd8v"]
 [ext_resource type="Texture2D" uid="uid://dt0wc8xe2yf17" path="res://art/attackerStrong_878x741.png" id="4_iw1qt"]
+[ext_resource type="Texture2D" uid="uid://btjdbbj72pfx5" path="res://art/attackerStrongHurt_878x741.png" id="5_mhw3o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55jtl"]
 radius = 175.114
@@ -27,6 +28,22 @@ region = Rect2(0, 1482, 878, 741)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhw3o"]
 atlas = ExtResource("4_iw1qt")
 region = Rect2(0, 0, 878, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr3l8"]
+atlas = ExtResource("5_mhw3o")
+region = Rect2(0, 0, 878, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuwwv"]
+atlas = ExtResource("5_mhw3o")
+region = Rect2(0, 0, 878, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pcyr"]
+atlas = ExtResource("5_mhw3o")
+region = Rect2(0, 741, 878, 741)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orsyx"]
+atlas = ExtResource("5_mhw3o")
+region = Rect2(0, 1482, 878, 741)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_55jtl"]
 animations = [{
@@ -53,6 +70,31 @@ animations = [{
 }],
 "loop": true,
 "name": &"Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr3l8")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuwwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pcyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orsyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuwwv")
+}],
+"loop": false,
+"name": &"hurtAttack",
 "speed": 5.0
 }]
 
@@ -128,7 +170,7 @@ shape = SubResource("CapsuleShape2D_55jtl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_55jtl")
-animation = &"Attack"
+animation = &"Normal"
 
 [node name="Area2D2" type="Area2D" parent="."]
 collision_layer = 0

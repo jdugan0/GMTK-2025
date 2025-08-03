@@ -111,5 +111,3 @@ onlyOnEnd = true
 [node name="SpeakTrigger7" parent="." instance=ExtResource("12_8hlpj")]
 position = Vector2(11429, -2985)
 lineName = "peer_pressure2"
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

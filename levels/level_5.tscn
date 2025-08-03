@@ -157,5 +157,3 @@ lineName = "interior"
 [node name="SpeakTrigger10" parent="." instance=ExtResource("12_ij65d")]
 position = Vector2(-2746, -23156)
 lineName = "cornered"
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

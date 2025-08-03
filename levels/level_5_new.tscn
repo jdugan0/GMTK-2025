@@ -91,5 +91,3 @@ position = Vector2(-689, -16168)
 scale = Vector2(-1.10405, -2112.79)
 lineName = "5_return"
 onlyOnEnd = true
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

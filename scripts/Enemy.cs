@@ -85,6 +85,13 @@ public partial class Enemy : CharacterBody2D
     {
         attackTimer = 0f;
         coolDownTimer = 0f;
+        var timer = new Timer();
+        timer.OneShot = true;
+        timer.WaitTime = 0.1;
+        AddChild(timer);
+        timer.Start();
+        await ToSignal(timer, Timer.SignalName.Timeout);
+        timer.QueueFree();
         switch (enemyType)
         {
             case EnemyTypes.NORMAL:

@@ -81,14 +81,14 @@ offset_right = 1878.0
 offset_bottom = 619.0
 theme = ExtResource("4_q8b54")
 theme_override_font_sizes/font_size = 56
-text = "CHECK OUT HARDCORE MODE!"
+text = "Too easy? Try hardcore mode!"
 horizontal_alignment = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(904, 501)
+position = Vector2(919, 515)
 color = Color(0.521569, 0.45098, 0.376471, 1)
 energy = 2.93
 texture = ExtResource("5_65jyh")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://8wfma6nhdeui"]
+[gd_scene load_steps=18 format=4 uid="uid://8wfma6nhdeui"]
 
 [ext_resource type="PackedScene" uid="uid://cq2xfvorp6hqy" path="res://scenes/Camera.tscn" id="1_l53as"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_gwceb"]
@@ -11,15 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://edv0tp67dunv" path="res://art/guidesR_1200x800.png" id="9_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://c2qg6ys7x5u2m" path="res://scenes/FastEnemy.tscn" id="10_5ot28"]
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="10_08mmt"]
+[ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="11_nmsli"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_aerfg"]
+[ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="12_vjtdm"]
+[ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="15_vjtdm"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l53as"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_betor"]
 scenes/1/scene = ExtResource("7_gwceb")
 scenes/2/scene = ExtResource("10_5ot28")
+scenes/3/scene = ExtResource("11_nmsli")
+scenes/5/scene = ExtResource("12_vjtdm")
 
 [sub_resource type="TileSet" id="TileSet_l53as"]
 tile_size = Vector2i(100, 100)
-sources/0 = SubResource("TileSetScenesCollectionSource_l53as")
+sources/0 = SubResource("TileSetScenesCollectionSource_betor")
 
 [node name="1" type="Node2D"]
 
@@ -69,7 +74,6 @@ region_rect = Rect2(0, 0, 1200, 800)
 
 [node name="Player" parent="." instance=ExtResource("3_l53as")]
 position = Vector2(5, 1535)
-health = 3
 
 [node name="Bullet" parent="." instance=ExtResource("6_5ot28")]
 position = Vector2(183, -6604)
@@ -113,3 +117,7 @@ onlyOnEnd = true
 position = Vector2(12947, -5833)
 lineName = "3_down"
 type = 5
+
+[node name="HardcoreScene" parent="." instance=ExtResource("15_vjtdm")]
+visible = false
+tile_map_data = PackedByteArray("AABtAmD+AAAAAAAAAgBwAqL+AAAAAAAAAgAzAgD+AAAAAAAABADRAUr+AAAAAAAAAwDGAdP+AAAAAAAAAwA=")

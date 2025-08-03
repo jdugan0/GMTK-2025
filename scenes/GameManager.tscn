@@ -5,5 +5,4 @@
 [node name="GameManager" type="Node"]
 process_mode = 3
 script = ExtResource("1_34tde")
-maxLevelUnlocked = 100
-songNames = PackedStringArray("intro", "lvl1", "lvl1", "lvl1", "lvl2", "spooky", "lvl2", "endingCutscene")
+songNames = PackedStringArray("intro", "lvl1", "lvl1", "lvl1", "lvl2", "spooky", "lvl1", "endingCutscene")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b4hssphxdggt5"]
+[gd_scene load_steps=16 format=4 uid="uid://b4hssphxdggt5"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://5ybjq0gl2k4h" path="res://scenes/Player.tscn" id="3_at1ld"]
@@ -11,11 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="8_vm7no"]
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_at1ld"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="11_vm7no"]
+[ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="12_wcjpl"]
+[ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="13_wcjpl"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_gwceb"]
 scenes/1/scene = ExtResource("7_wcjpl")
 scenes/2/scene = ExtResource("8_sd18g")
 scenes/3/scene = ExtResource("8_vm7no")
+scenes/4/scene = ExtResource("12_wcjpl")
 
 [sub_resource type="TileSet" id="TileSet_l53as"]
 tile_size = Vector2i(100, 100)
@@ -92,3 +95,7 @@ onlyOnEnd = true
 position = Vector2(1025, 119)
 lineName = "on_damage"
 type = 4
+
+[node name="HardcoreScene" parent="." instance=ExtResource("13_wcjpl")]
+visible = false
+tile_map_data = PackedByteArray("AAB4BJv+AAAAAAAABAB1BGf9AAAAAAAAAwAcBT78AAAAAAAAAgAfAzj7AAAAAAAAAQDTBOH8AAAAAAAAAgA=")

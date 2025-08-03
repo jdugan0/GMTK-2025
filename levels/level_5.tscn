@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dry8mgrnd1de7"]
+[gd_scene load_steps=17 format=4 uid="uid://dry8mgrnd1de7"]
 
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_yaabq"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dhnqt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b2b8ptmqti8kl" path="res://scenes/BulletPierce.tscn" id="11_a58qw"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_ij65d"]
 [ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="13_gci8k"]
+[ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="14_gder6"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mgx0j"]
 scenes/1/scene = ExtResource("6_gci8k")
@@ -135,4 +136,6 @@ scale = Vector2(1.88, 1.96)
 lineName = "5_return"
 onlyOnEnd = true
 
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]
+[node name="HardcoreScene" parent="." instance=ExtResource("14_gder6")]
+visible = false
+tile_map_data = PackedByteArray("AADR/yL/AAAAAAAAAwATACH/AAAAAAAAAwAzAM4AAAAAAAAAAgC2/80AAAAAAAAAAgC3/80AAAAAAAAAAgB9Abj+AAAAAAAAAgDwAXT+AAAAAAAAAgDtAZf9AAAAAAAAAwAYAI/9AAAAAAAAAwDv/2v9AAAAAAAAAwAuAcH8AAAAAAAAAwC1AVP6AAAAAAAABADGAe/5AAAAAAAABAA0AmP6AAAAAAAABAA=")

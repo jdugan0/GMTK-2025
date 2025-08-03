@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bln2h1yf6bgd6"]
+[gd_scene load_steps=9 format=3 uid="uid://bln2h1yf6bgd6"]
 
 [ext_resource type="Script" uid="uid://b0n73vfovoueu" path="res://scripts/UI/MainMenu.cs" id="1_s0hl8"]
 [ext_resource type="Texture2D" uid="uid://c7mjr43ipxlsx" path="res://art/homeEllie.png" id="2_le7e1"]
@@ -9,6 +9,19 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8b54"]
 texture = ExtResource("2_q8b54")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhqmm"]
+bg_color = Color(0.499125, 0.204483, 0.0862965, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -75,12 +88,13 @@ text = "QUIT"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 904.0
-offset_top = 768.0
-offset_right = 1878.0
-offset_bottom = 845.0
+offset_left = 1039.0
+offset_top = 769.0
+offset_right = 1648.0
+offset_bottom = 824.0
 theme = ExtResource("4_q8b54")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhqmm")
 text = "Too easy? Try hardcore mode!"
 horizontal_alignment = 1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bp4pbt66p04ah"]
+[gd_scene load_steps=24 format=3 uid="uid://bp4pbt66p04ah"]
 
 [ext_resource type="Script" uid="uid://d3t8putfy33y4" path="res://scripts/UI/LevelUI.cs" id="1_nlgad"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_2h0fi"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://brfmgp5o08hhn" path="res://scripts/UI/LevelButton.cs" id="4_dekjx"]
 [ext_resource type="Theme" uid="uid://0r7v0v6385k2" path="res://art/themes/Levels.tres" id="4_xagwo"]
 [ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="6_dekjx"]
+[ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="7_r2f54"]
+[ext_resource type="Script" uid="uid://degasaytfscvi" path="res://scripts/HardCoreFreeUI.cs" id="8_uhtl0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dekjx"]
 texture = ExtResource("2_2h0fi")
@@ -61,6 +63,19 @@ region = Rect2(1008, 518, 253, 259)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kv81e"]
 atlas = ExtResource("2_p3igk")
 region = Rect2(756, 518, 252, 259)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhtl0"]
+bg_color = Color(0.499125, 0.204483, 0.0862965, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -179,6 +194,23 @@ color = Color(0.521569, 0.45098, 0.376471, 1)
 energy = 2.93
 texture = ExtResource("6_dekjx")
 texture_scale = 14.91
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -304.5
+offset_top = 208.0
+offset_right = 304.5
+offset_bottom = 271.0
+grow_horizontal = 2
+theme = ExtResource("7_r2f54")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_uhtl0")
+text = "HARDCORE!"
+horizontal_alignment = 1
+script = ExtResource("8_uhtl0")
 
 [connection signal="pressed" from="GridContainer/TextureButton" to="GridContainer/TextureButton" method="LoadLevel"]
 [connection signal="pressed" from="GridContainer/TextureButton2" to="GridContainer/TextureButton2" method="LoadLevel"]

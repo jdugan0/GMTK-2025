@@ -161,17 +161,3 @@ lineName = "interior"
 [node name="SpeakTrigger10" parent="." instance=ExtResource("12_ij65d")]
 position = Vector2(-2746, -23156)
 lineName = "cornered"
-
-[node name="Collectible" parent="." instance=ExtResource("15_hv08k")]
-position = Vector2(5666, -6454)
-scale = 0.6
-id = 4
-image = ExtResource("16_brp6y")
-scale = 0.6
-
-[node name="Collectible2" parent="." instance=ExtResource("15_hv08k")]
-position = Vector2(9636, -9934)
-scale = 0.4
-id = 5
-image = ExtResource("17_mgx0j")
-scale = 0.4

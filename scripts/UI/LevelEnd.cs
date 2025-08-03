@@ -15,6 +15,7 @@ public partial class LevelEnd : Area2D
             UI.Visible = true;
             AudioManager.instance.PlaySFX("doorEntered");
             complete = true;
+            DialogueManager.instance.ClearQueue();
 
         }
 

@@ -10,7 +10,8 @@ public partial class LevelButton : TextureButton
     }
     public override void _Ready()
     {
-        if (GameManager.instance.maxLevelUnlocked < level)
+        int levelUnlocked = GameManager.instance.hardCore ? GameManager.instance.maxLevelUnlockedHardcore : GameManager.instance.maxLevelUnlocked;
+        if (levelUnlocked < level)
         {
             Disabled = true;
         }

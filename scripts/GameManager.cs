@@ -17,29 +17,39 @@ public partial class GameManager : Node
     [Signal] public delegate void EnemyHitEventHandler();
     public OEL oel;
     [Export] public int maxLevelUnlocked = 1;
+    public int maxLevelUnlockedHardcore = 1;
     public Camera camera;
     public string currentSong;
     [Export] string[] songNames;
+    public bool timer;
     private const string SavePath = "user://save.cfg";
     public override void _Ready()
     {
         instance = this;
         LoadProgress();
     }
-    private void SaveProgress()
+    public void SaveProgress()
     {
         var cfg = new ConfigFile();
         cfg.Load(SavePath);
         cfg.SetValue("progress", "max_level_unlocked", maxLevelUnlocked);
+        cfg.SetValue("progress", "max_level_unlocked_HC", maxLevelUnlockedHardcore);
+        cfg.SetValue("options", "volume", AudioServer.GetBusVolumeLinear(AudioServer.GetBusIndex("Master")));
+        cfg.SetValue("options", "timer", timer);
+        cfg.SetValue("options", "hardCore", hardCore);
         cfg.Save(SavePath);
     }
-    private void LoadProgress()
+    public void LoadProgress()
     {
         var cfg = new ConfigFile();
         var err = cfg.Load(SavePath);
         if (err == Error.Ok)
         {
             maxLevelUnlocked = (int)cfg.GetValue("progress", "max_level_unlocked", maxLevelUnlocked);
+            maxLevelUnlockedHardcore = (int)cfg.GetValue("progress", "max_level_unlocked_HC", maxLevelUnlockedHardcore);
+            timer = (bool)cfg.GetValue("options", "timer", timer);
+            AudioServer.SetBusVolumeLinear(AudioServer.GetBusIndex("Master"), (float)cfg.GetValue("options", "volume", 0));
+            hardCore = (bool)cfg.GetValue("options", "hardCore", hardCore);
         }
         else
         {
@@ -64,6 +74,7 @@ public partial class GameManager : Node
     public async void MainMenu()
     {
         GetTree().Paused = false;
+        DialogueManager.instance.ClearQueue();
         await SceneSwitcher.instance.SwitchSceneAsyncSlide("MainMenu");
         currentLevel = "";
         currentLevelID = -1;
@@ -75,12 +86,15 @@ public partial class GameManager : Node
     public void NextLevel()
     {
         GetTree().Paused = false;
-        if (GameManager.instance.maxLevelUnlocked == GameManager.instance.currentLevelID)
+        int levelUnlocked = hardCore ? maxLevelUnlockedHardcore : maxLevelUnlocked;
+        if (levelUnlocked == currentLevelID)
         {
-            GameManager.instance.maxLevelUnlocked++;
+            if (hardCore) maxLevelUnlockedHardcore++;
+            else maxLevelUnlocked++;
             SaveProgress();
         }
         LoadLevel(currentLevelID + 1);
+        DialogueManager.instance.ClearQueue();
     }
     public void Pause()
     {

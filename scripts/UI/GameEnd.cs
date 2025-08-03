@@ -8,12 +8,14 @@ public partial class GameEnd : Node
     [Export] public bool nextLevel = false;
     [Export] public string nextScene = "GameComplete2";
     float timer = 0;
+    bool fire = false;
     
     public override async void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("FIRE") && nextLevel)
+        if (Input.IsActionJustPressed("FIRE") && nextLevel && !fire)
         {
             GameManager.instance.NextLevel();
+            fire = true;
         }
         timer += (float)delta;
         if (timer > time)

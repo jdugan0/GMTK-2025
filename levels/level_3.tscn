@@ -119,9 +119,5 @@ lineName = "4_hallway"
 position = Vector2(-1613, -3985)
 lineName = "books"
 
-[node name="Collectible" parent="." instance=ExtResource("14_wi0qq")]
-position = Vector2(-12892, -19889)
-scale = 0.6
-id = 3
-image = ExtResource("15_s3q8p")
-scale = 0.6
+[node name="Bullet2" parent="." instance=ExtResource("6_0unm6")]
+position = Vector2(-1152, -9890)

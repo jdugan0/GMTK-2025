@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr54qoo8g7gow"]
+[gd_scene load_steps=9 format=3 uid="uid://cr54qoo8g7gow"]
 
 [ext_resource type="Texture2D" uid="uid://bmlisp5xhgoqm" path="res://art/enemyCount_406x175.png" id="1_0a4xe"]
 [ext_resource type="Script" uid="uid://8jkxksdv8lod" path="res://scripts/UI/EnemiesRemaining.cs" id="1_dq21l"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpd7uro1j6von" path="res://scenes/Border.tscn" id="5_jm2fy"]
 [ext_resource type="Script" uid="uid://2j01jv4ad2k" path="res://scripts/Health.cs" id="6_5863u"]
 [ext_resource type="Texture2D" uid="uid://dqrbaogcmfclp" path="res://art/UI/heart.png" id="6_cf1bu"]
+[ext_resource type="Script" uid="uid://4v8cx08vruv7" path="res://scripts/TimerHUD.cs" id="8_vr74h"]
 
 [node name="LevelHUD" type="CanvasLayer"]
 
@@ -80,3 +81,17 @@ texture = ExtResource("6_cf1bu")
 [node name="TextureRect3" type="TextureRect" parent="Control/health"]
 layout_mode = 2
 texture = ExtResource("6_cf1bu")
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -488.0
+offset_top = 140.0
+offset_bottom = 237.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 71
+text = "TIME: 00:00:00"
+script = ExtResource("8_vr74h")

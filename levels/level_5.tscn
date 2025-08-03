@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dry8mgrnd1de7"]
+[gd_scene load_steps=20 format=4 uid="uid://dry8mgrnd1de7"]
 
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="1_yaabq"]
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_dhnqt"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_ij65d"]
 [ext_resource type="PackedScene" uid="uid://c55il4hklg0bq" path="res://levels/ui/PauseMenu.tscn" id="13_gci8k"]
 [ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="14_gder6"]
+[ext_resource type="PackedScene" uid="uid://dh6hhvglr2gvp" path="res://scenes/collectible.tscn" id="15_hv08k"]
+[ext_resource type="Texture2D" uid="uid://bqog007i5y2es" path="res://art/Collectibles/art1.png" id="16_brp6y"]
+[ext_resource type="Texture2D" uid="uid://dbq5yg1abyrvg" path="res://art/Collectibles/image.png" id="17_mgx0j"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_mgx0j"]
 scenes/1/scene = ExtResource("6_gci8k")
@@ -158,5 +161,19 @@ lineName = "interior"
 [node name="SpeakTrigger10" parent="." instance=ExtResource("12_ij65d")]
 position = Vector2(-2746, -23156)
 lineName = "cornered"
+
+[node name="Collectible" parent="." instance=ExtResource("15_hv08k")]
+position = Vector2(5666, -6454)
+scale = 0.6
+id = 4
+image = ExtResource("16_brp6y")
+scale = 0.6
+
+[node name="Collectible2" parent="." instance=ExtResource("15_hv08k")]
+position = Vector2(9636, -9934)
+scale = 0.4
+id = 5
+image = ExtResource("17_mgx0j")
+scale = 0.4
 
 [connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh6hhvglr2gvp"]
+
+[ext_resource type="Script" uid="uid://bso6cpi2sshfe" path="res://scripts/Collectible.cs" id="1_8orai"]
+[ext_resource type="Texture2D" uid="uid://c28d6rmgq0kks" path="res://art/collectible.png" id="2_61c27"]
+[ext_resource type="Script" uid="uid://dcjaku3snr21n" path="res://TextureRect.cs" id="3_yciwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8orai"]
+
+[node name="Collectible" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_8orai")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_61c27")
+
+[node name="Content" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Content"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Content/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Content/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_yciwo")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8orai")
+
+[connection signal="body_entered" from="Area2D" to="." method="ResolvePickup"]

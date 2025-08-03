@@ -120,7 +120,7 @@ type = 5
 
 [node name="HardcoreScene" parent="." instance=ExtResource("15_vjtdm")]
 visible = false
-tile_map_data = PackedByteArray("AABtAmD+AAAAAAAAAgBwAqL+AAAAAAAAAgAzAgD+AAAAAAAABADRAUr+AAAAAAAAAwDGAdP+AAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AABtAmD+AAAAAAAAAgAzAgD+AAAAAAAABADRAUr+AAAAAAAAAwDGAdP+AAAAAAAAAwA=")
 
 [node name="SpeakTrigger5" parent="." instance=ExtResource("12_aerfg")]
 position = Vector2(3699, -6008)

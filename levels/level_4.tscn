@@ -96,7 +96,7 @@ type = 4
 
 [node name="HardcoreScene" parent="." instance=ExtResource("13_qhnv2")]
 visible = false
-tile_map_data = PackedByteArray("AAB0/9L+AAAAAAAAAwBu/73/AAAAAAAAAwC9/0T/AAAAAAAAAgA0AYz/AAAAAAAABAAwAfb+AAAAAAAABAA9Amz/AAAAAAAAAgBPAiX/AAAAAAAAAgCzAxv/AAAAAAAAAQC6A2v/AAAAAAAAAQD8A0T/AAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAC9/0T/AAAAAAAAAgA9Amz/AAAAAAAAAgBPAiX/AAAAAAAAAgCzAxv/AAAAAAAAAQC6A2v/AAAAAAAAAQAtAMD+AAAAAAAAAwAtAMf/AAAAAAAAAwChAcf+AAAAAAAAAgA=")
 
 [node name="SpeakTrigger5" parent="." instance=ExtResource("12_8hlpj")]
 position = Vector2(11309, -2993)

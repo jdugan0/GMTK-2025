@@ -15,7 +15,6 @@ public partial class Collectible : Node2D
 	{
 		textureRect = GetNode<TextureRect>("Content/Control/TextureRect");
 		textureRect.Texture = image;
-		textureRect.Scale = new Vector2(scale, scale);
 		GetNode<Label>("Content/Control/Label").Text = "Collectible # " + id;
 		label = GetNode<Label>("Content/Control/Label");
 	}

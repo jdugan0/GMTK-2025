@@ -175,5 +175,3 @@ scale = 0.4
 id = 5
 image = ExtResource("17_mgx0j")
 scale = 0.4
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

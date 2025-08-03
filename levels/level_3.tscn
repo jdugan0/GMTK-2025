@@ -79,8 +79,8 @@ lineName = "3_end"
 type = 5
 
 [node name="SpeakTrigger2" parent="." instance=ExtResource("12_0unm6")]
-position = Vector2(-4003, -20050)
-scale = Vector2(0.399998, 0.64)
+position = Vector2(-4003, -17950)
+scale = Vector2(-1.09396, 3.04804)
 lineName = "passage"
 
 [node name="SpeakTrigger3" parent="." instance=ExtResource("12_0unm6")]
@@ -97,3 +97,24 @@ type = 4
 [node name="HardcoreScene" parent="." instance=ExtResource("13_q42ux")]
 visible = false
 tile_map_data = PackedByteArray("AABr/6T8AAAAAAAABAAn/6T8AAAAAAAABAAm/6T8AAAAAAAABADs/xf8AAAAAAAAAwDF/pf8AAAAAAAAAgAL/+n7AAAAAAAAAwBt/5D6AAAAAAAAAwCs/4b6AAAAAAAAAQCr/6v6AAAAAAAAAQCr/6z6AAAAAAAAAQD3+xD7AAAAAAAABAD4+xD7AAAAAAAABAAY/A38AAAAAAAABAA=")
+
+[node name="SpeakTrigger" parent="." instance=ExtResource("12_0unm6")]
+position = Vector2(-7970, -16491)
+scale = Vector2(2.96672, 0.874477)
+lineName = "party"
+
+[node name="SpeakTrigger6" parent="." instance=ExtResource("12_0unm6")]
+position = Vector2(-7994, -16450)
+scale = Vector2(4.12629, 0.701403)
+lineName = "party2"
+
+[node name="SpeakTrigger7" parent="." instance=ExtResource("12_0unm6")]
+position = Vector2(-13461, -22264)
+scale = Vector2(0.524648, -1.35934)
+lineName = "4_hallway"
+
+[node name="SpeakTrigger8" parent="." instance=ExtResource("12_0unm6")]
+position = Vector2(-1613, -3985)
+lineName = "books"
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

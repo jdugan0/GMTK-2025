@@ -57,7 +57,7 @@ position = Vector2(2197, -2996)
 rotation = -0.523598
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADu//j/AAAAAAAAAgDv/8z/AAAAAAAAAgCOAPb/AAAAAAAAAgBqAOL/AAAAAAAAAgAxAOL/AAAAAAAABACOAND/AAAAAAAAAgCjAPb/AAAAAAAAAwCjAM3/AAAAAAAAAwCkAPb/AAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AADu//j/AAAAAAAAAgDv/8z/AAAAAAAAAgCOAPb/AAAAAAAAAgBqAOL/AAAAAAAAAgAxAOL/AAAAAAAABACOAND/AAAAAAAAAgCjAPb/AAAAAAAAAwCjAM3/AAAAAAAAAwCkAPb/AAAAAAAAAgAHAP//AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_dmnu2")
 navigation_enabled = false
 
@@ -84,8 +84,8 @@ lineName = "center"
 type = 1
 
 [node name="SpeakTrigger4" parent="." instance=ExtResource("12_8hlpj")]
-position = Vector2(1621, -2964)
-scale = Vector2(1.36, 1)
+position = Vector2(4424, -2186)
+scale = Vector2(3.606, 2.18741)
 lineName = "big_guy"
 
 [node name="SpeakTrigger3" parent="." instance=ExtResource("12_8hlpj")]
@@ -97,3 +97,19 @@ type = 4
 [node name="HardcoreScene" parent="." instance=ExtResource("13_qhnv2")]
 visible = false
 tile_map_data = PackedByteArray("AAB0/9L+AAAAAAAAAwBu/73/AAAAAAAAAwC9/0T/AAAAAAAAAgA0AYz/AAAAAAAABAAwAfb+AAAAAAAABAA9Amz/AAAAAAAAAgBPAiX/AAAAAAAAAgCzAxv/AAAAAAAAAQC6A2v/AAAAAAAAAQD8A0T/AAAAAAAAAQA=")
+
+[node name="SpeakTrigger5" parent="." instance=ExtResource("12_8hlpj")]
+position = Vector2(11309, -2993)
+lineName = "peer_pressure"
+
+[node name="SpeakTrigger6" parent="." instance=ExtResource("12_8hlpj")]
+position = Vector2(1176, -3132)
+scale = Vector2(1.96, 1)
+lineName = "rrr"
+onlyOnEnd = true
+
+[node name="SpeakTrigger7" parent="." instance=ExtResource("12_8hlpj")]
+position = Vector2(11429, -2985)
+lineName = "peer_pressure2"
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

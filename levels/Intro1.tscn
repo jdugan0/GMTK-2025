@@ -16,37 +16,37 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_qu2ks"]
 animations = [{
 "frames": [{
-"duration": 1.01,
+"duration": 3.0,
 "texture": ExtResource("2_fj8pa")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("2_ig6oe")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_6mkqo")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("4_ohqri")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("5_lw5k6")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("6_51bw0")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("7_tsnb8")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("8_wswip")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("9_52agt")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("10_4xdma")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": ExtResource("11_igwlv")
 }],
 "loop": false,
@@ -57,12 +57,19 @@ animations = [{
 [node name="Sprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qu2ks")
 animation = &"anim"
-frame = 1
 script = ExtResource("1_r3xse")
-time = 2.0
+time = 18.0
 nextLevel = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1868.0
+offset_top = -1019.0
+offset_right = -1154.0
+offset_bottom = -873.0
+theme_override_font_sizes/font_size = 106
+text = "CLICK TO SKIP"
 
 [connection signal="ready" from="." to="." method="play" binds= ["anim"]]

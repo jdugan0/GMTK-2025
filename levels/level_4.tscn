@@ -92,5 +92,3 @@ position = Vector2(225.176, -2385.44)
 rotation = 0.523599
 lineName = "on_damage"
 type = 4
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

@@ -99,5 +99,3 @@ type = 4
 [node name="HardcoreScene" parent="." instance=ExtResource("13_wcjpl")]
 visible = false
 tile_map_data = PackedByteArray("AAB4BJv+AAAAAAAABAB1BGf9AAAAAAAAAwAcBT78AAAAAAAAAgAfAzj7AAAAAAAAAQDTBOH8AAAAAAAAAgA=")
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

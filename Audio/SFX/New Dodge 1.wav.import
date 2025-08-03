@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmmikcq0t8475"
+path="res://.godot/imported/New Dodge 1.wav-f826071fff861d43bde1b84a52c5473a.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/New Dodge 1.wav"
+dest_files=["res://.godot/imported/New Dodge 1.wav-f826071fff861d43bde1b84a52c5473a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://n1i870278n80"]
+[gd_scene load_steps=47 format=3 uid="uid://n1i870278n80"]
 
 [ext_resource type="Script" uid="uid://dqt60nudgh88q" path="res://scripts/DialogueManager.cs" id="1_8rf17"]
 [ext_resource type="Script" uid="uid://mfnpo33dme3a" path="res://scripts/UI/Dialouge.cs" id="2_5sv7i"]
@@ -43,7 +43,7 @@ metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="Resource" id="Resource_wmocq"]
 script = ExtResource("2_5sv7i")
-line = "One last look before I leave forever... Why did I come  back here again?"
+line = "Yup. Its still dark and ominous back here."
 emotion = 1
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
@@ -68,13 +68,13 @@ metadata/_custom_type_script = "uid://mfnpo33dme3a"
 [sub_resource type="Resource" id="Resource_k4n8t"]
 script = ExtResource("2_5sv7i")
 line = "It sure is dark in here... I hope nothing scary pops up..."
-emotion = 1
+emotion = 2
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="Resource" id="Resource_v6pg2"]
 script = ExtResource("2_5sv7i")
-line = "that was pretty scary..."
-emotion = 2
+line = "One more room left! I bet I could still make it back in time for breakfast!"
+emotion = 3
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="Resource" id="Resource_05xiv"]
@@ -109,7 +109,7 @@ metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
 [sub_resource type="Resource" id="Resource_mlfsg"]
 script = ExtResource("2_5sv7i")
-line = "Looks like this bullet can pierce through multiple enemies. Good thing I just got my crossbow revamped!"
+line = "It looks like this bullet can pierce multiple enemies! Good thing I Just got my crossbow revamped to hold bullets!"
 emotion = 3
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
@@ -179,6 +179,48 @@ line = "SO MANY VAMPIRES!!!"
 emotion = 2
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
+[sub_resource type="Resource" id="Resource_8jjm8"]
+script = ExtResource("2_5sv7i")
+line = "KABLAM!! Take that vampires!!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_ks3rr"]
+script = ExtResource("2_5sv7i")
+line = "This would be a bad time to realize I'm scared of the dark!!!"
+emotion = 2
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_t3qsu"]
+script = ExtResource("2_5sv7i")
+line = "STOP CHASING ME!!! ITS NOT COOL!"
+emotion = 2
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_p5jye"]
+script = ExtResource("2_5sv7i")
+line = "Just making sure there's nothing back here. I'm kind of a hero like that."
+emotion = 1
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_2wvcn"]
+script = ExtResource("2_5sv7i")
+line = "I will NEVER understand these vampires and their choice in interior decor decor..."
+emotion = 1
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_rh1ou"]
+script = ExtResource("2_5sv7i")
+line = "If I had a nickel for every vampire I've killed... I would probably have at least 2 nickels."
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
+[sub_resource type="Resource" id="Resource_fvv3d"]
+script = ExtResource("2_5sv7i")
+line = "I wonder if it pays better to be a vampire or vampire slayer. I should look into this."
+emotion = 0
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_37fbv"]
 atlas = ExtResource("2_fklqs")
 region = Rect2(0, 0, 1532, 317)
@@ -214,16 +256,22 @@ lines = Dictionary[String, ExtResource("2_5sv7i")]({
 "4_end": SubResource("Resource_mv7ue"),
 "4_hallway": SubResource("Resource_isnv0"),
 "5_return": SubResource("Resource_wmocq"),
+"6_start": SubResource("Resource_t3qsu"),
 "armed": SubResource("Resource_awibv"),
 "better": SubResource("Resource_f8saq"),
 "big_guy": SubResource("Resource_ycowp"),
 "books": SubResource("Resource_imbje"),
 "center": SubResource("Resource_3qix3"),
+"checking": SubResource("Resource_p5jye"),
+"cornered": SubResource("Resource_fvv3d"),
 "dark": SubResource("Resource_k4n8t"),
 "dodgers": SubResource("Resource_d3isd"),
 "easy_peasy": SubResource("Resource_v6pg2"),
+"foyer": SubResource("Resource_rh1ou"),
 "game_start": SubResource("Resource_05xiv"),
 "hall": SubResource("Resource_vgorr"),
+"interior": SubResource("Resource_2wvcn"),
+"kablam": SubResource("Resource_8jjm8"),
 "leave": SubResource("Resource_rln71"),
 "on_damage": SubResource("Resource_5sv7i"),
 "party": SubResource("Resource_qcuo5"),
@@ -233,6 +281,7 @@ lines = Dictionary[String, ExtResource("2_5sv7i")]({
 "peer_pressure2": SubResource("Resource_sg4y5"),
 "pierce_intro": SubResource("Resource_mlfsg"),
 "rrr": SubResource("Resource_5um6o"),
+"scared": SubResource("Resource_ks3rr"),
 "table_dodge": SubResource("Resource_pa5jc"),
 "wonder": SubResource("Resource_8r56g")
 })

@@ -74,7 +74,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_y7d1a")
 Button/styles/normal = SubResource("StyleBoxTexture_y7d1a")
 Button/styles/pressed = SubResource("StyleBoxTexture_y7d1a")
 
-[node name="Options" type="Control" node_paths=PackedStringArray("hardCoreButton")]
+[node name="Options" type="Control" node_paths=PackedStringArray("hardCoreButton", "timer", "volume")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,6 +83,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1bic")
 hardCoreButton = NodePath("Button")
+timer = NodePath("Button2")
+volume = NodePath("Panel/VBoxContainer/Volume Slider")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -114,9 +116,9 @@ anchors_preset = -1
 anchor_top = 0.414
 anchor_right = 1.0
 anchor_bottom = 0.656
-offset_top = -97.12
+offset_top = -186.12
 offset_right = -548.0
-offset_bottom = -171.48
+offset_bottom = -260.48
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.4, 1.4)
@@ -147,10 +149,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 97.0
-offset_top = 814.0
-offset_right = -1073.0
-offset_bottom = -8.0
+offset_left = 25.0
+offset_top = 909.0
+offset_right = -1182.0
+offset_bottom = 66.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.664102, 0.631029)
@@ -176,15 +178,33 @@ anchor_top = 0.706
 anchor_right = 0.497
 anchor_bottom = 0.706
 offset_left = -261.24
-offset_top = -63.48
+offset_top = -132.48
 offset_right = 260.76
-offset_bottom = 63.52
+offset_bottom = -5.47998
 theme = SubResource("Theme_wk64w")
 theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 41
 toggle_mode = true
 text = "HARDCORE!!"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.706
+anchor_right = 0.497
+anchor_bottom = 0.706
+offset_left = -261.24
+offset_top = 18.52
+offset_right = 260.76
+offset_bottom = 145.52
+theme = SubResource("Theme_wk64w")
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+toggle_mode = true
+text = "Speedrun timer"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -194,9 +214,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -742.5
-offset_top = 60.5
+offset_top = -8.5
 offset_right = 742.5
-offset_bottom = 137.5
+offset_bottom = 68.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_h5v2r")
@@ -207,3 +227,4 @@ horizontal_alignment = 1
 [connection signal="value_changed" from="Panel/VBoxContainer/Volume Slider" to="." method="AdjustVolume"]
 [connection signal="pressed" from="Back" to="." method="MainMenu"]
 [connection signal="toggled" from="Button" to="." method="SetHardCore"]
+[connection signal="toggled" from="Button2" to="." method="SetTimer"]

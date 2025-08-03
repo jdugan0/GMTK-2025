@@ -78,6 +78,7 @@ public partial class GameManager : Node
         SpeedrunManager.levelTime = 0;
         SpeedrunManager.speedrun = false;
         CancelMusic();
+        DialogueManager.instance.ClearQueue();
     }
     public void NextLevel()
     {
@@ -88,6 +89,7 @@ public partial class GameManager : Node
             SaveProgress();
         }
         LoadLevel(currentLevelID + 1);
+        DialogueManager.instance.ClearQueue();
     }
     public void Pause()
     {

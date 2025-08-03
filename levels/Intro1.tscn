@@ -1,18 +1,68 @@
-[gd_scene format=3 uid="uid://c1ddnlxddyqa6"]
+[gd_scene load_steps=14 format=3 uid="uid://c1ddnlxddyqa6"]
 
-[node name="Intro1" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Script" uid="uid://bjdkx4wsaktia" path="res://scripts/UI/GameEnd.cs" id="1_r3xse"]
+[ext_resource type="Texture2D" uid="uid://lnv7qd784tr6" path="res://art/intro/intro1.png" id="2_fj8pa"]
+[ext_resource type="Texture2D" uid="uid://cr5ttljce8wd8" path="res://art/intro/intro2.png" id="2_ig6oe"]
+[ext_resource type="Texture2D" uid="uid://csm2k02bricsh" path="res://art/intro/intro3.png" id="3_6mkqo"]
+[ext_resource type="Texture2D" uid="uid://b4cxk17w16mp0" path="res://art/intro/intro4.png" id="4_ohqri"]
+[ext_resource type="Texture2D" uid="uid://csbqpa8figf7w" path="res://art/intro/intro5.png" id="5_lw5k6"]
+[ext_resource type="Texture2D" uid="uid://du3r1a1vx5jyd" path="res://art/intro/intro7.png" id="6_51bw0"]
+[ext_resource type="Texture2D" uid="uid://fhnyd8uf5y7k" path="res://art/intro/intro8.png" id="7_tsnb8"]
+[ext_resource type="Texture2D" uid="uid://h3jv6vnmrjex" path="res://art/intro/intro9.png" id="8_wswip"]
+[ext_resource type="Texture2D" uid="uid://bosxj1k20opxw" path="res://art/intro/intro10.png" id="9_52agt"]
+[ext_resource type="Texture2D" uid="uid://5i5o0xlkojhi" path="res://art/intro/intro11.png" id="10_4xdma"]
+[ext_resource type="Texture2D" uid="uid://nt0mcbjnah7e" path="res://art/intro/intro12.png" id="11_igwlv"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
+[sub_resource type="SpriteFrames" id="SpriteFrames_qu2ks"]
+animations = [{
+"frames": [{
+"duration": 1.01,
+"texture": ExtResource("2_fj8pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ig6oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6mkqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ohqri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lw5k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_51bw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tsnb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wswip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_52agt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4xdma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_igwlv")
+}],
+"loop": false,
+"name": &"anim",
+"speed": 1.0
+}]
+
+[node name="Sprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qu2ks")
+animation = &"anim"
+frame = 1
+script = ExtResource("1_r3xse")
+time = 2.0
+nextLevel = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[connection signal="ready" from="." to="." method="play" binds= ["anim"]]

@@ -23,12 +23,22 @@ public partial class DialogueManager : Node
 
     private readonly Queue<string> _queue = new();
     private bool _processing;
+    private int _cancelVersion = 0;
 
     public void EnqueueLine(string lineName)
     {
         _queue.Enqueue(lineName);
         if (!_processing)
             _ = ProcessQueueAsync();
+    }
+
+    public void ClearQueue()
+    {
+        _queue.Clear();
+        _cancelVersion++;
+        text.Text = "";
+        var m = display.Modulate;
+        display.Modulate = new Color(m.R, m.G, m.B, 0f);
     }
 
     private async Task ProcessQueueAsync()
@@ -50,6 +60,7 @@ public partial class DialogueManager : Node
 
     private async Task DisplayLine(string lineName)
     {
+        int version = _cancelVersion;
         Dialouge d = lines[lineName];
         switch (d.emotion)
         {
@@ -71,6 +82,7 @@ public partial class DialogueManager : Node
         tweenIn.SetTrans(Tween.TransitionType.Cubic);
         tweenIn.TweenProperty(display, "modulate:a", 0.7, 0.2).From(0);
         await ToSignal(tweenIn, Tween.SignalName.Finished);
+        if (version != _cancelVersion) return;
         text.Text = "";
         string full = d.line ?? "";
         for (int i = 0; i < full.Length; i++)
@@ -78,9 +90,11 @@ public partial class DialogueManager : Node
             text.Text += full[i];
             var timer = GetTree().CreateTimer(Mathf.Max(0f, 0.02));
             await ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
+            if (version != _cancelVersion) return;
         }
         var holdTimer = GetTree().CreateTimer(2);
         await ToSignal(holdTimer, SceneTreeTimer.SignalName.Timeout);
+        if (version != _cancelVersion) return;
         var tweenOut = CreateTween();
         tweenOut.SetEase(Tween.EaseType.In);
         tweenOut.SetTrans(Tween.TransitionType.Cubic);

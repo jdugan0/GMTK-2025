@@ -143,6 +143,7 @@ public partial class Movement : CharacterBody2D
         die = true;
         sprite.Play("death");
         GameManager.instance.PlayerDeath();
+        DialogueManager.instance.ClearQueue();
     }
 
     public override void _PhysicsProcess(double delta)

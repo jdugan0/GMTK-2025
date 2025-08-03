@@ -56,12 +56,12 @@ public partial class Enemy : CharacterBody2D
     }
     public void OnCol(Node2D node)
     {
-        // if (node is Bullet b)
-        // {
-        //     if (b.stuck) return;
-        //     b.Hit();
-        //     Death();
-        // }
+        if (node is Bullet b)
+        {
+            if (b.stuck) return;
+            b.Hit();
+            Death();
+        }
     }
     public override void _PhysicsProcess(double delta)
     {

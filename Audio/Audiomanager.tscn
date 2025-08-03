@@ -233,7 +233,7 @@ stream_2/stream = ExtResource("34_dblve")
 [sub_resource type="Resource" id="Resource_giii4"]
 script = ExtResource("2_subo3")
 stream = SubResource("AudioStreamRandomizer_5r4gf")
-volume = -1.0
+volume = -10.0
 name = "dodgeRoll"
 metadata/_custom_type_script = "uid://007myadtw53h"
 

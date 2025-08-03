@@ -157,7 +157,7 @@ texture_scale = 6.67
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 32
+collision_mask = 16384
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_khinc")

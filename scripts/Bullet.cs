@@ -41,6 +41,7 @@ public partial class Bullet : CharacterBody2D
         if (stuck)
         {
             trail.Emitting = false;
+            CollisionLayer = 1 << (15 - 1);
         }
         var hit = MoveAndCollide(Velocity * (float)delta);
         if (hit != null)

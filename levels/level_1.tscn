@@ -112,5 +112,3 @@ onlyOnEnd = true
 position = Vector2(12947, -5833)
 lineName = "3_down"
 type = 5
-
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

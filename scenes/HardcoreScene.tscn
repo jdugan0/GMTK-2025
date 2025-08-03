@@ -1,0 +1,20 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr15oth1rpo8c"]
+
+[ext_resource type="PackedScene" uid="uid://bc5m4qvdd6r0q" path="res://scenes/Enemy.tscn" id="1_8q006"]
+[ext_resource type="PackedScene" uid="uid://c2qg6ys7x5u2m" path="res://scenes/FastEnemy.tscn" id="2_ldf1x"]
+[ext_resource type="PackedScene" uid="uid://dtkuebyj01siw" path="res://scenes/RangedEnemy.tscn" id="3_l0x4k"]
+[ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="4_2f57k"]
+[ext_resource type="Script" uid="uid://cejt2psullqwt" path="res://scripts/HarcoreFree.cs" id="5_ldf1x"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0645i"]
+scenes/1/scene = ExtResource("1_8q006")
+scenes/2/scene = ExtResource("2_ldf1x")
+scenes/3/scene = ExtResource("3_l0x4k")
+scenes/4/scene = ExtResource("4_2f57k")
+
+[sub_resource type="TileSet" id="TileSet_8ng2f"]
+sources/0 = SubResource("TileSetScenesCollectionSource_0645i")
+
+[node name="HardcoreScene" type="TileMapLayer"]
+tile_set = SubResource("TileSet_8ng2f")
+script = ExtResource("5_ldf1x")

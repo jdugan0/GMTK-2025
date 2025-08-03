@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c67yqf3qd17es"]
+[gd_scene load_steps=16 format=4 uid="uid://c67yqf3qd17es"]
 
 [ext_resource type="TileSet" uid="uid://fgf17ec1udc6" path="res://art/tilesets/TileSet.tres" id="2_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://cr54qoo8g7gow" path="res://levels/ui/LevelHUD.tscn" id="3_ng40l"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cxtxuc2nlgg7y" path="res://scenes/StrongEnemy.tscn" id="9_04hp8"]
 [ext_resource type="PackedScene" uid="uid://bgi2a6rltx66b" path="res://scenes/OEL.tscn" id="9_sc6c1"]
 [ext_resource type="PackedScene" uid="uid://egigfxvpk7y4" path="res://scenes/SpeakTrigger.tscn" id="12_8hlpj"]
+[ext_resource type="PackedScene" uid="uid://cr15oth1rpo8c" path="res://scenes/HardcoreScene.tscn" id="13_qhnv2"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0fd8o"]
 scenes/1/scene = ExtResource("7_vru0x")
@@ -56,7 +57,7 @@ position = Vector2(2197, -2996)
 rotation = -0.523598
 
 [node name="Enemy" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADu//j/AAAAAAAAAgDv/8z/AAAAAAAAAgCOAPb/AAAAAAAAAgBqAOL/AAAAAAAAAgAxAOL/AAAAAAAABACOAND/AAAAAAAAAgCjAPb/AAAAAAAAAwCjAM3/AAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AADu//j/AAAAAAAAAgDv/8z/AAAAAAAAAgCOAPb/AAAAAAAAAgBqAOL/AAAAAAAAAgAxAOL/AAAAAAAABACOAND/AAAAAAAAAgCjAPb/AAAAAAAAAwCjAM3/AAAAAAAAAwCkAPb/AAAAAAAAAgA=")
 tile_set = SubResource("TileSet_dmnu2")
 navigation_enabled = false
 
@@ -93,4 +94,6 @@ rotation = 0.523599
 lineName = "on_damage"
 type = 4
 
-[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]
+[node name="HardcoreScene" parent="." instance=ExtResource("13_qhnv2")]
+visible = false
+tile_map_data = PackedByteArray("AAB0/9L+AAAAAAAAAwBu/73/AAAAAAAAAwC9/0T/AAAAAAAAAgA0AYz/AAAAAAAABAAwAfb+AAAAAAAABAA9Amz/AAAAAAAAAgBPAiX/AAAAAAAAAgCzAxv/AAAAAAAAAQC6A2v/AAAAAAAAAQD8A0T/AAAAAAAAAQA=")

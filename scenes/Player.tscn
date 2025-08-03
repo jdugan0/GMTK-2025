@@ -143,6 +143,7 @@ rollTime = 0.2
 rollSpeed = 6500.0
 rollCooldown = 0.5
 recoilForce = 1500.0
+health = 3
 iconPierce = SubResource("AtlasTexture_lkdrv")
 iconNormal = SubResource("AtlasTexture_6eyey")
 dashEffect = NodePath("DashExplosion")

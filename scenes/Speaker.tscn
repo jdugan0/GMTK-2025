@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://n1i870278n80"]
+[gd_scene load_steps=31 format=3 uid="uid://n1i870278n80"]
 
 [ext_resource type="Script" uid="uid://dqt60nudgh88q" path="res://scripts/DialogueManager.cs" id="1_8rf17"]
 [ext_resource type="Script" uid="uid://mfnpo33dme3a" path="res://scripts/UI/Dialouge.cs" id="2_5sv7i"]
@@ -119,6 +119,12 @@ line = "I wonder what it'd be like to be a vampire...."
 emotion = 0
 metadata/_custom_type_script = "uid://mfnpo33dme3a"
 
+[sub_resource type="Resource" id="Resource_m4dv4"]
+script = ExtResource("2_5sv7i")
+line = "I need to make sure I dash through enemies and bullets!"
+emotion = 3
+metadata/_custom_type_script = "uid://mfnpo33dme3a"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_37fbv"]
 atlas = ExtResource("2_fklqs")
 region = Rect2(0, 0, 1532, 317)
@@ -147,6 +153,7 @@ process_mode = 3
 script = ExtResource("1_8rf17")
 lines = {
 "1_return": SubResource("Resource_d4n4s"),
+"2_ready": SubResource("Resource_m4dv4"),
 "2_return": SubResource("Resource_2vdek"),
 "3_down": SubResource("Resource_hiysl"),
 "3_end": SubResource("Resource_lwwvl"),

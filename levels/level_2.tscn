@@ -77,6 +77,12 @@ position = Vector2(20218, -13824)
 scale = Vector2(2.99939, 0.126756)
 lineName = "table_dodge"
 
+[node name="SpeakTrigger4" parent="." instance=ExtResource("11_vm7no")]
+position = Vector2(20218, -13824)
+scale = Vector2(2.99939, 0.126756)
+lineName = "2_ready"
+type = 1
+
 [node name="SpeakTrigger3" parent="." instance=ExtResource("11_vm7no")]
 position = Vector2(19437, -6435)
 lineName = "2_return"

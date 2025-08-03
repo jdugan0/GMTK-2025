@@ -6,6 +6,7 @@ public partial class SpeakTrigger : Area2D
     bool fired;
     [Export] string lineName;
     [Export] TriggerType type;
+    bool acceptTriggers = false;
 
 
     public enum TriggerType { ENTERED, START, FIRED, ENEMYHIT, DAMAGE, ENDED }
@@ -18,7 +19,11 @@ public partial class SpeakTrigger : Area2D
     }
     public override void _Process(double delta)
     {
-        if (type == TriggerType.ENDED && GameManager.instance.enemiesRemaining == 0 && !fired)
+        if (GameManager.instance.enemiesRemaining > 0)
+        {
+            acceptTriggers = true;
+        }
+        if (type == TriggerType.ENDED && GameManager.instance.enemiesRemaining == 0 && !fired && acceptTriggers)
         {
             Trigger();
         }
@@ -46,9 +51,13 @@ public partial class SpeakTrigger : Area2D
                 break;
         }
     }
+    public void AcceptTriggers() {
+        acceptTriggers = true;
+    }
 
     private void OnBodyEntered(Node body)
     {
+        if (!acceptTriggers) return;
         if (fired) return;
         if (body is Movement && type == TriggerType.ENTERED)
             Trigger();
@@ -60,20 +69,8 @@ public partial class SpeakTrigger : Area2D
 
     private void Trigger()
     {
-        if (onlyOnEnd)
-        {
-            GD.Print(1);
-        }
         if (onlyOnEnd && GameManager.instance.enemiesRemaining != 0) return;
-        if (onlyOnEnd)
-        {
-            GD.Print(2);
-        }
         if (fired) return;
-        if (onlyOnEnd)
-        {
-            GD.Print(3);
-        }
         DialogueManager.instance.EnqueueLine(lineName);
         fired = true;
     }

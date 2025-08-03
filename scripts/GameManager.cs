@@ -24,6 +24,7 @@ public partial class GameManager : Node
     {
         instance = this;
     }
+    public bool hardCore = false;
 
     public override void _Process(double delta)
     {
@@ -49,17 +50,14 @@ public partial class GameManager : Node
         SpeedrunManager.speedrun = false;
         CancelMusic();
     }
-    public async void NextLevel()
+    public void NextLevel()
     {
         GetTree().Paused = false;
-        if (currentLevelID == levels.Length)
+        if (GameManager.instance.maxLevelUnlocked == GameManager.instance.currentLevelID)
         {
-            await SceneSwitcher.instance.SwitchSceneAsyncSlide("GameComplete");
+            GameManager.instance.maxLevelUnlocked++;
         }
-        else
-        {
-            LoadLevel(currentLevelID + 1);
-        }
+        LoadLevel(currentLevelID + 1);
     }
     public void Pause()
     {

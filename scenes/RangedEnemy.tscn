@@ -11,8 +11,8 @@
 radius = 175.114
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55jtl"]
-radius = 192.935
-height = 582.375
+radius = 218.222
+height = 617.625
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1k2w"]
 atlas = ExtResource("2_wltc5")
@@ -72,7 +72,7 @@ stopBuffer = 25.0
 coolDown = 1.5
 enemyBullet = ExtResource("3_r1k2w")
 sprite = NodePath("AnimatedSprite2D")
-fireSpeed = 2000.0
+fireSpeed = 2500.0
 firePos = NodePath("Node2D")
 corpse = ExtResource("4_pt6rv")
 enemyLight = NodePath("LightScene")

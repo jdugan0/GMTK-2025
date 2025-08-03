@@ -41,6 +41,7 @@ public partial class Bullet : CharacterBody2D
         if (stuck)
         {
             trail.Emitting = false;
+            CollisionLayer = 1 << (15 - 1);
         }
         var hit = MoveAndCollide(Velocity * (float)delta);
         if (hit != null)
@@ -62,13 +63,13 @@ public partial class Bullet : CharacterBody2D
         {
             if (target is Enemy enemy)
             {
-                enemy.Death();
-                if (bulletType != BulletType.Pierce || hitEnemy)
-                {
-                    Velocity = Vector2.Zero;
-                    stuck = true;
-                }
-                hitEnemy = true;
+                // enemy.Death();
+                // if (bulletType != BulletType.Pierce || hitEnemy)
+                // {
+                //     Velocity = Vector2.Zero;
+                //     stuck = true;
+                // }
+                // hitEnemy = true;
             }
             else
             {

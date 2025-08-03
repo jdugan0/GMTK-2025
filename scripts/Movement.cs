@@ -43,8 +43,11 @@ public partial class Movement : CharacterBody2D
     [Export] Texture2D iconNormal;
     [Export] GpuParticles2D dashEffect;
 
+    float rollSafeTimer = 0;
+
     private readonly List<Bullet.BulletType> magazine = new();
     public int bullets => magazine.Count;
+    [Export] public float dashSafety;
     public override void _Ready()
     {
         GameManager.instance.player = this;
@@ -82,12 +85,14 @@ public partial class Movement : CharacterBody2D
         // sprite.Modulate = new Color(origColor.R, origColor.G, origColor.B, 0.40f);
         isRolling = true;
         rollTImer = rollTime;
+        rollSafeTimer = dashSafety;
         rollCooldownTimer = rollCooldown;
         dashEffect.Emitting = true;
         prevLayer = CollisionLayer;
         prevMask = CollisionMask;
         CollisionMask &= ~((1u << 1) | (1u << 4));
         CollisionLayer = 1u << 9;
+        
 
         sprite.Play("roll");
         AudioManager.instance.PlaySFX("dodgeRoll");
@@ -113,10 +118,15 @@ public partial class Movement : CharacterBody2D
     {
         if (die) return;
         if (damageTimer > 0) return;
+        if (rollSafeTimer > 0) return;
+        if (GameManager.instance.hardCore) amount = 3;
         damageTimer = damageCoolDown;
         health -= amount;
         AudioManager.instance.PlaySFX("playerHit");
-        EmitSignal(SignalName.Damaged, amount);
+        if (health == 1)
+        {
+            EmitSignal(SignalName.Damaged, amount);
+        }
         if (health <= 0)
         {
             Death();
@@ -136,6 +146,7 @@ public partial class Movement : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         if (die) return;
+        rollSafeTimer -= (float)delta;
         MoveToFront();
         Vector2 inputDir = Input.GetVector("LEFT", "RIGHT", "UP", "DOWN");
         Vector2 targetVelocity = inputDir.Normalized() * maxSpeed;

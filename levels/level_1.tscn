@@ -69,6 +69,7 @@ region_rect = Rect2(0, 0, 1200, 800)
 
 [node name="Player" parent="." instance=ExtResource("3_l53as")]
 position = Vector2(5, 1535)
+health = 3
 
 [node name="Bullet" parent="." instance=ExtResource("6_5ot28")]
 position = Vector2(183, -6604)
@@ -112,3 +113,5 @@ onlyOnEnd = true
 position = Vector2(12947, -5833)
 lineName = "3_down"
 type = 5
+
+[connection signal="body_entered" from="Decor/LevelEnd" to="Decor/LevelEnd" method="OnCol"]

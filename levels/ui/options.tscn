@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://0fohlunqbspr"]
+[gd_scene load_steps=14 format=3 uid="uid://0fohlunqbspr"]
 
 [ext_resource type="Script" uid="uid://bkw53ywyvkt73" path="res://scripts/UI/Options.cs" id="1_v1bic"]
 [ext_resource type="Texture2D" uid="uid://d2irqm1rvfali" path="res://art/lvlSelect_1920x1080.png" id="2_lqvsu"]
 [ext_resource type="Texture2D" uid="uid://bb5pkwengli7b" path="res://art/UI/temp_slider_knob.png" id="2_xqxg3"]
 [ext_resource type="Texture2D" uid="uid://bjgjqxudkgjyi" path="res://art/homebutton_1370x322.png" id="4_lqvsu"]
 [ext_resource type="Texture2D" uid="uid://urrs1yqm5nea" path="res://art/lights/2d_lights_and_shadows_neutral_point_light.webp" id="5_wk64w"]
+[ext_resource type="Theme" uid="uid://cwdyn1lge3e2s" path="res://art/themes/homeTheme.tres" id="6_h5v2r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wk64w"]
 texture = ExtResource("2_lqvsu")
@@ -54,7 +55,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_h5v2r")
 Button/styles/normal = SubResource("StyleBoxTexture_6wvcv")
 Button/styles/pressed = SubResource("StyleBoxTexture_6wvcv")
 
-[node name="Options" type="Control"]
+[node name="Options" type="Control" node_paths=PackedStringArray("hardCoreButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,6 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v1bic")
+hardCoreButton = NodePath("Button")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -147,5 +149,22 @@ energy = 2.93
 texture = ExtResource("5_wk64w")
 texture_scale = 14.91
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.497
+anchor_top = 0.706
+anchor_right = 0.497
+anchor_bottom = 0.706
+offset_left = -261.24
+offset_top = -63.48
+offset_right = 260.76
+offset_bottom = 63.52
+theme = ExtResource("6_h5v2r")
+theme_override_font_sizes/font_size = 31
+toggle_mode = true
+text = "HARDCORE!!"
+
 [connection signal="value_changed" from="Panel/VBoxContainer/Volume Slider" to="." method="AdjustVolume"]
 [connection signal="pressed" from="Back" to="." method="MainMenu"]
+[connection signal="toggled" from="Button" to="." method="SetHardCore"]

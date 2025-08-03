@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://812ehdnsncj7" path="res://art/red_vignette.png" id="2_u8pla"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8pla"]
-bg_color = Color(1, 0, 0, 0.262745)
+bg_color = Color(0.92549, 0, 0.0666667, 0.14902)
 
-[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("overlay")]
+[node name="Camera2D" type="Camera2D" node_paths=PackedStringArray("overlay", "quickPulse")]
 zoom = Vector2(0.3, 0.3)
 script = ExtResource("1_a3ute")
 pulseAlpha = 0.8
 pulseTime = 1.0
 overlay = NodePath("CanvasLayer/Control/TextureRect")
+quickPulse = NodePath("CanvasLayer/Control/Panel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

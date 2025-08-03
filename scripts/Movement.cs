@@ -36,6 +36,7 @@ public partial class Movement : CharacterBody2D
     [Export] public int health = 2;
     [Signal] public delegate void FiredEventHandler();
     [Signal] public delegate void DamagedEventHandler(int amount);
+    [Signal] public delegate void OneDamageEventHandler();
     float damageCoolDown = 1f;
     float damageTimer;
 
@@ -123,6 +124,7 @@ public partial class Movement : CharacterBody2D
         damageTimer = damageCoolDown;
         health -= amount;
         AudioManager.instance.PlaySFX("playerHit");
+        EmitSignal(SignalName.OneDamage);
         if (health == 1)
         {
             EmitSignal(SignalName.Damaged, amount);
